@@ -2903,7 +2903,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <tas:getAvailableTasksRequest>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VcbmVsbGkubmV1dm9sYSYmaXNzdWVkPT0xMzI2NzIxODc4NDEzJiZyb2xlcz09a29rdVx2aXJrYWlsaWphJiZ1aWQ9PTg4ODg4OC04ODg4JiZlbWFpbD09dGVzdGlwb3N0aUB0ZXN0aXBvc3RpLmNvbSYmY249PW5lbGxpLm5ldXZvbGEmJmxhc3RuYW1lPT1uZXV2b2xhJiZmaXJzdG5hbWU9PW5lbGxpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT04NjQ1NDI4MzMxOTEyMzgzNDQ2JiZ0aW1lc3RhbXA9PTEzMjY3MjE4Nzg0NDQmJmRpZ2VzdD09SkhBdGdZNWU1NFlFRWZkZnBxNjBHOTlNTTRnPSYmJiZUT0tFTg==</tas:participantToken>
+         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VcbmVsbGkubmV1dm9sYSYmaXNzdWVkPT0xMzM3MDcyMjkxOTA1JiZyb2xlcz09a29rdVx2aXJrYWlsaWphJiZ1aWQ9PTg4ODg4OC04ODg4JiZlbWFpbD09dGVzdGlwb3N0aUB0ZXN0aXBvc3RpLmNvbSYmY249PW5lbGxpLm5ldXZvbGEmJmxhc3RuYW1lPT1uZXV2b2xhJiZmaXJzdG5hbWU9PW5lbGxpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tNzI3NzgwMTA5MTEzMjAyODY1MiYmdGltZXN0YW1wPT0xMzM3MDcyMjkxOTExJiZkaWdlc3Q9PTEyMUVWdTBtVmIwb21UM2RxN0JKRWlPVGZaMD0mJiYmVE9LRU4=</tas:participantToken>
          <tas:taskType>PIPATask</tas:taskType>
          <tas:subQuery>T._description like '%Uusi käyttäjäviesti%'</tas:subQuery>
       </tas:getAvailableTasksRequest>
