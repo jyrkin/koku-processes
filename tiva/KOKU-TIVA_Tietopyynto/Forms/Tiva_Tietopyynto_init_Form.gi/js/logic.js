@@ -1,4 +1,4 @@
-kokuServiceEndpoints = null;
+var kokuServiceEndpoints = null;
 
 function getEndpoint(serviceName) {
     if(kokuServiceEndpoints == null) {
@@ -254,7 +254,7 @@ function makeSearch(searchString) {
     hasEmptyChild = false;
 
     if(searchString == "") {
-        alert("Sy" + unescape("%F6") + "t" + unescape("%E4") + "hakusana");
+        alert("Sy" + unescape("%F6") + "t" + unescape("%E4") + " hakusana");
 
     }
     //searchString = searchString.toLowerCase();
@@ -366,7 +366,7 @@ function searchNames(searchString) {
         TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
     }
 
-formatDataCache(HaetutVastaanottajat-nomap, searchMatrix);
+    hasEmptyChild = formatDataCache('HaetutVastaanottajat-nomap', 'searchMatrix');
 
     usersData = Arcusys.Internal.Communication.GetUsers(searchString);
     
@@ -429,19 +429,30 @@ formatDataCache(HaetutVastaanottajat-nomap, searchMatrix);
                     node.setAttribute("sahkoposti", personInfo[3]);
                 if((personInfo[4] == "undefined")) {
                     alert("Kayttajahaussa tapahtui virhe. Kohdehenkilon id puuttuu");
-                    return false;
+                    return false;   
                 }
 
                 node.setAttribute("uid", personInfo[4]);
 
-                TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
+
+                //TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChildren();
+                
+                var document = TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap");
+                //var firstChild = document.getFirstChild();
+                //if (firstChild != null) {
+                    //replaceNode(node, TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
+                //}
+                
+                document.insertBefore(node);
+                //TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
 
             }
 
             if(hasEmptyChild == true) {
                 TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
             }
-
+            
+            
             TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
         } else {
             //alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
@@ -453,7 +464,6 @@ formatDataCache(HaetutVastaanottajat-nomap, searchMatrix);
 function searchChildrens(searchString) {
     var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
     entryFound = false;
-    hasEmptyChild = false;
 
     if(searchString == "") {
         alert("Sy" + unescape("%F6") + "t" + unescape("%E4") + "hakusana");
@@ -468,7 +478,7 @@ function searchChildrens(searchString) {
 
 
 
-formatDataCache(HaetutLapset-nomap, searchChildMatrix);
+    hasEmptyChild = formatDataCache('HaetutLapset-nomap', 'searchChildMatrix');
 /*
     if(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild() == null) {
         TivaTietopyyntoForm.getJSXByName("searchChildMatrix").commitAutoRowSession();
@@ -507,7 +517,7 @@ formatDataCache(HaetutLapset-nomap, searchChildMatrix);
 
         }
 
-        if(hasEmptyChild == true) {
+        if(hasEmptyChild) {
             TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
         }
 
