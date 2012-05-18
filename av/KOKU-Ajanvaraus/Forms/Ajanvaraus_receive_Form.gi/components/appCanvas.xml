@@ -1,9 +1,9 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize>Preload();</onAfterDeserialize>
+  <onAfterDeserialize><![CDATA[Preload();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxoverflow="1" jsxwidth="870"/>
     <strings jsxheight="100%" jsxname="root"/>
@@ -139,6 +139,11 @@
       <object type="jsx3.gui.TextBox">
         <variants jsxwidth="400" jsxenabled="0"/>
         <strings jsxname="User_Sender" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#ffffff" jsxdisplay="none"/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants jsxwidth="400" jsxenabled="1" jsxreadonly="1"/>
+        <strings jsxname="User_Role" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#ffffff" jsxdisplay="none" jsxvisibility="hidden"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
       </object>
     </object>

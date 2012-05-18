@@ -27,6 +27,7 @@
     		<element name="User_RecipientRealName" type="string"></element>
     		<element name="User_Sender" type="string"></element>
     		<element name="User_SenderRealName" type="string"></element>
+    		<element name="User_Role" type="string"></element>
     	</sequence>
     </complexType>
     

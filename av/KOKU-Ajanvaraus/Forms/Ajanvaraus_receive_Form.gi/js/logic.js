@@ -181,7 +181,7 @@ function radioSelect(selectBoxName) {
 
 function Preload() {
     var id, targetPerson;
-
+    alert(AjanvarausForm.getJSXByName("User_Role").getValue());
     if (gup("FormID")) {
         id = gup("FormID");
         targetPerson = gup("arg1");
@@ -229,14 +229,14 @@ function mapFormDataToFields(objXML) {
 }
 
 function getUserRealName(uid) {
-	var userData, firstname, lastname;
+    var userData, firstname, lastname;
     userData = Arcusys.Internal.Communication.getUserInfo(uid);
     if (userData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'") && userData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'")) {
         firstname = userData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         lastname = userData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         return firstname + " " + lastname;
     } else {
-    	return null;
+        return null;
     }
 }
 

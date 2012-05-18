@@ -1,9 +1,9 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize>prepareForm();</onAfterDeserialize>
+  <onAfterDeserialize><![CDATA[prepareForm();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxoverflow="1"/>
     <strings jsxheight="100%" jsxwidth="100%" jsxname="root"/>
@@ -136,7 +136,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1" jsxenabled="0"/>
+                    <variants jsxheight="18" jsxchecked="1" jsxenabled="0" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeKayttajia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
                   </object>
@@ -159,7 +159,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRyhmia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;groups&quot;);"/>
                   </object>
@@ -210,8 +210,8 @@
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="button" jsxtext="Hae" jsxmargin="14 4 0 0"/>
-                    <events jsxexecute="searchNames(KayttajaviestintaForm.getJSXByName(&quot;searchString&quot;).getValue());"/>
+                    <strings jsxname="button" jsxtext="Lisää" jsxmargin="14 4 0 0"/>
+                    <events jsxexecute="searchNames(KayttajaviestintaForm.getJSXByName(&quot;searchString&quot;).getValue());addToRecipients();"/>
                   </object>
                 </object>
               </object>
@@ -311,7 +311,7 @@
                   <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="addRecipient" jsxtext="Lisää haetun lapsen vanhemmat vastaanottajiksi" jsxmargin="0 4 0 0"/>
+                    <strings jsxname="addRecipient" jsxtext="Lisää haetun lapsen vanhemmat vastaanottajiksi" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvisibility="hidden"/>
                     <events jsxexecute="addToRecipients();"/>
                   </object>
                 </object>
@@ -346,7 +346,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1"/>
+                    <variants jsxheight="18" jsxchecked="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeKayttajia_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
                   </object>
@@ -369,7 +369,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="0" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRyhmia_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
                   </object>
@@ -454,7 +454,7 @@
                         <strings jsxcellpadding="1" jsxpath="valittu" jsxpadding="3" jsxcelltextalign="center" jsxname="Valittu" jsxvaluetemplate="@empty" jsxtext="Valinta"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.CheckBox">
-                          <variants jsxchecked="0" jsxenabled="1"/>
+                          <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                           <strings jsxname="valittu" jsxtext="" jsxtip=""/>
                           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED); listGroupUsers();"/>
                         </object>
@@ -464,7 +464,7 @@
                         <strings jsxcellpadding="1" jsxpath="Haettu" jsxpadding="3" jsxcelltextalign="center" jsxname="Haettu" jsxvaluetemplate="@empty" jsxtext="Valinta" jsxdisplay="none"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.CheckBox">
-                          <variants jsxchecked="0" jsxenabled="1"/>
+                          <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                           <strings jsxname="valittu" jsxtext="" jsxtip="" jsxvisibility="hidden"/>
                           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED); listGroupUsers();"/>
                         </object>
@@ -745,7 +745,7 @@
                   <variants/>
                   <strings riaLabelText="" jsxname="Message_FamilyMembers-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18"/>
+                    <variants jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Message_FamilyMembers" jsxtext="" jsxmargin="0 4 0 0"/>
                   </object>
                 </object>
@@ -776,7 +776,7 @@
                   <variants/>
                   <strings riaLabelText="" jsxname="Message_Website-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18"/>
+                    <variants jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Message_Website" jsxtext="" jsxmargin="0 4 0 0"/>
                   </object>
                 </object>
@@ -898,7 +898,7 @@
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="1"/>
+        <variants jsxheight="18" jsxchecked="1" jsxdefaultchecked="0"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
