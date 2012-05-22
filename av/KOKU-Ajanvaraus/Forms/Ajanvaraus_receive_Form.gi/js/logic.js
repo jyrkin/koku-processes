@@ -181,7 +181,7 @@ function radioSelect(selectBoxName) {
 
 function Preload() {
     var id, targetPerson;
-    alert(AjanvarausForm.getJSXByName("User_Role").getValue());
+
     if (gup("FormID")) {
         id = gup("FormID");
         targetPerson = gup("arg1");
@@ -212,7 +212,7 @@ function mapFormDataToFields(objXML) {
     inputPreload(objXML);
     
     username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));
+    username = username.substring((username.indexOf("\\")+1));
     uidData = Arcusys.Internal.Communication.GetUserUidByKunponame(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     AjanvarausForm.getJSXByName("User_Recipient").setValue(uid);

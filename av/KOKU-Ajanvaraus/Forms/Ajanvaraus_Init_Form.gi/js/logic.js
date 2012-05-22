@@ -1,56 +1,6 @@
 // General functions ----------------------------------------------------------------------------------------------------------------------------
 kokuServiceEndpoints = null;
 
-
-function prepareForm() {
-    var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/") + 1));
-    
-        try {
-        var userUid = Arcusys.Internal.Communication.GetUserUidByUsername(username);
-        if(userUid != "null") {
-            var uid = userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
-        }
-    } catch (e) {
-        alert(e);
-    }
-    
-    getRoles(uid);
-}
-
-jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetUserUidByUsername = function(username) {
-
-        var tout = 1000;
-        var limit = 100;
-        var searchString = "";
-
-        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + username + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
-
-        var url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-
-        var req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        var objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
-    };
-});
-
-
-
 function showDialog(dialogId, text, textTitle, title) {
     var dialog, cssDisplay;
     dialog = $("#" + dialogId);
@@ -109,79 +59,6 @@ function gup(name) {
     }
     return results[1];
 }
-
-function getRoles(uid) {
-    var i = 0, j = 0, roleName, roleId;
-
-    //var uid = "415ae6c9-406b-41df-b71e-887b5f0e4f3a";
-    rolesData = Arcusys.Internal.Communication.GetUserRoles(uid);
-
-    var roles = rolesData.selectNodeIterator("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
-    var rolesArray = [];
-
-    var checkRoles = rolesData.selectSingleNode("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
-
-    if(checkRoles) {
-        while(roles.hasNext()) {
-            node = roles.next();
-            if(node.getFirstChild()) {
-                childNode = node.getFirstChild();
-                rolesArray[i] = [];
-                while(childNode) {
-                    if(childNode.getValue()) {
-                        rolesArray[i][j] = childNode.getValue();
-                    }
-                    childNode = childNode.getNextSibling();
-                    j++;
-                }
-                i++;
-                j = 0;
-            }
-        }
-
-        var s = "<data>";
-
-        for( i = 0; i < rolesArray.length; i++) {
-            s += "<record jsxid=\"" + rolesArray[i][1] + "\" jsxtext=\"" + rolesArray[i][0] + "\"\/>";
-        }
-        s += "<record jsxid=\"\" jsxtext=\"Ei valintaa\"/>";
-        s += "</data>";
-
-        AjanvarausForm.getJSXByName("User_Role").setXMLString(s).resetCacheData();
-
-        //KayttajaviestintaForm.getJSXByName("Roolit").setDisplay("block", true);
-    }
-
-}
-
-jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetUserRoles = function(uid) {
-
-        var tout, msg, endpoint, url, req, objXML;
-        tout = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserRoles><userUid>" + uid + "</userUid></soa:getUserRoles></soapenv:Body></soapenv:Envelope>";
-
-        var url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
-
-    };
-});
 
 function commitCustomAutoRowSession(matrix, cache) {
     var nodes, xmlStr, i;
@@ -1280,7 +1157,7 @@ function setModeModify() {
 function Preload() {
     var username, formData, id, uid, uidData, userRealName;
     username = Intalio.Internal.Utilities.getUser();
-    username = username.substring(username.indexOf("/") + 1);
+    username = username.substring(username.indexOf("\\") + 1);
     uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     AjanvarausForm.getJSXByName("User_Sender").setValue(uid);
