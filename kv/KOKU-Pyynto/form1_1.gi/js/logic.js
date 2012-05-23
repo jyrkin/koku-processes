@@ -1205,7 +1205,7 @@ function getTaskSubscribe() {
 function prepareForm() {
     var username = Intalio.Internal.Utilities.getUser();
     var firstname, lastname;
-    username = username.substring((username.indexOf("/") + 1));
+    username = username.substring((username.indexOf("\\") + 1));
     setButtonDisplay("IntalioInternal_StartButton", "none");
 
     form1.getJSXByName("User_SenderDisplay").setValue(username);

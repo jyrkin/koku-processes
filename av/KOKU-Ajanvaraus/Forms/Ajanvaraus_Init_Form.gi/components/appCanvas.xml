@@ -164,7 +164,7 @@
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="button" jsxtext="Hae" jsxmargin="14 4 0 0"/>
+                    <strings jsxname="button" jsxtext="Lisää" jsxmargin="14 4 0 0"/>
                     <events jsxexecute="searchNames(AjanvarausForm.getJSXByName(&quot;searchStringChild&quot;).getValue());addToRecipients();"/>
                   </object>
                 </object>

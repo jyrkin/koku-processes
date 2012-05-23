@@ -212,7 +212,7 @@ function mapFormDataToFields(objXML) {
     inputPreload(objXML);
     
     username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));
+    username = username.substring((username.indexOf("\\")+1));
     uidData = Arcusys.Internal.Communication.GetUserUidByKunponame(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     AjanvarausForm.getJSXByName("User_Recipient").setValue(uid);
@@ -229,14 +229,14 @@ function mapFormDataToFields(objXML) {
 }
 
 function getUserRealName(uid) {
-	var userData, firstname, lastname;
+    var userData, firstname, lastname;
     userData = Arcusys.Internal.Communication.getUserInfo(uid);
     if (userData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'") && userData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'")) {
         firstname = userData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         lastname = userData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         return firstname + " " + lastname;
     } else {
-    	return null;
+        return null;
     }
 }
 

@@ -1157,7 +1157,7 @@ function setModeModify() {
 function Preload() {
     var username, formData, id, uid, uidData, userRealName;
     username = Intalio.Internal.Utilities.getUser();
-    username = username.substring(username.indexOf("/") + 1);
+    username = username.substring(username.indexOf("\\") + 1);
     uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     AjanvarausForm.getJSXByName("User_Sender").setValue(uid);

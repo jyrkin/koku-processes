@@ -132,15 +132,15 @@ function mapSelectedValuesToMatrix() {
     var selected = new Array;
 
     traverse(rootnode, selected);
-
+    
     if(selected.length != 0) {
         var node, i = 0;
         var hasEmptyChild = false;
 
-        hasEmptyChild = formatDataCache("Havainnointitiedot-nomap", "Havainnointitiedot");
+        hasEmptyChild = formatDataCache('Havainnointitiedot-nomap', 'Havainnointitiedot');
 
         for( i = 0; i < selected.length; i++) {
-            node = TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild().cloneNode();
+            node = TivaTietopyyntoForm.getCache().getDocument("Havainnointitiedot-nomap").getFirstChild().cloneNode();
 
             //node.setAttribute("jsxid",i);
             if((selected[i].getAttribute("jsxselected") != null) && (selected[i].getAttribute("jsxopen") == null)) {
@@ -163,7 +163,7 @@ function mapSelectedValuesToMatrix() {
             TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild());
         }
     }
-
+*/
 }
 
 function getIntalioUser() {
@@ -596,7 +596,7 @@ function addToTarget() {
 
     }
     if(counter < 1) {
-        alert("Yht" + unescape("%E4%E4") + "n kohdehenkil" + unescape("%F6%E4") + "ei ole valittuna");
+        alert("Yht" + unescape("%E4%E4") + "n kohdehenkil" + unescape("%F6%E4") + " ei ole valittuna");
         return;
     }
     xmlData = Arcusys.Internal.Communication.GetChildinfo(uid);
