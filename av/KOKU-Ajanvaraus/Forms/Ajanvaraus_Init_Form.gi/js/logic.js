@@ -182,11 +182,12 @@ function checkSlotMatrix() {
 }
 
 function formatDataCache(cache, matrix) {
-    if(AjanvarausForm.getCache().getDocument(cache).getFirstChild() === null) {
+    if(AjanvarausForm.getCache().getDocument(cache).getFirstChild() == null) {
         commitCustomAutoRowSession(matrix, cache);
         return true;
+    } else {
+        return false;
     }
-    return false;
 }
 
 function clearDataCache(cacheName, matrixName) {
