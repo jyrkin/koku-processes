@@ -487,7 +487,6 @@ function switchSearchMode(mode) {
 function searchGroup(searchString) {
 try {
 
-    alert("searchGroup");
     var entryFound, node, i, hasEmptyChild, splits, list, xmlData, groupData;
     clearDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
     if(searchString == "") {
