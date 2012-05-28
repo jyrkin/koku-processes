@@ -206,7 +206,7 @@ function prepareForm() {
     // form1.getJSXByName("User_Sender").setValue(Intalio.Internal.Utilities.getUser()).repaint();
     
     var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));
+    username = username.substring((username.indexOf("\\")+1));
     //alert(username);
     Valtakirja_Form.getJSXByName("Tiedot_Lahettaja").setValue(username);
     

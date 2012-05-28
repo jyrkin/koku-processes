@@ -75,7 +75,7 @@ function getPortNumber() {
  */
 function Preload() {
     var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));
+    username = username.substring((username.indexOf("\\")+1));
     //alert(username);
     Valtakirja_Form.getJSXByName("Tiedot_LahettajaDisplay").setValue(username);
     if (gup("FormID")) {

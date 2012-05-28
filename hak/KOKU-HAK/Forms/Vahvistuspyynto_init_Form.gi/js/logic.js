@@ -76,7 +76,7 @@ function getPortNumber() {
 function prepareForm() {
 
     var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));
+    username = username.substring((username.indexOf("\\")+1));
     //alert(username);
     
     if (gup("FormID")) {

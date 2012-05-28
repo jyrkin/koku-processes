@@ -11,7 +11,7 @@ function startUp(){
         //Toimeentulotuki_Form.getJSXByName("liite_label").setText("Ei liitett&auml;").repaint();
     } else{
       var newtext;
-       newtext="<a href=\""+liite+"\" target=\"_blank\">" +liite.substring(liite.lastIndexOf("/")+1, liite.length) +"</a>";
+       newtext="<a href=\""+liite+"\" target=\"_blank\">" +liite.substring(liite.lastIndexOf("\\")+1, liite.length) +"</a>";
        Paivahoitohakemus_Form.getJSXByName("liite_label").setText(newtext).repaint();
     }
 
