@@ -280,7 +280,7 @@ function preload() {
 
     getTemplates("");
     username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/") + 1));
+    username = username.substring((username.indexOf("\\") + 1));
     uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     userRealName = getUserRealName(uid);
@@ -418,6 +418,7 @@ function searchNames(searchString) {
                 if(childArray[i]["parents_uid"]) {
                     node = TIVAForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
                     node.setAttribute("jsxid", 0);
+                    node.setAttribute("valittu", 1);
                     node.setAttribute("etunimi", childArray[i]["firstname"]);
                     node.setAttribute("sukunimi", childArray[i]["lastname"]);
                     node.setAttribute("uid", childArray[i]["uid"]);
@@ -428,7 +429,7 @@ function searchNames(searchString) {
             }
 
             TIVAForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
-
+            // replaceNode(node, TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
             if(hasEmptyChild == true) {
                 TIVAForm.getCache().getDocument("HaetutLapset-nomap").removeChild(TIVAForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
             }

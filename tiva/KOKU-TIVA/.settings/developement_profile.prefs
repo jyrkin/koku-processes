@@ -1,11 +1,10 @@
-#Thu Mar 29 10:19:47 EEST 2012
+
 behind_proxy=false
-bundleExportPath=/home/henril/intalio_workspace/KOKU-TIVA
-deploy_bundleNcName=KOKU-TIVA-Suostumus
+bundleExportPath=/home/hmustonen/KOKU-workspace/mainworkspace/KOKU-TIVA
 deploy_bundleShouldBeArchived=false
 deploy_bundleShouldBeDeployed=true
 deploy_gi_serverUrl=http\://localhost\:8080/gi
 deploy_serverUrl=http\://localhost\:8080/ode
 deploymenttimeout=120
-diagram_baseUri=http\://www.arcusys.fi
+diagram_baseUri=http\://example.com
 eclipse.preferences.version=1
