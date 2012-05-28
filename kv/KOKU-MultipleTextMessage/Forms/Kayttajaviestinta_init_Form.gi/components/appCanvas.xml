@@ -627,7 +627,7 @@
                   <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="addRecipient" jsxtext="Lisää valitut ryhmät vastaanottajiin" jsxmargin="0 4 0 0"/>
+                    <strings jsxname="addRecipient" jsxtext="Lisää valittujen lasten vanhemmat vastaanottajiin" jsxmargin="0 4 0 0"/>
                     <events jsxexecute=" addGroupsToRecipients();"/>
                   </object>
                 </object>
