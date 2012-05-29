@@ -1,6 +1,7 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:TaskManagementSystem="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TokenService="http://tempo.intalio.org/security/tokenService/" xmlns:attachments="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:ns="http://ws.arcusys.fi" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Services="http://thisdiagram/Services" xmlns:this="http://thisdiagram/Process" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Process">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:TaskManagementSystem="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:User="http://thisdiagram/User" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TokenService="http://tempo.intalio.org/security/tokenService/" xmlns:attachments="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:ns="http://ws.arcusys.fi" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:this="http://thisdiagram/Process" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Process">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" bpdm:prefix="TaskManagementSystem" bpdm:comment="contrib=&apos;project:///Services/TaskManagementSystem.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/User" bpdm:prefix="User" bpdm:comment="contrib=&apos;partner-pool:///_CDSOcK0XEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://tempo.intalio.org/security/tokenService/" bpdm:prefix="TokenService" bpdm:comment="contrib=&apos;project:///Services/TokenService.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Copyofform1_1.gi.wsdl"></bpdm:namespaceDefinition>
@@ -10,9 +11,8 @@
         <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuRequestProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///KokuRequestProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/DynamicFields" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///DynamicFields.xsd"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Services" bpdm:prefix="Services" bpdm:comment="contrib=&apos;partner-pool:///_mCUH8K0fEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Process" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi" bpdm:prefix="Copyofform1_1" bpdm:comment="contrib=&apos;project:///Copyofform1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Process" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
         <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
             <wsdl:portType name="ForInterface">
@@ -55,7 +55,7 @@
             <bpel:partnerLink name="servicesAndProcessForPortServicePlkVar" partnerLinkType="diag:ServicesAndProcessForPortServicePlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="TokenService:TokenService" bpdm:invokedPort="Service" bpdm:invokedSOAPAddress="http://localhost:8080/axis2/services/TokenService.Service/" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_m9MocCZYEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
             <bpel:partnerLink name="servicesAndProcessForPortTaskManagementServicesSOAPPlkVar" partnerLinkType="diag:ServicesAndProcessForPortTaskManagementServicesSOAPPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="TaskManagementSystem:TaskManagementServices" bpdm:invokedPort="TaskManagementServicesSOAP" bpdm:invokedSOAPAddress="http://localhost:8080/axis2/services/TaskManagementServices" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_yfwssCZYEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
             <bpel:partnerLink name="servicesAndProcessForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:invokedPort="UsersAndGroupsServicePort" bpdm:invokedSOAPAddress="http://kokusrv1.lahti.fi:8280/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_K5M_AH2IEeGzXu12ZusphQ:_m2JbwGdzEeGD74mpnm3lrQ, _EPBGMK0XEeCYk7-iNBydwQ:_rQUpkH2DEeGzXu12ZusphQ" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
-            <bpel:partnerLink name="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" partnerLinkType="diag:WFmagic_xOJSwJUEEeGhLfrcJYTqEA" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_xOJSwJUEEeGhLfrcJYTqEAService" bpdm:providedPort="Process_for_UserForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/WFmagic_xOJSwJUEEeGhLfrcJYTqEA" bpdm:providedIsDefault="true" partnerRole="User_for_ProcessForCopyofform1_1Port" bpdm:invokedService="Copyofform1_1:WorkflowSoapService" bpdm:invokedPort="Copyofform1_1Port" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/Copyofform1_1" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Yudl4K0XEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_OPIgQK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_CDSOcK0XEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" partnerLinkType="diag:WFmagic_xOJSwJUEEeGhLfrcJYTqEA" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_xOJSwJUEEeGhLfrcJYTqEAService" bpdm:providedPort="Process_for_UserForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/WFmagic_xOJSwJUEEeGhLfrcJYTqEA" bpdm:providedIsDefault="true" partnerRole="User_for_ProcessForCopyofform1_1Port" bpdm:invokedService="Copyofform1_1:WorkflowSoapService" bpdm:invokedPort="Copyofform1_1Port" bpdm:invokedSOAPAddress="http://kohtikumppanuutta-qa-3.dmz:8080/fds/workflow/Copyofform1_1" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Yudl4K0XEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_OPIgQK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_CDSOcK0XEeCYk7-iNBydwQ"/>
             <bpel:partnerLink name="servicesAndProcessForPortPropertyStoreHttpEndpointPlkVar" partnerLinkType="diag:ServicesAndProcessForPortPropertyStoreHttpEndpointPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="ns:PropertyStore" bpdm:invokedPort="PropertyStoreHttpSoap11Endpoint" bpdm:invokedSOAPAddress="http://localhost:8080/property-ws/services/PropertyStore.PropertyStoreHttpSoap11Endpoint/" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Ae3BQJs7EeG3Of_SM22Mzg, _EPBGMK0XEeCYk7-iNBydwQ:_hBgCgJs6EeG3Of_SM22Mzg" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
         </bpel:partnerLinks>
         <bpel:variables>
@@ -262,8 +262,8 @@
             <bpdm:gateway bpdm:label="Exclusive_Event-Based_Gateway" bpdm:ID="_kDfQYCZYEeGZ6qIn2ne6Bw" bpdm:gatewayType="event_xor" bpdm:isMerge="false">
                 <bpel:sequence>
                     <bpdm:messagingtask eventType="intermediate: message" operation="notifyTaskCompletion" partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" portType="Copyofform1_1:Process" isMyRole="true" enableSharing="false" bpdm:label="Käsittele" bpdm:ID="_Yudl4K0XEeCYk7-iNBydwQ">
-                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="copyofform1_1NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:notifyTaskCompletionRequest" bpdm:ID="_BEybUJUFEeGhLfrcJYTqEA"></bpdm:linkset>
-                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="copyofform1_1NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:notifyTaskCompletionResponse" bpdm:ID="_BarLwJUFEeGhLfrcJYTqEA"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="copyofform1_1NotifyTaskCompletionRequestMsg" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:notifyTaskCompletionRequest" bpdm:ID="_BEybUJUFEeGhLfrcJYTqEA"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="copyofform1_1NotifyTaskCompletionResponseMsg" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:notifyTaskCompletionResponse" bpdm:ID="_BarLwJUFEeGhLfrcJYTqEA"></bpdm:linkset>
                     </bpdm:messagingtask>
                     <bpdm:messagingtask bpdm:label="Päivitä hakemus" bpdm:ID="_-0XFQK0fEeCYk7-iNBydwQ">
                         <bpdm:linkset bpdm:type="assignments">
@@ -315,13 +315,7 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>"credentials.username"</bpel:from>
-                                <bpel:to>$nsGetPropertyRequestMsg.parameters/ns:name</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="485145861" targetPath="$nsGetPropertyRequestMsg.parameters/ns:name" targetedBy="422583466-arg0"></mapper:vertice>
-  <mapper:vertice id="422583466" dimension="184x24" location="252,108">
-    <mapper:value>"credentials.username"</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$nsGetPropertyRequestMsg.parameters/ns:name</bpel:to><mapper:mapperLink><mapper:vertice id="485145861" targetPath="$nsGetPropertyRequestMsg.parameters/ns:name" targetedBy="422583466-arg0"></mapper:vertice><mapper:vertice id="422583466" dimension="184x24" location="252,108"><mapper:value>"credentials.username"</mapper:value></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="nsGetPropertyRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:getPropertyRequest" bpdm:binding="ns:PropertyStoreHttpBinding" bpdm:ID="_tTpwoJs6EeG3Of_SM22Mzg"></bpdm:linkset>
@@ -331,11 +325,7 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>$nsGetPropertyResponseMsg.parameters/ns:return</bpel:from>
-                                <bpel:to>$kayttajatunnus</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="9377200" targetPath="$kayttajatunnus" targetedBy="1444162401-arg0"></mapper:vertice>
-  <mapper:vertice id="1444162401" sourcePath="$nsGetPropertyResponseMsg.parameters/ns:return"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kayttajatunnus</bpel:to><mapper:mapperLink><mapper:vertice id="9377200" targetPath="$kayttajatunnus" targetedBy="1444162401-arg0"></mapper:vertice><mapper:vertice id="1444162401" sourcePath="$nsGetPropertyResponseMsg.parameters/ns:return"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                     </bpdm:messagingtask>
@@ -343,13 +333,7 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>"credentials.password"</bpel:from>
-                                <bpel:to>$nsGetPropertyRequestMsg.parameters/ns:name</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="293010534" targetPath="$nsGetPropertyRequestMsg.parameters/ns:name" targetedBy="1291648803-arg0"></mapper:vertice>
-  <mapper:vertice id="1291648803" dimension="187x24" location="180,24">
-    <mapper:value>"credentials.password"</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$nsGetPropertyRequestMsg.parameters/ns:name</bpel:to><mapper:mapperLink><mapper:vertice id="293010534" targetPath="$nsGetPropertyRequestMsg.parameters/ns:name" targetedBy="1291648803-arg0"></mapper:vertice><mapper:vertice id="1291648803" dimension="187x24" location="180,24"><mapper:value>"credentials.password"</mapper:value></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="nsGetPropertyRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:getPropertyRequest" bpdm:binding="ns:PropertyStoreHttpBinding" bpdm:ID="_CZDdEJs7EeG3Of_SM22Mzg"></bpdm:linkset>
@@ -359,11 +343,7 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>$nsGetPropertyResponseMsg.parameters/ns:return</bpel:from>
-                                <bpel:to>$salasana</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="152268097" targetPath="$salasana" targetedBy="1892942829-arg0"></mapper:vertice>
-  <mapper:vertice id="1892942829" sourcePath="$nsGetPropertyResponseMsg.parameters/ns:return"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$salasana</bpel:to><mapper:mapperLink><mapper:vertice id="152268097" targetPath="$salasana" targetedBy="1892942829-arg0"></mapper:vertice><mapper:vertice id="1892942829" sourcePath="$nsGetPropertyResponseMsg.parameters/ns:return"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                     </bpdm:messagingtask>
@@ -371,19 +351,11 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>$kayttajatunnus</bpel:from>
-                                <bpel:to>$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:user</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1651777020" targetPath="$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:user" targetedBy="842510149-arg0"></mapper:vertice>
-  <mapper:vertice id="842510149" sourcePath="$kayttajatunnus"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:user</bpel:to><mapper:mapperLink><mapper:vertice id="1651777020" targetPath="$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:user" targetedBy="842510149-arg0"></mapper:vertice><mapper:vertice id="842510149" sourcePath="$kayttajatunnus"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$salasana</bpel:from>
-                                <bpel:to>$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:password</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="919764384" targetPath="$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:password" targetedBy="1377620238-arg0"></mapper:vertice>
-  <mapper:vertice id="1377620238" sourcePath="$salasana"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:password</bpel:to><mapper:mapperLink><mapper:vertice id="919764384" targetPath="$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:password" targetedBy="1377620238-arg0"></mapper:vertice><mapper:vertice id="1377620238" sourcePath="$salasana"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tokenServiceAuthenticateUserRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="TokenService:authenticateUser" bpdm:binding="TokenService:TokenServiceSOAP" bpdm:ID="_t0nMMCZYEeGZ6qIn2ne6Bw"></bpdm:linkset>

@@ -1,24 +1,24 @@
 function commitCustomAutoRowSession(matrix, cache) {
-	var nodes, xmlStr;
-	nodes = form1.getJSXByName(matrix).getChildren();
-	xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+    var nodes, xmlStr;
+    nodes = form1.getJSXByName(matrix).getChildren();
+    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
 
-	for(var i = 0; i < nodes.length; i++) {
-		if(nodes[i] && nodes[i].getPath() != "jsxid") {
-			xmlStr += " " + nodes[i].getPath() + "=\"\"";
-		}
-	}
-	xmlStr += "/></data>";
-	form1.getCache().getDocument(cache).loadXML(xmlStr);
+    for(var i = 0; i < nodes.length; i++) {
+        if(nodes[i] && nodes[i].getPath() != "jsxid") {
+            xmlStr += " " + nodes[i].getPath() + "=\"\"";
+        }
+    }
+    xmlStr += "/></data>";
+    form1.getCache().getDocument(cache).loadXML(xmlStr);
 }
 
 function formatDataCache(cache, matrix) {
-	if(form1.getCache().getDocument(cache).getFirstChild() == null) {
-		commitCustomAutoRowSession(matrix, cache);
-		return true;
-	} else {
-		return false;
-	}
+    if(form1.getCache().getDocument(cache).getFirstChild() == null) {
+        commitCustomAutoRowSession(matrix, cache);
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /* place JavaScript code here */
@@ -694,7 +694,7 @@ function prepareForm() {
     // form1.getJSXByName("User_Sender").setValue(Intalio.Internal.Utilities.getUser()).repaint();
 
     var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/") + 1));
+    username = username.substring((username.indexOf("\\") + 1));
     //alert(username);
     // form1.getJSXByName("User_Sender").setValue(username);
 

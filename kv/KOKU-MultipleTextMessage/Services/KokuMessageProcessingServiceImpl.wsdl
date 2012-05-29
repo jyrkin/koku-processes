@@ -26,7 +26,6 @@
 <xs:element minOccurs="0" name="originalContent" type="xs:string" />
 <xs:element minOccurs="0" name="sendToFamilyMembers" type="xs:boolean" />
 <xs:element minOccurs="0" name="sendToGroupSite" type="xs:boolean" />
-<xs:element minOccurs="0" name="replyDisabled" type="xs:boolean" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="receipients">

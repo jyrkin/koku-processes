@@ -96,7 +96,7 @@ function getRoleUsers(groupUid) {
 
     while(userNames.hasNext()) {
         node = userNames.next();
-        users += "koku/" + node.getValue();
+        users += "koku\\" + node.getValue();
 
         if(userNames.hasNext())
             users += ",";
@@ -1205,7 +1205,7 @@ function getTaskSubscribe() {
 function prepareForm() {
     var username = Intalio.Internal.Utilities.getUser();
     var firstname, lastname;
-    username = username.substring((username.indexOf("/") + 1));
+    username = username.substring((username.indexOf("\\") + 1));
     setButtonDisplay("IntalioInternal_StartButton", "none");
 
     form1.getJSXByName("User_SenderDisplay").setValue(username);
@@ -1665,7 +1665,7 @@ function mapSelectedRecipientsToMatrix() {
                 if(parentData[i]["uid"]) {
                     node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
                     node.setAttribute("Receipients_ReceipientUid", parentData[i]["uid"]);
-                    node.setAttribute("Receipients_Receipient", "koku/" + parentData[i]["displayName"]);
+                    node.setAttribute("Receipients_Receipient", "koku\\" + parentData[i]["displayName"]);
                     node.setAttribute("Receipients_Realm", realm);
                     form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
                 }
@@ -1679,7 +1679,7 @@ function mapSelectedRecipientsToMatrix() {
 
             while(usernames.hasNext()) {
                 userNamesNode = usernames.next();
-                rooliKayttajat += "koku/" + userNamesNode.getValue();
+                rooliKayttajat += "koku\\" + userNamesNode.getValue();
                 userIdsData = Arcusys.Internal.Communication.GetUserUidByUsername(userNamesNode.getValue());
                 userIds += userIdsData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
 
@@ -1708,7 +1708,7 @@ function mapSelectedRecipientsToMatrix() {
 
             node.setAttribute("jsxid", jsxid);
             node.setAttribute("Receipients_ReceipientUid", uid);
-            node.setAttribute("Receipients_Receipient", "koku/" + displayName);
+            node.setAttribute("Receipients_Receipient", "koku\\" + displayName);
             node.setAttribute("Receipients_Realm", realm);
             form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
             jsxid++;

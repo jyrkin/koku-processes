@@ -97,6 +97,10 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xOvIp5UEEeGhLfrcJYTqEA" key="partnerLinkTypeKey" value="WFmagic_xOJSwJUEEeGhLfrcJYTqEA"/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xOvIqJUEEeGhLfrcJYTqEA" key="douri" value="project:///Copyofform1_1.gi.wsdl?wsdloperationbound={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask"/>
       </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OwOS8KZQEeGNEvz3lXhaIg" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Owrl8KZQEeGNEvz3lXhaIg" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ow0v4KZQEeGNEvz3lXhaIg" key="roles" value="koku/kuntalainen"/>
+      </eAnnotations>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_Acz1UZUFEeGhLfrcJYTqEA"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_AuNHUZUFEeGhLfrcJYTqEA"/>
     </vertices>

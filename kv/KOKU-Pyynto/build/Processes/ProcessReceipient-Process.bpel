@@ -143,7 +143,7 @@
     </Copyofform1_1:business>
     <Copyofform1_1:creationDate></Copyofform1_1:creationDate>
     <Copyofform1_1:userOwner/>
-    <Copyofform1_1:roleOwner/>
+    <Copyofform1_1:roleOwner>koku/kuntalainen</Copyofform1_1:roleOwner>
     <Copyofform1_1:claimAction>
       <Copyofform1_1:user></Copyofform1_1:user>
       <Copyofform1_1:role></Copyofform1_1:role>
@@ -468,6 +468,10 @@
     <bpel:copy>
         <bpel:from>"_xOVgAJUEEeGhLfrcJYTqEA"</bpel:from>
         <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"koku/kuntalainen"</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:roleOwner</bpel:to>
     </bpel:copy>
   </bpel:assign>
   <bpel:invoke partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" portType="Copyofform1_1:Workflow" operation="createTask" inputVariable="copyofform1_1CreateTaskRequestMsg" outputVariable="copyofform1_1CreateTaskResponseMsg" bpmn:label="Lähetä lomake vastaanottajalle" name="Lähetä_lomake_vastaanottajalle-1" bpmn:id="_OPIgQK0XEeCYk7-iNBydwQ"></bpel:invoke>
