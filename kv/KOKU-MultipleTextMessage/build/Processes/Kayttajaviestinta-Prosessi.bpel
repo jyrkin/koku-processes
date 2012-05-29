@@ -1,0 +1,183 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:attachments="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi/attachments" xmlns:this="http://soa.kv.koku.arcusys.fi/Processes/Kayttajaviestinta/Prosessi" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:Kayttajaviestinta_init_Form="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi" xmlns:Käyttäjä="http://soa.kv.koku.arcusys.fi/Processes/Kayttajaviestinta/Käyttäjä" xmlns:Palvelut="http://soa.kv.koku.arcusys.fi/Processes/Kayttajaviestinta/Palvelut" xmlns:diag="http://soa.kv.koku.arcusys.fi/Processes/Kayttajaviestinta" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Prosessi" name="Prosessi" bpmn:id="_sFmN0J1tEeCP0q7AMz-7Hg" targetNamespace="http://soa.kv.koku.arcusys.fi/Processes/Kayttajaviestinta/Prosessi">
+  <bpel:import namespace="http://soa.common.koku.arcusys.fi/" location="../Services/UsersAndGroupsServiceImpl.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://soa.kv.koku.arcusys.fi/" location="../Services/KokuMessageProcessingServiceImpl.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://soa.kv.koku.arcusys.fi/Processes/Kayttajaviestinta" location="Kayttajaviestinta.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi" location="../Forms/Kayttajaviestinta_init_Form.gi.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://soa.kv.koku.arcusys.fi/" location="../Forms/Kayttajaviestinta.xsd" importType="http://www.w3.org/2001/XMLSchema"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="prosessiAndKäyttäjäForPortTypeProcessPlkVar" partnerLinkType="diag:ProsessiAndKäyttäjäForPortTypeProcessPlk" myRole="Prosessi_for_Käyttäjä"></bpel:partnerLink>
+    <bpel:partnerLink name="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" partnerLinkType="diag:ProsessiAndPalvelutForKokuMessageProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi"></bpel:partnerLink>
+    <bpel:partnerLink name="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ProsessiAndPalvelutForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="kayttajaviestinta_init_FormInitProcessRequestMsg" messageType="Kayttajaviestinta_init_Form:initProcessRequest"></bpel:variable>
+    <bpel:variable name="kayttajaviestinta_init_FormInitProcessResponseMsg" messageType="Kayttajaviestinta_init_Form:initProcessResponse"></bpel:variable>
+    <bpel:variable name="Kayttajaviestinta_Form" element="tns:Kayttajaviestinta_Form"></bpel:variable>
+    <bpel:variable name="Kayttajaviestinta_Form0" element="tns:Kayttajaviestinta_Form"></bpel:variable>
+    <bpel:variable name="Kayttajaviestinta_Form1" element="tns:Kayttajaviestinta_Form"></bpel:variable>
+    <bpel:variable name="tnsSendMessageResponse" messageType="tns:sendMessageResponse"></bpel:variable>
+    <bpel:variable name="tnsSendMessage" messageType="tns:sendMessage"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="prosessiAndKäyttäjäForPortTypeProcessPlkVar" portType="Kayttajaviestinta_init_Form:Process" operation="initProcess" variable="kayttajaviestinta_init_FormInitProcessRequestMsg" createInstance="yes" bpmn:label="Message_Start_Event" name="Message_Start_Event" bpmn:id="_vlcY0J1tEeCP0q7AMz-7Hg"></bpel:receive>
+    <bpel:assign name="init-variables-Prosessi" bpmn:id="_vlcY0J1tEeCP0q7AMz-7Hg">
+      <bpel:copy bpmn:label="$kayttajaviestinta_init_FormInitProcessResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<Kayttajaviestinta_init_Form:initProcessResponse>
+  <Kayttajaviestinta_init_Form:status>OK</Kayttajaviestinta_init_Form:status>
+  <Kayttajaviestinta_init_Form:errorCode></Kayttajaviestinta_init_Form:errorCode>
+  <Kayttajaviestinta_init_Form:errorReason></Kayttajaviestinta_init_Form:errorReason>
+  <Kayttajaviestinta_init_Form:taskMetaData>
+    <Kayttajaviestinta_init_Form:nextTaskId></Kayttajaviestinta_init_Form:nextTaskId>
+    <Kayttajaviestinta_init_Form:nextTaskURL></Kayttajaviestinta_init_Form:nextTaskURL>
+    <Kayttajaviestinta_init_Form:instanceId></Kayttajaviestinta_init_Form:instanceId>
+  </Kayttajaviestinta_init_Form:taskMetaData>
+</Kayttajaviestinta_init_Form:initProcessResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$kayttajaviestinta_init_FormInitProcessResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$tnsSendMessage">
+        <bpel:from>
+          <bpel:literal>
+<tns:sendMessage>
+  <fromUser></fromUser>
+  <fromRoleUid></fromRoleUid>
+  <subject></subject>
+  <receipients>
+    <receipient></receipient>
+  </receipients>
+  <messageContent></messageContent>
+  <sendToFamilyMembers></sendToFamilyMembers>
+  <sendToGroupSite></sendToGroupSite>
+</tns:sendMessage></bpel:literal>
+        </bpel:from>
+        <bpel:to>$tnsSendMessage.parameters</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$kayttajaviestinta_init_FormInitProcessResponseMsg.root/Kayttajaviestinta_init_Form:taskMetaData/Kayttajaviestinta_init_Form:instanceId</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:reply partnerLink="prosessiAndKäyttäjäForPortTypeProcessPlkVar" portType="Kayttajaviestinta_init_Form:Process" operation="initProcess" variable="kayttajaviestinta_init_FormInitProcessResponseMsg" bpmn:label="Message_Start_Event" name="Message_Start_Event-1" bpmn:id="_vlcY0J1tEeCP0q7AMz-7Hg"></bpel:reply>
+    <bpel:scope bpmn:label="SubProcess" name="SubProcess" bpmn:id="_Ih_q4C1WEeGshrc1tf_wjg">
+      <ext:failureHandling xmlns:ext="http://ode.apache.org/activityRecovery">
+        <ext:faultOnFailure>true</ext:faultOnFailure>
+      </ext:failureHandling>
+      <bpel:sequence>
+        <bpel:assign bpmn:label="Luo viesti" name="Luo_viesti" bpmn:id="_x6rK0J1tEeCP0q7AMz-7Hg">
+          <bpel:copy>
+            <bpel:from>$kayttajaviestinta_init_FormInitProcessRequestMsg.root/Kayttajaviestinta_init_Form:taskOutput/tns:Kayttajaviestinta_Form</bpel:from>
+            <bpel:to>$Kayttajaviestinta_Form</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>$kayttajaviestinta_init_FormInitProcessRequestMsg.root/Kayttajaviestinta_init_Form:taskOutput/tns:Kayttajaviestinta_Form</bpel:from>
+            <bpel:to>$Kayttajaviestinta_Form0</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>$kayttajaviestinta_init_FormInitProcessRequestMsg.root/Kayttajaviestinta_init_Form:taskOutput/tns:Kayttajaviestinta_Form</bpel:from>
+            <bpel:to>$Kayttajaviestinta_Form1</bpel:to>
+          </bpel:copy>
+        </bpel:assign>
+        <bpel:assign bpmn:label="Tee HTML lähettäjälle" name="Tee_HTML_lähettäjälle" bpmn:id="_Pq000KYJEeCp0fI8GgMASQ">
+          <bpel:copy>
+            <bpel:from>bpel:doXslTransform("../xsl/Kayttajaviestinta.xsl", $Kayttajaviestinta_Form)</bpel:from>
+            <bpel:to>$Kayttajaviestinta_Form0/tns:Message/tns:Message_Content</bpel:to>
+          </bpel:copy>
+        </bpel:assign>
+        <bpel:assign bpmn:label="Viestin lähetys webservicelle" name="Viestin_lähetys_webservicelle" bpmn:id="_4SjS4J1tEeCP0q7AMz-7Hg">
+          <bpel:copy>
+            <bpel:from>bpel:doXslTransform("../xsl/receivers.xsl", $Kayttajaviestinta_Form0)</bpel:from>
+            <bpel:to>$tnsSendMessage.parameters</bpel:to>
+          </bpel:copy>
+        </bpel:assign>
+        <bpel:invoke partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" operation="sendMessage" inputVariable="tnsSendMessage" outputVariable="tnsSendMessageResponse" bpmn:label="Viestin lähetys webservicelle" name="Viestin_lähetys_webservicelle-1" bpmn:id="_4SjS4J1tEeCP0q7AMz-7Hg"></bpel:invoke>
+        <bpel:scope bpmn:label="outer-SubProcess" name="outer-SubProcess" bpmn:id="_60IzoKO0EeC8OdMz1v1xzQ">
+          <bpel:forEach bpmn:label="SubProcess" name="SubProcess-1" bpmn:id="_60IzoKO0EeC8OdMz1v1xzQ" parallel="no" counterName="emptyCounter">
+            <bpel:startCounterValue>"1"</bpel:startCounterValue>
+            <bpel:finalCounterValue>count($Kayttajaviestinta_Form/tns:receipients)</bpel:finalCounterValue>
+            <bpel:scope bpmn:label="SubProcess" name="SubProcess-2" bpmn:id="_60IzoKO0EeC8OdMz1v1xzQ">
+              <bpel:variables>
+                <bpel:variable name="tnsReceiveNewMessageResponse" messageType="tns:receiveNewMessageResponse"></bpel:variable>
+                <bpel:variable name="tnsReceiveNewMessage" messageType="tns:receiveNewMessage"></bpel:variable>
+                <bpel:variable name="usersAndGroupsServiceImplGetUserInfoRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo"></bpel:variable>
+                <bpel:variable name="usersAndGroupsServiceImplGetUserInfoResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse"></bpel:variable>
+              </bpel:variables>
+              <bpel:sequence>
+                <bpel:assign name="init-variables-SubProcess" bpmn:id="_60IzoKO0EeC8OdMz1v1xzQ">
+                  <bpel:copy bpmn:label="$tnsReceiveNewMessage">
+                    <bpel:from>
+                      <bpel:literal>
+<tns:receiveNewMessage>
+  <fromUser></fromUser>
+  <subject></subject>
+  <toUser></toUser>
+  <messageContent></messageContent>
+</tns:receiveNewMessage></bpel:literal>
+                    </bpel:from>
+                    <bpel:to>$tnsReceiveNewMessage.parameters</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy bpmn:label="$usersAndGroupsServiceImplGetUserInfoRequestMsg">
+                    <bpel:from>
+                      <bpel:literal>
+<UsersAndGroupsServiceImpl:getUserInfo>
+  <userUid></userUid>
+</UsersAndGroupsServiceImpl:getUserInfo></bpel:literal>
+                    </bpel:from>
+                    <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo</bpel:to>
+                  </bpel:copy>
+                </bpel:assign>
+                <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event" bpmn:id="_JnW9gH8FEeGMy9SZbwBYvA">
+                  <bpel:copy>
+                    <bpel:from>bpel:doXslTransform("../xsl/parseNames.xsl", $Kayttajaviestinta_Form/tns:receipients[$emptyCounter])</bpel:from>
+                    <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to>
+                  </bpel:copy>
+                </bpel:assign>
+                <bpel:invoke partnerLink="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" operation="getUserInfo" inputVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" outputVariable="usersAndGroupsServiceImplGetUserInfoResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-1" bpmn:id="_JnW9gH8FEeGMy9SZbwBYvA"></bpel:invoke>
+                <bpel:assign bpmn:label="Tallenna nimet" name="Tallenna_nimet" bpmn:id="_8S7oIH8GEeGMy9SZbwBYvA">
+                  <bpel:copy>
+                    <bpel:from>if (not(empty($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname))) then ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname) else ("")</bpel:from>
+                    <bpel:to>$Kayttajaviestinta_Form/tns:Message/tns:Message_ToFirstName</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy>
+                    <bpel:from>if (not(empty($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname))) then ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname) else ("")</bpel:from>
+                    <bpel:to>$Kayttajaviestinta_Form/tns:Message/tns:Message_ToLastName</bpel:to>
+                  </bpel:copy>
+                </bpel:assign>
+                <bpel:assign bpmn:label="Tee HTML vastaanottajalle" name="Tee_HTML_vastaanottajalle" bpmn:id="_aCsUUNhNEeCSRsHQfFlgvA">
+                  <bpel:copy>
+                    <bpel:from>bpel:doXslTransform("../xsl/KayttajaviestintaYksi.xsl", $Kayttajaviestinta_Form, "Vastaanottaja", $Kayttajaviestinta_Form/tns:receipients[$emptyCounter])</bpel:from>
+                    <bpel:to>$Kayttajaviestinta_Form1/tns:Message/tns:Message_Content</bpel:to>
+                  </bpel:copy>
+                </bpel:assign>
+                <bpel:assign bpmn:label="Lähetä vastaanottajalle" name="Lähetä_vastaanottajalle" bpmn:id="_lP7LUNhZEeCTGP94aNb78w">
+                  <bpel:copy>
+                    <bpel:from>$Kayttajaviestinta_Form1/tns:Message/tns:Message_Content</bpel:from>
+                    <bpel:to>$tnsReceiveNewMessage.parameters/messageContent</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy>
+                    <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Subject</bpel:from>
+                    <bpel:to>$tnsReceiveNewMessage.parameters/subject</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy>
+                    <bpel:from>bpel:doXslTransform("../xsl/receiveRequest.xsl", $Kayttajaviestinta_Form/tns:receipients[$emptyCounter])</bpel:from>
+                    <bpel:to>$tnsReceiveNewMessage.parameters/toUser</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy>
+                    <bpel:from>$Kayttajaviestinta_Form0/tns:Message/tns:Message_FromUser</bpel:from>
+                    <bpel:to>$tnsReceiveNewMessage.parameters/fromUser</bpel:to>
+                  </bpel:copy>
+                </bpel:assign>
+                <bpel:invoke partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" operation="receiveNewMessage" inputVariable="tnsReceiveNewMessage" outputVariable="tnsReceiveNewMessageResponse" bpmn:label="Lähetä vastaanottajalle" name="Lähetä_vastaanottajalle-1" bpmn:id="_lP7LUNhZEeCTGP94aNb78w"></bpel:invoke>
+              </bpel:sequence>
+            </bpel:scope>
+          </bpel:forEach>
+        </bpel:scope>
+      </bpel:sequence>
+    </bpel:scope>
+    <bpel:empty bpmn:label="Empty_End_Event" name="Empty_End_Event" bpmn:id="_WVdXcKOxEeCEJ9RUjchR7A"></bpel:empty>
+  </bpel:sequence>
+</bpel:process>

@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:MessageServiceFacadeImpl="http://service.kv.koku.arcusys.fi/" xmlns:diag="http://soa.kv.koku.arcusys.fi/Processes/KayttajaviestintaReply" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:Käyttäjä="http://soa.kv.koku.arcusys.fi/Processes/KayttajaviestintaReply/Käyttäjä" xmlns:Kayttajaviestinta_reply_Form="http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:attachments="http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi/attachments" xmlns:this="http://soa.kv.koku.arcusys.fi/Processes/KayttajaviestintaReply/Prosessi" xmlns:Palvelut="http://soa.kv.koku.arcusys.fi/Processes/KayttajaviestintaReply/Palvelut" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Prosessi" fileName="Processes/KayttajaviestintaReply-Prosessi.bpel">
+  <dd:property name="PATH">Processes/KayttajaviestintaReply</dd:property>
+  <dd:property name="SVG">Processes/KayttajaviestintaReply.svg</dd:property>
+  <dd:provide partnerLink="prosessiAndKäyttäjäForPortTypeProcessPlkVar">
+    <dd:service name="this:ProsessiAndKäyttäjäForPortTypeProcessPlkService" port="Prosessi_for_KäyttäjäPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="palvelutAndProsessiForKokuMessageProcessingServicePortPlkVar">
+    <dd:service name="tns:KokuMessageProcessingService" port="KokuMessageProcessingServicePort"/>
+  </dd:invoke>
+</dd:process>
