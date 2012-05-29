@@ -687,7 +687,7 @@ function getChildsParents(userUid) {
     var childData;
     //nodes = convertArrayToNodesString(userUid, "uid", "childUid"); // <childUid> uid </childUid>
     nodes = "<childUid>"+userUid+"</childUid>"; // todo use convertarray
-    childData = Arcusys.Internal.Communication.getChildInfo(nodes);
+    childData = Arcusys.Internal.Communication.GetChildinfo(nodes);
     
     //getParents
      parents = getData(childData.selectNodeIterator("//parents", "xmlns:ns2='http://soa.tiva.koku.arcucsys.fi/'"));
