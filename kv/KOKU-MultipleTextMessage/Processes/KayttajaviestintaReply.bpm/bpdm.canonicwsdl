@@ -20,14 +20,11 @@
   <pnlk:partnerLinkType name="ProsessiAndKäyttäjä" bpdm:poolOneId="_trxBoJ9LEeGA89WkWRnaIg" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Prosessi" bpdm:poolTwoId="_XZiVsJ9LEeGA89WkWRnaIg" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Käyttäjä">
     <pnlk:role name="Prosessi_for_Käyttäjä" portType="Prosessi:ForKäyttäjä" bpdm:thisPoolId="_trxBoJ9LEeGA89WkWRnaIg">
       <wsdl:portType name="ForKäyttäjä">
-        <wsdl:operation name="EventStartMessage" bpdm:canid="_0FTWkJ9LEeGA89WkWRnaIg._oUJcsJ9LEeGA89WkWRnaIg." bpdm:dataobjectPointer="project:///Forms/Kayttajaviestinta_reply_Form.gi.wsdl?wsdloperation={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}Process/initProcess">
+        <wsdl:operation name="EventStartMessage" bpdm:canid="_0FTWkJ9LEeGA89WkWRnaIg._oUJcsJ9LEeGA89WkWRnaIg.">
           <wsdl:input message="Kayttajaviestinta_reply_Form:initProcessRequest" name="EventStartMessage" bpdm:canid="_0yS_cJ9LEeGA89WkWRnaIg" bpdm:senderId="_oUJcsJ9LEeGA89WkWRnaIg" bpdm:receiverId="_0FTWkJ9LEeGA89WkWRnaIg" bpdm:senderName="Kayttajaviestinta_reply_Form-init request" bpdm:receiverName="EventStartMessage" bpdm:receiverPoolId="_trxBoJ9LEeGA89WkWRnaIg" bpdm:dataobjectPointer="project:///Forms/Kayttajaviestinta_reply_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}Process/initProcess/input/initProcessRequest"></wsdl:input>
           <wsdl:output message="Kayttajaviestinta_reply_Form:initProcessResponse" name="EventStartMessageResponse" bpdm:canid="_1OwR8J9LEeGA89WkWRnaIg" bpdm:senderId="_0FTWkJ9LEeGA89WkWRnaIg" bpdm:receiverId="_oUJcsJ9LEeGA89WkWRnaIg" bpdm:senderName="EventStartMessage" bpdm:receiverName="Kayttajaviestinta_reply_Form-init request" bpdm:receiverPoolId="_XZiVsJ9LEeGA89WkWRnaIg" bpdm:dataobjectPointer="project:///Forms/Kayttajaviestinta_reply_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}Process/initProcess/output/initProcessResponse"></wsdl:output>
         </wsdl:operation>
       </wsdl:portType>
     </pnlk:role>
-  </pnlk:partnerLinkType>
-  <pnlk:partnerLinkType name="ProsessiAndKäyttäjäForPortTypeProcessPlk" bpdm:canPlkId="_trxBoJ9LEeGA89WkWRnaIg-_XZiVsJ9LEeGA89WkWRnaIg">
-    <pnlk:role name="Prosessi_for_Käyttäjä" portType="Kayttajaviestinta_reply_Form:Process"></pnlk:role>
   </pnlk:partnerLinkType>
 </wsdl:definitions>

@@ -386,6 +386,7 @@ function mapSelectedRecipientsToMatrix() {
     var node, hasEmptyChild, jsxid, childIterator, childIteratorGroup, group, uid, groupUid, childNode, groupData, userData, i, kunpoUsername, displayName;
     var nodes, parentData, childData, status, error;
     var targetPerson;
+   
     jsxid = 0;
     error = false;
     
@@ -404,7 +405,11 @@ function mapSelectedRecipientsToMatrix() {
             node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
             kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
             if(kunpoUsername != null) {
-                displayName = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+                var temp;
+                temp = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+                if (temp != null) {
+                    displayName = temp.getValue();
+                }
             }
             node.setAttribute("jsxid", jsxid);
             node.setAttribute("Recipients_Recipient", uid);
