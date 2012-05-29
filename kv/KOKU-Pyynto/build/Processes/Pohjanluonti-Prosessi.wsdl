@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:Pohjanluontiform1="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi/attachments" xmlns:Pohjanluontiform2="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi" xmlns:Virkailija="http://arcusys.fi/Processes/Pohjanluonti/Virkailija" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:Pohjanluontiform="http://www.intalio.com/gi/Pohjanluontiform.gi" xmlns:Palvelut="http://arcusys.fi/Processes/Pohjanluonti/Palvelut" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:diag="http://arcusys.fi/Processes/Pohjanluonti" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:attachments="http://www.intalio.com/gi/Pohjanluontiform.gi/attachments" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:this="http://arcusys.fi/Processes/Pohjanluonti/Prosessi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://arcusys.fi/Processes/Pohjanluonti/Prosessi">
+    <wsdl:import namespace="http://www.intalio.com/gi/Pohjanluontiform.gi" location="../Pohjanluontiform.gi.wsdl"/>
+    <wsdl:binding name="ProsessiAndVirkailijaForPortTypeProcessPlkServiceBinding" type="Pohjanluontiform:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://www.intalio.com/gi/Pohjanluontiform.gi/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://www.intalio.com/gi/Pohjanluontiform.gi/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ProsessiAndVirkailijaForPortTypeProcessPlkService">
+        <wsdl:port name="Prosessi_for_VirkailijaPort" binding="this:ProsessiAndVirkailijaForPortTypeProcessPlkServiceBinding">
+            <soap:address location="http://localhost:8080/ode/processes/KOKU-Pyynto1/Processes/Pohjanluonti/Prosessi/Virkailija/ProsessiAndVirkailijaForPortTypeProcessPlk"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

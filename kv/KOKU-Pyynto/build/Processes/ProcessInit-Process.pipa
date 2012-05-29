@@ -1,0 +1,9 @@
+﻿#
+#Tue May 29 08:13:48 EEST 2012
+formURI=http\://localhost\:8080/gi/apppath/KOKU-Pyynto1/form1_1.gi/IntalioInternal/ServerLaunch.html
+userProcessInitSOAPAction=http\://www.intalio.com/gi/form1_1.gi/Process/initProcess
+processEndpoint=http\://localhost\:8080/ode/processes/KOKU-Pyynto1/Processes/ProcessInit/Process/User/ProcessAndUserForPortTypeProcessPlk
+task-description=Uusi pyynt\u00F6*
+task-role-owners=koku/virkailija
+task-user-owners=
+formNamespace=http\://www.intalio.com/gi/form1_1.gi

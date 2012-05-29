@@ -1,0 +1,49 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:KokuMessageProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://service.kv.koku.arcusys.fi/" xmlns:diag="http://thisdiagram" xmlns:this="http://thisdiagram/Palvelut" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Palvelut">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_trxBoJ9LEeGA89WkWRnaIg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuMessageProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuMessageProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://service.kv.koku.arcusys.fi/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Services/MessageServiceFacadeImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_trxBoJ9LEeGA89WkWRnaIg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/MessageServiceFacadeImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_trxBoJ9LEeGA89WkWRnaIg" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuMessageProcessingServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Palvelut" bpdm:ID="_vhGLkJ9LEeGA89WkWRnaIg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuMessageProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuMessageProcessingServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="KokuMessageProcessingServiceImpl:KokuMessageProcessingService" bpdm:providedPort="KokuMessageProcessingServicePort" bpdm:provideSOAPAddress="http://koku-salo-app3.ec.dmz:8280/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_vhGLkJ9LEeGA89WkWRnaIg:_8O4eEJ9REeGA89WkWRnaIg, _vhGLkJ9LEeGA89WkWRnaIg:_8O2o4J9REeGA89WkWRnaIg" bpdm:isManaged="true" bpdm:otherPoolId="_trxBoJ9LEeGA89WkWRnaIg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="kokuMessageProcessingServiceImplSendMessage" messageType="KokuMessageProcessingServiceImpl:sendMessage" binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" operation="sendMessage" opMsgType="0" bpdm:id="_-JES0J9REeGA89WkWRnaIg" bpdm:messageIds="inc:_-IuUkJ9REeGA89WkWRnaIg"/>
+            <bpel:variable name="kokuMessageProcessingServiceImplSendMessageResponse" messageType="KokuMessageProcessingServiceImpl:sendMessageResponse" binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" operation="sendMessage" opMsgType="1" bpdm:id="_-axt4J9REeGA89WkWRnaIg" bpdm:messageIds=" out:_-ahPMJ9REeGA89WkWRnaIg">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="KokuMessageProcessingServiceImpl:sendMessageResponse" bpdm:linkedPart="parameters" bpdm:binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="sendMessage"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuMessageProcessingServiceImplReceiveMessage" messageType="KokuMessageProcessingServiceImpl:receiveMessage" binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" operation="receiveMessage" opMsgType="0" bpdm:id="_ANSNVZ9SEeGA89WkWRnaIg" bpdm:messageIds="inc:_AM3WkJ9SEeGA89WkWRnaIg"/>
+            <bpel:variable name="kokuMessageProcessingServiceImplReceiveMessageResponse" messageType="KokuMessageProcessingServiceImpl:receiveMessageResponse" binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" operation="receiveMessage" opMsgType="1" bpdm:id="_Aja1YJ9SEeGA89WkWRnaIg" bpdm:messageIds=" out:_AjAlsJ9SEeGA89WkWRnaIg">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="KokuMessageProcessingServiceImpl:receiveMessageResponse" bpdm:linkedPart="parameters" bpdm:binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="receiveMessage"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="sendMessage" partnerLink="palvelutAndProsessiForKokuMessageProcessingServicePortPlkVar" portType="KokuMessageProcessingServiceImpl:KokuMessageProcessingService" isMyRole="true" enableSharing="false" bpdm:label="sendMessage" bpdm:ID="_8O4eEJ9REeGA89WkWRnaIg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="kokuMessageProcessingServiceImplSendMessage" bpdm:msgVarScopeId="_vhGLkJ9LEeGA89WkWRnaIg" bpdm:variableIsManaged="true" bpdm:messageType="KokuMessageProcessingServiceImpl:sendMessage" bpdm:binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_-IuUkJ9REeGA89WkWRnaIg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="kokuMessageProcessingServiceImplSendMessageResponse" bpdm:msgVarScopeId="_vhGLkJ9LEeGA89WkWRnaIg" bpdm:variableIsManaged="true" bpdm:messageType="KokuMessageProcessingServiceImpl:sendMessageResponse" bpdm:binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_-ahPMJ9REeGA89WkWRnaIg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="receiveMessage" partnerLink="palvelutAndProsessiForKokuMessageProcessingServicePortPlkVar" portType="KokuMessageProcessingServiceImpl:KokuMessageProcessingService" isMyRole="true" enableSharing="false" bpdm:label="receiveMessage" bpdm:ID="_8O2o4J9REeGA89WkWRnaIg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="kokuMessageProcessingServiceImplReceiveMessage" bpdm:msgVarScopeId="_vhGLkJ9LEeGA89WkWRnaIg" bpdm:variableIsManaged="true" bpdm:messageType="KokuMessageProcessingServiceImpl:receiveMessage" bpdm:binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_AM3WkJ9SEeGA89WkWRnaIg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="kokuMessageProcessingServiceImplReceiveMessageResponse" bpdm:msgVarScopeId="_vhGLkJ9LEeGA89WkWRnaIg" bpdm:variableIsManaged="true" bpdm:messageType="KokuMessageProcessingServiceImpl:receiveMessageResponse" bpdm:binding="KokuMessageProcessingServiceImpl:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_AjAlsJ9SEeGA89WkWRnaIg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>

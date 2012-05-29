@@ -1,0 +1,9 @@
+﻿#
+#Tue May 29 09:08:54 EEST 2012
+formURI=http\://localhost\:8080/gi/apppath/KOKU-MultipleTextMessage/Forms/Kayttajaviestinta_init_Form.gi/IntalioInternal/ServerLaunch.html
+userProcessInitSOAPAction=http\://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi/Process/initProcess
+processEndpoint=http\://localhost\:8080/ode/processes/KOKU-MultipleTextMessage/Processes/Kayttajaviestinta/Prosessi/K%C3%A4ytt%C3%A4j%C3%A4/ProsessiAndK%C3%A4ytt%C3%A4j%C3%A4ForPortTypeProcessPlk
+task-description=Uusi k\u00E4ytt\u00E4j\u00E4viesti
+task-role-owners=koku/virkailija,koku/kuntalainen
+task-user-owners=
+formNamespace=http\://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi

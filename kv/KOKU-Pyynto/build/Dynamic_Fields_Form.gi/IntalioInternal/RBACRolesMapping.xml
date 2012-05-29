@@ -1,0 +1,58 @@
+﻿<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) 2001-2009, TIBCO Software Inc.
+  ~ 
+  ~ The program(s) herein may be used and/or copied only with the
+  ~ written permission of Intalio Inc. or in accordance with the terms
+  ~ and conditions stipulated in the agreement/contract under which the
+  ~ program(s) have been supplied.
+  -->
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
+	<record jsxid="x56856" 
+		jsxtext="WSDL (IntalioInternal/RBACQueryService.wsdl)" jsxopen="1" src="../RBACQueryService.wsdl" type="W" path="/jsx1:definitions">
+		<record jsxid="x35674" jsxtext="Service (http://localhost:8080/axi...RBACService/)" 
+			jsxopen="1" path="/jsx1:definitions/jsx1:service/jsx1:port/jsx5:address" 
+			type="S" soapstyle="document">
+			<record jsxid="x40461" jsxtext="getAssignedRoles" 
+				opname="getAssignedRoles" 
+				endpoint="http://localhost:8080/axis2/services/RBACQueryService.RBACService/" 
+				method="POST" type="P" path="/jsx1:definitions/jsx1:binding/jsx1:operation[7]" jsxopen="1">
+			<headers jsxid="x23172">
+				<record jsxid="x95079" name="SOAPAction" value="getAssignedRoles"/>
+				<record jsxid="x70476" name="Content-Type" value="text/xml"/>
+			</headers>
+			<record jsxid="x70549" jsxtext="Input (request)" type="I" 
+				stubsrc="jsx://xml/stubs/soap.xml" stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" 
+				soapuse="literal" path="/jsx1:definitions/jsx1:message[19]" jsxopen="1">
+				<record jsxid="x20403" jsxtext="getAssignedRolesRequest" 
+				jsxopen="1" type="C" 
+				path="//jsx3:schema[@targetNamespace='http://tempo.intalio.org/security/RBACQueryService/']//jsx3:element[@name='getAssignedRolesRequest']" 
+				datatype="user" ttns="http://tempo.intalio.org/security/RBACQueryService/" 
+				tns="http://tempo.intalio.org/security/RBACQueryService/">
+					<record jsxid="x64651" jsxtext="user" jsxopen="1" type="E" 
+						path="/jsx1:definitions/jsx1:types/jsx3:schema/jsx3:complexType[5]/jsx3:sequence/jsx3:element" 
+						datatype="string" simple="1" 
+						tns="http://tempo.intalio.org/security/RBACQueryService/" jsxselected="1" jsxSelectMask="Script">
+						<mappings jsxid="x31295">
+							<record jsxid="jsx_1" name="Script" 
+								value="setValue(Intalio.Internal.Utilities.getUser());"/>
+						</mappings>
+					</record>
+				</record>
+			</record>
+			<record jsxid="x27319" jsxtext="Output (response)" type="O" 
+				soapuse="literal" path="/jsx1:definitions/jsx1:message[20]">
+				<record jsxid="x52572" jsxtext="getAssignedRolesResponse" jsxopen="1" type="C" 
+					path="//jsx3:schema[@targetNamespace='http://tempo.intalio.org/security/RBACQueryService/']//jsx3:element[@name='getAssignedRolesResponse']" 
+					datatype="roles" ttns="http://tempo.intalio.org/security/RBACQueryService/" 
+					tns="http://tempo.intalio.org/security/RBACQueryService/"/>
+			</record>
+			<record jsxid="x7466" jsxtext="Fault (response variant)" type="F" path="/jsx1:definitions/jsx1:message[3]">
+				<record jsxid="x68036" jsxtext="RBACFault" jsxopen="1" type="E" 
+				path="//jsx3:schema[@targetNamespace='http://tempo.intalio.org/security/RBACQueryService/']//jsx3:element[@name='RBACFault']" 
+				datatype="string" simple="1" tns="http://tempo.intalio.org/security/RBACQueryService/"/>
+			</record>
+			</record>
+		</record>
+	</record>
+</data>
