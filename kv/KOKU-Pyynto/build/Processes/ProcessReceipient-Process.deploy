@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:User="http://arcusys.fi/Processes/ProcessReceipient/User" xmlns:ns="http://ws.arcusys.fi" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:TokenService="http://tempo.intalio.org/security/tokenService/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:Interface="http://arcusys.fi/Processes/ProcessReceipient/Interface" xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://arcusys.fi/Processes/ProcessReceipient" xmlns:Services="http://arcusys.fi/Processes/ProcessReceipient/Services" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:TaskManagementSystem="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:attachments="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:this="http://arcusys.fi/Processes/ProcessReceipient/Process" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Process" fileName="Processes/ProcessReceipient-Process.bpel">
+  <dd:property name="PATH">Processes/ProcessReceipient</dd:property>
+  <dd:property name="SVG">Processes/ProcessReceipient.svg</dd:property>
+  <dd:provide partnerLink="processAndInterfacePlkVar">
+    <dd:service name="this:CanonicServiceForInterface" port="canonicPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar">
+    <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"/>
+  </dd:invoke>
+  <dd:invoke partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar">
+    <dd:service name="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" port="KokuRequestProcessingServicePort"/>
+  </dd:invoke>
+  <dd:provide partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar">
+    <dd:service name="this:WFmagic_xOJSwJUEEeGhLfrcJYTqEAService" port="Process_for_UserForThePortTypeProcessPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar">
+    <dd:service name="Copyofform1_1:WorkflowSoapService" port="Copyofform1_1Port"/>
+  </dd:invoke>
+  <dd:invoke partnerLink="servicesAndProcessForPortPropertyStoreHttpEndpointPlkVar">
+    <dd:service name="ns:PropertyStore" port="PropertyStoreHttpSoap11Endpoint"/>
+  </dd:invoke>
+  <dd:invoke partnerLink="servicesAndProcessForPortServicePlkVar">
+    <dd:service name="TokenService:TokenService" port="Service"/>
+  </dd:invoke>
+  <dd:invoke partnerLink="servicesAndProcessForPortTaskManagementServicesSOAPPlkVar">
+    <dd:service name="TaskManagementSystem:TaskManagementServices" port="TaskManagementServicesSOAP"/>
+  </dd:invoke>
+</dd:process>

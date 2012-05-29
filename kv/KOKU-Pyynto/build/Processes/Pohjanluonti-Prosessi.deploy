@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:Pohjanluontiform1="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi/attachments" xmlns:Pohjanluontiform2="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi" xmlns:Virkailija="http://arcusys.fi/Processes/Pohjanluonti/Virkailija" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:Pohjanluontiform="http://www.intalio.com/gi/Pohjanluontiform.gi" xmlns:Palvelut="http://arcusys.fi/Processes/Pohjanluonti/Palvelut" xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://arcusys.fi/Processes/Pohjanluonti" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:attachments="http://www.intalio.com/gi/Pohjanluontiform.gi/attachments" xmlns:this="http://arcusys.fi/Processes/Pohjanluonti/Prosessi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Prosessi" fileName="Processes/Pohjanluonti-Prosessi.bpel">
+  <dd:property name="PATH">Processes/Pohjanluonti</dd:property>
+  <dd:property name="SVG">Processes/Pohjanluonti.svg</dd:property>
+  <dd:provide partnerLink="prosessiAndVirkailijaForPortTypeProcessPlkVar">
+    <dd:service name="this:ProsessiAndVirkailijaForPortTypeProcessPlkService" port="Prosessi_for_VirkailijaPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="palvelutAndProsessiForKokuRequestProcessingServicePortPlkVar">
+    <dd:service name="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" port="KokuRequestProcessingServicePort"/>
+  </dd:invoke>
+</dd:process>

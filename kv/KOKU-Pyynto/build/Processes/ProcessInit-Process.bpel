@@ -1,0 +1,414 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:form1_1="http://www.intalio.com/gi/form1_1.gi" xmlns:form1_11="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" xmlns:User="http://arcusys.fi/Processes/ProcessInit/User" xmlns:ProcessReceipient-Process="http://arcusys.fi/ProcessReceipient/Process" xmlns:Copyofform1_11="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:form1_12="http://www.intalio.com/gi/Forms/form1_1.gi" xmlns:diag="http://arcusys.fi/Processes/ProcessInit" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:ProcessReceipient-Process1="http://arcusys.fi/Processes/ProcessReceipient/Process" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:attachments="http://www.intalio.com/gi/form1_1.gi/attachments" xmlns:Services="http://arcusys.fi/Processes/ProcessInit/Services" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:this="http://arcusys.fi/Processes/ProcessInit/Process" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Process" name="Process" bpmn:id="_e3wNcK0ZEeCYk7-iNBydwQ" targetNamespace="http://arcusys.fi/Processes/ProcessInit/Process">
+  <bpel:import namespace="http://arcusys.fi/Processes/ProcessReceipient/Process" location="../Services/ProcessReceipient-Process.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://soa.common.koku.arcusys.fi/" location="../UsersAndGroupsServiceImpl.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://soa.kv.koku.arcusys.fi/" location="../KokuRequestProcessingServiceImpl.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://arcusys.fi/Processes/ProcessInit" location="ProcessInit.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/gi/form1_1.gi" location="../form1_1.gi.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.arcusys.fi/DynamicFields" location="../DynamicFields.xsd" importType="http://www.w3.org/2001/XMLSchema"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="processAndUserForPortTypeProcessPlkVar" partnerLinkType="diag:ProcessAndUserForPortTypeProcessPlk" myRole="Process_for_User"></bpel:partnerLink>
+    <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+    <bpel:partnerLink name="servicesAndProcessForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+    <bpel:partnerLink name="servicesAndProcessForCanonicPortPlkVar" partnerLinkType="diag:ServicesAndProcessForCanonicPortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="Dynamic_Fields_Form" element="tns:Dynamic_Fields_Form"></bpel:variable>
+    <bpel:variable name="form1_1InitProcessRequestMsg" messageType="form1_1:initProcessRequest"></bpel:variable>
+    <bpel:variable name="form1_1InitProcessResponseMsg" messageType="form1_1:initProcessResponse"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg" messageType="KokuRequestProcessingServiceImpl:sendRequestWithTemplateNew"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplSendRequestWithTemplateNewResponseMsg" messageType="KokuRequestProcessingServiceImpl:sendRequestWithTemplateNewResponse"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplSendRequestNewMsg" messageType="KokuRequestProcessingServiceImpl:sendRequestNew"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplSendRequestNewResponseMsg" messageType="KokuRequestProcessingServiceImpl:sendRequestNewResponse"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplUpdateRequestTemplateMsg" messageType="KokuRequestProcessingServiceImpl:updateRequestTemplate"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplUpdateRequestTemplateResponseMsg" messageType="KokuRequestProcessingServiceImpl:updateRequestTemplateResponse"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplCreateRequestTemplateMsg" messageType="KokuRequestProcessingServiceImpl:createRequestTemplate"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplCreateRequestTemplateResponseMsg" messageType="KokuRequestProcessingServiceImpl:createRequestTemplateResponse"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="processAndUserForPortTypeProcessPlkVar" portType="form1_1:Process" operation="initProcess" variable="form1_1InitProcessRequestMsg" createInstance="yes" bpmn:label="Vastaanota tilaus" name="Vastaanota_tilaus" bpmn:id="_9ywGAK0ZEeCYk7-iNBydwQ"></bpel:receive>
+    <bpel:assign name="init-variables-Process" bpmn:id="_9ywGAK0ZEeCYk7-iNBydwQ">
+      <bpel:copy bpmn:label="$form1_1InitProcessResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<form1_1:initProcessResponse>
+  <form1_1:status>OK</form1_1:status>
+  <form1_1:errorCode></form1_1:errorCode>
+  <form1_1:errorReason></form1_1:errorReason>
+  <form1_1:taskMetaData>
+    <form1_1:nextTaskId></form1_1:nextTaskId>
+    <form1_1:nextTaskURL></form1_1:nextTaskURL>
+    <form1_1:instanceId></form1_1:instanceId>
+  </form1_1:taskMetaData>
+</form1_1:initProcessResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$form1_1InitProcessResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg">
+        <bpel:from>
+          <bpel:literal>
+<KokuRequestProcessingServiceImpl:sendRequestWithTemplateNew>
+  <requestTemplateId></requestTemplateId>
+  <request>
+    <content></content>
+    <fromRole></fromRole>
+    <fromUserUid></fromUserUid>
+    <notifyBeforeDays></notifyBeforeDays>
+    <receipients></receipients>
+    <replyTill></replyTill>
+    <subject></subject>
+  </request>
+</KokuRequestProcessingServiceImpl:sendRequestWithTemplateNew></bpel:literal>
+        </bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$kokuRequestProcessingServiceImplSendRequestNewMsg">
+        <bpel:from>
+          <bpel:literal>
+<KokuRequestProcessingServiceImpl:sendRequestNew>
+  <requestTemplate>
+    <creatorUid></creatorUid>
+    <requestTemplateId></requestTemplateId>
+    <subject></subject>
+    <visibility></visibility>
+    <choices>
+      <description></description>
+      <number></number>
+      <questionNumber></questionNumber>
+    </choices>
+    <questions>
+      <description></description>
+      <number></number>
+      <type></type>
+    </questions>
+  </requestTemplate>
+  <request>
+    <content></content>
+    <fromRole></fromRole>
+    <fromUserUid></fromUserUid>
+    <notifyBeforeDays></notifyBeforeDays>
+    <receipients></receipients>
+    <replyTill></replyTill>
+    <subject></subject>
+  </request>
+</KokuRequestProcessingServiceImpl:sendRequestNew></bpel:literal>
+        </bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg">
+        <bpel:from>
+          <bpel:literal>
+<KokuRequestProcessingServiceImpl:updateRequestTemplate>
+  <creator></creator>
+  <subject></subject>
+  <questions>
+    <question>
+      <description></description>
+      <number></number>
+      <type></type>
+    </question>
+  </questions>
+  <choices>
+    <choice>
+      <description></description>
+      <number></number>
+      <questionNumber></questionNumber>
+    </choice>
+  </choices>
+  <visibility></visibility>
+</KokuRequestProcessingServiceImpl:updateRequestTemplate></bpel:literal>
+        </bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$kokuRequestProcessingServiceImplCreateRequestTemplateMsg">
+        <bpel:from>
+          <bpel:literal>
+<KokuRequestProcessingServiceImpl:createRequestTemplate>
+  <creator></creator>
+  <subject></subject>
+  <questions>
+    <question>
+      <description></description>
+      <number></number>
+      <type></type>
+    </question>
+  </questions>
+  <choices>
+    <choice>
+      <description></description>
+      <number></number>
+      <questionNumber></questionNumber>
+    </choice>
+  </choices>
+  <visibility></visibility>
+</KokuRequestProcessingServiceImpl:createRequestTemplate></bpel:literal>
+        </bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$form1_1InitProcessResponseMsg.root/form1_1:taskMetaData/form1_1:instanceId</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:reply partnerLink="processAndUserForPortTypeProcessPlkVar" portType="form1_1:Process" operation="initProcess" variable="form1_1InitProcessResponseMsg" bpmn:label="Vastaanota tilaus" name="Vastaanota_tilaus-1" bpmn:id="_9ywGAK0ZEeCYk7-iNBydwQ"></bpel:reply>
+    <bpel:assign bpmn:label="Luo tilaus" name="Luo_tilaus" bpmn:id="_AExzAK0aEeCYk7-iNBydwQ">
+      <bpel:copy>
+        <bpel:from>$form1_1InitProcessRequestMsg.root/form1_1:taskOutput/tns:Dynamic_Fields_Form</bpel:from>
+        <bpel:to>$Dynamic_Fields_Form</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Tee HTML muunnos" name="Tee_HTML_muunnos" bpmn:id="_GtrZoK0aEeCYk7-iNBydwQ">
+      <bpel:copy>
+        <bpel:from>bpel:doXslTransform("../xsl/DynamicForm.xsl", $form1_1InitProcessRequestMsg.root/form1_1:taskOutput/tns:Dynamic_Fields_Form)</bpel:from>
+        <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID = ""</bpel:condition>
+      <bpel:sequence>
+        <bpel:assign bpmn:label="Lähetä HTML" name="Lähetä_HTML" bpmn:id="_eUWwAK0aEeCYk7-iNBydwQ">
+          <bpel:copy>
+            <bpel:from>bpel:doXslTransform("../xsl/SendRequestNew.xsl", $Dynamic_Fields_Form)</bpel:from>
+            <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters</bpel:to>
+          </bpel:copy>
+        </bpel:assign>
+        <bpel:invoke partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" operation="sendRequestNew" inputVariable="kokuRequestProcessingServiceImplSendRequestNewMsg" outputVariable="kokuRequestProcessingServiceImplSendRequestNewResponseMsg" bpmn:label="Lähetä HTML" name="Lähetä_HTML-1" bpmn:id="_eUWwAK0aEeCYk7-iNBydwQ"></bpel:invoke>
+        <bpel:assign bpmn:label="Tallenna RequestID" name="Tallenna_RequestID" bpmn:id="_eVpaQCZMEeGZ6qIn2ne6Bw">
+          <bpel:copy>
+            <bpel:from>$kokuRequestProcessingServiceImplSendRequestNewResponseMsg.parameters/requestId</bpel:from>
+            <bpel:to>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID</bpel:to>
+          </bpel:copy>
+        </bpel:assign>
+      </bpel:sequence>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:if>
+            <bpel:condition>$Dynamic_Fields_Form/tns:User/tns:User_LuoUusi = "true"</bpel:condition>
+            <bpel:sequence>
+              <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event" bpmn:id="_bRuQwCfBEeG34O-nVZ604A">
+                <bpel:copy>
+                  <bpel:from>bpel:doXslTransform("../xsl/SendRequestQuestions.xsl", $Dynamic_Fields_Form)</bpel:from>
+                  <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/questions</bpel:to>
+                </bpel:copy>
+                <bpel:copy>
+                  <bpel:from>bpel:doXslTransform("../xsl/SendRequestMultipleChoice.xsl", $Dynamic_Fields_Form)</bpel:from>
+                  <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/choices</bpel:to>
+                </bpel:copy>
+                <bpel:copy>
+                  <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Sender</bpel:from>
+                  <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/creator</bpel:to>
+                </bpel:copy>
+                <bpel:copy>
+                  <bpel:from>$Dynamic_Fields_Form/tns:Header/tns:Header_Text</bpel:from>
+                  <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/subject</bpel:to>
+                </bpel:copy>
+                <bpel:copy>
+                  <bpel:from>$Dynamic_Fields_Form/tns:PohjaNakyvyys/tns:PohjaNakyvyys_Arvo</bpel:from>
+                  <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/visibility</bpel:to>
+                </bpel:copy>
+              </bpel:assign>
+              <bpel:invoke partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" operation="createRequestTemplate" inputVariable="kokuRequestProcessingServiceImplCreateRequestTemplateMsg" outputVariable="kokuRequestProcessingServiceImplCreateRequestTemplateResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-1" bpmn:id="_bRuQwCfBEeG34O-nVZ604A"></bpel:invoke>
+              <bpel:empty bpmn:label="Task" name="Task" bpmn:id="_2qy2ADesEeGSa-HQ-M0nTA"></bpel:empty>
+            </bpel:sequence>
+            <bpel:elseif>
+              <bpel:condition>$Dynamic_Fields_Form/tns:User/tns:User_PaivitaOlemassaoleva = "true"</bpel:condition>
+              <bpel:sequence>
+                <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-2" bpmn:id="_lurX0CfBEeG34O-nVZ604A">
+                  <bpel:copy>
+                    <bpel:from>$Dynamic_Fields_Form/tns:Header/tns:Header_Text</bpel:from>
+                    <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/subject</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy>
+                    <bpel:from>bpel:doXslTransform("../xsl/SendRequestQuestions.xsl", $Dynamic_Fields_Form)</bpel:from>
+                    <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/questions</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy>
+                    <bpel:from>bpel:doXslTransform("../xsl/SendRequestMultipleChoice.xsl", $Dynamic_Fields_Form)</bpel:from>
+                    <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/choices</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy>
+                    <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Sender</bpel:from>
+                    <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/creator</bpel:to>
+                  </bpel:copy>
+                  <bpel:copy>
+                    <bpel:from>$Dynamic_Fields_Form/tns:PohjaNakyvyys/tns:PohjaNakyvyys_Arvo</bpel:from>
+                    <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/visibility</bpel:to>
+                  </bpel:copy>
+                </bpel:assign>
+                <bpel:invoke partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" operation="updateRequestTemplate" inputVariable="kokuRequestProcessingServiceImplUpdateRequestTemplateMsg" outputVariable="kokuRequestProcessingServiceImplUpdateRequestTemplateResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-3" bpmn:id="_lurX0CfBEeG34O-nVZ604A"></bpel:invoke>
+              </bpel:sequence>
+            </bpel:elseif>
+          </bpel:if>
+          <bpel:empty bpmn:label="Exclusive_Data-based_Gateway" name="Exclusive_Data-based_Gateway" bpmn:id="_xEPh4CfBEeG34O-nVZ604A">
+            <bpel:links>
+              <bpel:targets></bpel:targets>
+            </bpel:links>
+          </bpel:empty>
+          <bpel:assign bpmn:label="Lähetä HTML (pohja)" name="Lähetä_HTML__pohja_" bpmn:id="_RZbLwNd5EeCU1O2hlInHBA">
+            <bpel:copy>
+              <bpel:from>bpel:doXslTransform("../xsl/SendRequestWithTemplateNew.xsl", $Dynamic_Fields_Form)</bpel:from>
+              <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:invoke partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" operation="sendRequestWithTemplateNew" inputVariable="kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg" outputVariable="kokuRequestProcessingServiceImplSendRequestWithTemplateNewResponseMsg" bpmn:label="Lähetä HTML (pohja)" name="Lähetä_HTML__pohja_-1" bpmn:id="_RZbLwNd5EeCU1O2hlInHBA"></bpel:invoke>
+          <bpel:assign bpmn:label="Tallenna RequestID" name="Tallenna_RequestID-1" bpmn:id="_V5KtgNd5EeCU1O2hlInHBA">
+            <bpel:copy>
+              <bpel:from>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewResponseMsg.parameters/requestId</bpel:from>
+              <bpel:to>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:empty bpmn:label="Exclusive_Data-based_Gateway" name="Exclusive_Data-based_Gateway-1" bpmn:id="_tBbCgNd5EeCU1O2hlInHBA">
+      <bpel:links>
+        <bpel:targets></bpel:targets>
+      </bpel:links>
+    </bpel:empty>
+    <bpel:scope bpmn:label="outer-SubProcess" name="outer-SubProcess" bpmn:id="_KIczMK0hEeCYk7-iNBydwQ">
+      <bpel:forEach bpmn:label="SubProcess" name="SubProcess" bpmn:id="_KIczMK0hEeCYk7-iNBydwQ" parallel="no" counterName="emptyCounter">
+        <bpel:startCounterValue>"1"</bpel:startCounterValue>
+        <bpel:finalCounterValue>count($Dynamic_Fields_Form/tns:Receipients)</bpel:finalCounterValue>
+        <bpel:scope bpmn:label="SubProcess" name="SubProcess-1" bpmn:id="_KIczMK0hEeCYk7-iNBydwQ">
+          <bpel:partnerLinks>
+            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+            <bpel:partnerLink name="servicesAndProcessForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+            <bpel:partnerLink name="servicesAndProcessForCanonicPortPlkVar" partnerLinkType="diag:ServicesAndProcessForCanonicPortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+          </bpel:partnerLinks>
+          <bpel:variables>
+            <bpel:variable name="processReceipient-Process1VastaanotaMsg" messageType="ProcessReceipient-Process1:VastaanotaRequest"></bpel:variable>
+            <bpel:variable name="processReceipient-Process1VastaanotaResponseMsg" messageType="ProcessReceipient-Process1:VastaanotaResponse"></bpel:variable>
+            <bpel:variable name="usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUid"></bpel:variable>
+            <bpel:variable name="usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUidResponse"></bpel:variable>
+          </bpel:variables>
+          <bpel:sequence>
+            <bpel:assign name="init-variables-SubProcess" bpmn:id="_KIczMK0hEeCYk7-iNBydwQ">
+              <bpel:copy bpmn:label="$processReceipient-Process1VastaanotaMsg">
+                <bpel:from>
+                  <bpel:literal>
+<ProcessReceipient-Process1:VastaanotaRequest>
+  <tns:TextInput>
+    <tns:TextInput_Question></tns:TextInput_Question>
+    <tns:TextInput_Section></tns:TextInput_Section>
+    <tns:TextInput_AnswerText></tns:TextInput_AnswerText>
+    <tns:TextInput_Number></tns:TextInput_Number>
+    <tns:TextInput_Type></tns:TextInput_Type>
+  </tns:TextInput>
+  <tns:MultipleChoice>
+    <tns:MultipleChoice_Section></tns:MultipleChoice_Section>
+    <tns:MultipleChoice_Number></tns:MultipleChoice_Number>
+    <tns:MultipleChoice_Question></tns:MultipleChoice_Question>
+    <tns:MultipleChoice_Checked></tns:MultipleChoice_Checked>
+  </tns:MultipleChoice>
+  <tns:Header>
+    <tns:Header_Text></tns:Header_Text>
+  </tns:Header>
+  <tns:User>
+    <tns:User_Recipient></tns:User_Recipient>
+    <tns:User_RecipientDisplay></tns:User_RecipientDisplay>
+    <tns:User_Sender></tns:User_Sender>
+    <tns:User_SenderDisplay></tns:User_SenderDisplay>
+    <tns:User_Reminder></tns:User_Reminder>
+    <tns:User_AnswerUntil></tns:User_AnswerUntil>
+    <tns:User_PaivitaOlemassaoleva></tns:User_PaivitaOlemassaoleva>
+    <tns:User_Roolit></tns:User_Roolit>
+    <tns:User_LuoUusi></tns:User_LuoUusi>
+    <tns:User_VastaanottajaRoolit></tns:User_VastaanottajaRoolit>
+    <tns:User_SenderFirstname></tns:User_SenderFirstname>
+    <tns:User_SenderLastname></tns:User_SenderLastname>
+    <tns:User_RecipientFirstname></tns:User_RecipientFirstname>
+    <tns:User_RecipientLastname></tns:User_RecipientLastname>
+    <tns:User_RecipientRealnames></tns:User_RecipientRealnames>
+  </tns:User>
+  <tns:HTML>
+    <tns:HTML_Sisalto></tns:HTML_Sisalto>
+  </tns:HTML>
+  <tns:Receipients>
+    <tns:Receipients_Receipient></tns:Receipients_Receipient>
+    <tns:Receipients_ReceipientUid></tns:Receipients_ReceipientUid>
+    <tns:Receipients_Realm></tns:Receipients_Realm>
+  </tns:Receipients>
+  <tns:RequestProcessing>
+    <tns:RequestProcessing_RequestID></tns:RequestProcessing_RequestID>
+  </tns:RequestProcessing>
+  <tns:Kommentti>
+    <tns:Kommentti_Kommentti></tns:Kommentti_Kommentti>
+  </tns:Kommentti>
+  <tns:PohjaNakyvyys>
+    <tns:PohjaNakyvyys_Mina></tns:PohjaNakyvyys_Mina>
+    <tns:PohjaNakyvyys_Organisaatio></tns:PohjaNakyvyys_Organisaatio>
+    <tns:PohjaNakyvyys_Kaikki></tns:PohjaNakyvyys_Kaikki>
+    <tns:PohjaNakyvyys_Arvo></tns:PohjaNakyvyys_Arvo>
+  </tns:PohjaNakyvyys>
+</ProcessReceipient-Process1:VastaanotaRequest></bpel:literal>
+                </bpel:from>
+                <bpel:to>$processReceipient-Process1VastaanotaMsg.body</bpel:to>
+              </bpel:copy>
+              <bpel:copy bpmn:label="$usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg">
+                <bpel:from>
+                  <bpel:literal>
+<UsersAndGroupsServiceImpl:getKunpoNameByUserUid>
+  <userUid></userUid>
+</UsersAndGroupsServiceImpl:getKunpoNameByUserUid></bpel:literal>
+                </bpel:from>
+                <bpel:to>$usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg.getKunpoNameByUserUid</bpel:to>
+              </bpel:copy>
+            </bpel:assign>
+            <bpel:assign bpmn:label="Vastaanottajan muokkaus" name="Vastaanottajan_muokkaus" bpmn:id="_AdGhsK1BEeCYk7-iNBydwQ">
+              <bpel:copy>
+                <bpel:from>bpel:doXslTransform("../xsl/SendRequestRecipientsToOne.xsl", $Dynamic_Fields_Form/tns:Receipients[$emptyCounter])</bpel:from>
+                <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientDisplay</bpel:to>
+              </bpel:copy>
+              <bpel:copy>
+                <bpel:from>bpel:doXslTransform("../xsl/SendRequestRecipientsToOneUid.xsl", $Dynamic_Fields_Form/tns:Receipients[$emptyCounter])</bpel:from>
+                <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_Recipient</bpel:to>
+              </bpel:copy>
+            </bpel:assign>
+            <bpel:if>
+              <bpel:condition>"Loora" = bpel:doXslTransform("../xsl/GetRequestRecipientsRealm.xsl", $Dynamic_Fields_Form/tns:Receipients[$emptyCounter])</bpel:condition>
+              <bpel:sequence>
+                <bpel:assign bpmn:label="Task" name="Task-1" bpmn:id="_AtCcEH1_EeGzXu12ZusphQ">
+                  <bpel:copy>
+                    <bpel:from>"true"</bpel:from>
+                    <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_Roolit</bpel:to>
+                  </bpel:copy>
+                </bpel:assign>
+              </bpel:sequence>
+              <bpel:else>
+                <bpel:sequence>
+                  <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-4" bpmn:id="_ejblUDdoEeGWsLc5JL_Ygg">
+                    <bpel:copy>
+                      <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Recipient</bpel:from>
+                      <bpel:to>$usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg.getKunpoNameByUserUid/userUid</bpel:to>
+                    </bpel:copy>
+                  </bpel:assign>
+                  <bpel:invoke partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" operation="getKunpoNameByUserUid" inputVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg" outputVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-5" bpmn:id="_ejblUDdoEeGWsLc5JL_Ygg"></bpel:invoke>
+                  <bpel:assign bpmn:label="Tallenna Kunponimi" name="Tallenna_Kunponimi" bpmn:id="_BT5e0Fh_EeGnmLsOFrrVFA">
+                    <bpel:copy>
+                      <bpel:from>concat("koku/", $usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg.getKunpoNameByUserUidResponse/kunpoUsername)</bpel:from>
+                      <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientDisplay</bpel:to>
+                    </bpel:copy>
+                  </bpel:assign>
+                </bpel:sequence>
+              </bpel:else>
+            </bpel:if>
+            <bpel:empty bpmn:label="Exclusive_Data-based_Gateway" name="Exclusive_Data-based_Gateway-2" bpmn:id="_ek0qkDX2EeGIWfBqWAuhbg">
+              <bpel:links>
+                <bpel:targets></bpel:targets>
+              </bpel:links>
+            </bpel:empty>
+            <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-6" bpmn:id="_a2WPkDdoEeGWsLc5JL_Ygg">
+              <bpel:copy>
+                <bpel:from>$Dynamic_Fields_Form</bpel:from>
+                <bpel:to>$processReceipient-Process1VastaanotaMsg.body</bpel:to>
+              </bpel:copy>
+            </bpel:assign>
+            <bpel:invoke partnerLink="servicesAndProcessForCanonicPortPlkVar" portType="ProcessReceipient-Process1:ForInterface" operation="Vastaanota" inputVariable="processReceipient-Process1VastaanotaMsg" outputVariable="processReceipient-Process1VastaanotaResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-7" bpmn:id="_a2WPkDdoEeGWsLc5JL_Ygg"></bpel:invoke>
+          </bpel:sequence>
+        </bpel:scope>
+      </bpel:forEach>
+    </bpel:scope>
+  </bpel:sequence>
+</bpel:process>

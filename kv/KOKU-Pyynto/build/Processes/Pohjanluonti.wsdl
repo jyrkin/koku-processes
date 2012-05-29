@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:diag="http://arcusys.fi/Processes/Pohjanluonti" xmlns:Prosessi="http://arcusys.fi/Processes/Pohjanluonti/Prosessi" xmlns:Virkailija="http://arcusys.fi/Processes/Pohjanluonti/Virkailija" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:Pohjanluontiform2="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi" xmlns:Pohjanluontiform1="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi/attachments" xmlns:Pohjanluontiform="http://www.intalio.com/gi/Pohjanluontiform.gi" xmlns:attachments="http://www.intalio.com/gi/Pohjanluontiform.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://arcusys.fi/Processes/Pohjanluonti">
+    <wsdl:import namespace="http://soa.kv.koku.arcusys.fi/" location="../KokuRequestProcessingServiceImpl.wsdl"/>
+    <wsdl:import namespace="http://www.intalio.com/gi/Pohjanluontiform.gi" location="../Pohjanluontiform.gi.wsdl"/>
+    <pnlk:partnerLinkType name="PalvelutAndProsessiForKokuRequestProcessingServicePortPlk">
+        <pnlk:role name="Palvelut_for_Prosessi" portType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="ProsessiAndVirkailijaForPortTypeProcessPlk">
+        <pnlk:role name="Prosessi_for_Virkailija" portType="Pohjanluontiform:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>
