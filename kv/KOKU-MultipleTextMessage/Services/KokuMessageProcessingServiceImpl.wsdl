@@ -23,8 +23,10 @@
 <xs:element minOccurs="0" name="subject" type="xs:string" />
 <xs:element minOccurs="0" name="receipients" type="tns:receipients" />
 <xs:element minOccurs="0" name="messageContent" type="xs:string" />
+<xs:element minOccurs="0" name="originalContent" type="xs:string" />
 <xs:element minOccurs="0" name="sendToFamilyMembers" type="xs:boolean" />
 <xs:element minOccurs="0" name="sendToGroupSite" type="xs:boolean" />
+<xs:element minOccurs="0" name="replyDisabled" type="xs:boolean" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="receipients">
@@ -43,6 +45,7 @@
 <xs:element minOccurs="0" name="subject" type="xs:string" />
 <xs:element minOccurs="0" name="toUser" type="xs:string" />
 <xs:element minOccurs="0" name="messageContent" type="xs:string" />
+<xs:element minOccurs="0" name="originalContent" type="xs:string" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="receiveNewMessageResponse">
@@ -128,8 +131,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuMessageProcessingService">
     <wsdl:port binding="tns:KokuMessageProcessingServiceSoapBinding" name="KokuMessageProcessingServicePort">
-      <soap:address location="http://koku-salo-app3.ec.dmz:8280/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" />
-      <!-- <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" /> -->
+      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -1,5 +1,7 @@
 /* place JavaScript code here */
 
+// var kokuServiceEndpoints = null;
+
 function Preload() {
 MessageId = gup("MessageId");
 // alert(MessageId);
@@ -11,57 +13,100 @@ getRecipient(messagecontent);
 getContent(messagecontent);
 }
 
-function getSender(content) {
-/*
-sender = content.selectSingleNode("//recipientUserInfos", "xmlns:ns2='http://soa.kv.koku.arcusys.f/'");
-senderUid = sender.selectSingleNode("//uid", "xmlns:ns2='http://soa.kv.koku.arcusys.f/'").getValue();
-firstname = sender.selectSingleNode("//firstname", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-lastname = sender.selectSingleNode("//lastname", "xmlns:ns2='http://soa.kv.koku.arcusys.f/'").getValue();
-KayttajaviestintaForm.getJSXByName("Message_FromRealName").setValue(firstname + " " + lastname);
-KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(senderUid);
-*/
+function intalioPreStart() {
+    throughTextfields();
 }
 
-function getRecipient(content) {
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = KayttajaviestintaForm.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
+    var i;
+    for(i = 0; i < descendants.length; i++) {
+        value = KayttajaviestintaForm.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        KayttajaviestintaForm.getJSXByName(descendants[i].getName()).setValue(temp);
+        KayttajaviestintaForm.getJSXByName(descendants[i].getName()).repaint();
+    }
+}
 
-var childnode, childiterator, recipient;
-recipient = content.selectSingleNode("//senderUserInfo", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
-firstname = recipient.selectSingleNode("//firstname", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
-nodeIterator = recipient.getFirstChild();
-alert(recipient);
+// Removes HTML-tags.
+function escapeHTML(value) {
+    if(value !== null && value !== undefined && isNaN(value) && value.replace()) {
+        return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    } else {
+        return value;
+    }
+}
+
+// Sender's fields
+function getSender(content) {
+
+var childiterator, recipient;
+sender = content.selectSingleNode("//recipientUserInfos", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
+nodeIterator = sender.getFirstChild();
 quit = false;
 
 while(!quit){
     name = nodeIterator.getNodeName();
     if (name == "displayName"){
-        KayttajaviestintaForm.getJSXByName("Message_ToRealName").setValue(nodeIterator.getValue());       
-    }       
-    alert(name);   
+        KayttajaviestintaForm.getJSXByName("Message_FromRealName").setValue(nodeIterator.getValue());        
+    }         
+    
     if (name == "uid"){ 
         // TODO: change this field; now used for uid since it wasn't in use.                           
-        // KayttajaviestintaForm.getJSXByName("Message_ToFirstName").setValue(nodeIterator.getValue());
-        alert(tt);
+        KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(nodeIterator.getValue());
     }
     if(nodeIterator.getNextSibling() != null)
         nodeIterator = nodeIterator.getNextSibling();
     else quit = true;       
-}    
 
-/*
-alert(recipient);
-senderUid = recipient.selectSingleNode("//uid", "xmlns:ns2='http://soa.kv.koku.arcusys.f/'").getValue();
-alert(senderUid);
-KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(senderUid);
-firstname = recipient.selectSingleNode("//firstname", "xmlns:ns2='http://soa.kv.koku.arcusys.f/'").getValue();
-alert(firstname);
-lastname = recipient.selectSingleNode("//lastname", "xmlns:ns2='http://soa.kv.koku.arcusys.f/'").getValue();
-alert(lastname);
-KayttajaviestintaForm.getJSXByName("Message_ToRealName").setValue(firstname + " " + lastname);
-*/
+} // while
+}
+
+
+// Recipient's fields
+function getRecipient(content) {
+
+var childiterator, recipient;
+recipient = content.selectSingleNode("//senderUserInfo", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
+nodeIterator = recipient.getFirstChild();
+quit = false;
+
+while(!quit){
+    name = nodeIterator.getNodeName();
+    if (name == "displayName"){
+        KayttajaviestintaForm.getJSXByName("Message_ToRealName").setValue(nodeIterator.getValue());
+        // TODO: change this field below, now it was used since it wasn't being used in anything (requires schema change).
+        KayttajaviestintaForm.getJSXByName("Message_ToLastName").setValue(nodeIterator.getValue());       
+    }         
+    
+    if (name == "uid"){ 
+        // TODO: change this field below; now used for uid since it wasn't in use (requires schema change).                           
+        KayttajaviestintaForm.getJSXByName("Message_ToFirstName").setValue(nodeIterator.getValue());
+    }
+    if(nodeIterator.getNextSibling() != null)
+        nodeIterator = nodeIterator.getNextSibling();
+    else quit = true;       
+
+} // while   
+
 }
 
 function getContent(content) {
-
+var originalcontent, subject, temp;
+    subject = "re: ";
+    originalcontent = "\n\n\n--\n";
+    
+    temp = content.selectSingleNode("//subject", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
+    temp = temp.getValue();
+    subject = subject + temp;
+    temp = content.selectSingleNode("//originalContent", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
+    temp = temp.getValue();
+    originalcontent = originalcontent + temp;
+    
+    KayttajaviestintaForm.getJSXByName("Message_Content").setValue(originalcontent); 
+    KayttajaviestintaForm.getJSXByName("Message_Subject").setValue(subject); 
 }
 
 
@@ -75,8 +120,6 @@ function gup(name) {
     regex = new RegExp( regexS );
     results = regex.exec( top.location.href );
     
-    // alert(document.URL);
-    // alert(results);
     
     if(results[1].match("%20"))
     {
@@ -126,6 +169,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         // TODO: automaattinen endpointin haku.
         endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageServiceImpl";
         // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageServiceImpl";
+        // endpoint = getEndpoint("KvMessageService");
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         // msg = "message=%3Csoapenv%3AEnvelope%20xmlns%3Asoapenv%3D%22http%3A%2F%2Fschemas.xmlsoap.org%2Fsoap%2Fenvelope%2F%22%20xmlns%3Asoa%3D%22http%3A%2F%2Fsoa.common.koku.arcusys.fi%2F%22%3E%3Csoapenv%3AHeader%2F%3E%3Csoapenv%3ABody%3E%3Csoa%3AsearchChildren%3E%3CsearchString%3E444444-4444%3C%2FsearchString%3E%3Climit%3E100%3C%2Flimit%3E%3C%2Fsoa%3AsearchChildren%3E%3C%2Fsoapenv%3ABody%3E%3C%2Fsoapenv%3AEnvelope%3E&endpoint=http%3A%2F%2Flocalhost%3A8180%2Farcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT%2FUsersAndGroupsServiceImpl"

@@ -148,6 +148,11 @@
         <strings jsxvalue="" jsxxml="" jsxdisplay="none" jsxdefaulttext="- Valitse -" jsxname="Message_FromLastName" jsxvisibility="hidden" jsxmargin="0 4 0 0"/>
         <events jsxkeydown="" jsxselect=""/>
       </object>
+      <object type="jsx3.gui.Select">
+        <variants jsxheight="1" jsxwidth="1" _isfocusing="true" jsxxmlasync="1"/>
+        <strings jsxvalue="" jsxxml="" jsxdisplay="none" jsxdefaulttext="- Valitse -" jsxname="Message_ToLastName" jsxvisibility="hidden" jsxmargin="0 4 0 0"/>
+        <events jsxkeydown="" jsxselect=""/>
+      </object>
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>

@@ -48,8 +48,10 @@
     <receipient></receipient>
   </receipients>
   <messageContent></messageContent>
+  <originalContent></originalContent>
   <sendToFamilyMembers></sendToFamilyMembers>
   <sendToGroupSite></sendToGroupSite>
+  <replyDisabled></replyDisabled>
 </tns:sendMessage></bpel:literal>
         </bpel:from>
         <bpel:to>$tnsSendMessage.parameters</bpel:to>
@@ -80,25 +82,41 @@
     </bpel:assign>
     <bpel:assign bpmn:label="Tee HTML" name="Tee_HTML" bpmn:id="_-VtPYJ9LEeGA89WkWRnaIg">
       <bpel:copy>
-        <bpel:from>bpel:doXslTransform("../xsl/Kayttajaviestinta.xsl", $Kayttajaviestinta_Form)</bpel:from>
-        <bpel:to>$Kayttajaviestinta_Form0</bpel:to>
+        <bpel:from>bpel:doXslTransform("../xsl/KayttajaviestintaVastaus.xsl", $Kayttajaviestinta_Form)</bpel:from>
+        <bpel:to>$Kayttajaviestinta_Form/tns:Message/tns:Message_Content</bpel:to>
       </bpel:copy>
     </bpel:assign>
     <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event" bpmn:id="_avMNcJ9MEeGA89WkWRnaIg">
       <bpel:copy>
-        <bpel:from>bpel:doXslTransform("../xsl/receivers.xsl", $Kayttajaviestinta_Form0)</bpel:from>
-        <bpel:to>$tnsSendMessage.parameters</bpel:to>
+        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Content</bpel:from>
+        <bpel:to>$tnsSendMessage.parameters/messageContent</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_FromUser</bpel:from>
+        <bpel:to>$tnsSendMessage.parameters/fromUser</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_ToFirstName</bpel:from>
+        <bpel:to>$tnsSendMessage.parameters/receipients/receipient</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Subject</bpel:from>
+        <bpel:to>$tnsSendMessage.parameters/subject</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Content</bpel:from>
+        <bpel:to>$tnsSendMessage.parameters/originalContent</bpel:to>
       </bpel:copy>
     </bpel:assign>
     <bpel:invoke partnerLink="palvelutAndProsessiForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" operation="sendMessage" inputVariable="tnsSendMessage" outputVariable="tnsSendMessageResponse" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-1" bpmn:id="_avMNcJ9MEeGA89WkWRnaIg"></bpel:invoke>
     <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-2" bpmn:id="__V-x4J9REeGA89WkWRnaIg">
       <bpel:copy>
-        <bpel:from>$Kayttajaviestinta_Form/tns:receipients/tns:receipient</bpel:from>
-        <bpel:to>$tnsReceiveMessage.parameters/toUser</bpel:to>
-      </bpel:copy>
-      <bpel:copy>
         <bpel:from>$tnsSendMessageResponse.parameters/messageId</bpel:from>
         <bpel:to>$tnsReceiveMessage.parameters/messageId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_ToFirstName</bpel:from>
+        <bpel:to>$tnsReceiveMessage.parameters/toUser</bpel:to>
       </bpel:copy>
     </bpel:assign>
     <bpel:invoke partnerLink="palvelutAndProsessiForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" operation="receiveMessage" inputVariable="tnsReceiveMessage" outputVariable="tnsReceiveMessageResponse" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-3" bpmn:id="__V-x4J9REeGA89WkWRnaIg"></bpel:invoke>
