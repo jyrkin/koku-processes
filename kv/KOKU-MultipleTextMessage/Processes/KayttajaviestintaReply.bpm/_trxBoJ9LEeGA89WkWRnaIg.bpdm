@@ -91,14 +91,6 @@
                         <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Subject</bpel:from>
                         <bpel:to>$tnsSendMessage.parameters/subject</bpel:to><mapper:mapperLink><mapper:vertice id="351412486" targetPath="$tnsSendMessage.parameters/subject" targetedBy="2103362635-arg0"></mapper:vertice><mapper:vertice id="2103362635" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_Subject"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
-                    <bpel:copy>
-                        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Content</bpel:from>
-                        <bpel:to>$tnsSendMessage.parameters/originalContent</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1764052941" targetPath="$tnsSendMessage.parameters/originalContent" targetedBy="181365271-arg0"></mapper:vertice>
-  <mapper:vertice id="181365271" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_Content"></mapper:vertice>
-</mapper:mapperLink>
-                    </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tnsSendMessage" bpdm:msgVarScopeId="_trxBoJ9LEeGA89WkWRnaIg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_-IuUkJ9REeGA89WkWRnaIg"></bpdm:linkset>
                 <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="tnsSendMessageResponse" bpdm:msgVarScopeId="_trxBoJ9LEeGA89WkWRnaIg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendMessageResponse" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_-ahPMJ9REeGA89WkWRnaIg"></bpdm:linkset>

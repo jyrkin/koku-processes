@@ -7,7 +7,7 @@ MessageId = gup("MessageId");
 // alert(MessageId);
 messagecontent = Arcusys.Internal.Communication.GetMessageById(MessageId);
 // (messagecontent);
-
+alert(messagecontent);
 getSender(messagecontent);
 getRecipient(messagecontent);
 getContent(messagecontent);

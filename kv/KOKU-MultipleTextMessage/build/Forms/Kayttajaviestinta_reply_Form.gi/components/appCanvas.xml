@@ -9,46 +9,6 @@
     <variants jsxoverflow="1"/>
     <strings jsxheight="100%" jsxwidth="100%" jsxname="root"/>
     <object type="jsx3.gui.Block">
-      <variants/>
-      <strings jsxwidth="100%" jsxname="IntalioInternal_SpacerBlockTop" jsxmargin="15 0 0 0" jsxborder="1px solid gray; 0px solid; 0px solid; 0px solid;"/>
-    </object>
-    <object type="jsx3.gui.Button">
-      <variants jsxenabled="0" jsxheight="20"/>
-      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_StartButtonTop" jsxmargin="15 10 15 0"/>
-      <dynamics jsxtext="Intalio Start Button"/>
-      <events jsxexecute="Intalio.Internal.TMS.callInitProcess();"/>
-    </object>
-    <object type="jsx3.gui.Button">
-      <variants jsxenabled="0" jsxheight="20"/>
-      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_DismissButtonTop" jsxmargin="15 10 15 0"/>
-      <dynamics jsxtext="Intalio Dismiss Button"/>
-      <events jsxexecute="Intalio.Internal.TMS.callComplete();"/>
-    </object>
-    <object type="jsx3.gui.Button">
-      <variants jsxenabled="0" jsxheight="20"/>
-      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_SaveButtonTop" jsxmargin="15 10 15 0"/>
-      <dynamics jsxtext="Intalio Save Button"/>
-      <events jsxexecute="Intalio.Internal.TMS.callSetOutput();"/>
-    </object>
-    <object type="jsx3.gui.Button">
-      <variants jsxenabled="0" jsxheight="20"/>
-      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_ClaimButtonTop" jsxmargin="15 10 15 0"/>
-      <dynamics jsxtext="Intalio Claim Button"/>
-      <events jsxexecute="Intalio.Internal.TMP.callClaimTask();"/>
-    </object>
-    <object type="jsx3.gui.Button">
-      <variants jsxenabled="0" jsxheight="20"/>
-      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_RevokeButtonTop" jsxmargin="15 10 15 0"/>
-      <dynamics jsxtext="Intalio Revoke Button"/>
-      <events jsxexecute="Intalio.Internal.TMP.callRevokeTask();"/>
-    </object>
-    <object type="jsx3.gui.Button">
-      <variants jsxenabled="0" jsxheight="20"/>
-      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_CompleteButtonTop" jsxmargin="15 10 15 0"/>
-      <dynamics jsxtext="Intalio Complete Button"/>
-      <events jsxexecute="Intalio.Internal.TMP.callCompleteTask();"/>
-    </object>
-    <object type="jsx3.gui.Block">
       <variants jsxheight="18" jsxoverflow="3"/>
       <strings jsxwidth="100%" jsxdisplay="none" jsxname="IntalioInternal_AttachmentsImageBlock"/>
       <object type="jsx3.gui.LayoutGrid">

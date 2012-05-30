@@ -86,17 +86,7 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>bpel:doXslTransform("../xsl/receivers.xsl", $Kayttajaviestinta_Form0)</bpel:from>
-                                <bpel:to>$tnsSendMessage.parameters</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="858770681" targetPath="$tnsSendMessage.parameters" targetedBy="1320727977-arg2"></mapper:vertice>
-  <mapper:vertice id="1320727977" dimension="217x85" location="228,120">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="233330754" dimension="157x37" location="168,12" targetedBy="1320727977-arg0">
-    <mapper:value>"../xsl/receivers.xsl"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="616193029" sourcePath="$Kayttajaviestinta_Form0" targetedBy="1320727977-arg1"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$tnsSendMessage.parameters</bpel:to><mapper:mapperLink><mapper:vertice id="858770681" targetPath="$tnsSendMessage.parameters" targetedBy="1320727977-arg2"></mapper:vertice><mapper:vertice id="1320727977" dimension="217x85" location="228,120"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="233330754" dimension="157x37" location="168,12" targetedBy="1320727977-arg0"><mapper:value>"../xsl/receivers.xsl"</mapper:value></mapper:vertice><mapper:vertice id="616193029" sourcePath="$Kayttajaviestinta_Form0" targetedBy="1320727977-arg1"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tnsSendMessage" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_TS9b0CY_EeGZ6qIn2ne6Bw"></bpdm:linkset>
@@ -148,25 +138,7 @@
                                 <bpdm:linkset bpdm:type="assignments">
                                     <bpel:copy>
                                         <bpel:from>bpel:doXslTransform("../xsl/KayttajaviestintaYksi.xsl", $Kayttajaviestinta_Form, "Vastaanottaja", $Kayttajaviestinta_Form/tns:receipients[$emptyCounter])</bpel:from>
-                                        <bpel:to>$Kayttajaviestinta_Form1/tns:Message/tns:Message_Content</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1540348891" targetPath="$Kayttajaviestinta_Form1/tns:Message/tns:Message_Content" targetedBy="1394618573-arg1"></mapper:vertice>
-  <mapper:vertice id="1394618573" dimension="217x85" location="324,120">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="195247217" dimension="229x37" location="108,60" targetedBy="1394618573-arg0">
-    <mapper:value>"../xsl/KayttajaviestintaYksi.xsl"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="140206644" sourcePath="$Kayttajaviestinta_Form" targetedBy="1394618573-arg2"></mapper:vertice>
-  <mapper:vertice id="1792582619" dimension="78x24" location="132,180" targetedBy="1394618573-arg3">
-    <mapper:value>"Vastaanottaja"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="887993770" dimension="78x24" location="204,240" targetedBy="1394618573-arg4">
-    <mapper:value>[]</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="839046538" sourcePath="$Kayttajaviestinta_Form/tns:receipients" targetedBy="887993770-arg0"></mapper:vertice>
-  <mapper:vertice id="1627150687" sourcePath="$emptyCounter" targetedBy="887993770-arg1"></mapper:vertice>
-</mapper:mapperLink>
+                                        <bpel:to>$Kayttajaviestinta_Form1/tns:Message/tns:Message_Content</bpel:to><mapper:mapperLink><mapper:vertice id="1540348891" targetPath="$Kayttajaviestinta_Form1/tns:Message/tns:Message_Content" targetedBy="1394618573-arg1"></mapper:vertice><mapper:vertice id="1394618573" dimension="217x85" location="324,120"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="195247217" dimension="229x37" location="108,60" targetedBy="1394618573-arg0"><mapper:value>"../xsl/KayttajaviestintaYksi.xsl"</mapper:value></mapper:vertice><mapper:vertice id="140206644" sourcePath="$Kayttajaviestinta_Form" targetedBy="1394618573-arg2"></mapper:vertice><mapper:vertice id="1792582619" dimension="78x24" location="132,180" targetedBy="1394618573-arg3"><mapper:value>"Vastaanottaja"</mapper:value></mapper:vertice><mapper:vertice id="887993770" dimension="78x24" location="204,240" targetedBy="1394618573-arg4"><mapper:value>[]</mapper:value></mapper:vertice><mapper:vertice id="839046538" sourcePath="$Kayttajaviestinta_Form/tns:receipients" targetedBy="887993770-arg0"></mapper:vertice><mapper:vertice id="1627150687" sourcePath="$emptyCounter" targetedBy="887993770-arg1"></mapper:vertice></mapper:mapperLink>
                                     </bpel:copy>
                                 </bpdm:linkset>
                             </bpdm:messagingtask>
