@@ -487,7 +487,6 @@ function switchSearchMode(mode) {
 function searchGroup(searchString) {
 try {
 
-    alert("searchGroup");
     var entryFound, node, i, hasEmptyChild, splits, list, xmlData, groupData;
     clearDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
     if(searchString == "") {
@@ -684,7 +683,10 @@ function addToRecipients() {
 
 function getChildsParents(userUid) {
     var parents = null;
-    nodes = convertArrayToNodesString(userUid, "uid", "childUid"); // <childUid> uid </childUid>
+    var nodes;
+    var childData;
+    //nodes = convertArrayToNodesString(userUid, "uid", "childUid"); // <childUid> uid </childUid>
+    nodes = "<childUid>"+userUid+"</childUid>"; // todo use convertarray
     childData = Arcusys.Internal.Communication.GetChildinfo(nodes);
     
     //getParents
@@ -728,7 +730,8 @@ function addGroupsToRecipients() {
                 if(parentData[i]["uid"]) {
                     node = KayttajaviestintaForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
                    
-                    node.setAttribute("receipient", parentData[i]["uid"]);
+                    node.setAttribute("uid", parentData[i]["uid"]);
+                    node.setAttribute("receipient", parentData[i]["displayName"]);
                     //node.setAttribute("receipientDisplay", parentData[i]["displayName"]);
                     KayttajaviestintaForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
                 }

@@ -168,7 +168,7 @@ function mapSelectedValuesToMatrix() {
 
 function getIntalioUser() {
     var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/") + 1));
+    username = username.substring((username.indexOf("\\") + 1));
     return username;
 }
 

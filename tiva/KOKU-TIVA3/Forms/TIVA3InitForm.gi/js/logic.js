@@ -465,7 +465,7 @@ function preload() {
 
     getTemplates("");
     username = Intalio.Internal.Utilities.getUser();
-    username = username.substring(username.indexOf("/") + 1);
+    username = username.substring(username.indexOf("\\") + 1);
     uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     userRealName = getUserRealName(uid);

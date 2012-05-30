@@ -1,0 +1,52 @@
+<data jsxnamespace="propsbundle" locales="">
+  <locale>
+    <record jsxid="Intalio Start Button" jsxtext="Start"/>
+    <record jsxid="Intalio Dismiss Button" jsxtext="Dismiss"/>
+    <record jsxid="Intalio Save Button" jsxtext="Save"/>
+    <record jsxid="Intalio Claim Button" jsxtext="Claim"/>
+    <record jsxid="Intalio Revoke Button" jsxtext="Revoke"/>
+    <record jsxid="Intalio Complete Button" jsxtext="Complete"/>
+    <record jsxid="Operation Failed Error" jsxtext="Operation '{0}' failed.  The HTTP Status code is: {1}"/>
+    <record jsxid="Operation Invalid Error" jsxtext="Operation '{0}' failed.  The message failed validation."/>
+    <record jsxid="Operation Timeout Error" jsxtext="Operation '{0}' failed.  The operation timed out."/>
+    <record jsxid="Logging Error" jsxtext="An exception occurred while logging a previous exception."/>
+    <record jsxid="Task Type Parameter Missing Error" jsxtext="The task type parameter is missing."/>
+    <record jsxid="Path Parameter Missing Error" jsxtext="The path parameter is missing."/>
+    <record jsxid="Assembly Parameter Missing Error" jsxtext="The assembly parameter is missing."/>
+    <record jsxid="Form Parameter Missing Error" jsxtext="The form parameter is missing."/>
+    <record jsxid="Invalid Response Error" jsxtext="The server sent an invalid response."/>
+    <record jsxid="File Upload Error" jsxtext="There was a problem uploading the file: {0}"/>
+    <record jsxid="Incomplete Matrix Error" jsxtext="The form has an incomplete matrix field."/>
+    <record jsxid="Incomplete Field Error" jsxtext="Incomplete form field: {0}"/>
+    <record jsxid="Loading Text" jsxtext="Sending request, please wait..."/>
+    <record jsxid="Close Button" jsxtext="Close"/>
+    <record jsxid="Save Success Text" jsxtext="The task was successfully saved."/>
+    <record jsxid="Claim Success Text" jsxtext="The task was successfully claimed."/>
+    <record jsxid="Revoke Success Text" jsxtext="The task was successfully revoked."/>
+  </locale>
+  <locale key="en_US">
+    <record jsxid="Intalio Start Button" jsxtext="Start"/>
+    <record jsxid="Intalio Dismiss Button" jsxtext="Dismiss"/>
+    <record jsxid="Intalio Save Button" jsxtext="Save"/>
+    <record jsxid="Intalio Claim Button" jsxtext="Claim"/>
+    <record jsxid="Intalio Revoke Button" jsxtext="Revoke"/>
+    <record jsxid="Intalio Complete Button" jsxtext="Complete"/>
+    <record jsxid="Operation Failed Error" jsxtext="Operation '{0}' failed.  The HTTP Status code is: {1}"/>
+    <record jsxid="Operation Invalid Error" jsxtext="Operation '{0}' failed.  The message failed validation."/>
+    <record jsxid="Operation Timeout Error" jsxtext="Operation '{0}' failed.  The operation timed out."/>
+    <record jsxid="Logging Error" jsxtext="An exception occurred while logging a previous exception."/>
+    <record jsxid="Task Type Parameter Missing Error" jsxtext="The task type parameter is missing."/>
+    <record jsxid="Path Parameter Missing Error" jsxtext="The path parameter is missing."/>
+    <record jsxid="Assembly Parameter Missing Error" jsxtext="The assembly parameter is missing."/>
+    <record jsxid="Form Parameter Missing Error" jsxtext="The form parameter is missing."/>
+    <record jsxid="Invalid Response Error" jsxtext="The server sent an invalid response."/>
+    <record jsxid="File Upload Error" jsxtext="There was a problem uploading the file: {0}"/>
+    <record jsxid="Incomplete Matrix Error" jsxtext="The form has an incomplete matrix field."/>
+    <record jsxid="Incomplete Field Error" jsxtext="Incomplete form field: {0}"/>
+    <record jsxid="Loading Text" jsxtext="Sending request, please wait..."/>
+    <record jsxid="Close Button" jsxtext="Close"/>
+    <record jsxid="Save Success Text" jsxtext="The task was successfully saved."/>
+    <record jsxid="Claim Success Text" jsxtext="The task was successfully claimed."/>
+    <record jsxid="Revoke Success Text" jsxtext="The task was successfully revoked."/>
+  </locale>
+</data>

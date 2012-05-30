@@ -1,0 +1,572 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:TaskManagementSystem="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:User="http://arcusys.fi/Processes/ProcessReceipient/User" xmlns:TokenService="http://tempo.intalio.org/security/tokenService/" xmlns:attachments="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:ns="http://ws.arcusys.fi" xmlns:diag="http://arcusys.fi/Processes/ProcessReceipient" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:Interface="http://arcusys.fi/Processes/ProcessReceipient/Interface" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:Services="http://arcusys.fi/Processes/ProcessReceipient/Services" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:this="http://arcusys.fi/Processes/ProcessReceipient/Process" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Process" name="Process" bpmn:id="_EPBGMK0XEeCYk7-iNBydwQ" targetNamespace="http://arcusys.fi/Processes/ProcessReceipient/Process">
+  <bpel:import namespace="http://soa.common.koku.arcusys.fi/" location="../UsersAndGroupsServiceImpl.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://soa.kv.koku.arcusys.fi/" location="../KokuRequestProcessingServiceImpl.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://tempo.intalio.org/security/tokenService/" location="../Services/TokenService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://arcusys.fi/Processes/ProcessReceipient" location="ProcessReceipient.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://arcusys.fi/Processes/ProcessReceipient/Process" location="ProcessReceipient-Process.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://ws.arcusys.fi" location="../Services/PropertyStore.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" location="../Services/TaskManagementSystem.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/gi/Copyofform1_1.gi" location="../Copyofform1_1.gi.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.arcusys.fi/DynamicFields" location="../DynamicFields.xsd" importType="http://www.w3.org/2001/XMLSchema"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="processAndInterfacePlkVar" partnerLinkType="diag:ProcessAndInterface" myRole="Process_for_Interface"></bpel:partnerLink>
+    <bpel:partnerLink name="servicesAndProcessForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+    <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" partnerLinkType="diag:WFmagic_xOJSwJUEEeGhLfrcJYTqEA" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" partnerRole="User_for_ProcessForCopyofform1_1Port"></bpel:partnerLink>
+    <bpel:partnerLink name="servicesAndProcessForPortPropertyStoreHttpEndpointPlkVar" partnerLinkType="diag:ServicesAndProcessForPortPropertyStoreHttpEndpointPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+    <bpel:partnerLink name="servicesAndProcessForPortServicePlkVar" partnerLinkType="diag:ServicesAndProcessForPortServicePlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+    <bpel:partnerLink name="servicesAndProcessForPortTaskManagementServicesSOAPPlkVar" partnerLinkType="diag:ServicesAndProcessForPortTaskManagementServicesSOAPPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="thisVastaanotaRequestMsg" messageType="this:VastaanotaRequest"></bpel:variable>
+    <bpel:variable name="thisVastaanotaResponseMsg" messageType="this:VastaanotaResponse"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplReceiveRequestMsg" messageType="KokuRequestProcessingServiceImpl:receiveRequest"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplReceiveRequestResponseMsg" messageType="KokuRequestProcessingServiceImpl:receiveRequestResponse"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplReplyToRequestMsg" messageType="KokuRequestProcessingServiceImpl:replyToRequest"></bpel:variable>
+    <bpel:variable name="kokuRequestProcessingServiceImplReplyToRequestResponseMsg" messageType="KokuRequestProcessingServiceImpl:replyToRequestResponse"></bpel:variable>
+    <bpel:variable name="tokenServiceAuthenticateUserRequestMsg" messageType="TokenService:authenticateUser"></bpel:variable>
+    <bpel:variable name="tokenServiceAuthenticateUserResponseMsg" messageType="TokenService:authenticateUserResponse"></bpel:variable>
+    <bpel:variable name="taskManagementSystemDeleteRequestMsg" messageType="TaskManagementSystem:deleteRequest"></bpel:variable>
+    <bpel:variable name="taskManagementSystemDeleteResponseMsg" messageType="TaskManagementSystem:okResponse"></bpel:variable>
+    <bpel:variable name="usersAndGroupsServiceImplGetUserInfoRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo"></bpel:variable>
+    <bpel:variable name="usersAndGroupsServiceImplGetUserInfoResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse"></bpel:variable>
+    <bpel:variable name="userIds" type="xs:string"></bpel:variable>
+    <bpel:variable name="counter" type="xs:string"></bpel:variable>
+    <bpel:variable name="Dynamic_Fields_Form" element="tns:Dynamic_Fields_Form"></bpel:variable>
+    <bpel:variable name="copyofform1_1CreateTaskRequestMsg" messageType="Copyofform1_1:createTaskRequest"></bpel:variable>
+    <bpel:variable name="copyofform1_1CreateTaskResponseMsg" messageType="Copyofform1_1:createTaskResponse"></bpel:variable>
+    <bpel:variable name="copyofform1_1NotifyTaskCompletionRequestMsg" messageType="Copyofform1_1:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="copyofform1_1NotifyTaskCompletionResponseMsg" messageType="Copyofform1_1:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="nsGetPropertyRequestMsg" messageType="ns:getPropertyRequest"></bpel:variable>
+    <bpel:variable name="nsGetPropertyResponseMsg" messageType="ns:getPropertyResponse"></bpel:variable>
+    <bpel:variable name="kayttajatunnus" type="xs:string"></bpel:variable>
+    <bpel:variable name="salasana" type="xs:string"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="processAndInterfacePlkVar" portType="this:ForInterface" operation="Vastaanota" variable="thisVastaanotaRequestMsg" createInstance="yes" bpmn:label="Vastaanota" name="Vastaanota" bpmn:id="_Ilq9YK0XEeCYk7-iNBydwQ"></bpel:receive>
+    <bpel:assign name="init-variables-Process" bpmn:id="_Ilq9YK0XEeCYk7-iNBydwQ">
+      <bpel:copy bpmn:label="$thisVastaanotaResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<this:VastaanotaResponse></this:VastaanotaResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$thisVastaanotaResponseMsg.body</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$kokuRequestProcessingServiceImplReceiveRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<KokuRequestProcessingServiceImpl:receiveRequest>
+  <toUser></toUser>
+  <requestId></requestId>
+  <content></content>
+</KokuRequestProcessingServiceImpl:receiveRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplReceiveRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$kokuRequestProcessingServiceImplReplyToRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<KokuRequestProcessingServiceImpl:replyToRequest>
+  <user></user>
+  <requestId></requestId>
+  <answers>
+    <answer>
+      <comment></comment>
+      <questionNumber></questionNumber>
+      <textValue></textValue>
+      <yesNoValue></yesNoValue>
+    </answer>
+  </answers>
+  <comment></comment>
+</KokuRequestProcessingServiceImpl:replyToRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$tokenServiceAuthenticateUserRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<TokenService:authenticateUser>
+  <TokenService:user></TokenService:user>
+  <TokenService:password></TokenService:password>
+</TokenService:authenticateUser></bpel:literal>
+        </bpel:from>
+        <bpel:to>$tokenServiceAuthenticateUserRequestMsg.payload</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$taskManagementSystemDeleteRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<TaskManagementSystem:deleteRequest>
+  <TaskManagementSystem:taskId></TaskManagementSystem:taskId>
+  <TaskManagementSystem:participantToken></TaskManagementSystem:participantToken>
+</TaskManagementSystem:deleteRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$taskManagementSystemDeleteRequestMsg.deleteRequest</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$usersAndGroupsServiceImplGetUserInfoRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<UsersAndGroupsServiceImpl:getUserInfo>
+  <userUid></userUid>
+</UsersAndGroupsServiceImpl:getUserInfo></bpel:literal>
+        </bpel:from>
+        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$userIds">
+        <bpel:from>
+          <bpel:literal></bpel:literal>
+        </bpel:from>
+        <bpel:to>$userIds</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$counter">
+        <bpel:from>
+          <bpel:literal></bpel:literal>
+        </bpel:from>
+        <bpel:to>$counter</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$copyofform1_1CreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<Copyofform1_1:createTaskRequest>
+  <Copyofform1_1:taskMetaData>
+    <Copyofform1_1:taskId>_xOJSwJUEEeGhLfrcJYTqEA</Copyofform1_1:taskId>
+    <Copyofform1_1:taskState></Copyofform1_1:taskState>
+    <Copyofform1_1:taskType></Copyofform1_1:taskType>
+    <Copyofform1_1:description/>
+    <Copyofform1_1:processId></Copyofform1_1:processId>
+    <Copyofform1_1:instanceId></Copyofform1_1:instanceId>
+    <Copyofform1_1:business>
+      <Copyofform1_1:processName></Copyofform1_1:processName>
+      <Copyofform1_1:instanceId></Copyofform1_1:instanceId>
+      <Copyofform1_1:stepName></Copyofform1_1:stepName>
+      <Copyofform1_1:customData></Copyofform1_1:customData>
+    </Copyofform1_1:business>
+    <Copyofform1_1:creationDate></Copyofform1_1:creationDate>
+    <Copyofform1_1:userOwner/>
+    <Copyofform1_1:roleOwner>koku/kuntalainen</Copyofform1_1:roleOwner>
+    <Copyofform1_1:claimAction>
+      <Copyofform1_1:user></Copyofform1_1:user>
+      <Copyofform1_1:role></Copyofform1_1:role>
+    </Copyofform1_1:claimAction>
+    <Copyofform1_1:revokeAction>
+      <Copyofform1_1:user></Copyofform1_1:user>
+      <Copyofform1_1:role></Copyofform1_1:role>
+    </Copyofform1_1:revokeAction>
+    <Copyofform1_1:saveAction>
+      <Copyofform1_1:user></Copyofform1_1:user>
+      <Copyofform1_1:role></Copyofform1_1:role>
+    </Copyofform1_1:saveAction>
+    <Copyofform1_1:completeAction>
+      <Copyofform1_1:user></Copyofform1_1:user>
+      <Copyofform1_1:role></Copyofform1_1:role>
+    </Copyofform1_1:completeAction>
+    <Copyofform1_1:formUrl>http://localhost:8080/gi/apppath/KOKU-Pyynto1/Copyofform1_1.gi/IntalioInternal/ServerLaunch.html</Copyofform1_1:formUrl>
+    <Copyofform1_1:failureCode></Copyofform1_1:failureCode>
+    <Copyofform1_1:failureReason></Copyofform1_1:failureReason>
+    <Copyofform1_1:priority></Copyofform1_1:priority>
+    <Copyofform1_1:scheduledActions>
+      <Copyofform1_1:expiration>
+        <Copyofform1_1:until></Copyofform1_1:until>
+        <Copyofform1_1:for></Copyofform1_1:for>
+      </Copyofform1_1:expiration>
+      <Copyofform1_1:deferActivation>
+        <Copyofform1_1:until></Copyofform1_1:until>
+        <Copyofform1_1:for></Copyofform1_1:for>
+      </Copyofform1_1:deferActivation>
+    </Copyofform1_1:scheduledActions>
+    <Copyofform1_1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description/>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </Copyofform1_1:attachments>
+    <Copyofform1_1:userProcessCompleteSOAPAction>http://www.intalio.com/gi/Copyofform1_1.gi/Process/notifyTaskCompletion</Copyofform1_1:userProcessCompleteSOAPAction>
+    <Copyofform1_1:isChainedBefore></Copyofform1_1:isChainedBefore>
+    <Copyofform1_1:previousTaskId></Copyofform1_1:previousTaskId>
+    <Copyofform1_1:userProcessEndpoint>http://localhost:8080/ode/processes/KOKU-Pyynto1/Processes/ProcessReceipient/Process/User/WFmagic_xOJSwJUEEeGhLfrcJYTqEA</Copyofform1_1:userProcessEndpoint>
+    <Copyofform1_1:userProcessNamespaceURI>http://www.intalio.com/gi/Copyofform1_1.gi</Copyofform1_1:userProcessNamespaceURI>
+  </Copyofform1_1:taskMetaData>
+  <Copyofform1_1:participantToken></Copyofform1_1:participantToken>
+  <Copyofform1_1:taskInput>
+    <tns:Dynamic_Fields_Form>
+      <tns:TextInput>
+        <tns:TextInput_Question></tns:TextInput_Question>
+        <tns:TextInput_Section></tns:TextInput_Section>
+        <tns:TextInput_AnswerText></tns:TextInput_AnswerText>
+        <tns:TextInput_Number></tns:TextInput_Number>
+        <tns:TextInput_Type></tns:TextInput_Type>
+      </tns:TextInput>
+      <tns:MultipleChoice>
+        <tns:MultipleChoice_Section></tns:MultipleChoice_Section>
+        <tns:MultipleChoice_Number></tns:MultipleChoice_Number>
+        <tns:MultipleChoice_Question></tns:MultipleChoice_Question>
+        <tns:MultipleChoice_Checked></tns:MultipleChoice_Checked>
+      </tns:MultipleChoice>
+      <tns:Header>
+        <tns:Header_Text></tns:Header_Text>
+      </tns:Header>
+      <tns:User>
+        <tns:User_Recipient></tns:User_Recipient>
+        <tns:User_RecipientDisplay></tns:User_RecipientDisplay>
+        <tns:User_Sender></tns:User_Sender>
+        <tns:User_SenderDisplay></tns:User_SenderDisplay>
+        <tns:User_Reminder></tns:User_Reminder>
+        <tns:User_AnswerUntil></tns:User_AnswerUntil>
+        <tns:User_PaivitaOlemassaoleva></tns:User_PaivitaOlemassaoleva>
+        <tns:User_Roolit></tns:User_Roolit>
+        <tns:User_LuoUusi></tns:User_LuoUusi>
+        <tns:User_VastaanottajaRoolit></tns:User_VastaanottajaRoolit>
+        <tns:User_SenderFirstname></tns:User_SenderFirstname>
+        <tns:User_SenderLastname></tns:User_SenderLastname>
+        <tns:User_RecipientFirstname></tns:User_RecipientFirstname>
+        <tns:User_RecipientLastname></tns:User_RecipientLastname>
+        <tns:User_RecipientRealnames></tns:User_RecipientRealnames>
+      </tns:User>
+      <tns:HTML>
+        <tns:HTML_Sisalto></tns:HTML_Sisalto>
+      </tns:HTML>
+      <tns:Receipients>
+        <tns:Receipients_Receipient></tns:Receipients_Receipient>
+        <tns:Receipients_ReceipientUid></tns:Receipients_ReceipientUid>
+        <tns:Receipients_Realm></tns:Receipients_Realm>
+      </tns:Receipients>
+      <tns:RequestProcessing>
+        <tns:RequestProcessing_RequestID></tns:RequestProcessing_RequestID>
+      </tns:RequestProcessing>
+      <tns:Kommentti>
+        <tns:Kommentti_Kommentti></tns:Kommentti_Kommentti>
+      </tns:Kommentti>
+      <tns:PohjaNakyvyys>
+        <tns:PohjaNakyvyys_Mina></tns:PohjaNakyvyys_Mina>
+        <tns:PohjaNakyvyys_Organisaatio></tns:PohjaNakyvyys_Organisaatio>
+        <tns:PohjaNakyvyys_Kaikki></tns:PohjaNakyvyys_Kaikki>
+        <tns:PohjaNakyvyys_Arvo></tns:PohjaNakyvyys_Arvo>
+      </tns:PohjaNakyvyys>
+    </tns:Dynamic_Fields_Form>
+  </Copyofform1_1:taskInput>
+</Copyofform1_1:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$copyofform1_1NotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<Copyofform1_1:response>
+  <Copyofform1_1:isChainedAfter></Copyofform1_1:isChainedAfter>
+  <Copyofform1_1:taskMetaData>
+    <Copyofform1_1:taskId></Copyofform1_1:taskId>
+    <Copyofform1_1:taskState></Copyofform1_1:taskState>
+    <Copyofform1_1:taskType></Copyofform1_1:taskType>
+    <Copyofform1_1:description></Copyofform1_1:description>
+    <Copyofform1_1:processId></Copyofform1_1:processId>
+    <Copyofform1_1:instanceId></Copyofform1_1:instanceId>
+    <Copyofform1_1:business>
+      <Copyofform1_1:processName></Copyofform1_1:processName>
+      <Copyofform1_1:instanceId></Copyofform1_1:instanceId>
+      <Copyofform1_1:stepName></Copyofform1_1:stepName>
+      <Copyofform1_1:customData></Copyofform1_1:customData>
+    </Copyofform1_1:business>
+    <Copyofform1_1:creationDate></Copyofform1_1:creationDate>
+    <Copyofform1_1:userOwner></Copyofform1_1:userOwner>
+    <Copyofform1_1:roleOwner></Copyofform1_1:roleOwner>
+    <Copyofform1_1:claimAction>
+      <Copyofform1_1:user></Copyofform1_1:user>
+      <Copyofform1_1:role></Copyofform1_1:role>
+    </Copyofform1_1:claimAction>
+    <Copyofform1_1:revokeAction>
+      <Copyofform1_1:user></Copyofform1_1:user>
+      <Copyofform1_1:role></Copyofform1_1:role>
+    </Copyofform1_1:revokeAction>
+    <Copyofform1_1:saveAction>
+      <Copyofform1_1:user></Copyofform1_1:user>
+      <Copyofform1_1:role></Copyofform1_1:role>
+    </Copyofform1_1:saveAction>
+    <Copyofform1_1:completeAction>
+      <Copyofform1_1:user></Copyofform1_1:user>
+      <Copyofform1_1:role></Copyofform1_1:role>
+    </Copyofform1_1:completeAction>
+    <Copyofform1_1:formUrl></Copyofform1_1:formUrl>
+    <Copyofform1_1:failureCode></Copyofform1_1:failureCode>
+    <Copyofform1_1:failureReason></Copyofform1_1:failureReason>
+    <Copyofform1_1:priority></Copyofform1_1:priority>
+    <Copyofform1_1:scheduledActions>
+      <Copyofform1_1:expiration>
+        <Copyofform1_1:until></Copyofform1_1:until>
+        <Copyofform1_1:for></Copyofform1_1:for>
+      </Copyofform1_1:expiration>
+      <Copyofform1_1:deferActivation>
+        <Copyofform1_1:until></Copyofform1_1:until>
+        <Copyofform1_1:for></Copyofform1_1:for>
+      </Copyofform1_1:deferActivation>
+    </Copyofform1_1:scheduledActions>
+    <Copyofform1_1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </Copyofform1_1:attachments>
+    <Copyofform1_1:userProcessCompleteSOAPAction></Copyofform1_1:userProcessCompleteSOAPAction>
+    <Copyofform1_1:isChainedBefore></Copyofform1_1:isChainedBefore>
+    <Copyofform1_1:previousTaskId></Copyofform1_1:previousTaskId>
+    <Copyofform1_1:userProcessEndpoint></Copyofform1_1:userProcessEndpoint>
+    <Copyofform1_1:userProcessNamespaceURI></Copyofform1_1:userProcessNamespaceURI>
+  </Copyofform1_1:taskMetaData>
+  <Copyofform1_1:status>OK</Copyofform1_1:status>
+  <Copyofform1_1:errorCode></Copyofform1_1:errorCode>
+  <Copyofform1_1:errorReason></Copyofform1_1:errorReason>
+</Copyofform1_1:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$copyofform1_1NotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$nsGetPropertyRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<ns:getProperty>
+  <ns:name></ns:name>
+</ns:getProperty></bpel:literal>
+        </bpel:from>
+        <bpel:to>$nsGetPropertyRequestMsg.parameters</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="processAndInterfacePlkVar" portType="this:ForInterface" operation="Vastaanota" variable="thisVastaanotaResponseMsg" bpmn:label="Vastaanota" name="Vastaanota-1" bpmn:id="_Ilq9YK0XEeCYk7-iNBydwQ"></bpel:reply>
+    <bpel:assign bpmn:label="Luo tilaus" name="Luo_tilaus" bpmn:id="_PULcwK0XEeCYk7-iNBydwQ">
+      <bpel:copy>
+        <bpel:from>$thisVastaanotaRequestMsg.body</bpel:from>
+        <bpel:to>$Dynamic_Fields_Form</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event" bpmn:id="_rQUpkH2DEeGzXu12ZusphQ">
+      <bpel:copy>
+        <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Sender</bpel:from>
+        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" operation="getUserInfo" inputVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" outputVariable="usersAndGroupsServiceImplGetUserInfoResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-1" bpmn:id="_rQUpkH2DEeGzXu12ZusphQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Hae lahettaja" name="Hae_lahettaja" bpmn:id="_mZdBEGdlEeGD74mpnm3lrQ">
+      <bpel:copy>
+        <bpel:from>if ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname != "") then ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname) else ("")</bpel:from>
+        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>if ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname != "") then ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname) else ("")</bpel:from>
+        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Recipient</bpel:from>
+        <bpel:to>$userIds</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"0"</bpel:from>
+        <bpel:to>$counter</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:scope bpmn:label="SubProcess" name="SubProcess" bpmn:id="_K5M_AH2IEeGzXu12ZusphQ">
+      <bpel:variables>
+        <bpel:variable name="usersAndGroupsServiceImplGetUserInfoResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse"></bpel:variable>
+        <bpel:variable name="usersAndGroupsServiceImplGetUserInfoRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo"></bpel:variable>
+      </bpel:variables>
+      <bpel:while bpmn:label="SubProcess" name="SubProcess-1">
+        <bpel:condition>$userIds != ""</bpel:condition>
+        <bpel:sequence>
+          <bpel:assign name="init-variables-SubProcess" bpmn:id="_K5M_AH2IEeGzXu12ZusphQ">
+            <bpel:copy bpmn:label="$usersAndGroupsServiceImplGetUserInfoRequestMsg">
+              <bpel:from>
+                <bpel:literal>
+<UsersAndGroupsServiceImpl:getUserInfo>
+  <userUid></userUid>
+</UsersAndGroupsServiceImpl:getUserInfo></bpel:literal>
+              </bpel:from>
+              <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-2" bpmn:id="_m2JbwGdzEeGD74mpnm3lrQ">
+            <bpel:copy>
+              <bpel:from>if (contains($userIds, ",")) then (substring-before($userIds, ",")) else ($userIds)</bpel:from>
+              <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:invoke partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" operation="getUserInfo" inputVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" outputVariable="usersAndGroupsServiceImplGetUserInfoResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-3" bpmn:id="_m2JbwGdzEeGD74mpnm3lrQ"></bpel:invoke>
+          <bpel:assign bpmn:label="Hae vastottaja" name="Hae_vastottaja" bpmn:id="_qxYiQGdzEeGD74mpnm3lrQ">
+            <bpel:copy>
+              <bpel:from>if ($counter = "0") then (concat($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname, " ", $usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname)) else (concat($Dynamic_Fields_Form/tns:User/tns:User_RecipientRealnames, ", ", $usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname, " ", $usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname))</bpel:from>
+              <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientRealnames</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:assign bpmn:label="Task" name="Task" bpmn:id="_tdD0oH2IEeGzXu12ZusphQ">
+            <bpel:copy>
+              <bpel:from>if (contains($userIds, ",")) then (substring-after($userIds, ",")) else ("")</bpel:from>
+              <bpel:to>$userIds</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>"1"</bpel:from>
+              <bpel:to>$counter</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:while>
+    </bpel:scope>
+    <bpel:assign bpmn:label="Tee HTML" name="Tee_HTML" bpmn:id="_TPtRkO_bEeCh8b9d8uDTTA">
+      <bpel:copy>
+        <bpel:from>bpel:doXslTransform("../xsl/DynamicFormRecipientReceive.xsl", $Dynamic_Fields_Form)</bpel:from>
+        <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Lähetä viesti vastaanottajalle" name="Lähetä_viesti_vastaanottajalle" bpmn:id="_MFpxoK0fEeCYk7-iNBydwQ">
+      <bpel:copy>
+        <bpel:from>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID</bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplReceiveRequestMsg.parameters/requestId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplReceiveRequestMsg.parameters/content</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Recipient</bpel:from>
+        <bpel:to>$kokuRequestProcessingServiceImplReceiveRequestMsg.parameters/toUser</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" operation="receiveRequest" inputVariable="kokuRequestProcessingServiceImplReceiveRequestMsg" outputVariable="kokuRequestProcessingServiceImplReceiveRequestResponseMsg" bpmn:label="Lähetä viesti vastaanottajalle" name="Lähetä_viesti_vastaanottajalle-1" bpmn:id="_MFpxoK0fEeCYk7-iNBydwQ"></bpel:invoke>
+    <bpel:assign bpmn:label="Lähetä lomake vastaanottajalle" name="Lähetä_lomake_vastaanottajalle" bpmn:id="_OPIgQK0XEeCYk7-iNBydwQ">
+      <bpel:copy>
+        <bpel:from>$Dynamic_Fields_Form</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskInput/tns:Dynamic_Fields_Form</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_RecipientDisplay</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>concat("Uusi pyyntö: ", $Dynamic_Fields_Form/tns:Header/tns:Header_Text)</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:description</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:instanceId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://localhost:8080/ode/processes/KOKU-Pyynto1/Processes/ProcessReceipient/Process/User/WFmagic_xOJSwJUEEeGhLfrcJYTqEA"</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://www.intalio.com/gi/Copyofform1_1.gi/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_xOVgAJUEEeGhLfrcJYTqEA"</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"koku/kuntalainen"</bpel:from>
+        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:roleOwner</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" portType="Copyofform1_1:Workflow" operation="createTask" inputVariable="copyofform1_1CreateTaskRequestMsg" outputVariable="copyofform1_1CreateTaskResponseMsg" bpmn:label="Lähetä lomake vastaanottajalle" name="Lähetä_lomake_vastaanottajalle-1" bpmn:id="_OPIgQK0XEeCYk7-iNBydwQ"></bpel:invoke>
+    <bpel:pick bpmn:label="Exclusive_Event-Based_Gateway" name="Exclusive_Event-Based_Gateway" bpmn:id="_kDfQYCZYEeGZ6qIn2ne6Bw">
+      <bpel:onMessage partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" portType="Copyofform1_1:Process" operation="notifyTaskCompletion" variable="copyofform1_1NotifyTaskCompletionRequestMsg" bpmn:label="Käsittele" name="Käsittele" bpmn:id="_Yudl4K0XEeCYk7-iNBydwQ">
+        <bpel:sequence>
+          <bpel:reply partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" portType="Copyofform1_1:Process" operation="notifyTaskCompletion" variable="copyofform1_1NotifyTaskCompletionResponseMsg" bpmn:label="Käsittele" name="Käsittele-1" bpmn:id="_Yudl4K0XEeCYk7-iNBydwQ"></bpel:reply>
+          <bpel:assign bpmn:label="Päivitä hakemus" name="Päivitä_hakemus" bpmn:id="_-0XFQK0fEeCYk7-iNBydwQ">
+            <bpel:copy>
+              <bpel:from>$copyofform1_1NotifyTaskCompletionRequestMsg.root/Copyofform1_1:taskOutput/tns:Dynamic_Fields_Form</bpel:from>
+              <bpel:to>$Dynamic_Fields_Form</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:assign bpmn:label="Tee HTML" name="Tee_HTML-1" bpmn:id="_Axm1EK0gEeCYk7-iNBydwQ">
+            <bpel:copy>
+              <bpel:from>bpel:doXslTransform("../xsl/DynamicFormRecipient.xsl", $copyofform1_1NotifyTaskCompletionRequestMsg.root/Copyofform1_1:taskOutput/tns:Dynamic_Fields_Form)</bpel:from>
+              <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:assign bpmn:label="Lähetä vastaukset" name="Lähetä_vastaukset" bpmn:id="_NEyd8K0gEeCYk7-iNBydwQ">
+            <bpel:copy>
+              <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Recipient</bpel:from>
+              <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/user</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>bpel:doXslTransform("../xsl/ReplyToRequestAnswers.xsl", $Dynamic_Fields_Form)</bpel:from>
+              <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID</bpel:from>
+              <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/requestId</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>$Dynamic_Fields_Form/tns:Kommentti/tns:Kommentti_Kommentti</bpel:from>
+              <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/comment</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:invoke partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" operation="replyToRequest" inputVariable="kokuRequestProcessingServiceImplReplyToRequestMsg" outputVariable="kokuRequestProcessingServiceImplReplyToRequestResponseMsg" bpmn:label="Lähetä vastaukset" name="Lähetä_vastaukset-1" bpmn:id="_NEyd8K0gEeCYk7-iNBydwQ"></bpel:invoke>
+          <bpel:empty bpmn:label="Empty_End_Event" name="Empty_End_Event" bpmn:id="_KUZ6oK0YEeCYk7-iNBydwQ"></bpel:empty>
+        </bpel:sequence>
+      </bpel:onMessage>
+      <bpel:onAlarm bpmn:label="Timer_Intermediate_Event" name="Timer_Intermediate_Event" bpmn:id="_lYjl4CZYEeGZ6qIn2ne6Bw">
+        <bpel:until>$Dynamic_Fields_Form/tns:User/tns:User_AnswerUntil</bpel:until>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-4" bpmn:id="_hBgCgJs6EeG3Of_SM22Mzg">
+            <bpel:copy>
+              <bpel:from>"credentials.username"</bpel:from>
+              <bpel:to>$nsGetPropertyRequestMsg.parameters/ns:name</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:invoke partnerLink="servicesAndProcessForPortPropertyStoreHttpEndpointPlkVar" portType="ns:PropertyStorePortType" operation="getProperty" inputVariable="nsGetPropertyRequestMsg" outputVariable="nsGetPropertyResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-5" bpmn:id="_hBgCgJs6EeG3Of_SM22Mzg"></bpel:invoke>
+          <bpel:assign bpmn:label="Tallenna kayttajatunnus" name="Tallenna_kayttajatunnus" bpmn:id="_0zowQJs6EeG3Of_SM22Mzg">
+            <bpel:copy>
+              <bpel:from>$nsGetPropertyResponseMsg.parameters/ns:return</bpel:from>
+              <bpel:to>$kayttajatunnus</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-6" bpmn:id="_Ae3BQJs7EeG3Of_SM22Mzg">
+            <bpel:copy>
+              <bpel:from>"credentials.password"</bpel:from>
+              <bpel:to>$nsGetPropertyRequestMsg.parameters/ns:name</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:invoke partnerLink="servicesAndProcessForPortPropertyStoreHttpEndpointPlkVar" portType="ns:PropertyStorePortType" operation="getProperty" inputVariable="nsGetPropertyRequestMsg" outputVariable="nsGetPropertyResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-7" bpmn:id="_Ae3BQJs7EeG3Of_SM22Mzg"></bpel:invoke>
+          <bpel:assign bpmn:label="Tallenna salasana" name="Tallenna_salasana" bpmn:id="_IroOYJs7EeG3Of_SM22Mzg">
+            <bpel:copy>
+              <bpel:from>$nsGetPropertyResponseMsg.parameters/ns:return</bpel:from>
+              <bpel:to>$salasana</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-8" bpmn:id="_m9MocCZYEeGZ6qIn2ne6Bw">
+            <bpel:copy>
+              <bpel:from>$kayttajatunnus</bpel:from>
+              <bpel:to>$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:user</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>$salasana</bpel:from>
+              <bpel:to>$tokenServiceAuthenticateUserRequestMsg.payload/TokenService:password</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:invoke partnerLink="servicesAndProcessForPortServicePlkVar" portType="TokenService:TokenServicePortType" operation="authenticateUser" inputVariable="tokenServiceAuthenticateUserRequestMsg" outputVariable="tokenServiceAuthenticateUserResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-9" bpmn:id="_m9MocCZYEeGZ6qIn2ne6Bw"></bpel:invoke>
+          <bpel:assign bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-10" bpmn:id="_yfwssCZYEeGZ6qIn2ne6Bw">
+            <bpel:copy>
+              <bpel:from>$copyofform1_1CreateTaskResponseMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:taskId</bpel:from>
+              <bpel:to>$taskManagementSystemDeleteRequestMsg.deleteRequest/TaskManagementSystem:taskId</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>$tokenServiceAuthenticateUserResponseMsg.payload/TokenService:token</bpel:from>
+              <bpel:to>$taskManagementSystemDeleteRequestMsg.deleteRequest/TaskManagementSystem:participantToken</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+          <bpel:invoke partnerLink="servicesAndProcessForPortTaskManagementServicesSOAPPlkVar" portType="TaskManagementSystem:TaskManagementServices" operation="delete" inputVariable="taskManagementSystemDeleteRequestMsg" outputVariable="taskManagementSystemDeleteResponseMsg" bpmn:label="Message_Intermediate_Event" name="Message_Intermediate_Event-11" bpmn:id="_yfwssCZYEeGZ6qIn2ne6Bw"></bpel:invoke>
+          <bpel:empty bpmn:label="Empty_End_Event" name="Empty_End_Event-1" bpmn:id="_0Fi-wCZYEeGZ6qIn2ne6Bw"></bpel:empty>
+        </bpel:sequence>
+      </bpel:onAlarm>
+    </bpel:pick>
+  </bpel:sequence>
+</bpel:process>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_XY8f0J9LEeGA89WkWRnaIg" iD="_XY74wJ9LEeGA89WkWRnaIg">
+  <pools xmi:type="bpmn:Pool" xmi:id="_XZiVsZ9LEeGA89WkWRnaIg" iD="_XZiVsJ9LEeGA89WkWRnaIg" name="Käyttäjä">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lmLakJ9LEeGA89WkWRnaIg" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lmMBoJ9LEeGA89WkWRnaIg" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_0yfzwZ9LEeGA89WkWRnaIg" iD="_0yfzwJ9LEeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0yfzwp9LEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0yfzw59LEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0yho8p9LEeGA89WkWRnaIg" key="defaultDeclarationName" value="kayttajaviestinta_reply_FormInitProcessRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0ykFMJ9LEeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}initProcessRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_0yiQAJ9LEeGA89WkWRnaIg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0yi3EJ9LEeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0yjeIJ9LEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_1PIscZ9LEeGA89WkWRnaIg" iD="_1PIscJ9LEeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1PIscp9LEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1PIsc59LEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1PLvwp9LEeGA89WkWRnaIg" key="defaultDeclarationName" value="kayttajaviestinta_reply_FormInitProcessResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1PQoQJ9LEeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}initProcessResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_1PNk8J9LEeGA89WkWRnaIg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1POzEJ9LEeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1PQBMJ9LEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_oUPjUJ9LEeGA89WkWRnaIg" iD="_oUJcsJ9LEeGA89WkWRnaIg" associations="_0yiQAJ9LEeGA89WkWRnaIg _1PNk8J9LEeGA89WkWRnaIg" name="Kayttajaviestinta_reply_Form-init request" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oUPjUZ9LEeGA89WkWRnaIg" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oUPjUp9LEeGA89WkWRnaIg" key="projectRelativePath" value="Forms/Kayttajaviestinta_reply_Form.gi"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oUPjU59LEeGA89WkWRnaIg" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oUPjVJ9LEeGA89WkWRnaIg" key="factoryId" value="gi"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oUPjVZ9LEeGA89WkWRnaIg" key="taskType" value="init"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oUPjVp9LEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oUPjV59LEeGA89WkWRnaIg" key="douri" value="project:///Forms/Kayttajaviestinta_reply_Form.gi.wsdl?invokerequestresponse={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}Process/initProcess"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pxOesJ9LEeGA89WkWRnaIg" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pxPs0J9LEeGA89WkWRnaIg" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pxPs0Z9LEeGA89WkWRnaIg" key="roles" value="koku/kuntalainen"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YAbTEKWMEeGJC5yk4nv7PA" source="pipa">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YAwqQKWMEeGJC5yk4nv7PA" key="description" value="Vastaa kayttajaviestiin"/>
+      </eAnnotations>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_0yS_cZ9LEeGA89WkWRnaIg"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_1OwR8Z9LEeGA89WkWRnaIg"/>
+    </vertices>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_trxosJ9LEeGA89WkWRnaIg" iD="_trxBoJ9LEeGA89WkWRnaIg" name="Prosessi">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_0yl6YZ9LEeGA89WkWRnaIg" iD="_0yl6YJ9LEeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0yl6Yp9LEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0yl6Y59LEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0ynvkJ9LEeGA89WkWRnaIg" key="defaultDeclarationName" value="kayttajaviestinta_reply_FormInitProcessRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0yo9sZ9LEeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}initProcessRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_0ynvkZ9LEeGA89WkWRnaIg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0yoWoJ9LEeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0yo9sJ9LEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_1PBXsZ9LEeGA89WkWRnaIg" iD="_1PBXsJ9LEeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1PBXsp9LEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1PBXs59LEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1PDz8p9LEeGA89WkWRnaIg" key="defaultDeclarationName" value="kayttajaviestinta_reply_FormInitProcessResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1PG3QZ9LEeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}initProcessResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_1PFCEJ9LEeGA89WkWRnaIg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1PFpIJ9LEeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1PG3QJ9LEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_3HG6uJ9LEeGA89WkWRnaIg" iD="_3HCCMJ9LEeGA89WkWRnaIg" name="">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3HG6uZ9LEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3HG6up9LEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3HG6u59LEeGA89WkWRnaIg" key="douri" value="project:///Forms/Kayttajaviestinta.xsd?xsdelement={http://soa.kv.koku.arcusys.fi/}Kayttajaviestinta_Form"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3HJW8J9LEeGA89WkWRnaIg" key="defaultDeclarationName" value="Kayttajaviestinta_Form"/>
+      </eAnnotations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_KRH4iJ9MEeGA89WkWRnaIg" iD="_KRFcQZ9MEeGA89WkWRnaIg" name="">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KRH4iZ9MEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KRH4ip9MEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KRH4i59MEeGA89WkWRnaIg" key="douri" value="project:///Forms/Kayttajaviestinta.xsd?xsdelement={http://soa.kv.koku.arcusys.fi/}Kayttajaviestinta_Form"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KRJtsJ9MEeGA89WkWRnaIg" key="defaultDeclarationName" value="Kayttajaviestinta_Form0"/>
+      </eAnnotations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_-I8XAZ9REeGA89WkWRnaIg" iD="_-I8XAJ9REeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-I8XAp9REeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-I8XA59REeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-I_aUJ9REeGA89WkWRnaIg" key="defaultDeclarationName" value="tnsSendMessage"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-JDEsZ9REeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}sendMessage"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_-JAocJ9REeGA89WkWRnaIg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-JB2kJ9REeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-JDEsJ9REeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_-a4bkZ9REeGA89WkWRnaIg" iD="_-a4bkJ9REeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-a4bkp9REeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-a4bk59REeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-a8tAZ9REeGA89WkWRnaIg" key="defaultDeclarationName" value="tnsSendMessageResponse"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-bCMkJ9REeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}sendMessageResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_-a-iMJ9REeGA89WkWRnaIg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-a_wUJ9REeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-bBlgJ9REeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_ANGAEZ9SEeGA89WkWRnaIg" iD="_ANGAEJ9SEeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ANGAEp9SEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ANGAE59SEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ANK4kp9SEeGA89WkWRnaIg" key="defaultDeclarationName" value="tnsReceiveMessage"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ANRmQJ9SEeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}receiveMessage"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_ANNU0J9SEeGA89WkWRnaIg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ANPKAJ9SEeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ANQ_MJ9SEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AjlNdp9SEeGA89WkWRnaIg" iD="_AjlNdZ9SEeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AjlNd59SEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjlNeJ9SEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjqtAZ9SEeGA89WkWRnaIg" key="defaultDeclarationName" value="tnsReceiveMessageResponse"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ajyo0J9SEeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}receiveMessageResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_AjtJQJ9SEeGA89WkWRnaIg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AjvlgJ9SEeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjyBwJ9SEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_0FTWkZ9LEeGA89WkWRnaIg" iD="_0FTWkJ9LEeGA89WkWRnaIg" associations="_0ynvkZ9LEeGA89WkWRnaIg _1PFCEJ9LEeGA89WkWRnaIg" outgoingEdges="_6j05MZ9LEeGA89WkWRnaIg" activityType="EventStartMessage">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_0yS_cZ9LEeGA89WkWRnaIg"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_1OwR8Z9LEeGA89WkWRnaIg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_5WlqAZ9LEeGA89WkWRnaIg" iD="_5WlqAJ9LEeGA89WkWRnaIg" outgoingEdges="__XNIoZ9LEeGA89WkWRnaIg" incomingEdges="_6j05MZ9LEeGA89WkWRnaIg" name="Luo viesti" activityType="Task"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_-VtPYZ9LEeGA89WkWRnaIg" iD="_-VtPYJ9LEeGA89WkWRnaIg" outgoingEdges="_bGGRkZ9MEeGA89WkWRnaIg" incomingEdges="__XNIoZ9LEeGA89WkWRnaIg" name="Tee HTML" activityType="Task"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_avMNcZ9MEeGA89WkWRnaIg" iD="_avMNcJ9MEeGA89WkWRnaIg" associations="_-JAocJ9REeGA89WkWRnaIg _-a-iMJ9REeGA89WkWRnaIg" outgoingEdges="__tWJAZ9REeGA89WkWRnaIg" incomingEdges="_bGGRkZ9MEeGA89WkWRnaIg" activityType="EventIntermediateMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_-IuUkZ9REeGA89WkWRnaIg"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_-ahPMZ9REeGA89WkWRnaIg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="__V-x4Z9REeGA89WkWRnaIg" iD="__V-x4J9REeGA89WkWRnaIg" associations="_ANNU0J9SEeGA89WkWRnaIg _AjtJQJ9SEeGA89WkWRnaIg" outgoingEdges="_B_SWcZ9SEeGA89WkWRnaIg" incomingEdges="__tWJAZ9REeGA89WkWRnaIg" activityType="EventIntermediateMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_AM3WkZ9SEeGA89WkWRnaIg"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_AjAlsZ9SEeGA89WkWRnaIg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_BdyL4Z9SEeGA89WkWRnaIg" iD="_BdyL4J9SEeGA89WkWRnaIg" incomingEdges="_B_SWcZ9SEeGA89WkWRnaIg" activityType="EventEndEmpty"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_6j05MZ9LEeGA89WkWRnaIg" iD="_6j05MJ9LEeGA89WkWRnaIg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="__XNIoZ9LEeGA89WkWRnaIg" iD="__XNIoJ9LEeGA89WkWRnaIg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_bGGRkZ9MEeGA89WkWRnaIg" iD="_bGGRkJ9MEeGA89WkWRnaIg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="__tWJAZ9REeGA89WkWRnaIg" iD="__tWJAJ9REeGA89WkWRnaIg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_B_SWcZ9SEeGA89WkWRnaIg" iD="_B_SWcJ9SEeGA89WkWRnaIg"/>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_vhGLkZ9LEeGA89WkWRnaIg" iD="_vhGLkJ9LEeGA89WkWRnaIg" name="Palvelut">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wlY6IJ9LEeGA89WkWRnaIg" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wlY6IZ9LEeGA89WkWRnaIg" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_-JES0Z9REeGA89WkWRnaIg" iD="_-JES0J9REeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-JES0p9REeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-JES059REeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-JFg-J9REeGA89WkWRnaIg" key="defaultDeclarationName" value="kokuMessageProcessingServiceImplSendMessage"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-JH9MZ9REeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}sendMessage"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_-JGIAJ9REeGA89WkWRnaIg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-JHWIJ9REeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-JH9MJ9REeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_-axt4Z9REeGA89WkWRnaIg" iD="_-axt4J9REeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-axt4p9REeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-axt459REeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-a0KIp9REeGA89WkWRnaIg" key="defaultDeclarationName" value="kokuMessageProcessingServiceImplSendMessageResponse"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-a30gJ9REeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}sendMessageResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_-a1YQJ9REeGA89WkWRnaIg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-a2mYJ9REeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-a3NcJ9REeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_ANSNVp9SEeGA89WkWRnaIg" iD="_ANSNVZ9SEeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ANSNV59SEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ANSNWJ9SEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ANV3sp9SEeGA89WkWRnaIg" key="defaultDeclarationName" value="kokuMessageProcessingServiceImplReceiveMessage"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ANaJIZ9SEeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}receiveMessage"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_ANXF0J9SEeGA89WkWRnaIg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ANY7AJ9SEeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ANaJIJ9SEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_Aja1YZ9SEeGA89WkWRnaIg" iD="_Aja1YJ9SEeGA89WkWRnaIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AjbccJ9SEeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjbccZ9SEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjfG0p9SEeGA89WkWRnaIg" key="defaultDeclarationName" value="kokuMessageProcessingServiceImplReceiveMessageResponse"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjkmYZ9SEeGA89WkWRnaIg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}receiveMessageResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_Ajg8AJ9SEeGA89WkWRnaIg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AjixMJ9SEeGA89WkWRnaIg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjkmYJ9SEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_8PAZ4J9REeGA89WkWRnaIg" iD="_8O2o4J9REeGA89WkWRnaIg" associations="_ANXF0J9SEeGA89WkWRnaIg _Ajg8AJ9SEeGA89WkWRnaIg" name="receiveMessage" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8PAZ4Z9REeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8PAZ4p9REeGA89WkWRnaIg" key="douri" value="project:///Services/KokuMessageProcessingServiceImpl.wsdl?wsdloperationbound={http://soa.kv.koku.arcusys.fi/}KokuMessageProcessingService/KokuMessageProcessingServicePort/receiveMessage"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_AM3WkZ9SEeGA89WkWRnaIg"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_AjAlsZ9SEeGA89WkWRnaIg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_8PC2J59REeGA89WkWRnaIg" iD="_8O4eEJ9REeGA89WkWRnaIg" associations="_-JGIAJ9REeGA89WkWRnaIg _-a1YQJ9REeGA89WkWRnaIg" name="sendMessage" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8PC2KJ9REeGA89WkWRnaIg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8PC2KZ9REeGA89WkWRnaIg" key="douri" value="project:///Services/KokuMessageProcessingServiceImpl.wsdl?wsdloperationbound={http://soa.kv.koku.arcusys.fi/}KokuMessageProcessingService/KokuMessageProcessingServicePort/sendMessage"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_-IuUkZ9REeGA89WkWRnaIg"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_-ahPMZ9REeGA89WkWRnaIg"/>
+    </vertices>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_0yS_cZ9LEeGA89WkWRnaIg" iD="_0yS_cJ9LEeGA89WkWRnaIg" source="_oUPjUJ9LEeGA89WkWRnaIg" target="_0FTWkZ9LEeGA89WkWRnaIg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0yWCwJ9LEeGA89WkWRnaIg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0yWCwZ9LEeGA89WkWRnaIg" key="douri" value="project:///Forms/Kayttajaviestinta_reply_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}Process/initProcess/input/initProcessRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_1OwR8Z9LEeGA89WkWRnaIg" iD="_1OwR8J9LEeGA89WkWRnaIg" source="_0FTWkZ9LEeGA89WkWRnaIg" target="_oUPjUJ9LEeGA89WkWRnaIg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1O2_oJ9LEeGA89WkWRnaIg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1O2_oZ9LEeGA89WkWRnaIg" key="douri" value="project:///Forms/Kayttajaviestinta_reply_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Kayttajaviestinta_reply_Form.gi}Process/initProcess/output/initProcessResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_-IuUkZ9REeGA89WkWRnaIg" iD="_-IuUkJ9REeGA89WkWRnaIg" source="_avMNcZ9MEeGA89WkWRnaIg" target="_8PC2J59REeGA89WkWRnaIg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-Iz0IJ9REeGA89WkWRnaIg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-Iz0IZ9REeGA89WkWRnaIg" key="douri" value="project:///Services/KokuMessageProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuMessageProcessingService/KokuMessageProcessingServicePort/sendMessage/input/sendMessage"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_-ahPMZ9REeGA89WkWRnaIg" iD="_-ahPMJ9REeGA89WkWRnaIg" source="_8PC2J59REeGA89WkWRnaIg" target="_avMNcZ9MEeGA89WkWRnaIg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-amHsJ9REeGA89WkWRnaIg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-amHsZ9REeGA89WkWRnaIg" key="douri" value="project:///Services/KokuMessageProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuMessageProcessingService/KokuMessageProcessingServicePort/sendMessage/output/sendMessageResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_AM3WkZ9SEeGA89WkWRnaIg" iD="_AM3WkJ9SEeGA89WkWRnaIg" source="__V-x4Z9REeGA89WkWRnaIg" target="_8PAZ4J9REeGA89WkWRnaIg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AM7A8J9SEeGA89WkWRnaIg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AM7A8Z9SEeGA89WkWRnaIg" key="douri" value="project:///Services/KokuMessageProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuMessageProcessingService/KokuMessageProcessingServicePort/receiveMessage/input/receiveMessage"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_AjAlsZ9SEeGA89WkWRnaIg" iD="_AjAlsJ9SEeGA89WkWRnaIg" source="_8PAZ4J9REeGA89WkWRnaIg" target="__V-x4Z9REeGA89WkWRnaIg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AjMy8J9SEeGA89WkWRnaIg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjMy8Z9SEeGA89WkWRnaIg" key="douri" value="project:///Services/KokuMessageProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuMessageProcessingService/KokuMessageProcessingServicePort/receiveMessage/output/receiveMessageResponse"/>
+    </eAnnotations>
+  </messages>
+</bpmn:BpmnDiagram>

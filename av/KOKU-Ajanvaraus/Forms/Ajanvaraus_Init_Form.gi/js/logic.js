@@ -1,5 +1,5 @@
 // General functions ----------------------------------------------------------------------------------------------------------------------------
-kokuServiceEndpoints = null;
+var kokuServiceEndpoints = null;
 
 function showDialog(dialogId, text, textTitle, title) {
     var dialog, cssDisplay;
@@ -22,6 +22,81 @@ function showDialog(dialogId, text, textTitle, title) {
     dialog.html("<p style=\"text-align:left;\"><b>" + textTitle + "</b></p><p style=\"margin:0 0 0 0;\">" + text + "</p>");
 }
 
+function prepareForm() {
+    var username = Intalio.Internal.Utilities.getUser();
+    username = username.substring((username.indexOf("\\") + 1));
+        try {
+        var userUid = Arcusys.Internal.Communication.GetUserUidByUsername(username);
+        if(userUid != null) {
+            var uid = userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+        }
+    } catch (e) {
+        alert(e);
+    }
+    getRoles(uid);
+}
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserRoles = function(uid) {
+
+        var tout, msg, endpoint, url, req, objXML;
+        tout = 1000;
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserRoles><userUid>" + uid + "</userUid></soa:getUserRoles></soapenv:Body></soapenv:Envelope>";
+
+        url = getUrl();
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if(objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserUidByUsername = function(username) {
+
+        var tout = 1000;
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + username + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
+
+        var url = getUrl();
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        req.send(msg, tout);
+        var objXML = req.getResponseXML();
+
+        if(objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+});
+
+
 function getDomainName() {
     var url, url_parts, domain_name;
     url = window.location.href;
@@ -39,6 +114,7 @@ function getUrl() {
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
+
 
 function getEndpoint(serviceName) {
     if(kokuServiceEndpoints === null) {
@@ -61,17 +137,21 @@ function gup(name) {
 }
 
 function commitCustomAutoRowSession(matrix, cache) {
-    var nodes, xmlStr, i;
-    nodes = AjanvarausForm.getJSXByName(matrix).getChildren();
-    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
-
-    for( i = 0; i < nodes.length; i = i + 1) {
-        if(nodes[i] && nodes[i].getPath() !== "jsxid") {
-            xmlStr += " " + nodes[i].getPath() + "=\"\"";
-        }
+    var nodes, xmlStr;
+    matrixElement = AjanvarausForm.getJSXByName(matrix.valueOf());
+    if (matrixElement != null) {
+         nodes = matrixElement.getChildren();
+         
+          xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+          var i;
+            for(i = 0; i < nodes.length; i++) {
+                if(nodes[i] && nodes[i].getPath() != "jsxid") {
+                xmlStr += " " + nodes[i].getPath() + "=\"\"";
+                }
+            }
+            xmlStr += "/></data>";
+            AjanvarausForm.getCache().getDocument(cache).loadXML(xmlStr);
     }
-    xmlStr += "/></data>";
-    AjanvarausForm.getCache().getDocument(cache).loadXML(xmlStr);
 }
 
 function checkSlotMatrix() {
@@ -106,11 +186,12 @@ function checkSlotMatrix() {
 }
 
 function formatDataCache(cache, matrix) {
-    if(AjanvarausForm.getCache().getDocument(cache).getFirstChild() === null) {
+    if(AjanvarausForm.getCache().getDocument(cache).getFirstChild() == null) {
         commitCustomAutoRowSession(matrix, cache);
         return true;
+    } else {
+        return false;
     }
-    return false;
 }
 
 function clearDataCache(cacheName, matrixName) {
@@ -301,54 +382,50 @@ function deleteDupes() {
  *
  */
 function mapSelectedRecipientsToMatrix() {
-    var nodes, node, childNode, hasEmptyChild, recipients, targetPerson, childIterator, nodeIterator, i, group, groupUid, groupData, userData, childData, childArray;
 
-    clearDataCache("Recipients-nomap");
+    var node, hasEmptyChild, jsxid, childIterator, childIteratorGroup, group, uid, groupUid, childNode, groupData, userData, i, kunpoUsername, displayName;
+    var nodes, parentData, childData, status, error;
+    var targetPerson;
+   
+    jsxid = 0;
+    error = false;
+    
+    // Get recipents from matrix
+    //childIteratorGroup = AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getChildIterator();
     childIterator = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
     hasEmptyChild = formatDataCache("Recipients-nomap", "Recipients");
 
+    // user messages
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
-        group = childNode.getAttribute("group");
-
-        if(group !== "0") {
-            groupUid = childNode.getAttribute("recipientsUid");
-
-            try {
-                groupData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
-                userData = getData(groupData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
-                nodes = convertArrayToNodesString(userData, "uid", "childUid");
-                childData = Arcusys.Internal.Communication.getChildInfo(nodes);
-                nodeIterator = childData.selectNodes("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
-                childArray = getDataString(nodeIterator);
-
-                for( i = 0; i < childArray.length; i = i + 1) {
-                    if(childArray[i].parents_uid) {
-                        node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
-                        node.setAttribute("Recipients_TargetPerson", childArray[i].uid);
-                        node.setAttribute("Recipients_Recipient", childArray[i].parents_uid);
-                        AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
-                    }
-                }
-            } catch(e) {
-                alert(e);
-            }
-        } else {
-            recipients = childNode.getAttribute("recipientsUid");
-            targetPerson = childNode.getAttribute("uid");
+            
+            // parent's uid
+            uid = childNode.getAttribute("recipientsUid");
+            targetPerson = childNode.getAttribute("targetPerson");
             node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
-            node.setAttribute("Recipients_Recipient", recipients);
+            kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
+            if(kunpoUsername != null) {
+                var temp;
+                temp = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+                if (temp != null) {
+                    displayName = temp.getValue();
+                }
+            }
+            node.setAttribute("jsxid", jsxid);
+            node.setAttribute("Recipients_Recipient", uid);
             node.setAttribute("Recipients_TargetPerson", targetPerson);
+            
+            //node.setAttribute("receipientDisplay", displayName);
             AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
-
+            jsxid++;
         }
-    }
-
-    if(hasEmptyChild) {
-        AjanvarausForm.getCache().getDocument("Recipients-nomap").removeChild(AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild());
+        
+            if(hasEmptyChild == true) {
+                AjanvarausForm.getCache().getDocument("Recipients-nomap").removeChild(AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild());
     }
 
     deleteDupes();
+
 }
 
 function intalioPreStart() {
@@ -1325,7 +1402,8 @@ function removefromCache(removable) {
 }
 
 function listGroupUsers() {
-    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, xmlData, userData, fetched, groupName, error;
+
+    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData, fetched;
     hasEmptyChild = formatDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
     childIterator = AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getChildIterator();
 
@@ -1335,36 +1413,33 @@ function listGroupUsers() {
         fetched = childNode.getAttribute("haettu");
         groupUid = childNode.getAttribute("uid");
 
-        if(selected === 0 && fetched === 1) {
+        if(selected == 0 && fetched == 1) {
             childNode.setAttribute("haettu", 0);
             removefromCache(groupUid);
         }
 
-        if((selected !== 0) && (selected !== null) && (fetched !== 1)) {
+        if((selected != 0) && (selected != null) && (fetched != 1)) {
             childNode.setAttribute("haettu", 1);
             groupName = childNode.getAttribute("nimi");
             xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
-            error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
-            alert("Ryhm\u00E4n " + groupName + " k\u00E4ytt\u00E4jien hakemisessa tapahtui virhe. Virheviesti: " + error);
-            childNode.setAttribute("valittu", 0);
-            childNode.setAttribute("haettu", 0);
-            AjanvarausForm.getJSXByName("searchGroupMatrix").repaintData();
             userData = getData(xmlData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
 
-            for( i = 0; i < userData.length; i = i + 1) {
+            for( i = 0; i < userData.length; i++) {
                 node = AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
                 node.setAttribute("jsxid", i);
-                node.setAttribute("etunimi", userData[i].firstname);
-                node.setAttribute("sukunimi", userData[i].lastname);
-                node.setAttribute("puhelin", userData[i].phoneNumber);
-                node.setAttribute("sahkoposti", userData[i].email);
+                node.setAttribute("etunimi", userData[i]["firstname"]);
+                node.setAttribute("sukunimi", userData[i]["lastname"]);
+                node.setAttribute("puhelin", userData[i]["phoneNumber"]);
+                node.setAttribute("sahkoposti", userData[i]["email"]);
                 node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
-                node.setAttribute("valittu", 0);
+                node.setAttribute("userUid", userData[i]["uid"]);
+                node.setAttribute("valittu", 1);
                 AjanvarausForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
+
             }
         }
     }
-    if(hasEmptyChild === true) {
+    if(hasEmptyChild == true) {
         AjanvarausForm.getCache().getDocument("GroupUserList-nomap").removeChild(AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild());
     }
     AjanvarausForm.getJSXByName("listGroupUsersMatrix").repaintData();
@@ -1407,31 +1482,65 @@ function addToRecipients() {
     AjanvarausForm.getJSXByName("recipientCounter").setValue(counter);
 }
 
+function getChildsParents(userUid) {
+    var parents = null;
+    var nodes;
+    var childData;
+    //nodes = convertArrayToNodesString(userUid, "uid", "childUid"); // <childUid> uid </childUid>
+    nodes = "<childUid>"+userUid+"</childUid>"; // todo use convertarray
+    childData = Arcusys.Internal.Communication.getChildInfo(nodes);
+    
+    //getParents
+     parents = getData(childData.selectNodeIterator("//parents", "xmlns:ns2='http://soa.tiva.koku.arcucsys.fi/'"));
+
+           /* for( i = 0; i < parentData.length; i++) {
+                if(parentData[i]["uid"]) {
+                    node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
+                   
+                    //node.setAttribute("receipient", parentData[i]["uid"]);
+                    node.setAttribute("receipientDisplay", parentData[i]["displayName"]);
+                    AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
+                }
+            }*/
+    return parents;
+}
+// adds users instead of groups
 function addGroupsToRecipients() {
-    var counter, node, hasEmptyChild, valittu, childIterator, groupUid, childNode, groupname;
+
+    var counter, node, hasEmptyChild, valittu, childIterator, groupUid, childNode, groupname, userUid, parentData;
+    
+     // read child nodes
+     childIterator = AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getChildIterator(); // this has child uid
+    
     counter = AjanvarausForm.getJSXByName("recipientCounter").getValue();
-    childIterator = AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getChildIterator();
+    //childIterator = AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getChildIterator();
+   
     hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
 
+     // get parent data by loopping trought childs
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
-        valittu = childNode.getAttribute("valittu");
-        groupUid = childNode.getAttribute("uid");
+        valittu = childNode.getAttribute("valittuG"); // valittuG might not exist, need to check
 
-        if((valittu !== null) && (valittu !== 0)) {
-            node = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-            groupname = childNode.getAttribute("nimi");
-            node.setAttribute("jsxid", counter);
-            node.setAttribute("recipients", groupname);
-            node.setAttribute("recipientsUid", groupUid);
-            node.setAttribute("group", 1);
-            AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
-            counter = counter + 1;
-
+        //groupUid = childNode.getAttribute("uid");
+        userUid = childNode.getAttribute("userUid"); // child's uid
+        // if child is selected, checkbox
+        if((valittu != null) && (valittu != 0)) {
+            parentData = getChildsParents(userUid);
+            for( i = 0; i < parentData.length; i++) {
+                if(parentData[i]["uid"]) {
+                    node = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
+                                      
+                    node.setAttribute("recipientsUid", parentData[i]["uid"]);
+                    node.setAttribute("recipients", parentData[i]["displayName"]);
+                    node.setAttribute("targetPerson", userUid);
+                    //node.setAttribute("receipientDisplay", parentData[i]["displayName"]);
+                    AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+                }
+            }
         }
-
     }
-    if(hasEmptyChild === true) {
+    if(hasEmptyChild == true) {
         AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").removeChild(AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild());
     }
 
@@ -1609,6 +1718,52 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
     };
 });
 
+function getRoles(uid) {
+    var i = 0, j = 0, roleName, roleId;
+
+    //var uid = "415ae6c9-406b-41df-b71e-887b5f0e4f3a";
+    rolesData = Arcusys.Internal.Communication.GetUserRoles(uid);
+
+    var roles = rolesData.selectNodeIterator("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+    var rolesArray = [];
+
+    var checkRoles = rolesData.selectSingleNode("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+
+    if(checkRoles) {
+        while(roles.hasNext()) {
+            node = roles.next();
+            if(node.getFirstChild()) {
+                childNode = node.getFirstChild();
+                rolesArray[i] = [];
+                while(childNode) {
+                    if(childNode.getValue()) {
+                        rolesArray[i][j] = childNode.getValue();
+                    }
+                    childNode = childNode.getNextSibling();
+                    j++;
+                }
+                i++;
+                j = 0;
+            }
+        }
+
+        var s = "<data>";
+
+        for( i = 0; i < rolesArray.length; i++) {
+            s += "<record jsxid=\"" + rolesArray[i][1] + "\" jsxtext=\"" + rolesArray[i][0] + "\"\/>";
+        }
+        s += "<record jsxid=\"\" jsxtext=\"Ei valintaa\"/>";
+        s += "</data>";
+
+        AjanvarausForm.getJSXByName("User_Role").setXMLString(s).resetCacheData();
+
+        //AjanvarausForm.getJSXByName("Roolit").setDisplay("block", true);
+    }
+
+}
+
+
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetUserUidByLooraname = function(username) {
         var tout, msg, url, req, objXML, endpoint;
@@ -1634,6 +1789,46 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         }
     };
 });
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetKunpoUsernameByUid = function(uid) {
+
+        var tout = 1000;
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKunpoNameByUserUid><userUid>" + uid + "</userUid></soa:getKunpoNameByUserUid></soapenv:Body></soapenv:Envelope>";
+        var endpoint;
+        var url = getUrl();
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        //req.setRequestHeader("Content-Type","text/xml");
+
+        //req.setRequestHeader("SOAPAction","");
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        req.send(msg, tout);
+        var objXML = req.getResponseXML();
+        // alert(req.getStatus());
+
+        // var objXML = req.getResponseXML();
+        // alert("DEBUG - SERVER RESPONSE:" + objXML);
+        if(objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            // alert(objXML);
+            return objXML;
+
+        }
+    };
+});
+
 // Extra Functions -------------------------------------------------------------------------------------------------------------------------------
 
 jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error) {
