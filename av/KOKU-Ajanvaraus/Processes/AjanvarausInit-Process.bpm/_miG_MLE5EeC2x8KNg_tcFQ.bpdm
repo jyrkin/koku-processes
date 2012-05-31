@@ -1,10 +1,11 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:attachments="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi/attachments" xmlns:KokuAppointmentProcessingServiceImpl1="http://soa.av.koku.arcusys.fi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Virkailija="http://thisdiagram/Virkailija" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Prosessi" xmlns:KokuAppointmentProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/KOKU/Ajanvaraus" xmlns:Ajanvaraus_Init_Form="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:attachments="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi/attachments" xmlns:KokuAppointmentProcessingServiceImpl1="http://soa.av.koku.arcusys.fi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Virkailija="http://thisdiagram/Virkailija" xmlns:diag="http://thisdiagram" xmlns:KokuAppointmentProcessingServiceImpl2="http://soa.common.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Prosessi" xmlns:KokuAppointmentProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/KOKU/Ajanvaraus" xmlns:Ajanvaraus_Init_Form="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus_Init_Form.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://soa.av.koku.arcusys.fi/" bpdm:prefix="KokuAppointmentProcessingServiceImpl1" bpdm:comment="contrib=&apos;project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Virkailija" bpdm:prefix="Virkailija" bpdm:comment="contrib=&apos;partner-pool:///_G5qKwLE5EeC2x8KNg_tcFQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_G5qKwLE5EeC2x8KNg_tcFQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="KokuAppointmentProcessingServiceImpl2" bpdm:comment="contrib=&apos;project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuAppointmentProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
@@ -79,14 +80,14 @@
                                 <bpel:from>bpel:doXslTransform("../xsl/getAppointmentAttributes_Muokkaus.xsl", $Ajanvaraus_Form)</bpel:from>
                                 <bpel:to>$kokuAppointmentProcessingServiceImpl1StoreAppointmentMsg.parameters</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="1089940049" targetPath="$kokuAppointmentProcessingServiceImpl1StoreAppointmentMsg.parameters" targetedBy="666972767-arg2"></mapper:vertice>
-  <mapper:vertice id="666972767" dimension="224x39" location="329,94">
+  <mapper:vertice id="1683870401" targetPath="$kokuAppointmentProcessingServiceImpl1StoreAppointmentMsg.parameters" targetedBy="966455904-arg2"></mapper:vertice>
+  <mapper:vertice id="966455904" dimension="224x39" location="329,94">
     <mapper:value>bpel:doXslTransform()</mapper:value>
   </mapper:vertice>
-  <mapper:vertice id="723779397" dimension="277x23" location="0,0" targetedBy="666972767-arg0">
+  <mapper:vertice id="144496413" dimension="277x23" location="120,36" targetedBy="966455904-arg0">
     <mapper:value>"../xsl/getAppointmentAttributes_Muokkaus.xsl"</mapper:value>
   </mapper:vertice>
-  <mapper:vertice id="2115216873" sourcePath="$Ajanvaraus_Form" targetedBy="666972767-arg1"></mapper:vertice>
+  <mapper:vertice id="1203968351" sourcePath="$Ajanvaraus_Form" targetedBy="966455904-arg1"></mapper:vertice>
 </mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
@@ -107,17 +108,7 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>bpel:doXslTransform("../xsl/getAppointmentAttributes.xsl", $Ajanvaraus_Form)</bpel:from>
-                                <bpel:to>$kokuAppointmentProcessingServiceImpl1StoreAppointmentMsg.parameters</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1394862007" targetPath="$kokuAppointmentProcessingServiceImpl1StoreAppointmentMsg.parameters" targetedBy="1882076766-arg2"></mapper:vertice>
-  <mapper:vertice id="1882076766" dimension="224x39" location="240,120">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="20962992" dimension="277x49" location="55,26" targetedBy="1882076766-arg0">
-    <mapper:value>"../xsl/getAppointmentAttributes.xsl"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="1289656033" sourcePath="$Ajanvaraus_Form" targetedBy="1882076766-arg1"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1StoreAppointmentMsg.parameters</bpel:to><mapper:mapperLink><mapper:vertice id="1394862007" targetPath="$kokuAppointmentProcessingServiceImpl1StoreAppointmentMsg.parameters" targetedBy="1882076766-arg2"></mapper:vertice><mapper:vertice id="1882076766" dimension="224x39" location="240,120"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="20962992" dimension="277x49" location="55,26" targetedBy="1882076766-arg0"><mapper:value>"../xsl/getAppointmentAttributes.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1289656033" sourcePath="$Ajanvaraus_Form" targetedBy="1882076766-arg1"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuAppointmentProcessingServiceImpl1StoreAppointmentMsg" bpdm:msgVarScopeId="_miG_MLE5EeC2x8KNg_tcFQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuAppointmentProcessingServiceImpl1:storeAppointment" bpdm:binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceSoapBinding" bpdm:ID="_-VMdYNIIEeCKyeixYtRwlQ"></bpdm:linkset>
@@ -129,35 +120,19 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>$Ajanvaraus_Form/tns:User/tns:User_Sender</bpel:from>
-                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/user</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="632351443" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/user" targetedBy="757289570-arg0"></mapper:vertice>
-  <mapper:vertice id="757289570" sourcePath="$Ajanvaraus_Form/tns:User/tns:User_Sender"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/user</bpel:to><mapper:mapperLink><mapper:vertice id="632351443" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/user" targetedBy="757289570-arg0"></mapper:vertice><mapper:vertice id="757289570" sourcePath="$Ajanvaraus_Form/tns:User/tns:User_Sender"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_ID</bpel:from>
-                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/appointmentId</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1138758226" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/appointmentId" targetedBy="1884643585-arg0"></mapper:vertice>
-  <mapper:vertice id="1884643585" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_ID"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/appointmentId</bpel:to><mapper:mapperLink><mapper:vertice id="1138758226" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/appointmentId" targetedBy="1884643585-arg0"></mapper:vertice><mapper:vertice id="1884643585" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_ID"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Viesti</bpel:from>
-                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/comment</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1003102178" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/comment" targetedBy="321683983-arg0"></mapper:vertice>
-  <mapper:vertice id="321683983" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Viesti"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/comment</bpel:to><mapper:mapperLink><mapper:vertice id="1003102178" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/comment" targetedBy="321683983-arg0"></mapper:vertice><mapper:vertice id="321683983" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Viesti"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Kohdehenkilo</bpel:from>
-                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/targetUser</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1316720411" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/targetUser" targetedBy="2023775429-arg0"></mapper:vertice>
-  <mapper:vertice id="2023775429" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Kohdehenkilo"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/targetUser</bpel:to><mapper:mapperLink><mapper:vertice id="1316720411" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg.parameters/targetUser" targetedBy="2023775429-arg0"></mapper:vertice><mapper:vertice id="2023775429" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Kohdehenkilo"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuAppointmentProcessingServiceImpl1DeclineAppointmentMsg" bpdm:msgVarScopeId="_miG_MLE5EeC2x8KNg_tcFQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuAppointmentProcessingServiceImpl1:declineAppointment" bpdm:binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceSoapBinding" bpdm:ID="_DigPwNIJEeCKyeixYtRwlQ"></bpdm:linkset>
