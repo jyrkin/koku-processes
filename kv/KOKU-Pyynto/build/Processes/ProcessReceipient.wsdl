@@ -25,7 +25,7 @@
     <pnlk:partnerLinkType name="ServicesAndProcessForUsersAndGroupsServicePortPlk">
         <pnlk:role name="Services_for_Process" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService"/>
     </pnlk:partnerLinkType>
-    <pnlk:partnerLinkType name="WFmagic_xOJSwJUEEeGhLfrcJYTqEA">
+    <pnlk:partnerLinkType name="WFmagic_6qGN4KpPEeG1hJ7quKpamA">
         <pnlk:role name="Process_for_UserForThePortTypeProcess" portType="Copyofform1_1:Process"/>
         <pnlk:role name="User_for_ProcessForCopyofform1_1Port" portType="Copyofform1_1:Workflow"/>
     </pnlk:partnerLinkType>

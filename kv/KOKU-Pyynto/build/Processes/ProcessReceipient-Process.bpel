@@ -13,7 +13,7 @@
     <bpel:partnerLink name="processAndInterfacePlkVar" partnerLinkType="diag:ProcessAndInterface" myRole="Process_for_Interface"></bpel:partnerLink>
     <bpel:partnerLink name="servicesAndProcessForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
     <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
-    <bpel:partnerLink name="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" partnerLinkType="diag:WFmagic_xOJSwJUEEeGhLfrcJYTqEA" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" partnerRole="User_for_ProcessForCopyofform1_1Port"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_6qGN4KpPEeG1hJ7quKpamAPlkVar" partnerLinkType="diag:WFmagic_6qGN4KpPEeG1hJ7quKpamA" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" partnerRole="User_for_ProcessForCopyofform1_1Port"></bpel:partnerLink>
     <bpel:partnerLink name="servicesAndProcessForPortPropertyStoreHttpEndpointPlkVar" partnerLinkType="diag:ServicesAndProcessForPortPropertyStoreHttpEndpointPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
     <bpel:partnerLink name="servicesAndProcessForPortServicePlkVar" partnerLinkType="diag:ServicesAndProcessForPortServicePlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
     <bpel:partnerLink name="servicesAndProcessForPortTaskManagementServicesSOAPPlkVar" partnerLinkType="diag:ServicesAndProcessForPortTaskManagementServicesSOAPPlk" initializePartnerRole="yes" partnerRole="Services_for_Process"></bpel:partnerLink>
@@ -34,14 +34,14 @@
     <bpel:variable name="userIds" type="xs:string"></bpel:variable>
     <bpel:variable name="counter" type="xs:string"></bpel:variable>
     <bpel:variable name="Dynamic_Fields_Form" element="tns:Dynamic_Fields_Form"></bpel:variable>
-    <bpel:variable name="copyofform1_1CreateTaskRequestMsg" messageType="Copyofform1_1:createTaskRequest"></bpel:variable>
-    <bpel:variable name="copyofform1_1CreateTaskResponseMsg" messageType="Copyofform1_1:createTaskResponse"></bpel:variable>
-    <bpel:variable name="copyofform1_1NotifyTaskCompletionRequestMsg" messageType="Copyofform1_1:notifyTaskCompletionRequest"></bpel:variable>
-    <bpel:variable name="copyofform1_1NotifyTaskCompletionResponseMsg" messageType="Copyofform1_1:notifyTaskCompletionResponse"></bpel:variable>
     <bpel:variable name="nsGetPropertyRequestMsg" messageType="ns:getPropertyRequest"></bpel:variable>
     <bpel:variable name="nsGetPropertyResponseMsg" messageType="ns:getPropertyResponse"></bpel:variable>
     <bpel:variable name="kayttajatunnus" type="xs:string"></bpel:variable>
     <bpel:variable name="salasana" type="xs:string"></bpel:variable>
+    <bpel:variable name="copyofform1_1CreateTaskRequestMsg" messageType="Copyofform1_1:createTaskRequest"></bpel:variable>
+    <bpel:variable name="copyofform1_1CreateTaskResponseMsg" messageType="Copyofform1_1:createTaskResponse"></bpel:variable>
+    <bpel:variable name="copyofform1_1NotifyTaskCompletionRequestMsg" messageType="Copyofform1_1:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="copyofform1_1NotifyTaskCompletionResponseMsg" messageType="Copyofform1_1:notifyTaskCompletionResponse"></bpel:variable>
   </bpel:variables>
   <bpel:sequence>
     <bpel:receive partnerLink="processAndInterfacePlkVar" portType="this:ForInterface" operation="Vastaanota" variable="thisVastaanotaRequestMsg" createInstance="yes" bpmn:label="Vastaanota" name="Vastaanota" bpmn:id="_Ilq9YK0XEeCYk7-iNBydwQ"></bpel:receive>
@@ -124,12 +124,21 @@
         </bpel:from>
         <bpel:to>$counter</bpel:to>
       </bpel:copy>
+      <bpel:copy bpmn:label="$nsGetPropertyRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<ns:getProperty>
+  <ns:name></ns:name>
+</ns:getProperty></bpel:literal>
+        </bpel:from>
+        <bpel:to>$nsGetPropertyRequestMsg.parameters</bpel:to>
+      </bpel:copy>
       <bpel:copy bpmn:label="$copyofform1_1CreateTaskRequestMsg">
         <bpel:from>
           <bpel:literal>
 <Copyofform1_1:createTaskRequest>
   <Copyofform1_1:taskMetaData>
-    <Copyofform1_1:taskId>_xOJSwJUEEeGhLfrcJYTqEA</Copyofform1_1:taskId>
+    <Copyofform1_1:taskId>_6qGN4KpPEeG1hJ7quKpamA</Copyofform1_1:taskId>
     <Copyofform1_1:taskState></Copyofform1_1:taskState>
     <Copyofform1_1:taskType></Copyofform1_1:taskType>
     <Copyofform1_1:description/>
@@ -143,7 +152,7 @@
     </Copyofform1_1:business>
     <Copyofform1_1:creationDate></Copyofform1_1:creationDate>
     <Copyofform1_1:userOwner/>
-    <Copyofform1_1:roleOwner>koku/kuntalainen</Copyofform1_1:roleOwner>
+    <Copyofform1_1:roleOwner/>
     <Copyofform1_1:claimAction>
       <Copyofform1_1:user></Copyofform1_1:user>
       <Copyofform1_1:role></Copyofform1_1:role>
@@ -189,7 +198,7 @@
     <Copyofform1_1:userProcessCompleteSOAPAction>http://www.intalio.com/gi/Copyofform1_1.gi/Process/notifyTaskCompletion</Copyofform1_1:userProcessCompleteSOAPAction>
     <Copyofform1_1:isChainedBefore></Copyofform1_1:isChainedBefore>
     <Copyofform1_1:previousTaskId></Copyofform1_1:previousTaskId>
-    <Copyofform1_1:userProcessEndpoint>http://localhost:8080/ode/processes/KOKU-Pyynto1/Processes/ProcessReceipient/Process/User/WFmagic_xOJSwJUEEeGhLfrcJYTqEA</Copyofform1_1:userProcessEndpoint>
+    <Copyofform1_1:userProcessEndpoint>http://localhost:8080/ode/processes/KOKU-Pyynto1/Processes/ProcessReceipient/Process/User/WFmagic_6qGN4KpPEeG1hJ7quKpamA</Copyofform1_1:userProcessEndpoint>
     <Copyofform1_1:userProcessNamespaceURI>http://www.intalio.com/gi/Copyofform1_1.gi</Copyofform1_1:userProcessNamespaceURI>
   </Copyofform1_1:taskMetaData>
   <Copyofform1_1:participantToken></Copyofform1_1:participantToken>
@@ -330,15 +339,6 @@
         </bpel:from>
         <bpel:to>$copyofform1_1NotifyTaskCompletionResponseMsg.root</bpel:to>
       </bpel:copy>
-      <bpel:copy bpmn:label="$nsGetPropertyRequestMsg">
-        <bpel:from>
-          <bpel:literal>
-<ns:getProperty>
-  <ns:name></ns:name>
-</ns:getProperty></bpel:literal>
-        </bpel:from>
-        <bpel:to>$nsGetPropertyRequestMsg.parameters</bpel:to>
-      </bpel:copy>
     </bpel:assign>
     <bpel:reply partnerLink="processAndInterfacePlkVar" portType="this:ForInterface" operation="Vastaanota" variable="thisVastaanotaResponseMsg" bpmn:label="Vastaanota" name="Vastaanota-1" bpmn:id="_Ilq9YK0XEeCYk7-iNBydwQ"></bpel:reply>
     <bpel:assign bpmn:label="Luo tilaus" name="Luo_tilaus" bpmn:id="_PULcwK0XEeCYk7-iNBydwQ">
@@ -458,7 +458,7 @@
         <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:instanceId</bpel:to>
     </bpel:copy>
     <bpel:copy>
-        <bpel:from>"http://localhost:8080/ode/processes/KOKU-Pyynto1/Processes/ProcessReceipient/Process/User/WFmagic_xOJSwJUEEeGhLfrcJYTqEA"</bpel:from>
+        <bpel:from>"http://localhost:8080/ode/processes/KOKU-Pyynto1/Processes/ProcessReceipient/Process/User/WFmagic_6qGN4KpPEeG1hJ7quKpamA"</bpel:from>
         <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:userProcessEndpoint</bpel:to>
     </bpel:copy>
     <bpel:copy>
@@ -466,19 +466,15 @@
         <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:userProcessCompleteSOAPAction</bpel:to>
     </bpel:copy>
     <bpel:copy>
-        <bpel:from>"_xOVgAJUEEeGhLfrcJYTqEA"</bpel:from>
+        <bpel:from>"_6qJRMKpPEeG1hJ7quKpamA"</bpel:from>
         <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:taskId</bpel:to>
     </bpel:copy>
-    <bpel:copy>
-        <bpel:from>"koku/kuntalainen"</bpel:from>
-        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:roleOwner</bpel:to>
-    </bpel:copy>
   </bpel:assign>
-  <bpel:invoke partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" portType="Copyofform1_1:Workflow" operation="createTask" inputVariable="copyofform1_1CreateTaskRequestMsg" outputVariable="copyofform1_1CreateTaskResponseMsg" bpmn:label="Lähetä lomake vastaanottajalle" name="Lähetä_lomake_vastaanottajalle-1" bpmn:id="_OPIgQK0XEeCYk7-iNBydwQ"></bpel:invoke>
+  <bpel:invoke partnerLink="wFmagic_6qGN4KpPEeG1hJ7quKpamAPlkVar" portType="Copyofform1_1:Workflow" operation="createTask" inputVariable="copyofform1_1CreateTaskRequestMsg" outputVariable="copyofform1_1CreateTaskResponseMsg" bpmn:label="Lähetä lomake vastaanottajalle" name="Lähetä_lomake_vastaanottajalle-1" bpmn:id="_OPIgQK0XEeCYk7-iNBydwQ"></bpel:invoke>
     <bpel:pick bpmn:label="Exclusive_Event-Based_Gateway" name="Exclusive_Event-Based_Gateway" bpmn:id="_kDfQYCZYEeGZ6qIn2ne6Bw">
-      <bpel:onMessage partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" portType="Copyofform1_1:Process" operation="notifyTaskCompletion" variable="copyofform1_1NotifyTaskCompletionRequestMsg" bpmn:label="Käsittele" name="Käsittele" bpmn:id="_Yudl4K0XEeCYk7-iNBydwQ">
+      <bpel:onMessage partnerLink="wFmagic_6qGN4KpPEeG1hJ7quKpamAPlkVar" portType="Copyofform1_1:Process" operation="notifyTaskCompletion" variable="copyofform1_1NotifyTaskCompletionRequestMsg" bpmn:label="Käsittele" name="Käsittele" bpmn:id="_Yudl4K0XEeCYk7-iNBydwQ">
         <bpel:sequence>
-          <bpel:reply partnerLink="wFmagic_xOJSwJUEEeGhLfrcJYTqEAPlkVar" portType="Copyofform1_1:Process" operation="notifyTaskCompletion" variable="copyofform1_1NotifyTaskCompletionResponseMsg" bpmn:label="Käsittele" name="Käsittele-1" bpmn:id="_Yudl4K0XEeCYk7-iNBydwQ"></bpel:reply>
+          <bpel:reply partnerLink="wFmagic_6qGN4KpPEeG1hJ7quKpamAPlkVar" portType="Copyofform1_1:Process" operation="notifyTaskCompletion" variable="copyofform1_1NotifyTaskCompletionResponseMsg" bpmn:label="Käsittele" name="Käsittele-1" bpmn:id="_Yudl4K0XEeCYk7-iNBydwQ"></bpel:reply>
           <bpel:assign bpmn:label="Päivitä hakemus" name="Päivitä_hakemus" bpmn:id="_-0XFQK0fEeCYk7-iNBydwQ">
             <bpel:copy>
               <bpel:from>$copyofform1_1NotifyTaskCompletionRequestMsg.root/Copyofform1_1:taskOutput/tns:Dynamic_Fields_Form</bpel:from>

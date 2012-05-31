@@ -1462,7 +1462,7 @@ function addToRecipients() {
             lastname = childNode.getAttribute("sukunimi");
             vanhemmat = childNode.getAttribute("vanhempi");
             vanhemmatUid = childNode.getAttribute("vanhempiUid");
-            targetPerson = firstname + " " + lastname;
+            targetPerson = childNode.getAttribute("uid");
 
             node.setAttribute("jsxid", counter);
             node.setAttribute("recipients", vanhemmat);
