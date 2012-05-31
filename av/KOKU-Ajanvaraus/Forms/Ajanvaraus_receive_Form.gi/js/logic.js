@@ -202,13 +202,13 @@ function Preload() {
 }
 
 function mapFormDataToFields(objXML) {
-    var sender, subject, description, appointmentId, username;
+    var sender, subject, description, appointmentId, username, role;
 
     sender = objXML.selectSingleNode("//sender", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     subject = objXML.selectSingleNode("//subject", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     description = objXML.selectSingleNode("//description", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     appointmentId = objXML.selectSingleNode("//appointmentId", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
-    
+
     inputPreload(objXML);
     
     username = Intalio.Internal.Utilities.getUser();
@@ -226,6 +226,7 @@ function mapFormDataToFields(objXML) {
     AjanvarausForm.getJSXByName("Otsikko").setTitleText(subject, true);
     AjanvarausForm.getJSXByName("kuvaus").setText(description, true);
     AjanvarausForm.getJSXByName("Lomake_ID").setValue(appointmentId).repaint();
+
 }
 
 function getUserRealName(uid) {
