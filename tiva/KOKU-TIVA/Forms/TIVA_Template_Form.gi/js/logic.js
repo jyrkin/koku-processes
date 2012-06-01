@@ -343,7 +343,7 @@ function getId() {
 
 function preload() {
     var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/") + 1));
+    username = username.substring((username.indexOf("\\") + 1));
 
     TIVA_Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
     
@@ -357,7 +357,7 @@ function preload() {
 function commitCustomAutoRowSession(matrix, cache) {
     var nodes, xmlStr;
 
-    nodes = TIVAForm.getJSXByName(matrix).getChildren();
+    nodes = TIVA_Form.getJSXByName(matrix).getChildren();
     xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
 
     for (var i = 0; i < nodes.length; i++) {
@@ -366,7 +366,7 @@ function commitCustomAutoRowSession(matrix, cache) {
         }
     }
     xmlStr += "/></data>";
-    TIVAForm.getCache().getDocument(cache).loadXML(xmlStr);
+    TIVA_Form.getCache().getDocument(cache).loadXML(xmlStr);
 }
 
 

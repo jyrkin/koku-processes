@@ -264,7 +264,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuAppointmentProcessingService">
     <wsdl:port binding="tns:KokuAppointmentProcessingServiceSoapBinding" name="KokuAppointmentProcessingServicePort">
-      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl" />
+      <soap:address location="http://kohtikumppanuutta-qa5.dmz:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

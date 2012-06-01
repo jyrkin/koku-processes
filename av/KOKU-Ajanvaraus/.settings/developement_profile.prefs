@@ -1,6 +1,7 @@
-#Mon Mar 26 15:13:59 EEST 2012
+#Thu May 31 08:33:21 EEST 2012
 behind_proxy=false
 bundleExportPath=/home/henril/intalio_workspace/KOKU-Ajanvaraus
+deploy.fileRuntimeSelection=Forms\:Forms/Ajanvaraus.xsd\:Forms/Ajanvaraus_Init_Form.gi\:Forms/Ajanvaraus_receive_Form.gi\:Processes\:Processes/AjanvarausInit-Process.bpm\:Processes/AjanvarausRecipient-process.bpm\:Services\:Services/KokuAppointmentProcessingServiceImpl.wsdl\:metadata.xml\:testsuites\:testsuites/KOKU-Ajanvaraus\:testsuites/KOKU-Ajanvaraus-soapui-project-intalio.xml\:xsl\:xsl/getAppointmentAttributes.xsl\:xsl/getAppointmentAttributes_Muokkaus.xsl\:
 deploy_bundleShouldBeArchived=false
 deploy_bundleShouldBeDeployed=true
 deploy_gi_serverUrl=http\://localhost\:8080/gi
