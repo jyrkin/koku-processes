@@ -240,7 +240,7 @@ function preload() {
     var username, uidData, uid;
 
     username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/") + 1));
+    username = username.substring((username.indexOf("\\") + 1));
     uidData = Arcusys.Internal.Communication.getUserId(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
     TIVAForm.getJSXByName("Kayttaja_Vastaanottaja").setValue(username).repaint();

@@ -442,9 +442,9 @@ function mapAnswerMultipleChoiceFields(sectionNumber) {
             if(form1.getJSXByName("choicePane" + sectionNumber + "_" + childNode.getAttribute("MultipleChoice_Number")).getFirstChild().getFirstChild().getFirstChild().getChecked()) {
                 childNode.setAttribute("MultipleChoice_Checked", "true");
                 if(value == "") {
-                    value = childNode.getAttribute("MultipleChoice_Question");
+                    value = encodeURIComponent(childNode.getAttribute("MultipleChoice_Question"));
                 } else {
-                    value = value + ", " + childNode.getAttribute("MultipleChoice_Question");
+                    value = value + ", " + encodeURIComponent(childNode.getAttribute("MultipleChoice_Question"));
                 }
             } else {
                 childNode.setAttribute("MultipleChoice_Checked", "false");
