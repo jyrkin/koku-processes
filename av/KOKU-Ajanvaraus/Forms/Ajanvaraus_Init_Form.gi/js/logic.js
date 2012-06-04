@@ -1521,8 +1521,9 @@ function getChildsParents(userUid) {
 // adds users instead of groups
 function addGroupsToRecipients() {
 
-	var counter, node, hasEmptyChild, valittu, childIterator, groupUid, childNode, groupname, userUid, parentData;
-
+	var counter, node, hasEmptyChild, valittu, childIterator, groupUid, childNode, groupname, userUid, parentData, parentUids, parentNames;
+	parentUids = "";
+	parentNames = "";
 	// read child nodes
 	childIterator = AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getChildIterator();
 	// this has child uid
@@ -1536,27 +1537,46 @@ function addGroupsToRecipients() {
 	while(childIterator.hasNext()) {
 		childNode = childIterator.next();
 		valittu = childNode.getAttribute("valittuG");
-		// valittuG might not exist, need to check
 
-		//groupUid = childNode.getAttribute("uid");
 		userUid = childNode.getAttribute("userUid");
 		// child's uid
 		// if child is selected, checkbox
 		if((valittu != null) && (valittu != 0)) {
-			parentData = getChildsParents(userUid);
+			parentData = getChildsParents(userUid); // get parents
 			for( i = 0; i < parentData.length; i++) {
 				if(parentData[i]["uid"]) {
-					node = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-
-					node.setAttribute("recipientsUid", parentData[i]["uid"]);
-					node.setAttribute("recipients", parentData[i]["displayName"]);
-					node.setAttribute("targetPerson", userUid);
-					//node.setAttribute("receipientDisplay", parentData[i]["displayName"]);
-					AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+					if (parentData[i+1] == undefined) { // is next element null, then don't add char: ","
+						parentUids += parentData[i]["uid"];
+						parentNames += parentData[i]["displayName"];
+					} else {
+						parentUids += parentData[i]["uid"] + ","; // construct string uid,uid,uid,... adds , to last element also, this might be a problem
+						parentNames += parentData[i]["displayName"] + ","; // same logic as above
+					}
+					counter++;
 				}
 			}
 		}
+		
+		// check that required fields are found
+		if (parentUids != "" &&
+				parentNames != "" &&
+				userUid != "") {
+			
+			// add new recipient line
+			node = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
+			
+			node.setAttribute("recipientsUid", parentUids); //uids: 123456, 1234567
+			node.setAttribute("recipients", parentNames); // names: kalle kuntalainen, kirsi kuntalainen
+			node.setAttribute("targetPerson", userUid); // child
+			AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+		}
+		
+		parentUids = "";
+		parentNames = "";
+		userUid = "";
 	}
+	
+
 	if(hasEmptyChild == true) {
 		AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").removeChild(AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild());
 	}
