@@ -1,9 +1,0 @@
-﻿#
-#Mon Jun 04 14:03:31 EEST 2012
-formURI=http\://localhost\:8080/gi/apppath/KOKU-Pyynto1/Pohjanluontiform.gi/IntalioInternal/ServerLaunch.html
-userProcessInitSOAPAction=http\://www.intalio.com/gi/Pohjanluontiform.gi/Process/initProcess
-processEndpoint=http\://localhost\:8080/ode/processes/KOKU-Pyynto1/Processes/Pohjanluonti/Prosessi/Virkailija/ProsessiAndVirkailijaForPortTypeProcessPlk
-task-description=Kyselypohjan luominen*
-task-role-owners=koku/virkailija
-task-user-owners=
-formNamespace=http\://www.intalio.com/gi/Pohjanluontiform.gi
