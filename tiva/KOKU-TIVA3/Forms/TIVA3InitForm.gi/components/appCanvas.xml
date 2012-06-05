@@ -1,9 +1,9 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize>preload();</onAfterDeserialize>
+  <onAfterDeserialize><![CDATA[preload();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxoverflow="1" jsxwidth="850"/>
     <strings jsxheight="100%" jsxname="root"/>
@@ -369,10 +369,19 @@
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
-                  <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                  <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
                     <strings jsxname="Kayttaja_Lahettaja" jsxmargin="0 4 0 0" jsxvalue=""/>
+                    <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+                  </object>
+                </object>
+                <object type="com.intalio.ria.Field">
+                  <variants/>
+                  <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                  <object type="jsx3.gui.TextBox">
+                    <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
+                    <strings jsxname="lahettaja_tosinimi" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
                 </object>

@@ -1,5 +1,5 @@
 ﻿#
-#Wed May 30 15:07:04 EEST 2012
+#Mon Jun 04 14:03:31 EEST 2012
 formURI=http\://localhost\:8080/gi/apppath/KOKU-Pyynto1/form1_1.gi/IntalioInternal/ServerLaunch.html
 userProcessInitSOAPAction=http\://www.intalio.com/gi/form1_1.gi/Process/initProcess
 processEndpoint=http\://localhost\:8080/ode/processes/KOKU-Pyynto1/Processes/ProcessInit/Process/User/ProcessAndUserForPortTypeProcessPlk

@@ -469,7 +469,8 @@ function preload() {
     uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     userRealName = getUserRealName(uid);
-    TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(userRealName).repaint();
+    TIVA3Form.getJSXByName("lahettaja_tosinimi").setValue(userRealName).repaint();
+    TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
 }
 
 function getUserRealName(uid) {
