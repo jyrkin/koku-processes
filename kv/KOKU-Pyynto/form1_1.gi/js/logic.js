@@ -740,7 +740,7 @@ function addCalendarChoices(questionName) {
 function getUrl() {
     var domain = getDomainName();
     if(domain.search("file") != -1) {
-        domain = "http://62.61.65.15:8380"
+        domain = "http://62.61.65.15:8380";
     }
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
@@ -1338,7 +1338,7 @@ function showForm(flag) {
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton");
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
-                    descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
+                    descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button");
                     for( x = 0; x < descendants.length; x = x + 1) {
                         descendants[x].setDisplay("block", true);
                     }
@@ -1358,7 +1358,7 @@ function showForm(flag) {
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneDelete", true, false);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
-                    descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
+                    descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button");
                     for( x = 0; x < descendants.length; x = x + 1) {
                         descendants[x].setDisplay("block", true);
                     }
@@ -1394,7 +1394,7 @@ function showForm(flag) {
                     descendant.setDisplay("none").repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton", true, false);
                     descendant.setDisplay("none").repaint();
-                    descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
+                    descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button");
                     for( x = 0; x < descendants.length; x = x + 1) {
                         descendants[x].setDisplay("none", true);
                     }
@@ -1413,7 +1413,7 @@ function showForm(flag) {
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneDelete", true, false);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
-                    descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
+                    descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button");
                     for( x = 0; x < descendants.length; x = x + 1) {
                         descendants[x].setDisplay("none", true);
                     }
@@ -1644,7 +1644,7 @@ function mapSelectedRecipientsToMatrix() {
     rooliKayttajat = "";
     userIds = "";
     var parentInfo;
-    childIterator = form1.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
+    childIterator = form1.getCache().getDocument("receipientsToShow-nomap").getChildIterator(); // get recipients
     hasEmptyChild = formatDataCache("Receipients-nomapNew", "Receipients");
 
     while(childIterator.hasNext()) {
@@ -1653,7 +1653,7 @@ function mapSelectedRecipientsToMatrix() {
         role = childNode.getAttribute("role");
         realm = childNode.getAttribute("realm");
 
-        if(group != 0) {
+        /*if(group != 0) {
             groupUid = childNode.getAttribute("uid");
             groupData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
             userData = getData(groupData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
@@ -1670,7 +1670,7 @@ function mapSelectedRecipientsToMatrix() {
                     form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
                 }
             }
-        } else if(role != 0) {
+        }*/if(role != 0) {
             uid = childNode.getAttribute("uid");
             roleName = childNode.getAttribute("receipient");
             usernamesData = Arcusys.Internal.Communication.GetUsernamesInRole(uid);
@@ -1695,7 +1695,7 @@ function mapSelectedRecipientsToMatrix() {
             node.setAttribute("Receipients_Realm", realm);
             form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
             jsxid++;
-        } else {
+        } else { // add single users as recipients
             uid = childNode.getAttribute("uid");
             receipientName = childNode.getAttribute("receipient");
             node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
@@ -1722,6 +1722,7 @@ function mapSelectedRecipientsToMatrix() {
     // Delete dupes from the matrix
     deleteDupes();
 }
+
 
 function convertArrayToNodesString(array, index, wrapper) {
     var nodes = "";
@@ -1993,7 +1994,8 @@ function listGroupUsers() {
                 node.setAttribute("puhelin", userData[i]["phoneNumber"]);
                 node.setAttribute("sahkoposti", userData[i]["email"]);
                 node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
-                node.setAttribute("valittu", 0);
+                node.setAttribute("userUid", userData[i]["uid"]);
+                node.setAttribute("valittu", 1);
                 form1.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
 
             }
@@ -2167,32 +2169,62 @@ function addToRecipients() {
 
 }
 
-function addGroupsToRecipients() {
-    var counter, node, hasEmptyChild, valittu, childIterator, groupUid, childNode, groupname;
-    counter = form1.getJSXByName("recipientCounter").getValue();
-    hasEmptyChild = false;
-    childIterator = form1.getCache().getDocument("HaetutRyhmat-nomap").getChildIterator();
-    hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
+function getChildsParents(userUid) {
+    var parents = null;
+    var childData = null;
+    var nodes;
+    
+    // get childs
+    if (userUid != "") {
+    	nodes = "<childUid>"+userUid+"</childUid>"; // todo use convertarray
+    	childData = Arcusys.Internal.Communication.GetChildinfo(nodes);
+    }
 
+    // get parents
+    if (childData != null) {
+    	parents = getData(childData.selectNodeIterator("//parents", "xmlns:ns2='http://soa.tiva.koku.arcucsys.fi/'"));
+    }
+    
+    return parents;
+}
+
+// add users/parents instead
+function addGroupsToRecipients() {
+
+    var counter, node, hasEmptyChild, valittu, childIterator, groupUid, childNode, groupname, userUid, parentData;
+    
+     // read child nodes
+     childIterator = form1.getCache().getDocument("GroupUserList-nomap").getChildIterator(); // this has child uid
+    
+    counter = form1.getJSXByName("recipientCounter").getValue();
+   
+    hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
+    
+     // get parent data by loopping trought childs
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
-        valittu = childNode.getAttribute("valittu");
-        groupUid = childNode.getAttribute("uid");
-
+        valittu = childNode.getAttribute("valittuG"); // valittuG might not exist, need to check
+        //groupUid = childNode.getAttribute("uid");
+        userUid = childNode.getAttribute("userUid"); // might not exist
+        // if child is selected, checkbox
         if((valittu != null) && (valittu != 0)) {
-            node = form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-            groupname = childNode.getAttribute("nimi");
-            node.setAttribute("jsxid", counter);
-            node.setAttribute("receipient", groupname);
-            node.setAttribute("uid", groupUid);
-            node.setAttribute("group", 1);
-            node.setAttribute("role", 0);
-            node.setAttribute("realm", "Kunpo");
-            form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
-            counter++;
-
+            parentData = getChildsParents(userUid);
+            for( i = 0; i < parentData.length; i++) { // add parents to new rows
+                if(parentData[i]["uid"]) {
+                    node = form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
+                   
+                    node.setAttribute("jsxid", counter);
+                    node.setAttribute("uid", parentData[i]["uid"]);
+                    node.setAttribute("receipient", parentData[i]["displayName"]);
+                    node.setAttribute("realm", "Kunpo"); // in grp msg mode all recipients has kunpo realm
+                    node.setAttribute("role", 0);
+                    node.setAttribute("group", 0);
+                    
+                    form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+                    counter++;
+                }
+            }
         }
-
     }
     if(hasEmptyChild == true) {
         form1.getCache().getDocument("receipientsToShow-nomap").removeChild(form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild());
@@ -2517,10 +2549,6 @@ function checkArrayByGivenAttributes(arrayToCheck, attributeList) {
 
     }
     return true;
-}
-
-function helloWorld() {
-    alert("Hello World!");
 }
 
 function removeQuotes(str) {
