@@ -264,7 +264,7 @@ function prepareForm() {
 	// form1.getJSXByName("User_Sender").setValue(Intalio.Internal.Utilities.getUser()).repaint();
 
 	var username = Intalio.Internal.Utilities.getUser();
-	username = username.substring((username.indexOf("/") + 1));
+	username = username.substring((username.indexOf("\\") + 1));
 	uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
 	uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
 	userRealName = getUserRealName(uid);

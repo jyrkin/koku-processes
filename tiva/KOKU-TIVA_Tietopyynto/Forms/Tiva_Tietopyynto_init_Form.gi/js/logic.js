@@ -1,3 +1,5 @@
+
+
 var kokuServiceEndpoints = null;
 
 function getEndpoint(serviceName) {
@@ -163,7 +165,6 @@ function mapSelectedValuesToMatrix() {
             TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild());
         }
     }
-*/
 }
 
 function getIntalioUser() {

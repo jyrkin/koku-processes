@@ -909,6 +909,16 @@
                       <events jsxaftercommit=""/>
                       <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
                       <object type="jsx3.gui.Matrix.Column">
+                        <variants jsxwidth="44" jsxsort="0" jsxresize="0"/>
+                        <strings jsxcellpadding="1" jsxpath="valittuG" jsxpadding="3" jsxcelltextalign="center" jsxname="ValittuG" jsxvaluetemplate="@empty" jsxtext="Valinta"/>
+                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                        <object type="jsx3.gui.CheckBox">
+                          <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
+                          <strings jsxname="valittu" jsxtext="" jsxtip=""/>
+                          <events jsxtoggle=""/>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="75"/>
                         <strings jsxpath="etunimi" jsxcellpadding="3" jsxpadding="2" jsxname="Etunimi" jsxtext="Etunimi"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
@@ -931,6 +941,16 @@
                       <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="111"/>
                         <strings jsxpath="ryhmanimi" jsxcellpadding="3" jsxpadding="2" jsxname="Ryhmanimi" jsxtext="Sukunimi" jsxdisplay="none"/>
+                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                        <object type="jsx3.gui.TextBox">
+                          <variants jsxrelativeposition="0" jsxleft="119" jsxtop="40" jsxwidth="111" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
+                          <strings jsxname="ryhmanimi" jsxdisplay="none" jsxvalue=""/>
+                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Matrix.Column">
+                        <variants jsxwidth="111"/>
+                        <strings jsxpath="userUid" jsxcellpadding="3" jsxpadding="2" jsxname="userUid" jsxtext="Sukunimi" jsxdisplay="none"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">
                           <variants jsxrelativeposition="0" jsxleft="119" jsxtop="40" jsxwidth="111" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
@@ -1383,7 +1403,7 @@
           </object>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxname="muokkausValinnat-pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="none"/>
+            <strings jsxname="muokkausValinnat-pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="block"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
@@ -1699,8 +1719,8 @@
         </object>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxvalue="9"/>
-        <strings jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants/>
+        <strings jsxvalue="9" jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -1715,7 +1735,7 @@
       </object>
       <object type="jsx3.gui.TextBox">
         <variants/>
-        <strings jsxvalue="Y" jsxname="showFormFlag" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <strings jsxvalue="N" jsxname="showFormFlag" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
