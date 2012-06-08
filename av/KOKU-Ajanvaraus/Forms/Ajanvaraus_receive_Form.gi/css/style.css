@@ -26,8 +26,7 @@ div.jsx30block span.fieldset fieldset.fieldset {
 }
 
 div[label=IntalioInternal_SpacerBlock] {
-    display: inline !important;
-    width: 620px !important;
+    display: none !important;
 }
 
 .fieldset .fieldset-padding .jsx30block span[label=tooltipImg] {
@@ -39,6 +38,12 @@ span[label=IntalioInternal_ClaimButton],
 span[label=IntalioInternal_RevokeButton] {
     display: none !important;
 }
+
+/* Some weird div among the intalio buttons that breaks the layout with ie 9 @Henri Lämsä. */
+/* Workaround fix. */
+/* #_jsx_0_2y {
+    display: none;
+} */
 
 div.fieldset, span.fieldset {
   width: 100%;
