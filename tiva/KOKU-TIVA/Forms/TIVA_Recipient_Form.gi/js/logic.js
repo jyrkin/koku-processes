@@ -237,7 +237,7 @@ function addChoice(id, description, infotext) {
 // Preload ---------------------------------------------------------------------------------------------------------------------------------------
 
 function preload() {
-    var username, uidData, uid;
+    var username, uidData, uid, id;
 
     username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("\\") + 1));

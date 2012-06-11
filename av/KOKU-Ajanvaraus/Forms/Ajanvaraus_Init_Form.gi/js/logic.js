@@ -1184,7 +1184,7 @@ function mapFormDataToFields(objXML) {
     subject = objXML.selectSingleNode("//subject", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     description = objXML.selectSingleNode("//description", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     targetPerson = objXML.selectSingleNode("//targetPerson", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
-    if (objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'") {
+    if (objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'")) {
         role = objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     }
 
