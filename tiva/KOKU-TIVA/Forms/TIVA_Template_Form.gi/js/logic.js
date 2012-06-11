@@ -412,20 +412,11 @@ function searchNames(searchString) {
     var node, hasAnotherParent = false, hasEmptyChild, entryFound, userData, xmlData, personInfo, list, parents, parentData, parentInfo, parentList, vanhempi, vanhempiUid;
     entryFound = false;
 
-    if (searchString == "") {
+    if(searchString == "") {
         alert("Sy\u00F6t\u00E4 hakusana");
         return;
     }
-
     searchString = searchString.toLowerCase();
-
-    xmlData = Arcusys.Internal.Communication.GetChildren(searchString);
-    list = ["firstname", "lastname", "uid"];
-    userData = parseXML(xmlData, "child", list);
-    if (userData != "") {
-        entryFound = true;
-    }
-
     childData = Arcusys.Internal.Communication.GetChildren(searchString);
 
 /*
@@ -455,6 +446,7 @@ function searchNames(searchString) {
                 if(childArray[i]["parents_uid"]) {
                     node = TIVA_Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
                     node.setAttribute("jsxid", 0);
+                    node.setAttribute("valittu", 1);
                     node.setAttribute("etunimi", childArray[i]["firstname"]);
                     node.setAttribute("sukunimi", childArray[i]["lastname"]);
                     node.setAttribute("uid", childArray[i]["uid"]);
@@ -465,7 +457,7 @@ function searchNames(searchString) {
             }
 
             TIVA_Form.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
-
+            // replaceNode(node, TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
             if(hasEmptyChild == true) {
                 TIVA_Form.getCache().getDocument("HaetutLapset-nomap").removeChild(TIVA_Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
             }
@@ -475,11 +467,11 @@ function searchNames(searchString) {
         } else {
             alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
         }
-   
-}
+    }
+
 
 function addToRecipients(selection) {
-    if (!selection) {
+    if(!selection) {
         alert("Suostujat-kentt\u00E4 on tyhj\u00E4. Vastaanottajia ei haettu.");
         return;
     }
@@ -487,23 +479,16 @@ function addToRecipients(selection) {
     var counter, node, hasEmptyChild, chosen, childIterator, uid, targetPerson, firstname, lastname, vanhempi1, vanhempi2, vanhempi1Uid, vanhempi2Uid, childNode;
 
     clearDataCache("receipientsToShow-nomap");
-
     counter = TIVA_Form.getJSXByName("recipientCounter").getValue();
-
     childIterator = TIVA_Form.getCache().getDocument("HaetutLapset-nomap").getChildIterator();
-
     hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
 
-    while (childIterator.hasNext()) {
-
+    while(childIterator.hasNext()) {
         childNode = childIterator.next();
-
         chosen = childNode.getAttribute("valittu");
 
-        if ((chosen != null) && (chosen != 0)) {
-
+        if((chosen != null) && (chosen != 0)) {
             node = TIVA_Form.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-
             uid = childNode.getAttribute("uid");
             firstname = childNode.getAttribute("etunimi");
             lastname = childNode.getAttribute("sukunimi");
@@ -512,7 +497,7 @@ function addToRecipients(selection) {
             targetPerson = firstname + " " + lastname;
 
             node.setAttribute("jsxid", counter);
-            if (selection == 1) {
+            if(selection == 1) {
                 node.setAttribute("recipients", firstname + " " + lastname);
                 node.setAttribute("recipientsUid", uid);
             } else {
@@ -526,7 +511,7 @@ function addToRecipients(selection) {
             counter++;
         }
     }
-    if (hasEmptyChild == true) {
+    if(hasEmptyChild == true) {
         TIVA_Form.getCache().getDocument("receipientsToShow-nomap").removeChild(TIVA_Form.getCache().getDocument("receipientsToShow-nomap").getFirstChild());
     }
     TIVA_Form.getJSXByName("dummyMatrix").repaintData();
