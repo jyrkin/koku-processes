@@ -1574,9 +1574,10 @@ function addGroupsToRecipients() {
                         parentUids += parentData[i]["uid"] + ","; // construct string uid,uid,uid,... adds , to last element also, this might be a problem
                         parentNames += parentData[i]["displayName"] + ","; // same logic as above
                     }
-                    counter++;
+                    
                 }
             }
+            counter++;
         }
         
         // check that required fields are found
@@ -1586,7 +1587,7 @@ function addGroupsToRecipients() {
             
             // add new recipient line
             node = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-            
+            node.setAttribute("jsxid", counter);
             node.setAttribute("recipientsUid", parentUids); //uids: 123456, 1234567
             node.setAttribute("recipients", parentNames); // names: kalle kuntalainen, kirsi kuntalainen
             node.setAttribute("targetPerson", userUid); // child
