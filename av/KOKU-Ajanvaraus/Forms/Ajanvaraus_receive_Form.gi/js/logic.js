@@ -202,7 +202,7 @@ function Preload() {
 }
 
 function mapFormDataToFields(objXML) {
-    var sender, subject, description, appointmentId, username, role;
+    var sender, senderData, senderUid, senderRealName, subject, description, appointmentId, username, userRealName;
 
     sender = objXML.selectSingleNode("//sender", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     subject = objXML.selectSingleNode("//subject", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
@@ -242,8 +242,10 @@ function getUserRealName(uid) {
 }
 
 function inputPreload(objXML) {
-    var attributes, i, j, pvm, pvm1, pvm2, pvm3, numero, alkaa, paattyy, paikka, entryText;
+    var attributes, i, j, pvm, pvm1, pvm2, pvm3, numero, alkaa, paattyy, paikka, entryText, chosenSlot;
     attributes = getAttributes(objXML);
+    
+    chosenSlot = objXML.selectSingleNode("//chosenSlot", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
 
     for (i=0;i<attributes.length;i++) {       
        
@@ -262,7 +264,7 @@ function inputPreload(objXML) {
                
         entryText = pvm + ", klo: " + alkaa + " - " + paattyy + ", paikka: " + paikka;
         
-        addNewEntry(entryText, infotext, numero);
+        addNewEntry(entryText, infotext, numero, chosenSlot);
         refreshBlock();
     }
 }
@@ -287,7 +289,7 @@ function refreshBlock() {
     AjanvarausForm.getJSXByName("calendarEntryBlock").repaint();
 }
 
-function addNewEntry(entryText, infotext, numero) {
+function addNewEntry(entryText, infotext, numero, chosenSlot) {
     
     var ajankohtaPanel, yesBox, label;
     if(AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild() != null) {
@@ -322,6 +324,10 @@ function addNewEntry(entryText, infotext, numero) {
     parentNode = AjanvarausForm.getJSXByName("panel" + numero);
              
     yesBox = parentNode.getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild();
+    
+    if (numero == chosenSlot) {
+    	yesBox.setChecked(1, true);
+    }
        
     yesBox.setName(numero);
     label = parentNode.getDescendantOfName("label");
