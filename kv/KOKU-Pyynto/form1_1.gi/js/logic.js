@@ -1085,6 +1085,7 @@ function useTemplate() {
 }
 
 function dontUseTemplate() {
+    form1.getJSXByName("Haku_Kayttajat").setDisplay("block").repaint(); // show user/group search
     setButtonDisplay("IntalioInternal_StartButton", "inline-block");
     getRoles(form1.getJSXByName("User_Sender").getValue());
     form1.getJSXByName("showFormFlag").setValue("Y").repaint();
