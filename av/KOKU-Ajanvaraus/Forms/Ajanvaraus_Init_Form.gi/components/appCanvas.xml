@@ -525,7 +525,7 @@
                         <strings jsxcellpadding="1" jsxpath="valittuG" jsxpadding="3" jsxcelltextalign="center" jsxname="ValittuG" jsxvaluetemplate="@empty" jsxtext="Valinta"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.CheckBox">
-                          <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
+                          <variants jsxchecked="1" jsxenabled="1" jsxdefaultchecked="0"/>
                           <strings jsxname="valittuG" jsxtext="" jsxtip=""/>
                           <events jsxtoggle=""/>
                         </object>

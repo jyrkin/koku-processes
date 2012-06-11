@@ -560,7 +560,7 @@ function listGroupUsers() {
                 node.setAttribute("sahkoposti", userData[i]["email"]);
                 node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
                 node.setAttribute("userUid", userData[i]["uid"]);
-                node.setAttribute("valittu", 1);
+                node.setAttribute("valittuG", 1);
                 KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
 
             }
