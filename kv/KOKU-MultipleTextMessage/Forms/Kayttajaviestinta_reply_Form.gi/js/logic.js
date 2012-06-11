@@ -1,6 +1,6 @@
 /* place JavaScript code here */
 
-// var kokuServiceEndpoints = null;
+var kokuServiceEndpoints = null;
 
 function Preload() {
 MessageId = gup("MessageId");
@@ -166,9 +166,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var url = getUrl();
         
         // TODO: automaattinen endpointin haku.
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageServiceImpl";
         // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageServiceImpl";
-        // endpoint = getEndpoint("KvMessageService");
+        endpoint = getEndpoint("KvMessageService");
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         // msg = "message=%3Csoapenv%3AEnvelope%20xmlns%3Asoapenv%3D%22http%3A%2F%2Fschemas.xmlsoap.org%2Fsoap%2Fenvelope%2F%22%20xmlns%3Asoa%3D%22http%3A%2F%2Fsoa.common.koku.arcusys.fi%2F%22%3E%3Csoapenv%3AHeader%2F%3E%3Csoapenv%3ABody%3E%3Csoa%3AsearchChildren%3E%3CsearchString%3E444444-4444%3C%2FsearchString%3E%3Climit%3E100%3C%2Flimit%3E%3C%2Fsoa%3AsearchChildren%3E%3C%2Fsoapenv%3ABody%3E%3C%2Fsoapenv%3AEnvelope%3E&endpoint=http%3A%2F%2Flocalhost%3A8180%2Farcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT%2FUsersAndGroupsServiceImpl"

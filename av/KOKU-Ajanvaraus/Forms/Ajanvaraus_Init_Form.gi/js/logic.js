@@ -1178,13 +1178,15 @@ function mapAttributes(objXML) {
 }
 
 function mapFormDataToFields(objXML) {
-    var subject, description, targetPerson;
+    var subject, description, targetPerson, role;
 
     // Get basic information from xml document
     subject = objXML.selectSingleNode("//subject", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     description = objXML.selectSingleNode("//description", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     targetPerson = objXML.selectSingleNode("//targetPerson", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
-    role = objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+    if (objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'") {
+        role = objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+    }
 
     mapAttributes(objXML);
     mapRecipients(objXML);
@@ -1193,7 +1195,9 @@ function mapFormDataToFields(objXML) {
     AjanvarausForm.getJSXByName("Header_Text").setValue(subject).repaint();
     AjanvarausForm.getJSXByName("Header_Description").setValue(description).repaint();
     AjanvarausForm.getJSXByName("Lomake_Status").setValue("Created");
-    AjanvarausForm.getJSXByName("User_Role").setValue(role).repaint();
+    if (role) {
+        AjanvarausForm.getJSXByName("User_Role").setValue(role).repaint();
+    }
 }
 
 function getUserRealName(uid) {
