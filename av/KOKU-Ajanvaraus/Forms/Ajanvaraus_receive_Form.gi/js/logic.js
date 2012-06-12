@@ -241,30 +241,61 @@ function getUserRealName(uid) {
     }
 }
 
+function getDataString(nodeIterator) {
+    var attributes = [], i = 0, node, childNode, nodeName, depth = 0;
+
+    while(nodeIterator.hasNext()) {
+        node = nodeIterator.next();
+        attributes[i] = [];
+        childNode = node.getFirstChild();
+        while(childNode) {
+            if(childNode.getFirstChild()) {
+                childNode = childNode.getFirstChild();
+                depth = depth + 1;
+            }
+            nodeName = childNode.getNodeName();
+            if(depth > 0) {
+                nodeName = childNode.getParent().getNodeName() + "_" + nodeName;
+            }
+
+            if(attributes[i][nodeName]) {
+                attributes[i][nodeName] += ",";
+            } else {
+                attributes[i][nodeName] = "";
+            }
+            attributes[i][nodeName] += childNode.getValue();
+
+            while(!childNode.getNextSibling() && depth > 0) {
+                childNode = childNode.getParent();
+                depth = depth - 1;
+            }
+            childNode = childNode.getNextSibling();
+        }
+        i = i + 1;
+    }
+
+    return attributes;
+}
+
 function inputPreload(objXML) {
-    var attributes, i, j, pvm, pvm1, pvm2, pvm3, numero, alkaa, paattyy, paikka, entryText, chosenSlot;
-    attributes = getAttributes(objXML);
+    var attributes, i, pvm, pvm1, pvm2, pvm3, entryText, chosenSlot, nodeIterator, disabled;
+    nodeIterator = objXML.selectNodeIterator("//slots", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'");
+    attributes = getDataString(nodeIterator);
     
     chosenSlot = objXML.selectSingleNode("//chosenSlot", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
 
     for (i=0;i<attributes.length;i++) {       
        
-        pvm = attributes[i][1];
+        pvm = attributes[i].appointmentDate;
         pvm = pvm.replace("Z", "");
         pvm1 = pvm.substr(8,2);
         pvm2 = pvm.substr(5,2);
         pvm3 = pvm.substr(0,4);
         pvm = pvm1 + "." + pvm2 + "." + pvm3;
-                        
-        numero = attributes[i][0];       
-        alkaa = attributes[i][2].substr(0,5);
-        paattyy = attributes[i][3].substr(0,5);
-        paikka = attributes[i][4];
-        infotext = attributes[i][5];
                
-        entryText = pvm + ", klo: " + alkaa + " - " + paattyy + ", paikka: " + paikka;
+        entryText = pvm + ", klo: " + attributes[i].startTime.substr(0,5); + " - " + attributes[i].endTime.substr(0,5); + ", paikka: " + attributes[i].location;
         
-        addNewEntry(entryText, infotext, numero, chosenSlot);
+        addNewEntry(entryText, attributes[i].comment, attributes[i].slotNumber, chosenSlot, attributes[i].disabled);
         refreshBlock();
     }
 }
@@ -289,7 +320,7 @@ function refreshBlock() {
     AjanvarausForm.getJSXByName("calendarEntryBlock").repaint();
 }
 
-function addNewEntry(entryText, infotext, numero, chosenSlot) {
+function addNewEntry(entryText, infotext, numero, chosenSlot, disabled) {
     
     var ajankohtaPanel, yesBox, label;
     if(AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild() != null) {
@@ -325,8 +356,12 @@ function addNewEntry(entryText, infotext, numero, chosenSlot) {
              
     yesBox = parentNode.getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild();
     
-    if (numero == chosenSlot) {
-    	yesBox.setChecked(1, true);
+    if (disabled === 'true') {
+    	yesBox.setEnabled(0, true);
+    } else {
+    	if (numero === chosenSlot) {
+    		yesBox.setChecked(1, true);
+    	}
     }
        
     yesBox.setName(numero);
@@ -375,7 +410,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
     arc.GetFormData = function(id, targetPerson) {
         var msg, endpoint, url, tout, appointmentId, req, objXML;
     
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointmentForReply><appointmentId>" + id + "</appointmentId><arg1>" + targetPerson + "</arg1></soa:getAppointmentForReply></soapenv:Body></soapenv:Envelope>";
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointmentForReply><appointmentId>" + id + "</appointmentId><targetUser>" + targetPerson + "</targetUser></soa:getAppointmentForReply></soapenv:Body></soapenv:Envelope>";
 
         endpoint = getEndpoint("KokuAppointmentProcessingService");
         // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";

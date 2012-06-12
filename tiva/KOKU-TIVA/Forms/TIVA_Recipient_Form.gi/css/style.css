@@ -1,26 +1,33 @@
 @media all
 {
 
+.jsx30block fieldset {
+  display: block !important;
+}
+
 /* fieldset */
 fieldset {
   /*margin: 15px 5x;*/
   margin: 0 0 25 5;
   border: 1px solid #da251d;
-  width: 600px;
+  /* width: 600px; */
 } 
 
 .fieldset .fieldset-padding .jsx30block {
-    width: 570px !important;
+    /* width: 570px !important; */
 }
 
 div.jsx30block span.fieldset fieldset.fieldset {
-    width: 600px;
+    /* width: 600px; */
 }
 
 div[label=IntalioInternal_SpacerBlock] {
-	display: none !important;
+    display: none !important;
 }
 
+.jsx30button {
+    vertical-align: baseline !important;
+}
 
 #_jsx_0_1{
     display: block !important;
@@ -69,10 +76,11 @@ text-decoration:none
 /* padding inside fieldset (IE bug workaround) */
 div.fieldset-padding {
   margin: 15px 10px;
+  width: 100% !important;
 }
 
 div.fieldset, span.fieldset {
-  width: 600px;
+  /* width: 600px; */
 }
 
 legend {
@@ -223,7 +231,7 @@ text-transform:uppercase;
   font: Helvetica,Arial,Verdana,sans-serif;
   font-size:12px;
   color:#666666;
-   width: 800px !important;
+  width: 800px !important;
 }
 
 /* override the default GI CSS */

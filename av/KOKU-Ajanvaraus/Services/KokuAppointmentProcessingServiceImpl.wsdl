@@ -20,7 +20,7 @@
 <xs:sequence />
 </xs:complexType>
 </xs:schema>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://soa.av.koku.arcusys.fi/" xmlns:ns1="http://soa.common.koku.arcusys.fi/" xmlns:tns="http://soa.av.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://soa.av.koku.arcusys.fi/" version="1.0" xmlns:ns1="http://soa.common.koku.arcusys.fi/" xmlns:tns="http://soa.av.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:import namespace="http://soa.common.koku.arcusys.fi/" />
 <xs:element name="approveAppointment" type="tns:approveAppointment" />
 <xs:element name="approveAppointmentResponse" type="tns:approveAppointmentResponse" />
@@ -50,6 +50,8 @@
 <xs:complexContent>
 <xs:extension base="tns:appointmentSummary">
 <xs:sequence>
+<xs:element name="chosenSlot" type="xs:int" />
+<xs:element minOccurs="0" name="response" type="tns:appointmentSummaryStatus" />
 <xs:element maxOccurs="unbounded" minOccurs="0" name="slots" nillable="true" type="tns:appointmentSlot" />
 </xs:sequence>
 </xs:extension>
@@ -80,6 +82,7 @@
 <xs:element minOccurs="0" name="appointmentDate" type="xs:date" />
 <xs:element minOccurs="0" name="startTime" type="xs:time" />
 <xs:element minOccurs="0" name="endTime" type="xs:time" />
+<xs:element name="disabled" type="xs:boolean" />
 <xs:element minOccurs="0" name="location" type="xs:string" />
 <xs:element minOccurs="0" name="comment" type="xs:string" />
 </xs:sequence>
@@ -92,7 +95,7 @@
 <xs:complexType name="getAppointmentForReply">
 <xs:sequence>
 <xs:element minOccurs="0" name="appointmentId" type="xs:long" />
-<xs:element minOccurs="0" name="arg1" type="xs:string" />
+<xs:element minOccurs="0" name="targetUser" type="xs:string" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="getAppointmentForReplyResponse">
@@ -264,7 +267,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuAppointmentProcessingService">
     <wsdl:port binding="tns:KokuAppointmentProcessingServiceSoapBinding" name="KokuAppointmentProcessingServicePort">
-      <soap:address location="http://kohtikumppanuutta-qa5.dmz:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl" />
+      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
