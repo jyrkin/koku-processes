@@ -15,7 +15,9 @@ function intalioPreStart() {
 }
 
  function formatDataCache(cache, matrix) {
-    if (TivaTietopyyntoForm.getCache().getDocument(cache).getFirstChild() == null) {
+	 
+    if (TivaTietopyyntoForm.getCache().getDocument(cache) != null &&
+    		TivaTietopyyntoForm.getCache().getDocument(cache).getFirstChild() == null) {
        commitCustomAutoRowSession(matrix, cache);
         return true;
     }
@@ -51,17 +53,18 @@ function throughTextfields() {
 
 function commitCustomAutoRowSession(matrix, cache) {
     var nodes, xmlStr;
+    if (matrix != null && cache != null) {
+    	nodes = TivaTietopyyntoForm.getJSXByName(matrix).getChildren();
+        xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
 
-    nodes = TivaTietopyyntoForm.getJSXByName(matrix).getChildren();
-    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
-
-    for (var i = 0; i < nodes.length; i++) {
-        if (nodes[i] && nodes[i].getPath() != "jsxid") {
-            xmlStr += " " + nodes[i].getPath() + "=\"\"";
+        for (var i = 0; i < nodes.length; i++) {
+            if (nodes[i] && nodes[i].getPath() != "jsxid") {
+                xmlStr += " " + nodes[i].getPath() + "=\"\"";
+            }
         }
+        xmlStr += "/></data>";
+        TivaTietopyyntoForm.getCache().getDocument(cache).loadXML(xmlStr);
     }
-    xmlStr += "/></data>";
-    TivaTietopyyntoForm.getCache().getDocument(cache).loadXML(xmlStr);
 }
 
 
@@ -139,7 +142,7 @@ function mapSelectedValuesToMatrix() {
         var node, i = 0;
         var hasEmptyChild = false;
 
-        hasEmptyChild = formatDataCache('Havainnointitiedot-nomap', 'Havainnointitiedot');
+        hasEmptyChild = formatDataCache('Havannointitiedot-nomap', 'Havannointitiedot');
 
         for( i = 0; i < selected.length; i++) {
             node = TivaTietopyyntoForm.getCache().getDocument("Havainnointitiedot-nomap").getFirstChild().cloneNode();
