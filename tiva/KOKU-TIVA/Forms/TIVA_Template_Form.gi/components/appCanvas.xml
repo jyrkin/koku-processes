@@ -340,12 +340,12 @@
       <variants/>
       <strings jsxheight="" jsxdisplay="none" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="280" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="260" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-          <strings jsxheight="100%" jsxwidth="100%" jsxrows="18%,18%,56%,*" jsxname="layout (--)" jsxbgcolor=""/>
+          <strings jsxheight="100%" jsxwidth="100%" jsxrows="20%,20%,*" jsxname="layout (--)" jsxbgcolor=""/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -482,29 +482,6 @@
                         </object>
                       </object>
                     </object>
-                  </object>
-                </object>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.Button">
-                    <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="addRecipient" jsxmargin="0 4 0 0" jsxtext="Lisää valittu lapsi/lapsen vanhemmat vastaanottajiin"/>
-                    <events jsxexecute="addToRecipients(TIVA_Form.getJSXByName(&quot;suostumuksenAntajat&quot;).getValue());"/>
                   </object>
                 </object>
               </object>
