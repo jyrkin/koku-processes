@@ -170,18 +170,20 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
 
 function mapValtakirjaDataToFields(valtakirjaData) {
+    var validTillNode = valtakirjaData.selectSingleNode("//validTill", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
     
-    var validTill = valtakirjaData.selectSingleNode("//validTill", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    if (validTillNode != null) {
+         var validTill = validTillNode.getValue();
+
+        var array = validTill.split("-");
+        array[2] = array[2].charAt(0) + array[2].charAt(1);
     
-    var array = validTill.split("-");
-    array[2] = array[2].charAt(0) + array[2].charAt(1);
-
-    var d = new Date();
-
-    d.setFullYear(parseInt(array[0]), parseInt(array[1]) - 1, parseInt(array[2]));
-
-    Valtakirja_Form.getJSXByName("Tiedot_Voimassa").setValue(d);
+        var d = new Date();
     
+        d.setFullYear(parseInt(array[0]), parseInt(array[1]) - 1, parseInt(array[2]));
+    
+        Valtakirja_Form.getJSXByName("Tiedot_Voimassa").setValue(d);
+    }    
 }
 
 
