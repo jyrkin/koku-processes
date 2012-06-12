@@ -1168,7 +1168,7 @@ function mapAttributes(objXML) {
         mapFieldsToMatrix(attributes[i].slotNumber, attributes[i].appointmentDate, attributes[i].startTime.substr(0, 5), attributes[i].endTime.substr(0, 5), attributes[i].location, attributes[i].comment, true);
         entryText = pvm + ", klo: " + attributes[i].startTime + " - " + attributes[i].endTime + ", paikka: " + attributes[i].paikka;
 
-        addNewEntry(entryText, infotext, numero);
+        addNewEntry(entryText, attributes[i].comment, attributes[i].slotNumber);
         refreshBlock();
     }
 }

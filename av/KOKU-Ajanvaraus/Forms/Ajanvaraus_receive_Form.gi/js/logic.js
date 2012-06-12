@@ -155,7 +155,7 @@ function radioSelect(selectBoxName) {
     AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(false).repaint();
     var activeSelection = AjanvarausForm.getJSXByName("activeSelect").getValue();      
     if (activeSelection != "") {
-        if ((selectBoxName == activeSelection) && (AjanvarausForm.getJSXByName("selectBoxName").getChecked() == false)) {
+        if (selectBoxName == activeSelection) {
             AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
             AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
          }
@@ -278,11 +278,12 @@ function getDataString(nodeIterator) {
 }
 
 function inputPreload(objXML) {
-    var attributes, i, pvm, pvm1, pvm2, pvm3, entryText, chosenSlot, nodeIterator, disabled;
+    var attributes, i, pvm, pvm1, pvm2, pvm3, entryText, chosenSlot, nodeIterator, disabled, appointmentResponse;
     nodeIterator = objXML.selectNodeIterator("//slots", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'");
     attributes = getDataString(nodeIterator);
     
     chosenSlot = objXML.selectSingleNode("//chosenSlot", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+    appointmentResponse = objXML.selectSingleNode("//appointmentResponse", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
 
     for (i=0;i<attributes.length;i++) {       
        
@@ -297,6 +298,12 @@ function inputPreload(objXML) {
         
         addNewEntry(entryText, attributes[i].comment, attributes[i].slotNumber, chosenSlot, attributes[i].disabled);
         refreshBlock();
+    }
+    
+    if (appointmentResponse === 'Cancelled') {
+    	AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(1, true);
+    	AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
+    	AjanvarausForm.getJSXByName("Lomake").setDisplay("block", true);
     }
 }
 
@@ -361,6 +368,9 @@ function addNewEntry(entryText, infotext, numero, chosenSlot, disabled) {
     } else {
     	if (numero === chosenSlot) {
     		yesBox.setChecked(1, true);
+    		AjanvarausForm.getJSXByName("activeSelect").setValue(numero);
+    		AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
+    		AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(numero);
     	}
     }
        

@@ -195,8 +195,8 @@
         </object>
       </object>
       <object type="jsx3.gui.Block">
-        <variants jsxheight="50" jsxwidth="570" jsxoverflow="2"/>
-        <strings jsxname="pane" jsxmargin=""/>
+        <variants jsxheight="50" jsxoverflow="2"/>
+        <strings jsxwidth="" jsxname="pane" jsxmargin=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="1"/>
