@@ -10,11 +10,11 @@
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.Block">
       <variants jsxoverflow="2"/>
-      <strings jsxheight="100%" jsxname="pane" jsxwidth="3%" jsxvisibility="" jsxclassname="kokuSpan" jsxdisplay=""/>
+      <strings jsxheight="100%" jsxname="pane" jsxwidth="3%" jsxvisibility="" jsxclassname="checkBlock" jsxdisplay=""/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="com.intalio.ria.Field">
         <variants/>
-        <strings jsxname="vastaus-field" riaLabelText="vastaus" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif" jsxclassname="field"/>
+        <strings jsxname="vastaus-field" riaLabelText="vastaus" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
         <object type="jsx3.gui.CheckBox">
           <variants jsxchecked="0" jsxdefaultchecked="0"/>
           <strings jsxname="vastaus"/>
@@ -24,7 +24,7 @@
     </object>
     <object type="jsx3.gui.Block">
       <variants jsxoverflow="2"/>
-      <strings jsxheight="100%" jsxname="pane" jsxwidth="97%" jsxvisibility="" jsxclassname="kokuSpan" jsxdisplay=""/>
+      <strings jsxheight="100%" jsxname="pane" jsxwidth="97%" jsxvisibility="" jsxclassname="checkBlock checkLabel" jsxdisplay=""/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="3"/>
