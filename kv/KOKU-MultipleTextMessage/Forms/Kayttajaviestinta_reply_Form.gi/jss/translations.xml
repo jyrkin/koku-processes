@@ -1,6 +1,6 @@
 <data jsxnamespace="propsbundle" locales="">
   <locale>
-    <record jsxid="Intalio Start Button" jsxtext="Start"/>
+    <record jsxid="Intalio Start Button" jsxtext="Lähetä vastaus"/>
     <record jsxid="Intalio Dismiss Button" jsxtext="Dismiss"/>
     <record jsxid="Intalio Save Button" jsxtext="Save"/>
     <record jsxid="Intalio Claim Button" jsxtext="Claim"/>
@@ -25,7 +25,7 @@
     <record jsxid="Revoke Success Text" jsxtext="The task was successfully revoked."/>
   </locale>
   <locale key="en_US">
-    <record jsxid="Intalio Start Button" jsxtext="Start"/>
+    <record jsxid="Intalio Start Button" jsxtext="Lähetä vastaus"/>
     <record jsxid="Intalio Dismiss Button" jsxtext="Dismiss"/>
     <record jsxid="Intalio Save Button" jsxtext="Save"/>
     <record jsxid="Intalio Claim Button" jsxtext="Claim"/>

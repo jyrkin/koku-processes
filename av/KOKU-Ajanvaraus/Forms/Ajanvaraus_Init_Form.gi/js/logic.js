@@ -1152,27 +1152,23 @@ function addNewEntry(entryText, infotext, numero) {
 
 /* prefills appointment slots to the form */
 function mapAttributes(objXML) {
-    var i, attributes, pvm, pvm1, pvm2, pvm3, numero, alkaa, paattyy, paikka, infotext, entryText;
-    attributes = getAttributes(objXML);
+    var i, attributes, pvm, pvm1, pvm2, pvm3, entryText, nodeIterator;
+    nodeIterator = objXML.selectNodeIterator("//slots", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'");
+    attributes = getDataString(nodeIterator);
     for( i = 0; i < attributes.length; i = i + 1) {
 
         AjanvarausForm.getJSXByName("calendarEntryId").setValue(attributes[i][0]);
-        pvm = attributes[i][1];
+        pvm = attributes[i].appointmentDate;
         pvm = pvm.replace("Z", "");
         pvm1 = pvm.substr(8, 2);
         pvm2 = pvm.substr(5, 2);
         pvm3 = pvm.substr(0, 4);
         pvm = pvm1 + "." + pvm2 + "." + pvm3;
-        numero = attributes[i][0];
-        alkaa = attributes[i][2].substr(0, 5);
-        paattyy = attributes[i][3].substr(0, 5);
-        paikka = attributes[i][4];
-        infotext = attributes[i][5];
 
-        mapFieldsToMatrix(attributes[i][0], attributes[i][1], attributes[i][2].substr(0, 5), attributes[i][3].substr(0, 5), attributes[i][4], attributes[i][5], true);
-        entryText = pvm + ", klo: " + alkaa + " - " + paattyy + ", paikka: " + paikka;
+        mapFieldsToMatrix(attributes[i].slotNumber, attributes[i].appointmentDate, attributes[i].startTime.substr(0, 5), attributes[i].endTime.substr(0, 5), attributes[i].location, attributes[i].comment, true);
+        entryText = pvm + ", klo: " + attributes[i].startTime + " - " + attributes[i].endTime + ", paikka: " + attributes[i].paikka;
 
-        addNewEntry(entryText, infotext, numero);
+        addNewEntry(entryText, attributes[i].comment, attributes[i].slotNumber);
         refreshBlock();
     }
 }
@@ -1469,7 +1465,7 @@ function listGroupUsers() {
                 node.setAttribute("sahkoposti", userData[i]["email"]);
                 node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
                 node.setAttribute("userUid", userData[i]["uid"]);
-                node.setAttribute("valittu", 1);
+                node.setAttribute("valittuG", 1);
                 AjanvarausForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
 
             }
@@ -1576,9 +1572,10 @@ function addGroupsToRecipients() {
                         parentUids += parentData[i]["uid"] + ","; // construct string uid,uid,uid,... adds , to last element also, this might be a problem
                         parentNames += parentData[i]["displayName"] + ","; // same logic as above
                     }
-                    counter++;
+                    
                 }
             }
+            counter++;
         }
         
         // check that required fields are found
@@ -1588,7 +1585,7 @@ function addGroupsToRecipients() {
             
             // add new recipient line
             node = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-            
+            node.setAttribute("jsxid", counter);
             node.setAttribute("recipientsUid", parentUids); //uids: 123456, 1234567
             node.setAttribute("recipients", parentNames); // names: kalle kuntalainen, kirsi kuntalainen
             node.setAttribute("targetPerson", userUid); // child

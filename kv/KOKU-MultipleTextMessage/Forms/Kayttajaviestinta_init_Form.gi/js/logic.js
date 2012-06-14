@@ -560,7 +560,7 @@ function listGroupUsers() {
                 node.setAttribute("sahkoposti", userData[i]["email"]);
                 node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
                 node.setAttribute("userUid", userData[i]["uid"]);
-                node.setAttribute("valittu", 1);
+                node.setAttribute("valittuG", 1);
                 KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
 
             }
@@ -729,11 +729,12 @@ function addGroupsToRecipients() {
             for( i = 0; i < parentData.length; i++) {
                 if(parentData[i]["uid"]) {
                     node = KayttajaviestintaForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-                   
+                    node.setAttribute("jsxid", counter);
                     node.setAttribute("uid", parentData[i]["uid"]);
                     node.setAttribute("receipient", parentData[i]["displayName"]);
                     //node.setAttribute("receipientDisplay", parentData[i]["displayName"]);
                     KayttajaviestintaForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+                    counter++;
                 }
             }
         }
