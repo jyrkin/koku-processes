@@ -301,9 +301,9 @@ function inputPreload(objXML) {
     }
     
     if (appointmentResponse === 'Cancelled') {
-    	AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(1, true);
-    	AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
-    	AjanvarausForm.getJSXByName("Lomake").setDisplay("block", true);
+        AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(1, true);
+        AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
+        AjanvarausForm.getJSXByName("Lomake").setDisplay("block", true);
     }
 }
 
@@ -364,14 +364,17 @@ function addNewEntry(entryText, infotext, numero, chosenSlot, disabled) {
     yesBox = parentNode.getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild();
     
     if (disabled === 'true') {
-    	yesBox.setEnabled(0, true);
+        yesBox.setEnabled(0, true);
     } else {
-    	if (numero === chosenSlot) {
-    		yesBox.setChecked(1, true);
-    		AjanvarausForm.getJSXByName("activeSelect").setValue(numero);
-    		AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
-    		AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(numero);
-    	}
+        yesBox.setEnabled(1, true);
+        if (numero === chosenSlot) {
+            yesBox.setChecked(1, true);
+            AjanvarausForm.getJSXByName("activeSelect").setValue(numero);
+            AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
+            AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(numero);
+        } else {
+            yesBox.setChecked(0, true);
+        }
     }
        
     yesBox.setName(numero);

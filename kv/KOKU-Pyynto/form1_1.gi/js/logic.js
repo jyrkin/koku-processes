@@ -1173,37 +1173,6 @@ function getTemplateID() {
     return templateID;
 }
 
-function checkTemplateNameAlreadyExisting(creator, templateName) {
-    var resultValue = null;
-    try {
-
-        var resultData = Arcusys.Internal.Communication.IsTemplateNameExisting(creator, templateName);
-
-        if(resultData != null) {
-        	var node = resultData.selectSingleNode("//return", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
-        	
-        	if (node != null) {
-        		resultValue = node.getValue();
-        	}
-        }
-    } catch (e) {
-        return e;
-    }
-
-    if(resultValue == "ExistsActive") {
-        return "J\xE4rjestelm\xE4ss\xE4 on jo aktiivinen pohja t\xE4ll\xE4 nimell\xE4. Ole hyv\xE4 ja tallenna pohja toisella nimell\xE4.";
-    } else if(resultValue == "ExistsNotActive") {
-        var wantsToReplace = confirm("J\xE4rjestelm\xE4ss\xE4 on jo aktiivinen pohja t\xE4ll\xE4 nimell\xE4. Tahdotko tallentaa uuden pohjan olemassaolevan p\xE4\xE4lle?");
-        if(wantsToReplace == true) {
-            form1.getJSXByName("User_PaivitaOlemassaoleva").setChecked(jsx3.gui.CheckBox.CHECKED).repaint();
-        } else {
-            return "Muuta pohjan nimi ja l\xE4het\xE4 lomake uudelleen.";
-        }
-    }
-
-    return null;
-}
-
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.IsTemplateNameExisting = function(creator, templateName) {
 
@@ -1893,22 +1862,12 @@ function deleteDupes() {
 }
 
 function intalioPreStart() {
-	
-	var sender, headerText, returnValue = null;
-	
-	sender = form1.getJSXByName("User_Sender");
-	headerText = form1.getJSXByName("Header_Text");
-	
-	//check for duplicate template name
-	if (sender != null && headerText != null) {
-		returnValue = checkTemplateNameAlreadyExisting(sender.getValue(), headerText.getValue());
-	}
-	
-	// duplicate template found return error
-	if (returnValue != null) {
-		return returnValue;
-	}
-	
+    
+    var sender, headerText, returnValue = null;
+    
+    sender = form1.getJSXByName("User_Sender");
+    headerText = form1.getJSXByName("Header_Text");
+    
     if(form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild() == null) {
         return "Pyynt\xF6\xF6n ei ole lis\xE4tty yht\xE4\xE4n vastaanottajaa. Lis\xE4\xE4 pyynn\xF6lle vastaanottajat.";
     }
