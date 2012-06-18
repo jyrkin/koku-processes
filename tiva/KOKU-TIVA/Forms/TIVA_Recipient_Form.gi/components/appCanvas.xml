@@ -119,7 +119,7 @@
             <strings riaLabelText="Suostumus_Aikaraja" jsxname="Suostumus_Aikaraja-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
             <object type="jsx3.gui.DatePicker">
               <variants jsxenabled="0" jsxfirstweekday="1" jsxheight="18" jsxwidth="100" jsxrequired="0"/>
-              <strings jsxdisabledbgcolor="#ffffff" jsxformat="dd-MM-yyyy" jsxcolor="#8E8E8E" jsxname="Suostumus_Aikaraja" jsxdisplay=""/>
+              <strings jsxdisabledbgcolor="#ffffff" jsxformat="dd-MM-yyyy" jsxcolor="#8E8E8E" jsxname="Suostumus_Aikaraja" jsxdisplay="" jsxicon="images/empty.jpg"/>
               <events jsxhide="com.intalio.ria.validate(this);" jsxblur="isValidDate(this);"/>
             </object>
           </object>
