@@ -1854,7 +1854,7 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="1" jsxheight="205"/>
+      <variants jsxoverflow="1" jsxheight="105"/>
       <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="com.intalio.ria.Section">
         <variants/>
