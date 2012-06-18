@@ -5,47 +5,34 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="570" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
-    <strings jsxname="panetest" jsxdisplay="" jsxvisibility=""/>
+    <variants jsxoverflow="2" jsxheight="30" jsxrelativeposition="1"/>
+    <strings jsxwidth="100%" jsxname="panetest" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
-    <object type="jsx3.gui.LayoutGrid">
-      <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-      <strings jsxname="layout (--)" jsxrows="*" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"/>
+      <strings jsxheight="100%" jsxname="pane" jsxwidth="3%" jsxclassname="checkBlock checkLabel"/>
+      <dynamics jsxborder="@No jsxborder"/>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="yes-field" riaLabelText="yes" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
+        <object type="jsx3.gui.CheckBox">
+          <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
+          <strings jsxname="yes" jsxmargin="0 4 0 0"/>
+          <events jsxtoggle="radioSelect(this.getName());"/>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"/>
+      <strings jsxheight="100%" jsxname="pane" jsxwidth="97%" jsxclassname="checkBlock checkLabel"/>
+      <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2"/>
-        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-        <dynamics jsxborder="@No jsxborder"/>
-        <object type="jsx3.gui.LayoutGrid">
-          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout ( | )" jsxcols="5%,*" jsxwidth="100%" jsxheight="100%"/>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="com.intalio.ria.Field">
-              <variants/>
-              <strings jsxname="yes-field" jsxclassname="field" riaLabelText="yes" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
-              <object type="jsx3.gui.CheckBox">
-                <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
-                <strings jsxname="yes" jsxmargin="0 4 0 0"/>
-                <events jsxtoggle="radioSelect(this.getName());"/>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.Block">
-              <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Ajankohta" jsxclassname="FormLabel"/>
-              <object type="jsx3.gui.Image">
-                <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                <strings jsxname="tooltipImg" jsxsrc="images/help-button-small.png" jsxcursor="pointer" jsxpadding="0 0 0 6" jsxdisplay=""/>
-                <events jsxclick="showDialog(&quot;dialog&quot;,this.getParent().getParent().getParent().getParent().getParent().getParent().getChild(&quot;infotext&quot;).getValue(),&quot;Tarkennus&quot;,&quot;KOKU-ohjeet&quot;);"/>
-              </object>
-            </object>
-          </object>
+        <variants jsxrelativeposition="1" jsxoverflow="3"/>
+        <strings jsxname="label" jsxtext="Ajankohta" jsxclassname="FormLabel"/>
+        <object type="jsx3.gui.Image">
+          <variants jsxoverflow="2" jsxrelativeposition="1"/>
+          <strings jsxname="tooltipImg" jsxsrc="images/help-button-small.png" jsxcursor="pointer" jsxpadding="0 0 0 6" jsxdisplay=""/>
+          <events jsxclick="showDialog(&quot;dialog&quot;,this.getParent().getParent().getParent().getParent().getParent().getParent().getChild(&quot;infotext&quot;).getValue(),&quot;Tarkennus&quot;,&quot;KOKU-ohjeet&quot;);"/>
         </object>
       </object>
     </object>

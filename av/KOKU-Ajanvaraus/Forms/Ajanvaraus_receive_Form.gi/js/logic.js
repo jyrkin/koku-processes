@@ -361,7 +361,7 @@ function addNewEntry(entryText, infotext, numero, chosenSlot, disabled) {
        
     parentNode = AjanvarausForm.getJSXByName("panel" + numero);
              
-    yesBox = parentNode.getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild();
+    yesBox = parentNode.getFirstChild().getFirstChild().getFirstChild();
     
     if (disabled === 'true') {
         yesBox.setEnabled(0, true);

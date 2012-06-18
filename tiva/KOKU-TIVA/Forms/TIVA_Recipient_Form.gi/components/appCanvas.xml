@@ -5,8 +5,8 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxwidth="600" jsxoverflow="1"/>
-    <strings jsxname="root"/>
+    <variants jsxwidth="600"/>
+    <strings jsxname="root" jsxclassname="root"/>
     <object type="jsx3.gui.Block">
       <variants jsxheight="70"/>
       <strings jsxtextalign="right" jsxname="header" jsxrelativeposition="1" jsxclassname="header" jsxwidth="100%"/>
@@ -57,7 +57,7 @@
         <strings jsxwidth="100%" jsxname="block" jsxrelativeposition="1" jsxclassname="kokuBlock"/>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="2"/>
-          <strings jsxheight="100%" jsxwidth="3%" jsxname="pane"/>
+          <strings jsxheight="100%" jsxwidth="3%" jsxname="pane" jsxclassname="checkBlock"/>
           <dynamics jsxborder="@No jsxborder"/>
           <object type="com.intalio.ria.Field">
             <variants/>
@@ -71,10 +71,10 @@
         </object>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="2"/>
-          <strings jsxheight="100%" jsxwidth="97%" jsxname="pane"/>
+          <strings jsxheight="100%" jsxwidth="97%" jsxname="pane" jsxclassname="checkBlock checkLabel"/>
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
-            <variants jsxoverflow="3" jsxrelativeposition="1"/>
+            <variants jsxrelativeposition="1"/>
             <strings jsxname="rejectLabel" jsxclassname="formLabel" jsxtext="Hylkää suostumus"/>
           </object>
         </object>

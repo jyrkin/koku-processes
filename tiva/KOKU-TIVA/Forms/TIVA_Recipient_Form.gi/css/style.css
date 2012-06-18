@@ -1,20 +1,41 @@
 @media all
 {
 
-/*
-.kokuBlock {
-  padding: 4px;
-} */
+span.root {
+  overflow: visible;
+}
+
+span.FormLabel, span.headerNote, #JSX div.form-title, #JSX span.form-title {
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  display: block !important;
+}
 
 span.FormLabel, span.headerNote {
-  font: Helvetica,Arial,Verdana,sans-serif;
   font-size:12px;
   color:#666666;
-  display:block !important;
+}
+
+div[label=IntalioInternal_SpacerBlock] {
+  display: none !important;
+}
+
+.checkBlock {
+  float: left;
+}
+
+.checkLabel {
+  padding-top: 2px;
+}
+
+span.checkLabel {
+  padding-top: 2px;
+}
+
+legend, JSX div.form-title, #JSX span.form-title {
+  color:#444;
 }
 
 legend {
-  color:#444444;
   font-size:12px;
   font-weight:normal;
   letter-spacing:1px;
@@ -32,38 +53,19 @@ div.fieldset-padding {
   width: 100% !important;
 }
 
-/*
-div.field, span.field {
-  margin: 0.5em 0em;
-} */
-
 /* form header */
 #JSX div.form-title, #JSX span.form-title {
-  color:#444;
   font-size:2.5em;
   font-weight:bolder;
   letter-spacing:2px;
   text-transform:uppercase;
-  font-family: Helvetica,Arial,Verdana,sans-serif;
-  display: block;
 }
 
 span.required {
   color: red;
 }
 
-/*
-.jsx30block.field, .fieldset .fieldset-padding .jsx30block.FormLabel {
-    width: 100% !important;
-} */
-
-span[label=IntalioInternal_SaveButton], 
-span[label=IntalioInternal_ClaimButton], 
-span[label=IntalioInternal_RevokeButton] {
-    display: none !important;
-}
-
-td.label-column{
+td.label-column {
   display:none;
 }
 

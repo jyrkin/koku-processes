@@ -1,69 +1,66 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxwidth="680" jsxheight="25"/>
+    <variants jsxoverflow="2" jsxrelativeposition="1" jsxheight="25"/>
     <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
-    <object type="jsx3.gui.LayoutGrid">
-      <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-      <strings jsxname="layout (--)" jsxrows="*" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"/>
+      <strings jsxname="rootpane"/>
+      <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxheight="25" jsxwidth="570"/>
-        <strings jsxname="rootpane"/>
+        <variants jsxoverflow="2"/>
+        <strings jsxname="column" jsxclassname="column"/>
         <dynamics jsxborder="@No jsxborder"/>
-        <object type="jsx3.gui.LayoutGrid">
-          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout ( | )" jsxcols="68%,10%,*" jsxwidth="100%" jsxheight="100%"/>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.Block">
-              <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="entry" jsxtext="Ajankohta" jsxclassname="FormLabel"/>
-              <object type="jsx3.gui.Image">
-                <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                <strings jsxname="tooltipImg" jsxsrc="images/help-button-small.png" jsxcursor="pointer" jsxpadding="0 0 0 6" jsxdisplay="" jsxwidth=""/>
-                <events jsxclick="showDialog(&quot;dialog&quot;,this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getChild(&quot;infotext&quot;).getValue(),&quot;Tarkennus&quot;,&quot;KOKU-ohjeet&quot;);"/>
-              </object>
-            </object>
-            <object type="jsx3.gui.TextBox">
-              <variants/>
-              <strings jsxname="tooltipText" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
-              <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
-            </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="entry" jsxtext="Ajankohta" jsxclassname="FormLabel"/>
+          <object type="jsx3.gui.Image">
+            <variants jsxoverflow="2" jsxrelativeposition="1"/>
+            <strings jsxname="tooltipImg" jsxsrc="images/help-button-small.png" jsxcursor="pointer" jsxpadding="0 0 0 6" jsxdisplay="" jsxwidth=""/>
+            <events jsxclick="showDialog(&quot;dialog&quot;,this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getChild(&quot;infotext&quot;).getValue(),&quot;Tarkennus&quot;,&quot;KOKU-ohjeet&quot;);"/>
           </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.Button">
-              <variants jsxindex="0" jsxheight="18"/>
-              <strings jsxname="modButton" jsxtext="Muokkaa" jsxmargin="0 4 0 0"/>
-              <events jsxexecute="modifyThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());"/>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.Button">
-              <variants jsxindex="0" jsxheight="18"/>
-              <strings jsxname="remButton" jsxtext="Poista" jsxmargin="0 4 0 0"/>
-              <events jsxexecute="removeThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());checkSlotMatrix();"/>
-            </object>
-          </object>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <variants/>
+          <strings jsxname="tooltipText" jsxdisplay="none" jsxvalue=""/>
+          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
       </object>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxheight="0" jsxwidth="600"/>
-        <strings jsxname="modPane" jsxdisplay=""/>
+        <variants jsxoverflow="2"/>
+        <strings jsxname="column" jsxstyleoverride="margin-left:12px" jsxclassname="column"/>
         <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="column" jsxclassname="column"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Button">
+            <variants jsxheight="18"/>
+            <strings jsxname="modButton" jsxtext="Muokkaa" jsxclassname="kokuButton"/>
+            <events jsxexecute="modifyThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getName());"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="column" jsxclassname="column"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Button">
+            <variants jsxheight="18"/>
+            <strings jsxname="remButton" jsxtext="Poista" jsxclassname="kokuButton"/>
+            <events jsxexecute="removeThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());checkSlotMatrix();"/>
+          </object>
+        </object>
       </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"/>
+      <strings jsxname="modPane" jsxdisplay=""/>
+      <dynamics jsxborder="@No jsxborder"/>
     </object>
     <object type="jsx3.gui.TextBox">
       <variants/>
