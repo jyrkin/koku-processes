@@ -1407,7 +1407,11 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
+<<<<<<< HEAD
       <variants jsxoverflow="1"/>
+=======
+      <variants jsxoverflow="1" jsxheight="105"/>
+>>>>>>> 1534ad0eaa449edb1fc96b02045e5a66ce0785bb
       <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="com.intalio.ria.Section">
         <variants/>
