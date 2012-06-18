@@ -145,7 +145,7 @@ function mapSelectedValuesToMatrix() {
         hasEmptyChild = formatDataCache('Havannointitiedot-nomap', 'Havannointitiedot');
 
         for( i = 0; i < selected.length; i++) {
-            node = TivaTietopyyntoForm.getCache().getDocument("Havainnointitiedot-nomap").getFirstChild().cloneNode();
+            node = TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild().cloneNode();
 
             //node.setAttribute("jsxid",i);
             if((selected[i].getAttribute("jsxselected") != null) && (selected[i].getAttribute("jsxopen") == null)) {
