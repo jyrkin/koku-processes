@@ -1,11 +1,11 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="680" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+    <variants jsxoverflow="2" jsxwidth="580" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
     <strings jsxname="choicePane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">

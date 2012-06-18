@@ -456,11 +456,6 @@ function removeModSection(id) {
 }
 
 function setValuesForModify(id, multiplier) {
-    if(multiplier > 0) {
-        AjanvarausForm.getJSXByName(id).getDescendantOfName("layout (--)").setRows("10%,*").repaint();
-    } else if(multiplier < 0) {
-        AjanvarausForm.getJSXByName(id).getDescendantOfName("layout (--)").setRows("*").repaint();
-    }
     AjanvarausForm.getJSXByName("calendarEntryBlock").setHeight(AjanvarausForm.getJSXByName("calendarEntryBlock").getHeight() + (280 * multiplier), true);
     AjanvarausForm.getJSXByName(id).setHeight(AjanvarausForm.getJSXByName(id).getHeight() + (280 * multiplier), true);
 }
@@ -694,6 +689,7 @@ function mapFieldsToMatrix(id, entryDate, entryStartTime, entryEndTime, entryLoc
 function refreshBlock() {
     var newHeight, child;
     //currentHeigh = AjanvarausForm.getJSXByName("calendarEntryBlock").getHeight();
+    newHeight = 0;
 
     if(AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild() !== null) {
         child = AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild();
@@ -987,8 +983,8 @@ function clearAppointments() {
 }
 
 function singleSlotFunc() {
-    AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("pane").setDisplay("none", true);
-    AjanvarausForm.getJSXByName("lopetusAika").getAncestorOfName("pane").setDisplay("none", true);
+    AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("column").setDisplay("none", true);
+    AjanvarausForm.getJSXByName("lopetusAika").getAncestorOfName("column").setDisplay("none", true);
     AjanvarausForm.getJSXByName("multiSlots").setChecked(0, true);
     AjanvarausForm.getJSXByName("lopetusPvm").setDate(null);
     AjanvarausForm.getJSXByName("lopetusAika").setValue("").repaint();
@@ -1000,8 +996,8 @@ function singleSlotFunc() {
 }
 
 function multiSlotsFunc() {
-    AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("pane").setDisplay("block", true);
-    AjanvarausForm.getJSXByName("lopetusAika").getAncestorOfName("pane").setDisplay("block", true);
+    AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("column").setDisplay("block", true);
+    AjanvarausForm.getJSXByName("lopetusAika").getAncestorOfName("column").setDisplay("block", true);
     AjanvarausForm.getJSXByName("singleSlot").setChecked(0, true);
     enableAll("week", 1);
 
@@ -1181,7 +1177,7 @@ function mapFormDataToFields(objXML) {
     description = objXML.selectSingleNode("//description", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     targetPerson = objXML.selectSingleNode("//targetPerson", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     if (objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'")) {
-    	role = objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+        role = objXML.selectSingleNode("//senderRole", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     }
 
     mapAttributes(objXML);

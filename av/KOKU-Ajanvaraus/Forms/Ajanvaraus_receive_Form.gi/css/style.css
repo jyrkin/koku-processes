@@ -1,17 +1,22 @@
 @media all
 {
 
+.body {
+  margin:0px;
+  padding:0px;
+}
+
 span.root {
   overflow: visible;
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  font-size:12px;
 }
 
 span.FormLabel, span.headerNote, #JSX div.form-title, #JSX span.form-title {
-  font-family: Helvetica,Arial,Verdana,sans-serif;
   display: block !important;
 }
 
 span.FormLabel, span.headerNote {
-  font-size:12px;
   color:#666666;
 }
 
@@ -36,7 +41,6 @@ legend, JSX div.form-title, #JSX span.form-title {
 }
 
 legend {
-  font-size:12px;
   font-weight:normal;
   letter-spacing:1px;
   text-transform:uppercase;
