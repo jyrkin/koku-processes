@@ -189,7 +189,7 @@
                     <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay="" jsxmargin="0 0 0 20"/>
                     <object type="jsx3.gui.Matrix">
                       <variants jsxautorow="1" jsxselectionmodel="0" jsxpagingmodel="3" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
-                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxname="searchChildMatrix" jsxbgcolor="#efefff" jsxsortpath="sukunimi" jsxsorttype="text" jsxsortdirection="ascending"/>
+                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxname="searchChildMatrix" jsxbgcolor="#efefff" jsxsortpath="vanhempi" jsxsorttype="text" jsxsortdirection="descending"/>
                       <events jsxaftercommit=""/>
                       <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
                       <object type="jsx3.gui.Matrix.Column">
@@ -214,7 +214,7 @@
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="134"/>
-                        <strings jsxpath="vanhempi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi-column" jsxtext="Vanhempi1"/>
+                        <strings jsxpath="vanhempi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi-column" jsxtext="Vanhempi"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">
                           <variants jsxrelativeposition="0" jsxleft="216" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
