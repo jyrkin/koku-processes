@@ -130,7 +130,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuMessageProcessingService">
     <wsdl:port binding="tns:KokuMessageProcessingServiceSoapBinding" name="KokuMessageProcessingServicePort">
-      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" />
+      <soap:address location="http://kohtikumppanuutta-qa5.dmz:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

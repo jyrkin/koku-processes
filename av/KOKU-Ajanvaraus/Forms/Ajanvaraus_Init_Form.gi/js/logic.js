@@ -1187,7 +1187,9 @@ function mapFormDataToFields(objXML) {
     AjanvarausForm.getJSXByName("Header_Text").setValue(subject).repaint();
     AjanvarausForm.getJSXByName("Header_Description").setValue(description).repaint();
     AjanvarausForm.getJSXByName("Lomake_Status").setValue("Created");
-    AjanvarausForm.getJSXByName("User_Role").setValue(role).repaint();
+    if (role) {
+        AjanvarausForm.getJSXByName("User_Role").setValue(role).repaint();
+    }
 }
 
 function getUserRealName(uid) {
