@@ -1,32 +1,32 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="720" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+    <variants jsxoverflow="2" jsxwidth="550" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
     <strings jsxname="choicePane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
       <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-      <strings jsxname="layout ( | )" jsxcols="6%,42%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+      <strings jsxname="layout ( | )" jsxcols="6%,70%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
       <object type="com.intalio.ria.Field">
         <variants/>
         <strings jsxname="check-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
         <object type="jsx3.gui.CheckBox">
-          <variants jsxheight="18" jsxchecked="0" jsxenabled="0"/>
+          <variants jsxheight="18" jsxchecked="0" jsxenabled="0" jsxdefaultchecked="0"/>
           <strings jsxname="check" jsxmargin="0 4 0 0" jsxdisplay=""/>
           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
         </object>
       </object>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="3" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
-        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxdisplay="" jsxvisibility=""/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
-          <strings jsxname="checkLabel" jsxtext="Kysymys" jsxclassname="FormLabel" jsxdisplay=""/>
+          <strings jsxname="checkLabel" jsxtext="Kysymys" jsxclassname="FormLabel checkLabel" jsxdisplay=""/>
         </object>
       </object>
       <object type="jsx3.gui.Block">

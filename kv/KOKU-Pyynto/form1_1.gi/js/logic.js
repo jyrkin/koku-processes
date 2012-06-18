@@ -526,12 +526,12 @@ function setChoicesForCalendar(timelevelComponent) {
     if(value == "Tunti") {
         form1.getJSXByName(parentPaneName).getDescendantOfName("paneHours").setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
         form1.getJSXByName(parentPaneName).setHeight(form1.getJSXByName(parentPaneName).getHeight() + 50).repaint();
-        form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 50).repaint();
+        //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 50).repaint();
     } else {
         if(form1.getJSXByName(parentPaneName).getDescendantOfName("paneHours").getDisplay() == jsx3.gui.Block.DISPLAYBLOCK) {
             form1.getJSXByName(parentPaneName).getDescendantOfName("paneHours").setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
             form1.getJSXByName(parentPaneName).setHeight(form1.getJSXByName(parentPaneName).getHeight() - 50).repaint();
-            form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 50).repaint();
+            //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 50).repaint();
         }
     }
 }
@@ -709,7 +709,7 @@ function addCalendarChoiceToForm(tempID, choiceText) {
 
     form1.getJSXByName(tempID).getDescendantOfName("choiceBlock" + tempID).setHeight(form1.getJSXByName(tempID).getDescendantOfName("choiceBlock" + tempID).getHeight() + 30, true).repaint();
     form1.getJSXByName(tempID).setHeight(form1.getJSXByName(tempID).getHeight() + 30);
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30).repaint();
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30).repaint();
 
     form1.getJSXByName("choicePane").setName("choicePane" + id).repaint();
 
@@ -926,7 +926,7 @@ function inputMultipleChoiceQuestion(tempID, question, questionNumber) {
 
     form1.getJSXByName(block).setHeight(form1.getJSXByName(block).getHeight() + 30, true).repaint();
     form1.getJSXByName(block).getParent().setHeight(form1.getJSXByName(block).getParent().getHeight() + 30);
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30).repaint();
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30).repaint();
 
     var choice = section.getFirstChild().getFirstChild().getFirstChild();
     var label = section.getFirstChild().getFirstChild().getNextSibling().getFirstChild();
@@ -1121,7 +1121,7 @@ function addChoice(tempID) {
 
     form1.getJSXByName(block).setHeight(form1.getJSXByName(block).getHeight() + 30, true);
     form1.getJSXByName(block).getParent().setHeight(form1.getJSXByName(block).getParent().getHeight() + 30, true);
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30, true);
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30, true);
 
     var choice = section.getFirstChild().getFirstChild().getFirstChild();
     var label = section.getFirstChild().getFirstChild().getNextSibling().getFirstChild();
@@ -1163,7 +1163,7 @@ function removeChoice(block, ID) {
     form1.getJSXByName(block).removeChild(ID);
     form1.getJSXByName(block).setHeight(form1.getJSXByName(block).getHeight() - 30, true).repaint();
     form1.getJSXByName(block).getParent().setHeight(form1.getJSXByName(block).getParent().getHeight() - 30);
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 30).repaint();
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 30).repaint();
 
 }
 
@@ -1375,7 +1375,7 @@ function showForm(flag) {
             fieldsetNumber = childNode.getAttribute("TextInput_Number");
             if(fieldsetNumber != "") {
                 if(childNode.getAttribute("TextInput_Type") == "MULTIPLE_CHOICE") {
-                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 80).repaint();
+                    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 80).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 80).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneOption", true, false);
                     descendant.setHeight(descendant.getHeight() + 40).repaint();
@@ -1388,13 +1388,13 @@ function showForm(flag) {
                         descendants[x].setDisplay("block", true);
                     }
                 } else if(childNode.getAttribute("TextInput_Type") == "CALENDAR") {
-                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 150).repaint();
+                    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 150).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 150).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneEdit", true, false);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
 
                     if(form1.getJSXByName(fieldsetNumber).getDescendantOfName("aikataso").getValue() == "Tunti") {
-                        form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 50).repaint();
+                        //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 50).repaint();
                         form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 50).repaint();
                         descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneHours", true, false);
                         descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
@@ -1408,7 +1408,7 @@ function showForm(flag) {
                         descendants[x].setDisplay("block", true);
                     }
                 } else {
-                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 23).repaint();
+                    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 23).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 23).repaint();
                     form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton").setDisplay("block", true);
                 }
@@ -1431,7 +1431,7 @@ function showForm(flag) {
             fieldsetNumber = childNode.getAttribute("TextInput_Number");
             if(fieldsetNumber != "") {
                 if(childNode.getAttribute("TextInput_Type") == "MULTIPLE_CHOICE") {
-                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 80).repaint();
+                    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 80).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 80).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneOption", true, false);
                     descendant.setHeight(descendant.getHeight() - 40).repaint();
@@ -1444,12 +1444,12 @@ function showForm(flag) {
                         descendants[x].setDisplay("none", true);
                     }
                 } else if(childNode.getAttribute("TextInput_Type") == "CALENDAR") {
-                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 150).repaint();
+                    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 150).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 150).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneEdit", true, false);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
                     if(form1.getJSXByName(fieldsetNumber).getDescendantOfName("aikataso").getValue() == "Tunti") {
-                        form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 50).repaint();
+                        //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 50).repaint();
                         form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 50).repaint();
                         descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneHours", true, false);
                         descendant.setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
@@ -1463,7 +1463,7 @@ function showForm(flag) {
                         descendants[x].setDisplay("none", true);
                     }
                 } else {
-                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 23).repaint();
+                    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 23).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 23).repaint();
                     form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton").getParent().setDisplay("none", true);
                 }
@@ -1568,7 +1568,7 @@ function inputSection(title, question) {
 }
 
 function inputTextSection(title, question, nameSection) {
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 205, true);
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 205, true);
     var textSection = form1.getJSXByName("block").load("components/textinputsection.xml", true);
     textSection.setName(nameSection).repaint();
     form1.getJSXByName("labelKysymys").setText(question).repaint();
@@ -1576,7 +1576,7 @@ function inputTextSection(title, question, nameSection) {
 }
 
 function inputYesNoSection(title, question, nameSection) {
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 213, true);
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 213, true);
     var textSection = form1.getJSXByName("block").load("components/yesnosection.xml", true);
 
     textSection.setName(nameSection).repaint();
@@ -1587,7 +1587,7 @@ function inputYesNoSection(title, question, nameSection) {
 function inputMultipleChoiceSection(title, question, nameSection) {
 
     // var id = getTemplateID();
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 215, true).repaint();
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 215, true).repaint();
     var textSection = form1.getJSXByName("block").load("components/multiplechoicesection.xml", true);
     textSection.setName(nameSection).repaint();
     //textSection.setTitleText(title).repaint();
@@ -1601,7 +1601,7 @@ function inputMultipleChoiceSection(title, question, nameSection) {
 }
 
 function inputCalendarSection(title, question, nameSection) {
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 275).repaint();
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 275).repaint();
     var textSection = form1.getJSXByName("block").load("components/multiplecalendarsection.xml", true);
 
     textSection.setName(nameSection).repaint();
@@ -1614,7 +1614,7 @@ function inputCalendarSection(title, question, nameSection) {
 }
 
 function inputNumberSection(title, question, nameSection) {
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 95).repaint();
+    //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 95).repaint();
     var textSection = form1.getJSXByName("block").load("components/numberinputsection.xml", true);
 
     textSection.setName(nameSection).repaint();
@@ -1629,13 +1629,13 @@ function removeThisSection(sectionComponent, type) {
     form1.getCache().getDocument("TextInput-nomap").removeChild(form1.getCache().getDocument("TextInput-nomap").selectSingleNode("//record[@TextInput_Number='" + sectionName + "']"));
 
     if(type == "textinputsection") {
-        form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 205).repaint();
+        //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 205).repaint();
     }
     if(type == "yesnoinputsection") {
-        form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 145).repaint();
+        //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 145).repaint();
     }
     if(type == "multiplechoice") {
-        form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 133).repaint();
+        //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 133).repaint();
         removeChildrenOfThisMultipleChoiceSection(sectionName);
     }
 

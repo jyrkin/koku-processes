@@ -1,37 +1,37 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
-  <name>Block - 100%</name>
-  <icon>images/prototypes/block.gif</icon>
-  <description>Simple block, relatively positioned with overflow=scroll.</description>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
+  <name><![CDATA[Block - 100%]]></name>
+  <icon><![CDATA[images/prototypes/block.gif]]></icon>
+  <description><![CDATA[Simple block, relatively positioned with overflow=scroll.]]></description>
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="1" jsxheight="185"/>
-    <strings jsxname="rootpane" jsxwidth="100%" jsxrelativeposition="1"/>
+    <variants jsxoverflow="2" jsxwidth="550" jsxheight="160"/>
+    <strings jsxname="rootpane" jsxrelativeposition="1"/>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="2" jsxwidth="720" jsxheight="25" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
-      <strings jsxname="paneQuestion" jsxdisplay="" jsxvisibility="" jsxpadding="0" jsxmargin="0"/>
+      <variants jsxoverflow="2" jsxwidth="550" jsxheight="25" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+      <strings jsxname="paneQuestion" jsxdisplay="" jsxvisibility=""/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxheight="15"/>
-        <strings jsxname="pane" jsxwidth="100%" jsxpadding="0" jsxmargin="0"/>
+        <strings jsxname="pane" jsxwidth="100%"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
           <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0" jsxmargin="0 0 0 18"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="labelKysymys" jsxtext="Kysymysteksti tähän" jsxclassname="FormLabel" jsxmargin="0" jsxpadding="0"/>
+              <strings jsxname="labelKysymys" jsxtext="Kysymysteksti tähän" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
       </object>
     </object>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="2" jsxwidth="720" jsxheight="90"/>
+      <variants jsxoverflow="2" jsxwidth="550" jsxheight="90"/>
       <strings jsxname="paneEdit" jsxpadding="" jsxbgcolor=""/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.LayoutGrid">
@@ -112,7 +112,7 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="2" jsxwidth="720" jsxheight="50"/>
+      <variants jsxoverflow="2" jsxwidth="550" jsxheight="30"/>
       <strings jsxname="paneHours" jsxpadding="" jsxbgcolor="" jsxdisplay="none"/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.LayoutGrid">
@@ -166,7 +166,7 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="2" jsxwidth="720" jsxheight="30"/>
+      <variants jsxoverflow="2" jsxwidth="550" jsxheight="60"/>
       <strings jsxname="paneAddButton" jsxpadding="" jsxbgcolor=""/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.LayoutGrid">
@@ -182,11 +182,11 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxoverflow="2"/>
-              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor="" jsxmargin="0 0 0 20"/>
+              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Button">
                 <variants jsxindex="0" jsxheight="18"/>
-                <strings jsxname="lisaaVaihtoehdot" jsxtext="Lisää ajankohdat" jsxmargin="0 4 0 0"/>
+                <strings jsxname="lisaaVaihtoehdot" jsxtext="Lisää ajankohdat"/>
                 <events jsxexecute="addCalendarChoices(this.getParent().getParent().getParent().getParent().getParent().getParent().getName());"/>
               </object>
             </object>
@@ -210,7 +210,7 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="2" jsxwidth="720" jsxheight="0" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+      <variants jsxoverflow="2" jsxwidth="550" jsxheight="0" jsxrelativeposition="1"/>
       <strings jsxname="choiceBlock" jsxdisplay="" jsxvisibility=""/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.TextBox">
@@ -226,7 +226,7 @@
     </object>
     <object type="jsx3.gui.Block">
       <variants jsxoverflow="2" jsxheight="40"/>
-      <strings jsxname="paneDelete" jsxwidth="100%" jsxpadding="0" jsxmargin="0"/>
+      <strings jsxname="paneDelete" jsxpadding="0" jsxmargin="0"/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.LayoutGrid">
         <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>

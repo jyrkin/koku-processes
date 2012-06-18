@@ -1,15 +1,15 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
-  <name>Fieldset</name>
-  <icon>images/prototypes/block.gif</icon>
-  <description>Fieldset.</description>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
+  <name><![CDATA[Fieldset]]></name>
+  <icon><![CDATA[images/prototypes/block.gif]]></icon>
+  <description><![CDATA[Fieldset.]]></description>
   <onBeforeDeserialize/>
-  <onAfterDeserialize>resetChoiceSection();</onAfterDeserialize>
+  <onAfterDeserialize><![CDATA[resetChoiceSection();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="120"/>
+    <variants jsxoverflow="2" jsxwidth="550" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="120"/>
     <strings jsxname="rootpane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="2" jsxwidth="720" jsxheight="60" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+      <variants jsxoverflow="2" jsxwidth="550" jsxheight="60" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
       <strings jsxname="paneOption" jsxdisplay="" jsxvisibility="" jsxpadding="0" jsxmargin="0"/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.Block">
@@ -21,11 +21,11 @@
           <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0" jsxmargin="0 0 0 18"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="labelKysymys" jsxtext="Vaihtoehto" jsxclassname="FormLabel" jsxmargin="0" jsxpadding="0"/>
+              <strings jsxname="labelKysymys" jsxtext="Vaihtoehto" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
@@ -46,7 +46,7 @@
               <strings jsxname="layout ( | )" jsxcols="40%,*" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxmargin="0 0 0 0" jsxtextalign="left"/>
+                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxtextalign="left"/>
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -60,7 +60,7 @@
               </object>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
+                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Button">
                   <variants jsxindex="0" jsxheight="18"/>
@@ -74,7 +74,7 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="2" jsxwidth="720" jsxheight="10" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+      <variants jsxoverflow="2" jsxwidth="550" jsxheight="10" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
       <strings jsxname="choiceBlock" jsxdisplay="" jsxvisibility=""/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.TextBox">
@@ -90,14 +90,14 @@
     </object>
     <object type="jsx3.gui.Block">
       <variants jsxoverflow="2" jsxheight="20"/>
-      <strings jsxname="pane" jsxwidth="100%" jsxpadding="0" jsxmargin="0"/>
+      <strings jsxname="pane" jsxwidth="100%"/>
       <dynamics jsxborder="@No jsxborder"/>
       <object type="jsx3.gui.LayoutGrid">
         <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
         <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="2"/>
-          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0" jsxmargin="0 0 0 8"/>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Button">
             <variants jsxindex="0" jsxheight="18"/>
