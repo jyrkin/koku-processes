@@ -1,11 +1,11 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
-  <name>Fieldset</name>
-  <icon>images/prototypes/block.gif</icon>
-  <description>Fieldset.</description>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
+  <name><![CDATA[Fieldset]]></name>
+  <icon><![CDATA[images/prototypes/block.gif]]></icon>
+  <description><![CDATA[Fieldset.]]></description>
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="720" jsxheight="130" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+    <variants jsxoverflow="2" jsxwidth="580" jsxheight="130" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
     <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
@@ -62,7 +62,7 @@
               <variants/>
               <strings jsxname="yes-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxheight="18" jsxchecked="0" jsxenabled="0"/>
+                <variants jsxheight="18" jsxchecked="0" jsxenabled="0" jsxdefaultchecked="0"/>
                 <strings jsxname="yes" jsxmargin="0 4 0 0"/>
                 <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
               </object>
@@ -94,7 +94,7 @@
               <variants/>
               <strings jsxname="no-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxheight="18" jsxchecked="0" jsxenabled="0"/>
+                <variants jsxheight="18" jsxchecked="0" jsxenabled="0" jsxdefaultchecked="0"/>
                 <strings jsxname="no" jsxmargin="0 4 0 0"/>
                 <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
               </object>

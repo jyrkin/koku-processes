@@ -33,43 +33,38 @@
       <variants/>
       <strings riaTitleText="TAPAAMISEN PERUSTIEDOT" jsxname="Viesti" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
-        <strings jsxwidth="100%" jsxheight="100%" jsxname="pane" jsxdisplay="" jsxvisibility=""/>
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="2" jsxheight="40"/>
-          <strings jsxname="pane"/>
-          <dynamics jsxborder="@No jsxborder"/>
-          <object type="jsx3.gui.Block">
-            <variants jsxrelativeposition="1" jsxoverflow="3"/>
-            <strings jsxname="label" jsxtext="Lähettäjä" jsxclassname="FormLabel"/>
-          </object>
-          <object type="com.intalio.ria.Field">
-            <variants/>
-            <strings jsxname="tekstikentanOtsikko-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
-            <object type="jsx3.gui.TextBox">
-              <variants jsxwidth="400" jsxenabled="0"/>
-              <strings jsxname="User_SenderRealName" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
-              <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
-            </object>
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Lähettäjä" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings jsxname="tekstikentanOtsikko-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxwidth="400" jsxenabled="0"/>
+            <strings jsxname="User_SenderRealName" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
+            <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
+        <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="2"/>
-          <strings jsxname="pane" jsxheight="100%"/>
-          <dynamics jsxborder="@No jsxborder"/>
-          <object type="jsx3.gui.Block">
-            <variants jsxrelativeposition="1" jsxoverflow="3"/>
-            <strings jsxname="label" jsxtext="Vastaanottaja" jsxclassname="FormLabel"/>
-          </object>
-          <object type="com.intalio.ria.Field">
-            <variants/>
-            <strings jsxname="kysymys-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
-            <object type="jsx3.gui.TextBox">
-              <variants jsxwidth="400" jsxenabled="0"/>
-              <strings jsxname="User_RecipientRealName" jsxdisabledbgcolor="#ffffff" jsxvalue=""/>
-              <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
-            </object>
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Vastaanottaja" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings jsxname="kysymys-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxwidth="400" jsxenabled="0"/>
+            <strings jsxname="User_RecipientRealName" jsxdisabledbgcolor="#ffffff" jsxvalue=""/>
+            <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>
       </object>
@@ -129,7 +124,7 @@
       <strings riaTitleText="Peruuta Tapaaminen" jsxname="Peruuta_Ajanvaraus" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxrelativeposition="1"/>
-        <strings jsxname="pane" jsxdisplay="" jsxvisibility="" jsxclassname="checkBlock"/>
+        <strings jsxname="column" jsxdisplay="" jsxvisibility="" jsxclassname="checkBlock"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.CheckBox">
           <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
@@ -139,7 +134,7 @@
       </object>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxrelativeposition="1"/>
-        <strings jsxname="pane" jsxdisplay="" jsxvisibility="" jsxclassname="checkBlock checkLabel"/>
+        <strings jsxname="column" jsxdisplay="" jsxvisibility="" jsxclassname="checkBlock checkLabel"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>

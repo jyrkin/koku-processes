@@ -1,16 +1,16 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
-  <name>Fieldset</name>
-  <icon>images/prototypes/block.gif</icon>
-  <description>Fieldset.</description>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
+  <name><![CDATA[Fieldset]]></name>
+  <icon><![CDATA[images/prototypes/block.gif]]></icon>
+  <description><![CDATA[Fieldset.]]></description>
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="720" jsxheight="130" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+    <variants jsxoverflow="2" jsxwidth="550" jsxheight="130"/>
     <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
       <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-      <strings jsxname="layout (--)" jsxrows="12%,5%,22%,30%,*" jsxwidth="100%" jsxheight="100%"/>
+      <strings jsxname="layout (--)" jsxrows="12%,12%,22%,30%,*" jsxwidth="100%" jsxheight="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
         <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
@@ -62,7 +62,7 @@
               <variants/>
               <strings jsxname="yes-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                 <strings jsxname="yes" jsxmargin="0 4 0 0"/>
                 <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);uncheckTheOthers(this.getParent().getParent().getParent().getParent().getParent().getParent().getName(), this.getName());"/>
               </object>
@@ -94,7 +94,7 @@
               <variants/>
               <strings jsxname="no-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                 <strings jsxname="no" jsxmargin="0 4 0 0"/>
                 <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);uncheckTheOthers(this.getParent().getParent().getParent().getParent().getParent().getParent().getName(), this.getName());"/>
               </object>
@@ -120,7 +120,7 @@
           <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxmargin="0 0 0 18"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Button">
               <variants jsxindex="0" jsxheight="18"/>

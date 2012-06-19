@@ -1,11 +1,11 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
-  <name>Fieldset</name>
-  <icon>images/prototypes/block.gif</icon>
-  <description>Fieldset.</description>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
+  <name><![CDATA[Fieldset]]></name>
+  <icon><![CDATA[images/prototypes/block.gif]]></icon>
+  <description><![CDATA[Fieldset.]]></description>
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="720" jsxheight="190" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+    <variants jsxoverflow="2" jsxwidth="550" jsxheight="190" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
     <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
@@ -65,7 +65,7 @@
           <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxmargin="0 0 0 18"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Button">
               <variants jsxindex="0" jsxheight="18"/>

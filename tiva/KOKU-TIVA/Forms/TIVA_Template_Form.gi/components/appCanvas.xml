@@ -188,7 +188,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" jsxdisplay="none" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxwidth="100%"/>
+      <strings jsxdisplay="none" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
         <strings jsxname="row"/>
@@ -534,8 +534,8 @@
       </object>
     </object>
     <object type="com.intalio.ria.Section">
-      <variants jsxwidth="570"/>
-      <strings riaTitleText="Toimenpiteiden lisäys" jsxname="toimenpiteet-section" jsxclassname="fieldset"/>
+      <variants/>
+      <strings jsxwidth="100%" riaTitleText="Toimenpiteiden lisäys" jsxname="toimenpiteet-section" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
         <strings jsxname="row" jsxclassname="row"/>
@@ -561,7 +561,7 @@
           <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Tarkentava teksti"/>
         </object>
         <object type="com.intalio.ria.Field">
-          <variants jsxwidth="570"/>
+          <variants/>
           <strings riaLabelText="tarkentavaTeksti" jsxdisplay="" jsxname="tarkentavaTeksti-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxheight="100" jsxwidth="500" jsxtype="1"/>
@@ -582,7 +582,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Suostumuspohja" jsxname="template-section" jsxclassname="fieldset"/>
+      <strings riaTitleText="Suostumuspohja" jsxname="template-section" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="3" jsxrelativeposition="1"/>
         <strings jsxdisplay="none" jsxname="label" jsxclassname="FormLabel" jsxtext="&lt;div id=&quot;dialog&quot; title=&quot;Täyttöohje&quot; style=&quot;display:none;&quot;&gt; &lt;/div&gt;"/>
@@ -592,7 +592,7 @@
         <strings jsxname="suostumusKuvaus" jsxclassname="FormLabel"/>
       </object>
       <object type="jsx3.gui.Block">
-        <variants jsxheight="0" jsxoverflow="2" jsxwidth="570"/>
+        <variants jsxheight="0" jsxoverflow="2"/>
         <strings jsxname="toimenpiteetBlock" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
       </object>
