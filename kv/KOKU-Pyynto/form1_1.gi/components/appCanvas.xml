@@ -16,7 +16,7 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Button">
           <variants jsxindex="0" jsxheight="18"/>
-          <strings jsxname="button" jsxtext="Käytä lomakepohjaa" jsxmargin="0 4 0 0"/>
+          <strings jsxname="button" jsxtext="KÃ¤ytÃ¤ lomakepohjaa" jsxmargin="0 4 0 0"/>
           <events jsxexecute="useTemplate();Preload();"/>
         </object>
       </object>
@@ -36,12 +36,12 @@
       <strings jsxwidth="100%" jsxname="headerEdit" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="jsx3.gui.Button">
         <variants jsxindex="0" jsxheight="18"/>
-        <strings jsxname="showFormButton" jsxtext="Näytä lomake" jsxmargin="0 4 0 0"/>
+        <strings jsxname="showFormButton" jsxtext="NÃ¤ytÃ¤ lomake" jsxmargin="0 4 0 0"/>
         <events jsxexecute="showForm(form1.getJSXByName(&quot;showFormFlag&quot;).getValue());"/>
       </object>
       <object type="jsx3.gui.Button">
         <variants jsxindex="0" jsxheight="18"/>
-        <strings jsxname="button" jsxtext="Lisää lähettäjä" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <strings jsxname="button" jsxtext="LisÃ¤Ã¤ lÃ¤hettÃ¤jÃ¤" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxexecute="fillUser();"/>
       </object>
       <object type="jsx3.gui.Block">
@@ -66,7 +66,7 @@
           <object type="jsx3.gui.Select">
             <variants jsxwidth="300" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
             <strings jsxname="PohjanValinta" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -"/>
-            <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="getTemplate(this.getValue());if(form1.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  if (form1.getJSXByName(&quot;HaeKayttajia_Checkbox1&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Kayttajat&quot;).setDisplay(&quot;block&quot;).repaint();  }  else if (form1.getJSXByName(&quot;HaeRyhmia_Checkbox2&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;block&quot;).repaint();  }  else if (form1.getJSXByName(&quot;HaeRooleja_Checkbox3&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Roolit&quot;).setDisplay(&quot;block&quot;).repaint();  }  form1.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;, true);  form1.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(form1.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  form1.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;Haku_Kayttajat&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;Haku_Roolit&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;, true);  form1.getJSXByName(&quot;searchVisible&quot;).setChecked(0); }"/>
+            <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="getTemplate(this.getValue());if(form1.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  if (form1.getJSXByName(&quot;HaeKayttajia_Checkbox1&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Kayttajat&quot;).setDisplay(&quot;block&quot;).repaint();  }  else if (form1.getJSXByName(&quot;HaeRyhmia_Checkbox2&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;block&quot;).repaint();  }  else if (form1.getJSXByName(&quot;HaeRooleja_Checkbox3&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Roolit&quot;).setDisplay(&quot;block&quot;).repaint();  }  form1.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;, true);  form1.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(form1.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  form1.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;Haku_Kayttajat&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;Haku_Roolit&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;LisÃ¤Ã¤ vastaanottajia&quot;, true);  form1.getJSXByName(&quot;searchVisible&quot;).setChecked(0); }"/>
           </object>
         </object>
       </object>
@@ -104,7 +104,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Viestin näkyvyys" jsxname="Roolit" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%"/>
+      <strings riaTitleText="Viestin nÃ¤kyvyys" jsxname="Roolit" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
         <strings jsxname="row" jsxdisplay="" jsxclassname="row"/>
@@ -125,7 +125,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Hae Käyttäjiä tai ryhmiä" jsxname="Haku_Kayttajat" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%"/>
+      <strings riaTitleText="Hae KÃ¤yttÃ¤jiÃ¤ tai ryhmiÃ¤" jsxname="Haku_Kayttajat" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="1"/>
         <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
@@ -152,7 +152,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Käyttäjät" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="KÃ¤yttÃ¤jÃ¤t" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
@@ -179,7 +179,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Ryhmät" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="RyhmÃ¤t" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
@@ -220,7 +220,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxrelativeposition="1" jsxoverflow="3"/>
-            <strings jsxname="label" jsxtext="Lapsen henkilötunnus" jsxclassname="FormLabel"/>
+            <strings jsxname="label" jsxtext="Lapsen henkilÃ¶tunnus" jsxclassname="FormLabel"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants/>
@@ -241,7 +241,7 @@
             <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
             <object type="jsx3.gui.Button">
               <variants jsxindex="0" jsxheight="18"/>
-              <strings jsxname="button" jsxtext="Lisää" jsxclassname="kokuButton"/>
+              <strings jsxname="button" jsxtext="LisÃ¤Ã¤" jsxclassname="kokuButton"/>
               <events jsxexecute="searchNames(form1.getJSXByName(&quot;searchString&quot;).getValue());addToRecipients();"/>
             </object>
           </object>
@@ -325,7 +325,7 @@
           <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.Button">
             <variants jsxindex="0" jsxheight="18"/>
-            <strings jsxname="addRecipient" jsxtext="Lisää haetun lapsen vanhemmat vastaanottajiksi" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvisibility="hidden"/>
+            <strings jsxname="addRecipient" jsxtext="LisÃ¤Ã¤ haetun lapsen vanhemmat vastaanottajiksi" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvisibility="hidden"/>
             <events jsxexecute="addToRecipients();"/>
           </object>
         </object>
@@ -360,7 +360,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Käyttäjät" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="KÃ¤yttÃ¤jÃ¤t" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
@@ -387,7 +387,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Ryhmät" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="RyhmÃ¤t" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
@@ -428,7 +428,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxrelativeposition="1" jsxoverflow="3"/>
-            <strings jsxname="label" jsxtext="Hakusana (Käyttäjänimi)" jsxclassname="FormLabel"/>
+            <strings jsxname="label" jsxtext="Hakusana (KÃ¤yttÃ¤jÃ¤nimi)" jsxclassname="FormLabel"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants/>
@@ -552,7 +552,7 @@
           <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.Button">
             <variants jsxindex="0" jsxheight="18"/>
-            <strings jsxname="addRecipient" jsxtext="Lisää haettu käyttäjä vastaanottajiin" jsxclassname="kokuButton"/>
+            <strings jsxname="addRecipient" jsxtext="LisÃ¤Ã¤ haettu kÃ¤yttÃ¤jÃ¤ vastaanottajiin" jsxclassname="kokuButton"/>
             <events jsxexecute="addRolesToRecipients();"/>
           </object>
         </object>
@@ -560,7 +560,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Hae Käyttäjiä tai ryhmiä" jsxname="Haku_Ryhmat" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%"/>
+      <strings riaTitleText="Hae KÃ¤yttÃ¤jiÃ¤ tai ryhmiÃ¤" jsxname="Haku_Ryhmat" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="1"/>
         <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
@@ -587,7 +587,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Käyttäjät" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="KÃ¤yttÃ¤jÃ¤t" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
@@ -614,7 +614,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Ryhmät" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="RyhmÃ¤t" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
@@ -747,11 +747,11 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
-          <strings jsxname="label" jsxtext="Ryhmän jäsenet" jsxclassname="FormLabel"/>
+          <strings jsxname="label" jsxtext="RyhmÃ¤n jÃ¤senet" jsxclassname="FormLabel"/>
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
-          <strings riaLabelText="list" jsxname="list-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="block" riaHelpImageTip="Perheenjäsenten tiedot"/>
+          <strings riaLabelText="list" jsxname="list-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="block" riaHelpImageTip="PerheenjÃ¤senten tiedot"/>
           <object type="jsx3.gui.Block">
             <variants jsxheight="140" jsxwidth="540" jsxoverflow="1"/>
             <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay=""/>
@@ -843,7 +843,7 @@
           <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.Button">
             <variants jsxindex="0" jsxheight="18"/>
-            <strings jsxname="addRecipient" jsxtext="Lisää valitut ryhmät vastaanottajiin" jsxclassname="kokuButton"/>
+            <strings jsxname="addRecipient" jsxtext="LisÃ¤Ã¤ valitut ryhmÃ¤t vastaanottajiin" jsxclassname="kokuButton"/>
             <events jsxexecute=" addGroupsToRecipients();"/>
           </object>
         </object>
@@ -858,7 +858,7 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
-          <strings jsxname="label" jsxtext="Lähettäjä" jsxclassname="FormLabel"/>
+          <strings jsxname="label" jsxtext="LÃ¤hettÃ¤jÃ¤" jsxclassname="FormLabel"/>
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
@@ -939,14 +939,14 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
-          <strings jsxname="label" jsxtext="Vastauksen määräaika" jsxclassname="FormLabel"/>
+          <strings jsxname="label" jsxtext="Vastauksen mÃ¤Ã¤rÃ¤aika" jsxclassname="FormLabel"/>
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
           <strings jsxname="User_AnswerUntil-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.DatePicker">
             <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18" jsxrequired="1"/>
-            <strings jsxname="User_AnswerUntil" jsxmargin="0 4 0 0" jsxformat="dd.MM.yyyy" jsxtip="Vastauksen määräaika"/>
+            <strings jsxname="User_AnswerUntil" jsxmargin="0 4 0 0" jsxformat="dd.MM.yyyy" jsxtip="Vastauksen mÃ¤Ã¤rÃ¤aika"/>
             <events jsxhide="com.intalio.ria.validate(this);"/>
           </object>
         </object>
@@ -957,7 +957,7 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
-          <strings jsxname="label" jsxtext="Vastauksen muistutusraja päivinä" jsxclassname="FormLabel"/>
+          <strings jsxname="label" jsxtext="Vastauksen muistutusraja pÃ¤ivinÃ¤" jsxclassname="FormLabel"/>
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
@@ -974,7 +974,7 @@
         <strings jsxname="hidden" jsxrelativeposition="1" jsxdisplay="none"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
-          <strings jsxname="label" jsxtext="Vastauksen muistutusraja päivinä" jsxclassname="FormLabel"/>
+          <strings jsxname="label" jsxtext="Vastauksen muistutusraja pÃ¤ivinÃ¤" jsxclassname="FormLabel"/>
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
@@ -1168,7 +1168,7 @@
               <strings jsxname="column" jsxrelativeposition="1" jsxclassname="checkBlock checkLabel"/>
               <object type="jsx3.gui.Block">
                 <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                <strings jsxname="label" jsxtext="Vapaa tekstikenttä" jsxclassname="FormLabel"/>
+                <strings jsxname="label" jsxtext="Vapaa tekstikenttÃ¤" jsxclassname="FormLabel"/>
               </object>
             </object>
           </object>
@@ -1190,7 +1190,7 @@
             <strings jsxname="column" jsxrelativeposition="1" jsxclassname="checkBlock checkLabel"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Kyllä - Ei" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="KyllÃ¤ - Ei" jsxclassname="FormLabel"/>
             </object>
           </object>
         </object>
@@ -1264,7 +1264,7 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Button">
           <variants jsxheight="18"/>
-          <strings jsxname="button" jsxtext="Lisää kysymys" jsxdisplay="" jsxclassname="kokuButton"/>
+          <strings jsxname="button" jsxtext="LisÃ¤Ã¤ kysymys" jsxdisplay="" jsxclassname="kokuButton"/>
           <events jsxexecute="inputSection(form1.getJSXByName(&quot;tekstikentanOtsikko&quot;).getValue(),form1.getJSXByName(&quot;kysymys&quot;).getValue());"/>
         </object>
       </object>
@@ -1342,7 +1342,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxrelativeposition="1" jsxoverflow="3"/>
-            <strings jsxname="label" jsxtext="Näkyy vain minulle" jsxclassname="FormLabel"/>
+            <strings jsxname="label" jsxtext="NÃ¤kyy vain minulle" jsxclassname="FormLabel"/>
           </object>
         </object>
       </object>
@@ -1369,7 +1369,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxrelativeposition="1" jsxoverflow="3"/>
-            <strings jsxname="label" jsxtext="Näkyy vain organisaatioyksikölleni" jsxclassname="FormLabel"/>
+            <strings jsxname="label" jsxtext="NÃ¤kyy vain organisaatioyksikÃ¶lleni" jsxclassname="FormLabel"/>
           </object>
         </object>
       </object>
@@ -1396,7 +1396,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxrelativeposition="1" jsxoverflow="3"/>
-            <strings jsxname="label" jsxtext="Näkyy kaikille" jsxclassname="FormLabel"/>
+            <strings jsxname="label" jsxtext="NÃ¤kyy kaikille" jsxclassname="FormLabel"/>
           </object>
         </object>
       </object>
@@ -1407,11 +1407,7 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
-<<<<<<< HEAD
       <variants jsxoverflow="1"/>
-=======
-      <variants jsxoverflow="1" jsxheight="105"/>
->>>>>>> 1534ad0eaa449edb1fc96b02045e5a66ce0785bb
       <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="com.intalio.ria.Section">
         <variants/>

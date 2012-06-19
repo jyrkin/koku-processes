@@ -64,7 +64,7 @@
           <strings jsxname="User_Roolit-field" jsxclassname="field" riaLabelText="" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif" jsxdisplay="" jsxvisibility=""/>
           <object type="jsx3.gui.Select">
             <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" _isfocusing="true"/>
-            <strings jsxname="Message_FromRole" jsxmargin="0 4 0 0" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay="" jsxvisibility=""/>
+            <strings jsxname="Message_FromRole" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay="" jsxvisibility="" jsxclassname="selectList"/>
             <events jsxselect="" jsxkeydown=""/>
           </object>
         </object>

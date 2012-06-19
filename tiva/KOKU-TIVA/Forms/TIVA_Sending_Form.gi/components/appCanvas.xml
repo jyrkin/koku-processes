@@ -70,7 +70,7 @@
               <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
               <object type="jsx3.gui.TextBox">
                 <variants jsxwidth="250"/>
-                <strings jsxvalue="" jsxname="searchStringChild"/>
+                <strings jsxvalue="" jsxname="searchStringChild" jsxclassname="textField"/>
                 <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
               </object>
             </object>
@@ -182,7 +182,7 @@
           </object>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
-            <strings jsxvalue="" jsxname="Kayttaja_NakyvaLahettaja" jsxvisibility=""/>
+            <strings jsxvalue="" jsxname="Kayttaja_NakyvaLahettaja" jsxvisibility="" jsxclassname="textField"/>
             <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
         </object>
@@ -424,7 +424,7 @@
                   <strings riaLabelText="HaePohja_Tulokset" jsxname="HaePohja_Tulokset-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxheight="18" jsxwidth="400" _isfocusing="true" jsxxmlasync="1" jsxtype="1"/>
-                    <strings jsxvalue="" jsxxmlid="Pohjat-nomap" jsxxml="" jsxname="HaePohja_Tulokset" jsxmargin="0 4 0 0"/>
+                    <strings jsxvalue="" jsxxmlid="Pohjat-nomap" jsxxml="" jsxname="HaePohja_Tulokset"/>
                     <events onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" onmousedown="this.style.backgroundColor='';" jsxselect="com.intalio.ria.validate(this, objEVENT);getTemplate(TIVAForm.getJSXByName(&quot;HaePohja_Tulokset&quot;).getValue());"/>
                   </object>
                 </object>

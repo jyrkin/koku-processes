@@ -1,8 +1,42 @@
 @media all
 {
-
 span.root {
-  overflow: visible;
+  overflow: visible !important;
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  font-size:12px;
+  color: #444;
+}
+
+.kokuButton, .selectList {
+  font-size:10px;
+  color: #000;
+}
+
+.row {
+  margin-bottom: 12px;
+  display: block !important;
+  clear: both;
+}
+
+.column, .checkBlock {
+  float: left;
+}
+
+.column {
+  margin-right: 12px;
+}
+
+.textField, .selectList {
+  width: 250px;
+  height: 20px;
+}
+
+.labelPadding {
+  padding-top: 12px;
+}
+
+.labelHeader {
+  margin-bottom: 12px;
 }
 
 span.FormLabel, span.headerNote, #JSX div.form-title, #JSX span.form-title {
@@ -11,17 +45,12 @@ span.FormLabel, span.headerNote, #JSX div.form-title, #JSX span.form-title {
 }
 
 span.FormLabel, span.headerNote {
-  font-size:12px;
   color:#666666;
 }
 
 div[label=IntalioInternal_SpacerBlock] {
   display: none !important;
-}
-
-.checkBlock {
-  float: left;
-}
+} 
 
 .checkLabel {
   padding-top: 2px;
@@ -31,20 +60,19 @@ span.checkLabel {
   padding-top: 2px;
 }
 
-legend, JSX div.form-title, #JSX span.form-title {
-  color:#444;
-}
-
 legend {
-  font-size:12px;
   font-weight:normal;
   letter-spacing:1px;
   text-transform:uppercase;
+  font-size: 14px;
+  color: #444;
 }
 
 /* fieldset */
 fieldset {
   border: 1px solid #da251d;
+  margin: 0px 0px 12px 0px;
+  padding: 12px;
 }
 
 /* padding inside fieldset (IE bug workaround) */
@@ -59,6 +87,7 @@ div.fieldset-padding {
   font-weight:bolder;
   letter-spacing:2px;
   text-transform:uppercase;
+  color: #444;
 }
 
 span.required {
