@@ -1090,7 +1090,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Lomakkeen muokkaus" jsxname="Kentat" jsxclassname="fieldset" jsxdisplay="" jsxwidth="100%"/>
+      <strings riaTitleText="Lomakkeen muokkaus" jsxname="Kentat" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
         <strings jsxname="row" jsxclassname="row"/>
@@ -1408,10 +1408,10 @@
     </object>
     <object type="jsx3.gui.Block">
       <variants jsxoverflow="1"/>
-      <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay="none"/>
+      <strings jsxname="paneBlock" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="com.intalio.ria.Section">
         <variants/>
-        <strings jsxheight="" riaTitleText="Viesti" jsxname="block" jsxclassname="fieldset" jsxdisplay="block"/>
+        <strings riaTitleText="Viesti" jsxname="block" jsxclassname="fieldset" jsxdisplay="block" jsxwidth="100%"/>
       </object>
     </object>
     <object type="com.intalio.ria.Section">

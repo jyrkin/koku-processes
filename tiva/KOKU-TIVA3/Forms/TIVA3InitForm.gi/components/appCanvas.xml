@@ -5,471 +5,270 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize><![CDATA[preload();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="1" jsxwidth="850"/>
-    <strings jsxheight="100%" jsxname="root"/>
+    <variants jsxoverflow="1" jsxwidth="600"/>
+    <strings jsxname="root" jsxclassname="root"/>
     <object type="jsx3.gui.Block">
-      <variants jsxheight="110" jsxwidth="640"/>
-      <strings jsxpadding="5,0,5,5" jsxname="header" jsxrelativeposition="1" jsxbgcolor="" jsxtextalign="left" jsxclassname="header" jsxmargin="0,0,0,5"/>
-      <object type="jsx3.gui.LayoutGrid">
-        <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-        <strings jsxname="layout (--)" jsxrows="85%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+      <variants/>
+      <strings jsxwidth="100%" jsxname="header" jsxrelativeposition="1"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxtextalign="right" jsxclassname="row"/>
+        <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="2"/>
-          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder=""/>
-          <object type="jsx3.gui.LayoutGrid">
-            <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-            <strings jsxname="layout ( | )" jsxcols="10%,35%,50%" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.Block">
-              <variants jsxoverflow="2"/>
-              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
-            </object>
-            <object type="jsx3.gui.Block">
-              <variants jsxoverflow="2"/>
-              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxbgcolor="" jsxdisplay="none"/>
-              <dynamics jsxborder="@No jsxborder"/>
-            </object>
-            <object type="jsx3.gui.Block">
-              <variants jsxoverflow="2"/>
-              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
-              <dynamics jsxborder="@No jsxborder"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxrelativeposition="1"/>
-                <strings jsxname="form-title" jsxclassname="form-title-new2" jsxtext="KIRJAA ASIAKKAAN SUOSTUMUS" jsxfontweight="normal" jsxpadding="12px" jsxtextalign="right" jsxmargin=""/>
-              </object>
-            </object>
-          </object>
+          <variants jsxrelativeposition="1"/>
+          <strings jsxname="form-title" jsxclassname="form-title" jsxtext="KIRJAA ASIAKKAAN SUOSTUMUS" jsxfontweight="normal" jsxtextalign="right"/>
         </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxtextalign="right" jsxclassname="row"/>
+        <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="2"/>
-          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder=""/>
-          <object type="jsx3.gui.LayoutGrid">
-            <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-            <strings jsxname="layout ( | )" jsxcols="52%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.Block">
-              <variants jsxoverflow="2"/>
-              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
-              <dynamics jsxborder="@No jsxborder"/>
-            </object>
-            <object type="jsx3.gui.Block">
-              <variants jsxoverflow="2"/>
-              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
-              <dynamics jsxborder="@No jsxborder"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                <strings jsxname="label" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)." jsxclassname="FormLabel"/>
-              </object>
-            </object>
-          </object>
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)." jsxclassname="FormLabel"/>
         </object>
       </object>
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="block"/>
+      <strings riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="300"/>
-        <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
+        <variants jsxoverflow="1"/>
+        <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="column" jsxclassname="column"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="1" jsxoverflow="3"/>
+            <strings jsxname="label" jsxtext="Hakusana (HETU)" jsxclassname="FormLabel"/>
+          </object>
+          <object type="com.intalio.ria.Field">
+            <variants/>
+            <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+            <object type="jsx3.gui.TextBox">
+              <variants/>
+              <strings jsxname="searchStringChild" jsxvalue="" jsxclassname="textField"/>
+              <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="column" jsxclassname="column"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="com.intalio.ria.Field">
+            <variants/>
+            <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+            <object type="jsx3.gui.Button">
+              <variants jsxheight="18"/>
+              <strings jsxname="button" jsxtext="Hae" jsxmargin="14 4 0 0" jsxclassname="kokuButton"/>
+              <events jsxexecute="searchNames(TIVA3Form.getJSXByName(&quot;searchStringChild&quot;).getValue());"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="column" jsxclassname="column"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="1" jsxoverflow="3"/>
+            <strings jsxname="label" jsxtext="Suostumuksen antajat" jsxclassname="FormLabel"/>
+          </object>
+          <object type="com.intalio.ria.Field">
+            <variants/>
+            <strings riaLabelText="Viesti_SuostumuksenAntajat" jsxname="Viesti_SuostumuksenAntajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+            <object type="jsx3.gui.Select">
+              <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" jsxrequired="0" _isfocusing="true"/>
+              <strings jsxname="suostumuksenAntajat" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;1&quot; jsxtext=&quot;Lapsi itse&quot;/&gt;&lt;record jsxid=&quot;2&quot; jsxtext=&quot;Toinen Huoltajista&quot;/&gt;&lt;record jsxid=&quot;3&quot; jsxtext=&quot;Molemmat huoltajista&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxvalue="2" jsxclassname="selectList"/>
+              <events jsxselect="com.intalio.ria.validate(this, objEVENT);swapConsentGivers(this.getValue());"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="column" jsxdisplay="block" jsxclassname="column"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="1" jsxoverflow="2"/>
+            <strings jsxname="suostuja_label" jsxtext="Suostuja" jsxclassname="FormLabel" jsxdisplay=""/>
+          </object>
+          <object type="com.intalio.ria.Field">
+            <variants/>
+            <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
+            <object type="jsx3.gui.Select">
+              <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" _isfocusing="true"/>
+              <strings jsxname="suostuja" jsxxmlid="suostuja-nomap" jsxdefaulttext="- Valitse -" jsxdisplay="" jsxclassname="selectList"/>
+              <events jsxselect="com.intalio.ria.validate(this, objEVENT); getTitle();"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
-        <object type="jsx3.gui.LayoutGrid">
-          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="18%,18%,54%,*" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="kayttajatLista" jsxname="kayttajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="block" riaHelpImageTip=""/>
           <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="40%,40%,*" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Hakusana (HETU)" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.TextBox">
-                    <variants/>
-                    <strings jsxname="searchStringChild" jsxmargin="0 4 0 0" jsxvalue=""/>
-                    <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
-                  </object>
+            <variants jsxheight="140" jsxwidth="540" jsxoverflow="1"/>
+            <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay=""/>
+            <object type="jsx3.gui.Matrix">
+              <variants jsxautorow="1" jsxselectionmodel="0" jsxpagingmodel="3" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
+              <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxname="searchChildMatrix" jsxbgcolor="#efefff" jsxsortpath="vanhempi" jsxsorttype="text" jsxsortdirection="descending"/>
+              <events jsxaftercommit=""/>
+              <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants jsxwidth="111"/>
+                <strings jsxpath="etunimi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Etunimi-column" jsxtext="Etunimi"/>
+                <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                <object type="jsx3.gui.TextBox">
+                  <variants jsxrelativeposition="0" jsxleft="44" jsxtop="40" jsxwidth="61" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
+                  <strings jsxname="Kayttajahaku_Etunimi" jsxdisplay="none" jsxvalue=""/>
+                  <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                 </object>
               </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.Button">
-                    <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="button" jsxtext="Hae" jsxmargin="14 4 0 0"/>
-                    <events jsxexecute="searchNames(TIVA3Form.getJSXByName(&quot;searchStringChild&quot;).getValue());"/>
-                  </object>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants jsxwidth="116"/>
+                <strings jsxpath="sukunimi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Sukunimi-column" jsxtext="Sukunimi"/>
+                <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                <object type="jsx3.gui.TextBox">
+                  <variants jsxrelativeposition="0" jsxleft="105" jsxtop="25" jsxwidth="111" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
+                  <strings jsxname="Kayttajahaku_Sukunimi" jsxdisplay="none" jsxvalue=""/>
+                  <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                 </object>
               </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="40%,*" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Suostumuksen antajat" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_SuostumuksenAntajat" jsxname="Viesti_SuostumuksenAntajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.Select">
-                    <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" jsxrequired="0" _isfocusing="true"/>
-                    <strings jsxname="suostumuksenAntajat" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;1&quot; jsxtext=&quot;Lapsi itse&quot;/&gt;&lt;record jsxid=&quot;2&quot; jsxtext=&quot;Toinen Huoltajista&quot;/&gt;&lt;record jsxid=&quot;3&quot; jsxtext=&quot;Molemmat huoltajista&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxvalue=""/>
-                    <events jsxselect="com.intalio.ria.validate(this, objEVENT);swapConsentGivers(this.getValue());"/>
-                  </object>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants jsxwidth="134"/>
+                <strings jsxpath="vanhempi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi-column" jsxtext="Vanhempi"/>
+                <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                <object type="jsx3.gui.TextBox">
+                  <variants jsxrelativeposition="0" jsxleft="216" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
+                  <strings jsxname="Kayttajahaku_Vanhempi" jsxdisplay="none" jsxvalue=""/>
+                  <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                 </object>
               </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.LayoutGrid">
-                  <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-                  <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
-                  <object type="jsx3.gui.Block">
-                    <variants jsxoverflow="2"/>
-                    <strings jsxname="valittu_suostuja" jsxwidth="100%" jsxheight="100%" jsxdisplay="none"/>
-                    <dynamics jsxborder="@No jsxborder"/>
-                    <object type="jsx3.gui.Block">
-                      <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                      <strings jsxname="label" jsxtext="Suostuja" jsxclassname="FormLabel"/>
-                    </object>
-                    <object type="com.intalio.ria.Field">
-                      <variants/>
-                      <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                      <object type="jsx3.gui.Select">
-                        <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" _isfocusing="true"/>
-                        <strings jsxname="suostuja" jsxmargin="0 4 0 0" jsxxml="" jsxxmlid="suostuja-nomap" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay=""/>
-                        <events jsxselect="com.intalio.ria.validate(this, objEVENT); getTitle();"/>
-                      </object>
-                    </object>
-                  </object>
-                </object>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="100%" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="kayttajatLista" jsxname="kayttajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="block" riaHelpImageTip=""/>
-                  <object type="jsx3.gui.Block">
-                    <variants jsxheight="140" jsxwidth="540" jsxoverflow="1"/>
-                    <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay="" jsxmargin="0 0 0 20"/>
-                    <object type="jsx3.gui.Matrix">
-                      <variants jsxautorow="1" jsxselectionmodel="0" jsxpagingmodel="3" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
-                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxname="searchChildMatrix" jsxbgcolor="#efefff" jsxsortpath="vanhempi" jsxsorttype="text" jsxsortdirection="descending"/>
-                      <events jsxaftercommit=""/>
-                      <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants jsxwidth="111"/>
-                        <strings jsxpath="etunimi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Etunimi-column" jsxtext="Etunimi"/>
-                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxrelativeposition="0" jsxleft="44" jsxtop="40" jsxwidth="61" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Etunimi" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants jsxwidth="116"/>
-                        <strings jsxpath="sukunimi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Sukunimi-column" jsxtext="Sukunimi"/>
-                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxrelativeposition="0" jsxleft="105" jsxtop="25" jsxwidth="111" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Sukunimi" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants jsxwidth="134"/>
-                        <strings jsxpath="vanhempi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi-column" jsxtext="Vanhempi"/>
-                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxrelativeposition="0" jsxleft="216" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Vanhempi" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxpath="vanhempiUid" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_VanhempiUid-column" jsxtext="Vanhempi1" jsxdisplay="none"/>
-                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxrelativeposition="0" jsxleft="216" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_VanhempiUid" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                    </object>
-                  </object>
-                </object>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="40%,40%,*" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.Button">
-                    <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="addRecipient" jsxtext="Lisää käyttäjä" jsxmargin="0 4 0 0"/>
-                    <events jsxexecute="addToRecipients();"/>
-                  </object>
-                </object>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="none"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="5%,15%,5%,15%,5%,10%,*" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1" jsxenabled="0" jsxdefaultchecked="0"/>
-                    <strings jsxname="HaeLapsia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
-                    <events jsxtoggle="switchSearchMode(&quot;childrens&quot;);"/>
-                  </object>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxmargin=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Lapset" jsxclassname="FormLabel" jsxpadding="6"/>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
-                    <strings jsxname="HaeKayttajia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
-                    <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
-                  </object>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxmargin=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Käyttäjät" jsxclassname="FormLabel" jsxpadding="6"/>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
-                    <strings jsxname="HaeRyhmia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
-                    <events jsxtoggle="switchSearchMode(&quot;groups&quot;);"/>
-                  </object>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxmargin=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Ryhmät" jsxclassname="FormLabel" jsxpadding="6"/>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxpath="vanhempiUid" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_VanhempiUid-column" jsxtext="Vanhempi1" jsxdisplay="none"/>
+                <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                <object type="jsx3.gui.TextBox">
+                  <variants jsxrelativeposition="0" jsxleft="216" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
+                  <strings jsxname="Kayttajahaku_VanhempiUid" jsxdisplay="none" jsxvalue=""/>
+                  <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                 </object>
               </object>
             </object>
           </object>
         </object>
       </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18"/>
+            <strings jsxname="addRecipient" jsxtext="Lisää käyttäjä" jsxclassname="kokuButton"/>
+            <events jsxexecute="addToRecipients();"/>
+          </object>
+        </object>
+      </object>
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Suostujat" jsxname="Message" jsxclassname="fieldset hiddenSection"/>
+      <strings riaTitleText="Suostujat" jsxname="Message" jsxclassname="fieldset" jsxwidth="100%" jsxdisplay=""/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="200" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
-        <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
-        <object type="jsx3.gui.LayoutGrid">
-          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="25%,*" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Lähettäjä" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
-                  <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
-                    <strings jsxname="Kayttaja_Lahettaja" jsxmargin="0 4 0 0" jsxvalue=""/>
-                    <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
-                  </object>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
-                    <strings jsxname="lahettaja_tosinimi" jsxmargin="0 4 0 0" jsxvalue=""/>
-                    <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
-                  </object>
-                </object>
-              </object>
-            </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Lähettäjä" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
+            <strings jsxname="Kayttaja_Lahettaja" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
+            <strings jsxname="lahettaja_tosinimi" jsxvalue="" jsxclassname="textField"/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Suostuja(t)" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="receipients" jsxname="receipients-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="55%, *" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Suostuja(t)" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="receipients" jsxname="receipients-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.Block">
-                    <variants jsxwidth="350" jsxheight="110" jsxoverflow="1"/>
-                    <strings jsxname="matrix-block" jsxrelativeposition="1" jsxmargin="0 0 0 18"/>
-                    <object type="jsx3.gui.Matrix">
-                      <variants jsxpagingmodel="3" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1"/>
-                      <strings jsxname="dummyMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlid="receipientsToShow-nomap" jsxsortpath="receipient2" jsxsorttype="text" jsxsortdirection="ascending"/>
-                      <events jsxaftercommit="this.getParent().getParent().validate(this, objEVENT);"/>
-                      <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants jsxwidth="50"/>
-                        <strings jsxname="deleteButtonColumn" jsxtext="Poista" jsxpadding="2" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxtextalign="center" jsxcelltextalign="center"/>
-                        <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                        <object type="jsx3.gui.ImageButton">
-                          <variants jsxwidth="16" jsxheight="16" jsxenabled="1" jsxstate="0" jsxprefetch="1" jsxtype="0"/>
-                          <strings jsxname="deleteButtonMask" jsximage="jsx:///images/list/delete.gif"/>
-                          <events jsxexecute="this.getParent().getParent().deleteRecord(this.emGetSession().recordId, true);this.getParent().getParent().getParent().getParent().validate(this, objEVENT);"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxname="recipients" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="recipients" jsxdisplay=""/>
-                        <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="recipients" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxname="recipientsUid" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="recipientsUid" jsxdisplay="none"/>
-                        <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="recipientsUid" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxname="targetPerson" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="targetPerson" jsxdisplay="none"/>
-                        <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="targetPerson" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                    </object>
-                  </object>
+            <variants jsxwidth="350" jsxheight="110" jsxoverflow="1"/>
+            <strings jsxname="matrix-block" jsxrelativeposition="1"/>
+            <object type="jsx3.gui.Matrix">
+              <variants jsxpagingmodel="3" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1"/>
+              <strings jsxname="dummyMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlid="receipientsToShow-nomap" jsxsortpath="receipient2" jsxsorttype="text" jsxsortdirection="ascending"/>
+              <events jsxaftercommit="this.getParent().getParent().validate(this, objEVENT);"/>
+              <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants jsxwidth="50"/>
+                <strings jsxname="deleteButtonColumn" jsxtext="Poista" jsxpadding="2" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxtextalign="center" jsxcelltextalign="center"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+                <object type="jsx3.gui.ImageButton">
+                  <variants jsxwidth="16" jsxheight="16" jsxenabled="1" jsxstate="0" jsxprefetch="1" jsxtype="0"/>
+                  <strings jsxname="deleteButtonMask" jsximage="jsx:///images/list/delete.gif"/>
+                  <events jsxexecute="this.getParent().getParent().deleteRecord(this.emGetSession().recordId, true);this.getParent().getParent().getParent().getParent().validate(this, objEVENT);"/>
                 </object>
               </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="button" jsxname="button-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.Button">
-                    <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="showOrHideSearch" jsxtext="Piilota Haku" jsxmargin="12 4 0 0"/>
-                    <events jsxexecute="if (TIVA3Form.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  TIVA3Form.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;block&quot;).repaint();  TIVA3Form.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;,true);  TIVA3Form.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(TIVA3Form.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  TIVA3Form.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;none&quot;).repaint();  TIVA3Form.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;,true);  TIVA3Form.getJSXByName(&quot;searchVisible&quot;).setChecked(0); } "/>
-                  </object>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="recipients" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="recipients" jsxdisplay=""/>
+                <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+                <object type="jsx3.gui.TextBox">
+                  <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10" jsxenabled="0"/>
+                  <strings jsxname="recipients" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+                  <events jsxkeydown="1;"/>
+                </object>
+              </object>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="recipientsUid" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="recipientsUid" jsxdisplay="none"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+                <object type="jsx3.gui.TextBox">
+                  <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10" jsxenabled="0"/>
+                  <strings jsxname="recipientsUid" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+                  <events jsxkeydown="1;"/>
+                </object>
+              </object>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="targetPerson" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="targetPerson" jsxdisplay="none"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+                <object type="jsx3.gui.TextBox">
+                  <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
+                  <strings jsxname="targetPerson" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+                  <events jsxkeydown="1;"/>
                 </object>
               </object>
             </object>
@@ -531,151 +330,96 @@
         </object>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="1" jsxdefaultchecked="0"/>
+        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxvalue="43"/>
-        <strings jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants/>
+        <strings jsxvalue="43" jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Suostumuksen perustiedot" jsxname="Suostumus_Perustiedot" jsxclassname="fieldset"/>
+      <strings riaTitleText="Suostumuksen perustiedot" jsxname="Suostumus_Perustiedot" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxheight="50" jsxwidth="720"/>
-        <strings jsxname="pane"/>
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
-        <object type="jsx3.gui.LayoutGrid">
-          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="*" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxwidth="100%" jsxname="pane" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-              <dynamics jsxborder="@No jsxborder"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Voimassaoloaika" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Suostumus_Maaraaika" jsxname="Suostumus_Maaraaika-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.DatePicker">
-                    <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxfirstweekday="1" jsxenabled="1" jsxrequired="0"/>
-                    <strings jsxformat="dd-MM-yyyy" jsxname="Suostumus_Maaraaika" jsxmargin="0 4 0 0" jsxdisabledbgcolor="#ffffff"/>
-                    <events jsxhide="com.intalio.ria.validate(this);" jsxblur="isValidDate(this, 1);"/>
-                  </object>
-                </object>
-              </object>
-            </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Voimassaoloaika" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Suostumus_Maaraaika" jsxname="Suostumus_Maaraaika-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <object type="jsx3.gui.DatePicker">
+            <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxfirstweekday="1" jsxenabled="1" jsxrequired="0"/>
+            <strings jsxformat="dd-MM-yyyy" jsxname="Suostumus_Maaraaika" jsxmargin="0 4 0 0" jsxdisabledbgcolor="#ffffff"/>
+            <events jsxhide="com.intalio.ria.validate(this);" jsxblur="isValidDate(this, 1);"/>
           </object>
         </object>
       </object>
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" riaTitleText="Pohjien hakeminen" jsxname="Hae_Pohjat" jsxclassname="fieldset" jsxdisplay=""/>
+      <strings riaTitleText="Pohjien hakeminen" jsxname="Hae_Pohjat" jsxclassname="fieldset" jsxdisplay="" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="70"/>
-        <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxdisplay="none"/>
         <dynamics jsxborder="@No jsxborder"/>
-        <object type="jsx3.gui.LayoutGrid">
-          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="0%,75%,*" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxwidth="100%" jsxname="pane" jsxheight="100%" jsxdisplay="none"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="40%,40%,*" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Rajaa haku pohjan otsikolla" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="HaePohja_Suodatin" jsxname="HaePohja_Suodatin-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.TextBox">
-                    <variants/>
-                    <strings jsxname="HaePohja_Suodatin" jsxmargin="0 4 0 0" jsxvalue=""/>
-                    <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="getTemplates(this.getValue());"/>
-                  </object>
-                </object>
-              </object>
-            </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Rajaa haku pohjan otsikolla" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="HaePohja_Suodatin" jsxname="HaePohja_Suodatin-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <object type="jsx3.gui.TextBox">
+            <variants/>
+            <strings jsxname="HaePohja_Suodatin" jsxvalue="" jsxdisplay=""/>
+            <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="getTemplates(this.getValue());"/>
           </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxwidth="100%" jsxname="pane" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Pohjat" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="HaePohja_Tulokset" jsxname="HaePohja_Tulokset-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.Select">
-                    <variants jsxwidth="350" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
-                    <strings jsxname="HaePohja_Tulokset" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="" jsxxmlid="Pohjat-nomap"/>
-                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);getTemplate(TIVA3Form.getJSXByName(&quot;HaePohja_Tulokset&quot;).getValue());"/>
-                  </object>
-                </object>
-              </object>
-            </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Pohjat" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="HaePohja_Tulokset" jsxname="HaePohja_Tulokset-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <object type="jsx3.gui.Select">
+            <variants jsxwidth="350" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
+            <strings jsxname="HaePohja_Tulokset" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="" jsxxmlid="Pohjat-nomap"/>
+            <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);getTemplate(TIVA3Form.getJSXByName(&quot;HaePohja_Tulokset&quot;).getValue());"/>
           </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxwidth="100%" jsxname="pane" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="laatija_label" jsxtext="&lt;b&gt;Laatija: &lt;/b&gt;" jsxclassname="FormLabel"/>
-                </object>
-              </object>
-            </object>
-          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="laatija_label" jsxtext="&lt;b&gt;Laatija: &lt;/b&gt;" jsxclassname="FormLabel"/>
         </object>
       </object>
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="SUOSTUMUS" jsxname="Suostumus" jsxclassname="fieldset"/>
+      <strings riaTitleText="SUOSTUMUS" jsxname="Suostumus" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxrelativeposition="1" jsxoverflow="3"/>
         <strings jsxname="label" jsxtext="&lt;div id=&quot;dialog&quot; title=&quot;Täyttöohje&quot; style=&quot;display:none;&quot;&gt; &lt;/div&gt;" jsxclassname="FormLabel"/>
       </object>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxheight="30" jsxwidth="720"/>
-        <strings jsxname="pane" jsxtextalign="left" jsxpadding="" jsxmargin="0 0 0 -20"/>
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
@@ -683,7 +427,7 @@
         </object>
       </object>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxheight="0" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <variants jsxoverflow="2" jsxheight="0" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="block" jsxdisplay=""/>
         <dynamics jsxborder="@No jsxborder"/>
       </object>
@@ -716,178 +460,133 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="" jsxname="Suostumus1" jsxclassname="fieldset" jsxdisplay="block"/>
+      <strings riaTitleText="" jsxname="Suostumus1" jsxclassname="fieldset" jsxdisplay="block" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxheight="300" jsxwidth="720"/>
-        <strings jsxname="pane"/>
+        <variants jsxoverflow="1"/>
+        <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="column" jsxclassname="column"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="1" jsxoverflow="3"/>
+            <strings jsxname="label" jsxtext="Suostumustapa" jsxclassname="FormLabel"/>
+          </object>
+          <object type="com.intalio.ria.Field">
+            <variants/>
+            <strings riaLabelText="suostumustapa" jsxname="suostumustapa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
+            <object type="jsx3.gui.Select">
+              <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" jsxenabled="1" jsxrequired="1" jsxtype="0" _isfocusing="true"/>
+              <strings jsxname="Suostumus1_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Verbal&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;PaperBased&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;EmailBased&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff" jsxxmlurl="" jsxtip="Suostumustapa"/>
+              <events jsxselect="enablePaperStorage(this.getValue(), &quot;Suostumus1_Sailytyspaikka&quot;);"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="column" jsxdisplay="" jsxclassname="column"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="1" jsxoverflow="3"/>
+            <strings jsxname="label" jsxtext="Suostumusajankohta" jsxclassname="FormLabel"/>
+          </object>
+          <object type="com.intalio.ria.Field">
+            <variants/>
+            <strings riaLabelText="Suostumus_Suostumusajankohta" jsxname="Suostumus_Suostumusajankohta-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
+            <object type="jsx3.gui.DatePicker">
+              <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxenabled="1" jsxrequired="1" jsxyear="2012" jsxmonth="2" jsxdate="3"/>
+              <strings jsxformat="dd-MM-yyyy" jsxname="Suostumus1_Suostumusajankohta" jsxmargin="0 4 0 0" jsxdisabledbgcolor="#ffffff" jsxtip="Suostumusajankohta"/>
+              <events jsxhide="com.intalio.ria.validate(this);" jsxblur="isValidDate(this, 0);"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
-        <object type="jsx3.gui.LayoutGrid">
-          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="18%,18%,45%,*" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxwidth="100%" jsxname="pane" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="40%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-              <dynamics jsxborder="@No jsxborder"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Suostumustapa" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="suostumustapa" jsxname="suostumustapa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
-                  <object type="jsx3.gui.Select">
-                    <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" jsxenabled="1" jsxrequired="1" jsxtype="0" _isfocusing="true"/>
-                    <strings jsxname="Suostumus1_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Verbal&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;PaperBased&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;EmailBased&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff" jsxxmlurl="" jsxtip="Suostumustapa"/>
-                    <events jsxselect="enablePaperStorage(this.getValue(), &quot;Suostumus1_Sailytyspaikka&quot;);"/>
-                  </object>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor="" jsxdisplay=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Suostumusajankohta" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Suostumus_Suostumusajankohta" jsxname="Suostumus_Suostumusajankohta-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
-                  <object type="jsx3.gui.DatePicker">
-                    <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxenabled="1" jsxrequired="1" jsxyear="2012" jsxmonth="2" jsxdate="3"/>
-                    <strings jsxformat="dd-MM-yyyy" jsxname="Suostumus1_Suostumusajankohta" jsxmargin="0 4 0 0" jsxdisabledbgcolor="#ffffff" jsxtip="Suostumusajankohta"/>
-                    <events jsxhide="com.intalio.ria.validate(this);" jsxblur="isValidDate(this, 0);"/>
-                  </object>
-                </object>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxwidth="100%" jsxname="pane" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-              <dynamics jsxborder="@No jsxborder"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Paperilla annetun suostumuksen säilytyspaikka" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Suostumus_Sailytyspaikka" jsxname="Suostumus_Sailytyspaikka-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
-                  <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="390" jsxenabled="0"/>
-                    <strings jsxname="Suostumus1_Sailytyspaikka" jsxmargin="0 4 0 0" jsxvalue=""/>
-                    <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
-                  </object>
-                </object>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxwidth="100%" jsxname="pane" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-              <dynamics jsxborder="@No jsxborder"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Lisätiedot" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Suostumus_Lisatiedot" jsxname="Suostumus_Lisatiedot-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
-                  <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="540" jsxtype="1" jsxheight="100"/>
-                    <strings jsxname="Suostumus1_Lisatiedot" jsxmargin="0 4 0 0" jsxvalue=""/>
-                    <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
-                  </object>
-                </object>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Liite" jsxclassname="FormLabel"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings jsxname="file-upload-field" jsxclassname="field" riaLabelText="Lataa liitetiedosto" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif" jsxdisplay=""/>
-                  <object type="com.intalio.ria.FileUpload">
-                    <variants/>
-                    <strings jsxname="liite_tiedosto1" jsxmargin="0 0 0 18"/>
-                  </object>
-                </object>
-              </object>
-            </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Paperilla annetun suostumuksen säilytyspaikka" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Suostumus_Sailytyspaikka" jsxname="Suostumus_Sailytyspaikka-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxwidth="390" jsxenabled="0"/>
+            <strings jsxname="Suostumus1_Sailytyspaikka" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
         </object>
       </object>
-      <object type="com.intalio.ria.Field">
-        <variants/>
-        <strings riaLabelText="Suostumus_Liite" jsxname="Suostumus_Liite-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
-        <object type="jsx3.gui.TextBox">
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="row" jsxclassname="row"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Lisätiedot" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
           <variants/>
-          <strings jsxname="Suostumus1_Liite" jsxmargin="0 4 0 0" jsxvalue=""/>
-          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          <strings riaLabelText="Suostumus_Lisatiedot" jsxname="Suostumus_Lisatiedot-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxwidth="540" jsxtype="1" jsxheight="100"/>
+            <strings jsxname="Suostumus1_Lisatiedot" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
         </object>
       </object>
-      <object type="com.intalio.ria.Field">
-        <variants/>
-        <strings riaLabelText="Suostumus_Status" jsxname="Suostumus_Status-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
-        <object type="jsx3.gui.TextBox">
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxname="hidden" jsxrelativeposition="1" jsxdisplay="none"/>
+        <object type="com.intalio.ria.Field">
           <variants/>
-          <strings jsxname="Suostumus1_Status" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
-          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          <strings riaLabelText="Suostumus_Liite" jsxname="Suostumus_Liite-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+          <object type="jsx3.gui.TextBox">
+            <variants/>
+            <strings jsxname="Suostumus1_Liite" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
         </object>
-      </object>
-      <object type="com.intalio.ria.Field">
-        <variants/>
-        <strings riaLabelText="Suostumus_Extend1" jsxname="Suostumus_Extend1-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
-        <object type="jsx3.gui.TextBox">
+        <object type="com.intalio.ria.Field">
           <variants/>
-          <strings jsxname="Suostumus1_Extend1" jsxmargin="0 4 0 0" jsxvalue=""/>
-          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          <strings riaLabelText="Suostumus_Status" jsxname="Suostumus_Status-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+          <object type="jsx3.gui.TextBox">
+            <variants/>
+            <strings jsxname="Suostumus1_Status" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+            <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
         </object>
-      </object>
-      <object type="com.intalio.ria.Field">
-        <variants/>
-        <strings riaLabelText="Suostumus_Extend2" jsxname="Suostumus_Extend2-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
-        <object type="jsx3.gui.TextBox">
+        <object type="com.intalio.ria.Field">
           <variants/>
-          <strings jsxname="Suostumus1_Extend2" jsxmargin="0 4 0 0" jsxvalue=""/>
-          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          <strings riaLabelText="Suostumus_Extend1" jsxname="Suostumus_Extend1-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+          <object type="jsx3.gui.TextBox">
+            <variants/>
+            <strings jsxname="Suostumus1_Extend1" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Suostumus_Extend2" jsxname="Suostumus_Extend2-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+          <object type="jsx3.gui.TextBox">
+            <variants/>
+            <strings jsxname="Suostumus1_Extend2" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="label" jsxtext="Liite" jsxclassname="FormLabel"/>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings jsxname="file-upload-field" jsxclassname="field" riaLabelText="Lataa liitetiedosto" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif" jsxdisplay=""/>
+          <object type="com.intalio.ria.FileUpload">
+            <variants/>
+            <strings jsxname="liite_tiedosto1" jsxmargin="0 0 0 18"/>
+          </object>
         </object>
       </object>
     </object>

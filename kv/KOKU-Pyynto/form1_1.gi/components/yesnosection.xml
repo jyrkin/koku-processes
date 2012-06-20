@@ -5,12 +5,12 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="580" jsxheight="130" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+    <variants jsxoverflow="2" jsxwidth="550" jsxheight="130" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
     <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
       <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-      <strings jsxname="layout (--)" jsxrows="12%,5%,22%,30%,*" jsxwidth="100%" jsxheight="100%"/>
+      <strings jsxname="layout (--)" jsxrows="12%,12%,22%,30%,*" jsxwidth="100%" jsxheight="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
         <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>

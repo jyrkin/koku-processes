@@ -190,7 +190,7 @@ function swapConsentGivers(selection) {
 
 // molemmat vanhemmat valittu suostujaksi
     if (selection == 3){
-        TIVA3Form.getJSXByName("valittu_suostuja").setDisplay("none", true);
+        TIVA3Form.getJSXByName("suostuja").getAncestorOfName("column").setDisplay("none", true);
         TIVA3Form.getJSXByName("Suostumus1").setDisplay("block", true);
         TIVA3Form.getJSXByName("Suostumus2").setDisplay("block", true);
 
@@ -203,7 +203,7 @@ function swapConsentGivers(selection) {
         
 // toinen vanhempi valittu suostujaksi
     if (selection == 2){
-        TIVA3Form.getJSXByName("valittu_suostuja").setDisplay("block", true);
+        TIVA3Form.getJSXByName("suostuja").getAncestorOfName("column").setDisplay("block", true);
         // TIVA3Form.getJSXByName("valittu_suostuja").repaint();
         TIVA3Form.getJSXByName("Suostumus1").setDisplay("block", true);
         TIVA3Form.getJSXByName("Suostumus2").setDisplay("none", true);
@@ -215,7 +215,7 @@ function swapConsentGivers(selection) {
         } 
 // lapsi valittu suostujaksi
     if (selection == 1) {
-        TIVA3Form.getJSXByName("valittu_suostuja").setDisplay("none", true);
+        TIVA3Form.getJSXByName("suostuja").getAncestorOfName("column").setDisplay("none", true);
         TIVA3Form.getJSXByName("Suostumus1").setDisplay("block", true);
         TIVA3Form.getJSXByName("Suostumus2").setDisplay("none", true);
         // kenttien pakollisuudet

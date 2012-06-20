@@ -278,12 +278,12 @@ function getDataString(nodeIterator) {
 }
 
 function inputPreload(objXML) {
-    var attributes, i, pvm, pvm1, pvm2, pvm3, entryText, chosenSlot, nodeIterator, disabled, appointmentResponse;
+    var attributes, i, pvm, pvm1, pvm2, pvm3, entryText, chosenSlot, nodeIterator, disabled, appointmentStatus;
     nodeIterator = objXML.selectNodeIterator("//slots", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'");
     attributes = getDataString(nodeIterator);
     
     chosenSlot = objXML.selectSingleNode("//chosenSlot", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
-    appointmentResponse = objXML.selectSingleNode("//appointmentResponse", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+    appointmentStatus = objXML.selectSingleNode("//status", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
 
     for (i=0;i<attributes.length;i++) {       
        
@@ -300,7 +300,7 @@ function inputPreload(objXML) {
         refreshBlock();
     }
     
-    if (appointmentResponse === 'Cancelled') {
+    if (appointmentStatus === 'Cancelled') {
         AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(1, true);
         AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
         AjanvarausForm.getJSXByName("Lomake").setDisplay("block", true);

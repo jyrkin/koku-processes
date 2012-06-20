@@ -185,8 +185,8 @@
       <variants jsxoverflow="1"/>
       <strings jsxname="paneBlock" jsxrelativeposition="1"/>
       <object type="com.intalio.ria.Section">
-        <variants/>
-        <strings riaTitleText="Viesti" jsxname="block" jsxclassname="fieldset" jsxdisplay="block" jsxwidth="100%"/>
+        <variants jsxwidth="600"/>
+        <strings riaTitleText="Viesti" jsxname="block" jsxclassname="fieldset" jsxdisplay="block"/>
       </object>
     </object>
     <object type="com.intalio.ria.Section">

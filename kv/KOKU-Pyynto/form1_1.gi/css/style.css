@@ -20,6 +20,8 @@ span.root {
 
 .column, .checkBlock {
   float: left;
+  min-height: 20px;
+  min-width: 20px;
 }
 
 .column {

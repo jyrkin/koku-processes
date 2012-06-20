@@ -456,8 +456,8 @@ function removeModSection(id) {
 }
 
 function setValuesForModify(id, multiplier) {
-    AjanvarausForm.getJSXByName("calendarEntryBlock").setHeight(AjanvarausForm.getJSXByName("calendarEntryBlock").getHeight() + (280 * multiplier), true);
-    AjanvarausForm.getJSXByName(id).setHeight(AjanvarausForm.getJSXByName(id).getHeight() + (280 * multiplier), true);
+    AjanvarausForm.getJSXByName("calendarEntryBlock").setHeight(AjanvarausForm.getJSXByName("calendarEntryBlock").getHeight() + (240 * multiplier), true);
+    AjanvarausForm.getJSXByName(id).setHeight(AjanvarausForm.getJSXByName(id).getHeight() + (240 * multiplier), true);
 }
 
 function getSlotAttributes(id) {
@@ -487,7 +487,7 @@ function checkIfModifyOpen() {
     var id;
 
     if(AjanvarausForm.getJSXByName("mod")) {
-        id = AjanvarausForm.getJSXByName("mod").getParent().getParent().getParent().getName();
+        id = AjanvarausForm.getJSXByName("mod").getParent().getParent().getName();
         removeModSection(id);
         setValuesForModify(id, -1);
     }
@@ -1104,8 +1104,8 @@ function addNewEntry(entryText, infotext, numero) {
     var ajankohtaPanel, lastChild, previousLabel, splitted, entryTextSplit, parentNode;
     if(AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild() !== null) {
         lastChild = AjanvarausForm.getJSXByName("calendarEntryBlock").getLastChild();
-        previousLabel = lastChild.getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild();
-        splitted = previousLabel.getText().split(",");
+        previousLabel = lastChild.getFirstChild().getFirstChild().getFirstChild().getText();
+        splitted = previousLabel.split(",");
 
         if(splitted[0] !== "ajankohta") {
             entryTextSplit = entryText.split(",");
@@ -1153,7 +1153,7 @@ function mapAttributes(objXML) {
     attributes = getDataString(nodeIterator);
     for( i = 0; i < attributes.length; i = i + 1) {
 
-        AjanvarausForm.getJSXByName("calendarEntryId").setValue(attributes[i][0]);
+        AjanvarausForm.getJSXByName("calendarEntryId").setValue(attributes[i].slotNumber);
         pvm = attributes[i].appointmentDate;
         pvm = pvm.replace("Z", "");
         pvm1 = pvm.substr(8, 2);
@@ -1162,7 +1162,7 @@ function mapAttributes(objXML) {
         pvm = pvm1 + "." + pvm2 + "." + pvm3;
 
         mapFieldsToMatrix(attributes[i].slotNumber, attributes[i].appointmentDate, attributes[i].startTime.substr(0, 5), attributes[i].endTime.substr(0, 5), attributes[i].location, attributes[i].comment, true);
-        entryText = pvm + ", klo: " + attributes[i].startTime + " - " + attributes[i].endTime + ", paikka: " + attributes[i].paikka;
+        entryText = pvm + ", klo: " + attributes[i].startTime.substr(0, 5) + " - " + attributes[i].endTime.substr(0, 5) + ", paikka: " + attributes[i].location;
 
         addNewEntry(entryText, attributes[i].comment, attributes[i].slotNumber);
         refreshBlock();
@@ -1268,7 +1268,7 @@ function Preload() {
     if(userRealName) {
         AjanvarausForm.getJSXByName("User_SenderRealName").setValue(userRealName).repaint();
     }
-    AjanvarausForm.getJSXByName("block").setHeight(0, true);
+    //AjanvarausForm.getJSXByName("block").setHeight(0, true);
     getRoles(uid);
     if(gup("FormID")) {
         id = gup("FormID");

@@ -52,7 +52,7 @@
           <object type="jsx3.gui.Button">
             <variants jsxheight="18"/>
             <strings jsxname="remButton" jsxtext="Poista" jsxclassname="kokuButton"/>
-            <events jsxexecute="removeThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());checkSlotMatrix();"/>
+            <events jsxexecute="removeThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getName());checkSlotMatrix();"/>
           </object>
         </object>
       </object>
