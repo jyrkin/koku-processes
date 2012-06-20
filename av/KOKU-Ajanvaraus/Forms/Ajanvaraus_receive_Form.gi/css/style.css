@@ -12,6 +12,10 @@ span.root {
   color: #000;
 }
 
+.fieldset .fieldset-padding .jsx30block span[label=tooltipImg] {
+    width: 30px !important;
+}
+
 .row {
   margin-bottom: 12px;
   display: block !important;

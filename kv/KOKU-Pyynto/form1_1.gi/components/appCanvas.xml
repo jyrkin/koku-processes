@@ -16,7 +16,7 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Button">
           <variants jsxindex="0" jsxheight="18"/>
-          <strings jsxname="button" jsxtext="KÃ¤ytÃ¤ lomakepohjaa" jsxmargin="0 4 0 0"/>
+          <strings jsxname="button" jsxtext="Käytä lomakepohjaa" jsxmargin="0 4 0 0"/>
           <events jsxexecute="useTemplate();Preload();"/>
         </object>
       </object>

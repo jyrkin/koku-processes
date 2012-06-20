@@ -8,20 +8,20 @@
     <variants jsxwidth="600"/>
     <strings jsxheight="100%" jsxname="root"/>
     <object type="jsx3.gui.Block">
-      <variants jsxheight="90"/>
-      <strings jsxwidth="100%" jsxname="header" jsxrelativeposition="1" jsxbgcolor="" jsxtextalign="left" jsxclassname="header"/>
+      <variants/>
+      <strings jsxwidth="100%" jsxname="header" jsxrelativeposition="1" jsxclassname="header"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
-        <strings jsxname="pane" jsxwidth="100%" jsxheight="90%" jsxbgcolor=""/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1"/>
-          <strings jsxname="form-title" jsxclassname="form-title" jsxtext="AJANVARAUS" jsxfontweight="normal" jsxpadding="12px" jsxtextalign="right"/>
+          <strings jsxname="form-title" jsxclassname="form-title" jsxtext="AJANVARAUS" jsxfontweight="normal" jsxtextalign="right"/>
         </object>
       </object>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
-        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor="" jsxtextalign="right"/>
+        <strings jsxname="row" jsxtextalign="right" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
