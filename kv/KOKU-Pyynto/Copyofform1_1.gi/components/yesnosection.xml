@@ -40,10 +40,6 @@
             <variants jsxoverflow="2"/>
             <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
             <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.Block">
-              <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Vastaus" jsxclassname="FormLabel" jsxdisplay="none"/>
-            </object>
           </object>
         </object>
       </object>
