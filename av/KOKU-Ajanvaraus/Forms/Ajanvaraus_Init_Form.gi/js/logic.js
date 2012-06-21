@@ -1209,7 +1209,6 @@ function getUserRealName(uid) {
 function setModeModify() {
     AjanvarausForm.getJSXByName("Haku_Lapset").setDisplay("none", true);
     AjanvarausForm.getJSXByName("dummyMatrix").getChild("deleteButtonColumn").setDisplay("none", true);
-    AjanvarausForm.getJSXByName("showOrHideSearch").setDisplay("none", true);
 
     AjanvarausForm.getJSXByName("aloitusPvm").setRequired(0);
     AjanvarausForm.getJSXByName("aloitusPvm").getParent().repaint();
