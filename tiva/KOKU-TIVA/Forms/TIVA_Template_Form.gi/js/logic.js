@@ -312,6 +312,7 @@ function addChoice(id, description, infotext, prefill) {
     if (infotext != "") {
         info.setValue(infotext);
         TIVA_Form.getJSXByName("tarkentavaTeksti").setValue("");
+        section.getDescendantOfName("tooltipImg").setDisplay("inline !important", true);
     } else {
         section.getDescendantOfName("tooltipImg").setDisplay("none", true);
     }
