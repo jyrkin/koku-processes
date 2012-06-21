@@ -37,7 +37,6 @@
                     <bpel:literal bpdm:linkedMessageType="Kayttajaviestinta_reply_Form:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
-            <bpel:variable name="Kayttajaviestinta_Form" element="tns:Kayttajaviestinta_Form" bpdm:id="_3HCCMJ9LEeGA89WkWRnaIg"/>
             <bpel:variable name="Kayttajaviestinta_Form0" element="tns:Kayttajaviestinta_Form" bpdm:id="_KRFcQZ9MEeGA89WkWRnaIg"/>
             <bpel:variable name="tnsSendMessage" messageType="tns:sendMessage" binding="tns:KokuMessageProcessingServiceSoapBinding" operation="sendMessage" opMsgType="0" bpdm:id="_-I8XAJ9REeGA89WkWRnaIg" bpdm:messageIds=" out:_-IuUkJ9REeGA89WkWRnaIg">
                 <bpel:from bpdm:toPart="parameters">
@@ -51,6 +50,7 @@
                 </bpel:from>
             </bpel:variable>
             <bpel:variable name="tnsReceiveMessageResponse" messageType="tns:receiveMessageResponse" binding="tns:KokuMessageProcessingServiceSoapBinding" operation="receiveMessage" opMsgType="1" bpdm:id="_AjlNdZ9SEeGA89WkWRnaIg" bpdm:messageIds="inc:_AjAlsJ9SEeGA89WkWRnaIg"/>
+            <bpel:variable name="Kayttajaviestinta_Form" element="tns:Kayttajaviestinta_Form" bpdm:id="_LqO4oLtoEeG24t8AxV2WZg"/>
         </bpel:variables>
         <bpel:sequence>
             <bpdm:messagingtask eventType="start: message" operation="initProcess" partnerLink="prosessiAndKäyttäjäForPortTypeProcessPlkVar" portType="Kayttajaviestinta_reply_Form:Process" isMyRole="true" enableSharing="false" bpdm:label="Message_Start_Event" bpdm:ID="_0FTWkJ9LEeGA89WkWRnaIg">
@@ -90,6 +90,14 @@
                     <bpel:copy>
                         <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Subject</bpel:from>
                         <bpel:to>$tnsSendMessage.parameters/subject</bpel:to><mapper:mapperLink><mapper:vertice id="351412486" targetPath="$tnsSendMessage.parameters/subject" targetedBy="2103362635-arg0"></mapper:vertice><mapper:vertice id="2103362635" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_Subject"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_MessageId</bpel:from>
+                        <bpel:to>$tnsSendMessage.parameters/replyMessageId</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1878167117" targetPath="$tnsSendMessage.parameters/replyMessageId" targetedBy="2099877756-arg0"></mapper:vertice>
+  <mapper:vertice id="2099877756" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_MessageId"></mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tnsSendMessage" bpdm:msgVarScopeId="_trxBoJ9LEeGA89WkWRnaIg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_-IuUkJ9REeGA89WkWRnaIg"></bpdm:linkset>

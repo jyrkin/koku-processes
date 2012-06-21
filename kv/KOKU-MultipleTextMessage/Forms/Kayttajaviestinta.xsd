@@ -12,6 +12,7 @@
     		<element name="Message_ToFirstName" type="string"></element>
     		<element name="Message_ToLastName" type="string"></element>
     		<element name="Message_FromRole" type="string"></element>
+    		<element name="Message_MessageId" type="string"></element>
     	</sequence>
 </complexType>
     <complexType name="Kayttajaviestinta_Type">

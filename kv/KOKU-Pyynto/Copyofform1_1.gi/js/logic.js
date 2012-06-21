@@ -45,7 +45,7 @@ function preload() {
     var recipientDisplayName = "";
     var rolereceiver, recipientData;
 
-    if(form1.getJSXByName("User_Roolit").getValue() == "true") {
+    if(form1.getJSXByName("User_VastaanottajaRoolit").getValue() == "true") {
         var uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
         var uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
         form1.getJSXByName("User_Recipient").setValue(uid);

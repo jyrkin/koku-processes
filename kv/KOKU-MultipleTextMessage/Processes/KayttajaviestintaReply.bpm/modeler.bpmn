@@ -75,13 +75,6 @@
         </eAnnotations>
       </associations>
     </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_3HG6uJ9LEeGA89WkWRnaIg" iD="_3HCCMJ9LEeGA89WkWRnaIg" name="">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3HG6uZ9LEeGA89WkWRnaIg" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3HG6up9LEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3HG6u59LEeGA89WkWRnaIg" key="douri" value="project:///Forms/Kayttajaviestinta.xsd?xsdelement={http://soa.kv.koku.arcusys.fi/}Kayttajaviestinta_Form"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3HJW8J9LEeGA89WkWRnaIg" key="defaultDeclarationName" value="Kayttajaviestinta_Form"/>
-      </eAnnotations>
-    </artifacts>
     <artifacts xmi:type="bpmn:DataObject" xmi:id="_KRH4iJ9MEeGA89WkWRnaIg" iD="_KRFcQZ9MEeGA89WkWRnaIg" name="">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KRH4iZ9MEeGA89WkWRnaIg" source="attachedDataobject">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KRH4ip9MEeGA89WkWRnaIg" key="isBpelDeclaration" value="true"/>
@@ -136,6 +129,13 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AjyBwJ9SEeGA89WkWRnaIg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
         </eAnnotations>
       </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_LqYCmLtoEeG24t8AxV2WZg" iD="_LqO4oLtoEeG24t8AxV2WZg" name="">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LqYpoLtoEeG24t8AxV2WZg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LqYpobtoEeG24t8AxV2WZg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LqYportoEeG24t8AxV2WZg" key="douri" value="project:///Forms/Kayttajaviestinta.xsd?xsdelement={http://soa.kv.koku.arcusys.fi/}Kayttajaviestinta_Form"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LqewQLtoEeG24t8AxV2WZg" key="defaultDeclarationName" value="Kayttajaviestinta_Form"/>
+      </eAnnotations>
     </artifacts>
     <vertices xmi:type="bpmn:Activity" xmi:id="_0FTWkZ9LEeGA89WkWRnaIg" iD="_0FTWkJ9LEeGA89WkWRnaIg" associations="_0ynvkZ9LEeGA89WkWRnaIg _1PFCEJ9LEeGA89WkWRnaIg" outgoingEdges="_6j05MZ9LEeGA89WkWRnaIg" activityType="EventStartMessage">
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_0yS_cZ9LEeGA89WkWRnaIg"/>

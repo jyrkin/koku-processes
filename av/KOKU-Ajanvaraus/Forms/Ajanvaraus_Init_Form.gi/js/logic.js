@@ -422,26 +422,6 @@ function intalioPreStart() {
     return null;
 }
 
-function isValidHour(node) {
-    var hours, minutes;
-    hours = parseInt(node.getValue().substr(0, 2), 10);
-    minutes = parseInt(node.getValue().substr(3, 2), 10);
-
-    if(node.getValue().length !== 5 || node.getValue().substr(2, 1) !== ":") {
-        alert("Ajan t\u00E4ytyy olla muotoa hh:mm");
-        return false;
-    }
-    if(hours < 0 || hours > 23) {
-        alert("Tuntien t\u00E4ytyy olla v\u00E4lilt\u00E4 00 - 23");
-        return false;
-    }
-    if(minutes < 0 || minutes > 59) {
-        alert("Minuuttien t\u00E4ytyy olla v\u00E4lilt\u00E4 00 - 59");
-    } else {
-        return true;
-    }
-}
-
 function confirmation(question) {
     if(confirm(question)) {
         return true;
@@ -931,14 +911,10 @@ function addAppointment() {
         return;
     }
 
-    if(isValidHour(AjanvarausForm.getJSXByName("aloitusAika"))) {
-        if(AjanvarausForm.getJSXByName("singleSlot").getChecked()) {
-            inputSingleSection();
-        } else if(AjanvarausForm.getJSXByName("multiSlots").getChecked()) {
-            if(isValidHour(AjanvarausForm.getJSXByName("lopetusAika"))) {
-                inputMultiSections();
-            }
-        }
+    if(AjanvarausForm.getJSXByName("singleSlot").getChecked()) {
+        inputSingleSection();
+    } else if(AjanvarausForm.getJSXByName("multiSlots").getChecked()) {
+        inputMultiSections();
     }
 }
 
@@ -1209,7 +1185,6 @@ function getUserRealName(uid) {
 function setModeModify() {
     AjanvarausForm.getJSXByName("Haku_Lapset").setDisplay("none", true);
     AjanvarausForm.getJSXByName("dummyMatrix").getChild("deleteButtonColumn").setDisplay("none", true);
-    AjanvarausForm.getJSXByName("showOrHideSearch").setDisplay("none", true);
 
     AjanvarausForm.getJSXByName("aloitusPvm").setRequired(0);
     AjanvarausForm.getJSXByName("aloitusPvm").getParent().repaint();

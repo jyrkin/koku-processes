@@ -69,14 +69,6 @@
         </object>
       </object>
     </object>
-    <object type="jsx3.gui.Block">
-      <variants/>
-      <strings jsxwidth="100%" jsxpadding="5 10 0 10" jsxname="header" jsxrelativeposition="1" jsxdisplay=""/>
-      <object type="jsx3.gui.Block">
-        <variants jsxrelativeposition="1"/>
-        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title-new" jsxtext=""/>
-      </object>
-    </object>
     <object type="com.intalio.ria.Section">
       <variants/>
       <strings riaTitleText="Viestin tiedot" jsxname="User" jsxclassname="fieldset" jsxdisplay="" jsxwidth="100%"/>
@@ -179,6 +171,14 @@
           <strings jsxname="User_Roolit" jsxmargin="0 4 0 0" jsxvalue="" jsxvisibility="hidden" jsxdisplay="none"/>
           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
         </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants/>
+      <strings jsxwidth="100%" jsxpadding="5 10 0 10" jsxname="header" jsxrelativeposition="1" jsxdisplay=""/>
+      <object type="jsx3.gui.Block">
+        <variants jsxrelativeposition="1"/>
+        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title" jsxtext=""/>
       </object>
     </object>
     <object type="jsx3.gui.Block">
@@ -350,6 +350,15 @@
           <variants jsxwidth="300" jsxenabled="0"/>
           <strings jsxname="User_Recipient" jsxmargin="0 4 0 0" jsxvalue=""/>
           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+        </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="User_VastaanottajaRoolit-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif" jsxdisplay="none"/>
+        <object type="jsx3.gui.TextBox">
+          <variants/>
+          <strings jsxname="User_VastaanottajaRoolit" jsxmargin="0 4 0 0" jsxvalue=""/>
+          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
       </object>
     </object>

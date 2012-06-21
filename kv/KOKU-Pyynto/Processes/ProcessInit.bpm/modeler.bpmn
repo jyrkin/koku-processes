@@ -252,7 +252,7 @@
       </artifacts>
       <vertices xmi:type="bpmn:Activity" xmi:id="_AdGhsa1BEeCYk7-iNBydwQ" iD="_AdGhsK1BEeCYk7-iNBydwQ" outgoingEdges="_cmD30TX2EeGIWfBqWAuhbg" name="Vastaanottajan muokkaus" activityType="Task"/>
       <vertices xmi:type="bpmn:Activity" xmi:id="_a9NDoDX2EeGIWfBqWAuhbg" iD="_a9MckDX2EeGIWfBqWAuhbg" outgoingEdges="_fBk54TdoEeGWsLc5JL_Ygg _BLujMX1_EeGzXu12ZusphQ" incomingEdges="_cmD30TX2EeGIWfBqWAuhbg" activityType="GatewayDataBasedExclusive"/>
-      <vertices xmi:type="bpmn:Activity" xmi:id="_ek0qkTX2EeGIWfBqWAuhbg" iD="_ek0qkDX2EeGIWfBqWAuhbg" outgoingEdges="_b0nOoTdoEeGWsLc5JL_Ygg" incomingEdges="_CjLVYVh_EeGnmLsOFrrVFA _JDxdgX1_EeGzXu12ZusphQ" activityType="GatewayDataBasedExclusive"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_ek0qkTX2EeGIWfBqWAuhbg" iD="_ek0qkDX2EeGIWfBqWAuhbg" outgoingEdges="_b0nOoTdoEeGWsLc5JL_Ygg" incomingEdges="_JDxdgX1_EeGzXu12ZusphQ _UErMAbuBEeG24t8AxV2WZg" activityType="GatewayDataBasedExclusive"/>
       <vertices xmi:type="bpmn:Activity" xmi:id="_a2WPkTdoEeGWsLc5JL_Ygg" iD="_a2WPkDdoEeGWsLc5JL_Ygg" associations="_cVjYgDdoEeGWsLc5JL_Ygg _dFC7wDdoEeGWsLc5JL_Ygg" incomingEdges="_b0nOoTdoEeGWsLc5JL_Ygg" activityType="EventIntermediateMessage">
         <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_cVEQUTdoEeGWsLc5JL_Ygg"/>
         <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_dD7hcTdoEeGWsLc5JL_Ygg"/>
@@ -261,15 +261,17 @@
         <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_gK7uoDdoEeGWsLc5JL_Ygg"/>
         <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_hX7GMTdoEeGWsLc5JL_Ygg"/>
       </vertices>
-      <vertices xmi:type="bpmn:Activity" xmi:id="_BT5e0Vh_EeGnmLsOFrrVFA" iD="_BT5e0Fh_EeGnmLsOFrrVFA" outgoingEdges="_CjLVYVh_EeGnmLsOFrrVFA" incomingEdges="_B8Cc4Vh_EeGnmLsOFrrVFA" name="Tallenna Kunponimi" activityType="Task"/>
-      <vertices xmi:type="bpmn:Activity" xmi:id="_AtCcEX1_EeGzXu12ZusphQ" iD="_AtCcEH1_EeGzXu12ZusphQ" outgoingEdges="_JDxdgX1_EeGzXu12ZusphQ" incomingEdges="_BLujMX1_EeGzXu12ZusphQ" activityType="Task"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_BT5e0Vh_EeGnmLsOFrrVFA" iD="_BT5e0Fh_EeGnmLsOFrrVFA" outgoingEdges="_TzIwEbuBEeG24t8AxV2WZg" incomingEdges="_B8Cc4Vh_EeGnmLsOFrrVFA" name="Tallenna Kunponimi" activityType="Task"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_AtCcEX1_EeGzXu12ZusphQ" iD="_AtCcEH1_EeGzXu12ZusphQ" outgoingEdges="_JDxdgX1_EeGzXu12ZusphQ" incomingEdges="_BLujMX1_EeGzXu12ZusphQ" name="Loora User" activityType="Task"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_SXbnELuBEeG24t8AxV2WZg" iD="_SXbAALuBEeG24t8AxV2WZg" outgoingEdges="_UErMAbuBEeG24t8AxV2WZg" incomingEdges="_TzIwEbuBEeG24t8AxV2WZg" name="Kunpo User" activityType="Task"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_cmD30TX2EeGIWfBqWAuhbg" iD="_cmD30DX2EeGIWfBqWAuhbg"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_b0nOoTdoEeGWsLc5JL_Ygg" iD="_b0nOoDdoEeGWsLc5JL_Ygg"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_fBk54TdoEeGWsLc5JL_Ygg" iD="_fBk54DdoEeGWsLc5JL_Ygg" conditionType="Default" isDefault="true"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_B8Cc4Vh_EeGnmLsOFrrVFA" iD="_B8Cc4Fh_EeGnmLsOFrrVFA"/>
-      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_CjLVYVh_EeGnmLsOFrrVFA" iD="_CjLVYFh_EeGnmLsOFrrVFA"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_BLujMX1_EeGzXu12ZusphQ" iD="_BLujMH1_EeGzXu12ZusphQ"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_JDxdgX1_EeGzXu12ZusphQ" iD="_JDxdgH1_EeGzXu12ZusphQ"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_TzIwEbuBEeG24t8AxV2WZg" iD="_TzIwELuBEeG24t8AxV2WZg"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_UErMAbuBEeG24t8AxV2WZg" iD="_UErMALuBEeG24t8AxV2WZg"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_NquscNd5EeCU1O2hlInHBA" iD="_NquFYNd5EeCU1O2hlInHBA" outgoingEdges="_EI3e0SfBEeG34O-nVZ604A _OCaW0SfBEeG34O-nVZ604A" incomingEdges="_PP6hkdd5EeCU1O2hlInHBA" name="Onko pohjaa?" activityType="GatewayDataBasedExclusive"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_RZbLwdd5EeCU1O2hlInHBA" iD="_RZbLwNd5EeCU1O2hlInHBA" associations="_COZUACeyEeG34O-nVZ604A _ChdZ8CeyEeG34O-nVZ604A" outgoingEdges="_XIr0odd5EeCU1O2hlInHBA" incomingEdges="_1yEi8SfBEeG34O-nVZ604A" name="Lähetä HTML (pohja)" activityType="EventIntermediateMessage">

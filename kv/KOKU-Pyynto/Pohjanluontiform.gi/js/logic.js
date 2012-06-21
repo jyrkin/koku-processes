@@ -300,8 +300,9 @@ function addCalendarChoiceToForm(tempID, choiceText) {
     // alert(id);
     var section = form1.getJSXByName(tempID).getDescendantOfName("choiceBlock" + tempID).load("components/choicesection.xml", true);
 
-    form1.getJSXByName(tempID).getDescendantOfName("choiceBlock" + tempID).setHeight(form1.getJSXByName(tempID).getDescendantOfName("choiceBlock" + tempID).getHeight() + 30, true).repaint();
-    form1.getJSXByName(tempID).setHeight(form1.getJSXByName(tempID).getHeight() + 30);
+    form1.getJSXByName(tempID).getDescendantOfName(block).setHeight(form1.getJSXByName(tempID).getDescendantOfName(block).getHeight() + 30, true).repaint();
+    form1.getJSXByName(tempID).setHeight(form1.getJSXByName(tempID).getHeight() + 30, true);
+    //form1.getJSXByName(block).getParent().setHeight(form1.getJSXByName(block).getParent().getHeight() + 30, true);
     //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30).repaint();
 
     form1.getJSXByName("choicePane").setName("choicePane" + id).repaint();
@@ -637,7 +638,7 @@ function removeChoice(block, ID) {
     form1.getCache().getDocument("MultipleChoice-nomap").removeChild(form1.getCache().getDocument("MultipleChoice-nomap").selectSingleNode("//record[@jsxid='" + choiceID1 + "']"));
     form1.getJSXByName(block).removeChild(ID);
     form1.getJSXByName(block).setHeight(form1.getJSXByName(block).getHeight() - 30, true).repaint();
-    form1.getJSXByName(block).getParent().setHeight(form1.getJSXByName(block).getParent().getHeight() - 30);
+    form1.getJSXByName(block).getParent().setHeight(form1.getJSXByName(block).getParent().getHeight() - 30, true);
     //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 30).repaint();
 
 }

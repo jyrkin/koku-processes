@@ -75,13 +75,6 @@
         </eAnnotations>
       </associations>
     </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_-LJd-J1tEeCP0q7AMz-7Hg" iD="_-LFMgJ1tEeCP0q7AMz-7Hg" name="">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-LJd-Z1tEeCP0q7AMz-7Hg" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-LJd-p1tEeCP0q7AMz-7Hg" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-LJd-51tEeCP0q7AMz-7Hg" key="douri" value="project:///Forms/Kayttajaviestinta.xsd?xsdelement={http://soa.kv.koku.arcusys.fi/}Kayttajaviestinta_Form"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-LO9gJ1tEeCP0q7AMz-7Hg" key="defaultDeclarationName" value="Kayttajaviestinta_Form"/>
-      </eAnnotations>
-    </artifacts>
     <artifacts xmi:type="bpmn:DataObject" xmi:id="_Po_2eNhqEeCTGP94aNb78w" iD="_Po5v0NhqEeCTGP94aNb78w" name="">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Po_2edhqEeCTGP94aNb78w" source="attachedDataobject">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Po_2ethqEeCTGP94aNb78w" key="isBpelDeclaration" value="true"/>
@@ -94,6 +87,13 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SGMRqdhqEeCTGP94aNb78w" key="isBpelDeclaration" value="true"/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SGMRqthqEeCTGP94aNb78w" key="douri" value="project:///Forms/Kayttajaviestinta.xsd?xsdelement={http://soa.kv.koku.arcusys.fi/}Kayttajaviestinta_Form"/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SGPU8NhqEeCTGP94aNb78w" key="defaultDeclarationName" value="Kayttajaviestinta_Form"/>
+      </eAnnotations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_cyq457trEeG24t8AxV2WZg" iD="_cykLMLtrEeG24t8AxV2WZg" name="">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cyq46LtrEeG24t8AxV2WZg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cyq46btrEeG24t8AxV2WZg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cyq46rtrEeG24t8AxV2WZg" key="douri" value="project:///Forms/Kayttajaviestinta.xsd?xsdelement={http://soa.kv.koku.arcusys.fi/}Kayttajaviestinta_Form"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cyw_gLtrEeG24t8AxV2WZg" key="defaultDeclarationName" value="Kayttajaviestinta_Form"/>
       </eAnnotations>
     </artifacts>
     <vertices xmi:type="bpmn:Activity" xmi:id="_vlc_4J1tEeCP0q7AMz-7Hg" iD="_vlcY0J1tEeCP0q7AMz-7Hg" associations="_wfSx8J1tEeCP0q7AMz-7Hg _w_t-cJ1tEeCP0q7AMz-7Hg" outgoingEdges="_08of8Z1tEeCP0q7AMz-7Hg" activityType="EventStartMessage">

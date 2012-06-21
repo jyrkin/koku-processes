@@ -4,6 +4,7 @@ var kokuServiceEndpoints = null;
 
 function Preload() {
 MessageId = gup("MessageId");
+KayttajaviestintaForm.getJSXByName("Message_MessageId").setValue(MessageId);
 // alert(MessageId);
 messagecontent = Arcusys.Internal.Communication.GetMessageById(MessageId);
 // (messagecontent);

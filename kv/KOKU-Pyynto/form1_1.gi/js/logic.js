@@ -708,7 +708,7 @@ function addCalendarChoiceToForm(tempID, choiceText) {
     var section = form1.getJSXByName(tempID).getDescendantOfName("choiceBlock" + tempID).load("components/choicesection.xml", true);
 
     form1.getJSXByName(tempID).getDescendantOfName("choiceBlock" + tempID).setHeight(form1.getJSXByName(tempID).getDescendantOfName("choiceBlock" + tempID).getHeight() + 30, true).repaint();
-    form1.getJSXByName(tempID).setHeight(form1.getJSXByName(tempID).getHeight() + 30);
+    form1.getJSXByName(tempID).setHeight(form1.getJSXByName(tempID).getHeight() + 30, true);
     //form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30).repaint();
 
     form1.getJSXByName("choicePane").setName("choicePane" + id).repaint();
@@ -1881,15 +1881,6 @@ function intalioPreStart() {
         return "Lomakkeelle ei ole lis\xE4tty yht\xE4\xE4n pyynt\xF6\xE4.";
     }
 
-    if(form1.getJSXByName("User_PaivitaOlemassaoleva").getChecked() || form1.getJSXByName("User_LuoUusi").getChecked()) {
-        if(form1.getJSXByName("PohjaNakyvyys_Mina").getChecked()) {
-            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Creator").repaint();
-        } else if(form1.getJSXByName("PohjaNakyvyys_Organisaatio").getChecked()) {
-            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Organization").repaint();
-        } else if(form1.getJSXByName("PohjaNakyvyys_Kaikki").getChecked()) {
-            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("All").repaint();
-        }
-    }
     mapSelectedRecipientsToMatrix();
     throughTextfields();
 }

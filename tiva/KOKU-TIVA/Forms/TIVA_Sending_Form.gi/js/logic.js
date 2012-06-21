@@ -195,6 +195,7 @@ function addChoice(id, description, infotext, prefill) {
 
     if(infotext) {
         info.setValue(infotext);
+        section.getDescendantOfName("tooltipImg").setDisplay("inline !important", true);
     } else {
         section.getDescendantOfName("tooltipImg").setDisplay("none", true);
     }
