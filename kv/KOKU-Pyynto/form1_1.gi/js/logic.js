@@ -1881,15 +1881,6 @@ function intalioPreStart() {
         return "Lomakkeelle ei ole lis\xE4tty yht\xE4\xE4n pyynt\xF6\xE4.";
     }
 
-    if(form1.getJSXByName("User_PaivitaOlemassaoleva").getChecked() || form1.getJSXByName("User_LuoUusi").getChecked()) {
-        if(form1.getJSXByName("PohjaNakyvyys_Mina").getChecked()) {
-            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Creator").repaint();
-        } else if(form1.getJSXByName("PohjaNakyvyys_Organisaatio").getChecked()) {
-            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Organization").repaint();
-        } else if(form1.getJSXByName("PohjaNakyvyys_Kaikki").getChecked()) {
-            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("All").repaint();
-        }
-    }
     mapSelectedRecipientsToMatrix();
     throughTextfields();
 }
