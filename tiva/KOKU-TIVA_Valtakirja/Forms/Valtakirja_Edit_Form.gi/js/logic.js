@@ -83,22 +83,21 @@ function Preload() {
         Valtakirja_Form.getJSXByName("Tiedot_ValtakirjaId").setValue(id);
        
         try {
-           // alert("1. try");
-            // Add form preload functions here.
-            var userUid = Arcusys.Internal.Communication.GetUserUidByUsername(username);
-            //Arcusys.Internal.Communication.GerLDAPUser();
-            if(userUid != null) {
-                Valtakirja_Form.getJSXByName("Tiedot_Lahettaja").setValue(userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
+            var userUidData = Arcusys.Internal.Communication.GetUserUidByUsername(username);
+            if (userUidData != null) {
+                userUid = userUidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi'").getValue();
+                var userInfo = Arcusys.Internal.Communication.GetUserInfo(userUid);
+                if (userInfo != null) {
+                    var userFullName = userInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.common.koku.arcusys.fi'").getValue() + " " + userInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.common.koku.arcusys.fi'").getValue();
+                    Valtakirja_Form.getJSXByName("Tiedot_LahettajaDisplay").setValue(userFullName).repaint();
+                }
             }
         } catch (e) {
             alert(e);
         }
        
         try {
-           // alert("2. try");
-            // Add form preload functions here.
-            var formData = Arcusys.Internal.Communication.GetFormData(id,userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue());
-            //Arcusys.Internal.Communication.GerLDAPUser();
+            var formData = Arcusys.Internal.Communication.GetFormData(id, userUid);
             
             if(formData != null) {
                 mapFormDataToFields(formData);
@@ -108,28 +107,22 @@ function Preload() {
         }
         
         try {
-            //alert("3. try");
             var receipientUid = Valtakirja_Form.getJSXByName("Tiedot_Vastaanottaja").getValue();
-            // Add form preload functions here.
-            var receipientUsername = Arcusys.Internal.Communication.GetUsernameByUid(receipientUid);
-            //Arcusys.Internal.Communication.GerLDAPUser();
-            
-            if(receipientUsername != null) {
-                Valtakirja_Form.getJSXByName("Tiedot_Vastaanottaja").setValue(receipientUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
+            var recipientUserInfo = Arcusys.Internal.Communication.GetUserInfo(receipientUid);
+            if (recipientUserInfo != null) {
+                var recipientFullName = recipientUserInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.common.koku.arcusys.fi'").getValue() + " " + recipientUserInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.common.koku.arcusys.fi'").getValue();
+                Valtakirja_Form.getJSXByName("Tiedot_VastaanottajaDisplay").setValue(recipientFullName).repaint();
             }
         } catch (e) {
             alert(e);
         }
         
         try {
-            //alert("3. try");
             var personUid = Valtakirja_Form.getJSXByName("Tiedot_Henkilo").getValue();
-            // Add form preload functions here.
-            var personUsername = Arcusys.Internal.Communication.GetUsernameByUid(personUid);
-            //Arcusys.Internal.Communication.GerLDAPUser();
-            
-            if(personUsername != null) {
-                Valtakirja_Form.getJSXByName("Tiedot_Henkilo").setValue(personUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
+            var personUserInfo = Arcusys.Internal.Communication.GetUserInfo(personUid);
+            if (personUserInfo != null) {
+                var personFullName = personUserInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.common.koku.arcusys.fi'").getValue() + " " + personUserInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.common.koku.arcusys.fi'").getValue();
+                Valtakirja_Form.getJSXByName("Tiedot_HenkiloDisplay").setValue(personFullName).repaint();
             }
         } catch (e) {
             alert(e);
@@ -338,6 +331,34 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
     };
 });
 
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserInfo = function(id) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+        tout = 1000;
+        limit = 100;
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
+        url = getUrl();
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if(objXML === null) {
+            alert("Virhe palvelinyhteydessa");
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
 
 
 function getTaskSubscribe() {
@@ -387,34 +408,21 @@ function checkDate(dateValue) {
 
 // USE: checkDateNotBefore(newDATE, getTodayDateFinnish());
 function checkDateNotBefore(dateValue, dateNotBefore) {
-   // alert(dateValue);
-
-    //dateValue = dateValue.toString();
-   // alert(dateValue.getDate() + " " + dateValue.getMonth() + " " + dateValue.getyear());
     
     var dayValue = dateValue.getDate();
     var monthValue = dateValue.getMonth()+1;
     var yearValue = dateValue.getFullYear();
-   // var dayValue = dateValue.substring(0, 2);
-   // var monthValue = dateValue.substring(3, 5);
-   // var yearValue = dateValue.substring(6, 10);
-  //  alert(dayValue + " " + monthValue + " " + yearValue);
 
     var dayNotBefore = dateNotBefore.substring(0, 2);
     var monthNotBefore = dateNotBefore.substring(3, 5);
     var yearNotBefore = dateNotBefore.substring(6, 10);
-    //alert(dayNotBefore + " " + monthNotBefore + " " + yearNotBefore);    
     
     dateObjectValue = new Date(yearValue, monthValue-1, dayValue);
     dateObjectNotBefore = new Date(yearNotBefore, monthNotBefore-1, dayNotBefore);
     
-   // alert(dateObjectValue.toString() + " " + dateObjectNotBefore.toString());
-    
-    if (dateObjectValue<dateObjectNotBefore)
-      {
-     // alert("P" + unescape("%E4") + "iv" + unescape("%E4") + "m" + unescape("%E4%E4") + "r" + unescape("%E4") + " ei voi olla ennen t" + unescape("%E4") + "t" + unescape("%E4") + " p" + unescape("%E4") + "iv" + unescape("%E4%E4"));
-      return false;
-      }
+    if (dateObjectValue<dateObjectNotBefore) {
+        return false;
+    }
     
     return true;
 }

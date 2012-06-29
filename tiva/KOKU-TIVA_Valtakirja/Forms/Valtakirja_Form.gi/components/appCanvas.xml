@@ -44,7 +44,7 @@
           <variants/>
           <strings riaLabelText="Valtakirjapohja_Valinta" jsxname="Valtakirjapohja_Valinta-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
           <object type="jsx3.gui.Select">
-            <variants jsxwidth="200" jsxheight="18" jsxxmlasync="1" jsxrequired="1" _isfocusing="true"/>
+            <variants jsxxmlasync="1" jsxrequired="1" _isfocusing="true" jsxwidth="250"/>
             <strings jsxname="Valtakirjapohja_Valinta" jsxxmlurl="" jsxdefaulttext="- Valitse -" jsxtip="Valtakirjapohjan valinta" jsxclassname="selectList"/>
             <events jsxselect="changeMandateTemplate();"/>
           </object>
@@ -110,7 +110,7 @@
           <variants/>
           <strings riaLabelText="Tiedot_LahettajaDisplay" jsxname="Tiedot_LahettajaDisplay-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
-            <variants jsxwidth="200"/>
+            <variants jsxreadonly="1"/>
             <strings jsxname="Tiedot_LahettajaDisplay" jsxvalue=""/>
             <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
@@ -127,7 +127,7 @@
           <variants/>
           <strings riaLabelText="Tiedot_Henkilo" jsxname="Tiedot_Henkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.Select">
-            <variants jsxwidth="200" jsxheight="18" jsxxmlasync="1" jsxrequired="1" _isfocusing="true"/>
+            <variants jsxxmlasync="1" jsxrequired="1" _isfocusing="true" jsxwidth="250"/>
             <strings jsxname="Tiedot_Henkilo" jsxxmlurl="" jsxdefaulttext="- Valitse -" jsxtip="Kohdehenkilön valinta" jsxclassname="selectList"/>
             <events jsxselect="listChildsParents(this.getValue());"/>
           </object>
@@ -144,7 +144,7 @@
           <variants/>
           <strings riaLabelText="Tiedot_Vastaanottaja" jsxname="Tiedot_Vastaanottaja-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.Select">
-            <variants jsxwidth="200" jsxheight="18" jsxxmlasync="1" jsxrequired="1" _isfocusing="true"/>
+            <variants jsxxmlasync="1" jsxrequired="1" _isfocusing="true" jsxwidth="250"/>
             <strings jsxname="Tiedot_Vastaanottaja" jsxxmlurl="" jsxdefaulttext="" jsxtip="Vastaanottajan valinta" jsxclassname="selectList"/>
             <events jsxselect="setReceipientKunpoName(this.getValue());"/>
           </object>
@@ -152,7 +152,7 @@
       </object>
       <object type="jsx3.gui.Block">
         <variants/>
-        <strings jsxname="row" jsxdisplay="" jsxclassname="row"/>
+        <strings jsxname="row" jsxdisplay="" jsxclassname="rowExtraMargin"/>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="2"/>
           <strings jsxname="column" jsxpadding="6px"/>

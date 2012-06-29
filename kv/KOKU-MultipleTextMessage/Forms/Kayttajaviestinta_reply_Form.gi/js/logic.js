@@ -3,14 +3,14 @@
 var kokuServiceEndpoints = null;
 
 function Preload() {
-MessageId = gup("MessageId");
-KayttajaviestintaForm.getJSXByName("Message_MessageId").setValue(MessageId);
-// alert(MessageId);
-messagecontent = Arcusys.Internal.Communication.GetMessageById(MessageId);
-// (messagecontent);
-getSender(messagecontent);
-getRecipient(messagecontent);
-getContent(messagecontent);
+    MessageId = gup("MessageId");
+    KayttajaviestintaForm.getJSXByName("Message_MessageId").setValue(MessageId);
+    // alert(MessageId);
+    messagecontent = Arcusys.Internal.Communication.GetMessageById(MessageId);
+    // (messagecontent);
+    getSender(messagecontent);
+    getRecipient(messagecontent);
+    getContent(messagecontent);
 }
 
 function intalioPreStart() {
@@ -42,54 +42,62 @@ function escapeHTML(value) {
 // Sender's fields
 function getSender(content) {
 
-var childiterator, recipient;
-sender = content.selectSingleNode("//recipientUserInfos", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
-nodeIterator = sender.getFirstChild();
-quit = false;
+    var childiterator, recipient;
+    sender = content.selectSingleNode("//recipientUserInfos", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
+    nodeIterator = sender.getFirstChild();
+    quit = false;
 
-while(!quit){
-    name = nodeIterator.getNodeName();
-    if (name == "displayName"){
-        KayttajaviestintaForm.getJSXByName("Message_FromRealName").setValue(nodeIterator.getValue());        
-    }         
+    while(!quit){
+        name = nodeIterator.getNodeName();
+        if (name == "displayName"){
+            KayttajaviestintaForm.getJSXByName("Message_FromRealName").setValue(nodeIterator.getValue());        
+        }         
     
-    if (name == "uid"){ 
-        // TODO: change this field; now used for uid since it wasn't in use.                           
-        KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(nodeIterator.getValue());
-    }
-    if(nodeIterator.getNextSibling() != null)
-        nodeIterator = nodeIterator.getNextSibling();
-    else quit = true;       
+        if (name == "uid"){ 
+            // TODO: change this field; now used for uid since it wasn't in use.                           
+            KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(nodeIterator.getValue());
+        }
+        if(nodeIterator.getNextSibling() != null) {
+            nodeIterator = nodeIterator.getNextSibling();
+        } else {
+            quit = true;
+        }   
 
-} // while
+    } // while
 }
 
 
 // Recipient's fields
 function getRecipient(content) {
-
-var childiterator, recipient;
-recipient = content.selectSingleNode("//senderUserInfo", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
-nodeIterator = recipient.getFirstChild();
-quit = false;
-
-while(!quit){
-    name = nodeIterator.getNodeName();
-    if (name == "displayName"){
-        KayttajaviestintaForm.getJSXByName("Message_ToRealName").setValue(nodeIterator.getValue());
-        // TODO: change this field below, now it was used since it wasn't being used in anything (requires schema change).
-        KayttajaviestintaForm.getJSXByName("Message_ToLastName").setValue(nodeIterator.getValue());       
-    }         
-    
-    if (name == "uid"){ 
-        // TODO: change this field below; now used for uid since it wasn't in use (requires schema change).                           
-        KayttajaviestintaForm.getJSXByName("Message_ToFirstName").setValue(nodeIterator.getValue());
+    var childiterator, recipient, senderRole;
+    recipient = content.selectSingleNode("//senderUserInfo", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
+    if (content.selectSingleNode("//fromRoleUid", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'")) {
+        senderRole = content.selectSingleNode("//fromRoleUid", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
+        KayttajaviestintaForm.getJSXByName("Message_FromRole").setValue(senderRole);
     }
-    if(nodeIterator.getNextSibling() != null)
-        nodeIterator = nodeIterator.getNextSibling();
-    else quit = true;       
+        
+    nodeIterator = recipient.getFirstChild();
+    quit = false;
 
-} // while   
+    while(!quit){
+        name = nodeIterator.getNodeName();
+        if (name == "displayName"){
+            KayttajaviestintaForm.getJSXByName("Message_ToRealName").setValue(nodeIterator.getValue());
+            // TODO: change this field below, now it was used since it wasn't being used in anything (requires schema change).
+            KayttajaviestintaForm.getJSXByName("Message_ToLastName").setValue(nodeIterator.getValue());       
+        }
+    
+        if (name == "uid"){ 
+            // TODO: change this field below; now used for uid since it wasn't in use (requires schema change).                           
+            KayttajaviestintaForm.getJSXByName("Message_ToFirstName").setValue(nodeIterator.getValue());
+        }
+        if (nodeIterator.getNextSibling() != null) {
+            nodeIterator = nodeIterator.getNextSibling();
+        } else {
+            quit = true;
+        }  
+
+    } // while   
 
 }
 

@@ -49,7 +49,12 @@
       </object>
       <object type="jsx3.gui.TextBox">
         <variants/>
-        <strings jsxname="Message_MessageId" jsxmargin="0 4 0 0"/>
+        <strings jsxname="Message_MessageId" jsxmargin="0 4 0 0" jsxvalue=""/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="Message_FromRole" jsxmargin="0 4 0 0"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>

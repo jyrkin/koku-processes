@@ -299,7 +299,6 @@ function modfiyForm() {
         form1.getJSXByName("User_PaivitaOlemassaoleva").setChecked(0).setEnabled(0, true);
     }
 
-    form1.getJSXByName("Muokkaus").setDisplay("none", true);
     form1.getJSXByName("Nakyvyys").setDisplay("block", true);
 
     bringButtonsBack();
@@ -896,8 +895,6 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 });
 function getTemplate(templateId) {
 
-    //form1.getJSXByName("Muokkaus").setDisplay("block", true);
-
     try {
         // Add form preload functions here.
         var formData = Arcusys.Internal.Communication.GetTemplate(templateId);
@@ -1079,7 +1076,6 @@ function useTemplate() {
     form1.getJSXByName("showFormFlag").setValue("Y").repaint();
 
     form1.getJSXByName("Lomaketyyppi").setDisplay("none").repaint();
-    form1.getJSXByName("headerEdit").setDisplay("none").repaint();
     form1.getJSXByName("Pohja").setDisplay("block").repaint();
     form1.getJSXByName("Kentat").setDisplay("none").repaint();
 }
@@ -1091,9 +1087,7 @@ function dontUseTemplate() {
     form1.getJSXByName("showFormFlag").setValue("Y").repaint();
 
     form1.getJSXByName("Lomaketyyppi").setDisplay("none").repaint();
-    form1.getJSXByName("headerEdit").setDisplay("block").repaint();
     form1.getJSXByName("Pohja").setDisplay("none").repaint();
-    form1.getJSXByName("muokkausValinnat-pane").setDisplay("none").repaint();
     form1.getJSXByName("Kentat").setDisplay("block").repaint();
 
     form1.getJSXByName("header").setDisplay("block").repaint();
@@ -1362,7 +1356,6 @@ function prepareFormMatrix() {
 function showForm(flag) {
     var descendant, descendants;
     if(flag == "N") {
-        form1.getJSXByName("showFormButton").setText("N\xE4yt\xE4 lomake").repaint();
         form1.getJSXByName("Kentat").setDisplay("block").repaint();
 
         var childNode;
@@ -1419,7 +1412,6 @@ function showForm(flag) {
         }
         form1.getJSXByName("showFormFlag").setValue("Y").repaint();
     } else {
-        form1.getJSXByName("showFormButton").setText("N\xE4yt\xE4 muokkausn\xE4kym\xE4").repaint();
         form1.getJSXByName("Kentat").setDisplay("none").repaint();
 
         var childNode;
@@ -1478,10 +1470,6 @@ function showForm(flag) {
 function setValueToText(value, textLabel) {
     form1.getJSXByName(textLabel).setText(value).repaint();
 
-}
-
-function fillUser() {
-    form1.getJSXByName("User_Sender").setValue(Intalio.Internal.Utilities.getUser()).repaint();
 }
 
 function mapFieldsToMatrix(title, question, sectionNumber, type) {

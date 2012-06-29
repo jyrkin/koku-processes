@@ -168,10 +168,47 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
     };
 });
 
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserInfo = function(id) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+        tout = 1000;
+        limit = 100;
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
+        url = getUrl();
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if(objXML === null) {
+            alert("Virhe palvelinyhteydessa");
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
 
 function mapValtakirjaDataToFields(valtakirjaData) {
     var validTillNode = valtakirjaData.selectSingleNode("//validTill", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
-    
+    var recipientUid = valtakirjaData.selectSingleNode("//receiverUid", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+
+    if (recipientUid != null) {
+        var recipientFullNameData = Arcusys.Internal.Communication.GetUserInfo(recipientUid.getValue());
+        if (recipientFullNameData != null) {
+            var recipientFullName = recipientFullNameData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue() + " " + recipientFullNameData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+            Valtakirja_Form.getJSXByName("Tiedot_VastaanottajaFullName").setValue(recipientFullName).repaint();
+        }
+    }
+
     if (validTillNode != null) {
          var validTill = validTillNode.getValue();
 

@@ -78,7 +78,17 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>bpel:doXslTransform("../xsl/Kayttajaviestinta.xsl", $Kayttajaviestinta_Form)</bpel:from>
-                                <bpel:to>$Kayttajaviestinta_Form0/tns:Message/tns:Message_Content</bpel:to><mapper:mapperLink><mapper:vertice id="1121649497" targetPath="$Kayttajaviestinta_Form0/tns:Message/tns:Message_Content" targetedBy="554433406-arg2"></mapper:vertice><mapper:vertice id="554433406" dimension="217x85" location="384,84"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="1835904123" dimension="157x37" location="168,24" targetedBy="554433406-arg0"><mapper:value>"../xsl/Kayttajaviestinta.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1250564378" sourcePath="$Kayttajaviestinta_Form" targetedBy="554433406-arg1"></mapper:vertice></mapper:mapperLink>
+                                <bpel:to>$Kayttajaviestinta_Form0/tns:Message/tns:Message_Content</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="794994886" targetPath="$Kayttajaviestinta_Form0/tns:Message/tns:Message_Content" targetedBy="1749480890-arg2"></mapper:vertice>
+  <mapper:vertice id="1749480890" dimension="217x85" location="384,84">
+    <mapper:value>bpel:doXslTransform()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1910334018" dimension="253x37" location="168,24" targetedBy="1749480890-arg0">
+    <mapper:value>"../xsl/Kayttajaviestinta.xsl"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="735228665" sourcePath="$Kayttajaviestinta_Form" targetedBy="1749480890-arg1"></mapper:vertice>
+</mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                     </bpdm:messagingtask>
@@ -98,18 +108,18 @@
                             <bpel:condition bpdm:loopType="forEachFinalCounter">count($Kayttajaviestinta_Form/tns:receipients)<mapper:mapperLink><mapper:vertice id="636603905" targetPath="$Final counter" targetedBy="1005521066-arg0"></mapper:vertice><mapper:vertice id="1005521066" dimension="78x24" location="213,130"><mapper:value>count()</mapper:value></mapper:vertice><mapper:vertice id="834974536" sourcePath="$Kayttajaviestinta_Form/tns:receipients" targetedBy="1005521066-arg1"></mapper:vertice></mapper:mapperLink></bpel:condition>
                         </bpdm:linkset>
                         <bpel:variables>
-                            <bpel:variable name="tnsReceiveNewMessageResponse" messageType="tns:receiveNewMessageResponse" binding="tns:KokuMessageProcessingServiceSoapBinding" operation="receiveNewMessage" opMsgType="1" bpdm:messageIds="inc:_8tTLoCZAEeGZ6qIn2ne6Bw"/>
-                            <bpel:variable name="tnsReceiveNewMessage" messageType="tns:receiveNewMessage" binding="tns:KokuMessageProcessingServiceSoapBinding" operation="receiveNewMessage" opMsgType="0" bpdm:messageIds=" out:_8cIjICZAEeGZ6qIn2ne6Bw">
-                                <bpel:from bpdm:toPart="parameters">
-                                    <bpel:literal bpdm:linkedMessageType="tns:receiveNewMessage" bpdm:linkedPart="parameters" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:opMsgType="0" bpdm:operation="receiveNewMessage"></bpel:literal>
-                                </bpel:from>
-                            </bpel:variable>
                             <bpel:variable name="usersAndGroupsServiceImplGetUserInfoRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserInfo" opMsgType="0" bpdm:id="_fY_oYH8GEeGMy9SZbwBYvA" bpdm:messageIds=" out:_fYqRMH8GEeGMy9SZbwBYvA">
                                 <bpel:from bpdm:toPart="getUserInfo">
                                     <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" bpdm:linkedPart="getUserInfo" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:opMsgType="0" bpdm:operation="getUserInfo"></bpel:literal>
                                 </bpel:from>
                             </bpel:variable>
                             <bpel:variable name="usersAndGroupsServiceImplGetUserInfoResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserInfo" opMsgType="1" bpdm:id="_fsWCMH8GEeGMy9SZbwBYvA" bpdm:messageIds="inc:_fru-MH8GEeGMy9SZbwBYvA"/>
+                            <bpel:variable name="tnsReceiveMessage" messageType="tns:receiveMessage" binding="tns:KokuMessageProcessingServiceSoapBinding" operation="receiveMessage" opMsgType="0" bpdm:id="_g_G2cL-EEeGpyY_PjoZzGQ" bpdm:messageIds=" out:_g-1JoL-EEeGpyY_PjoZzGQ">
+                                <bpel:from bpdm:toPart="parameters">
+                                    <bpel:literal bpdm:linkedMessageType="tns:receiveMessage" bpdm:linkedPart="parameters" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:opMsgType="0" bpdm:operation="receiveMessage"></bpel:literal>
+                                </bpel:from>
+                            </bpel:variable>
+                            <bpel:variable name="tnsReceiveMessageResponse" messageType="tns:receiveMessageResponse" binding="tns:KokuMessageProcessingServiceSoapBinding" operation="receiveMessage" opMsgType="1" bpdm:id="_hor-8L-EEeGpyY_PjoZzGQ" bpdm:messageIds="inc:_hoJMYL-EEeGpyY_PjoZzGQ"/>
                         </bpel:variables>
                         <bpel:sequence>
                             <bpdm:messagingtask eventType="intermediate: message" operation="getUserInfo" partnerLink="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_JnW9gH8FEeGMy9SZbwBYvA">
@@ -142,31 +152,33 @@
                                     </bpel:copy>
                                 </bpdm:linkset>
                             </bpdm:messagingtask>
-                            <bpdm:messagingtask eventType="intermediate: message" operation="receiveNewMessage" partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä vastaanottajalle" bpdm:ID="_lP7LUNhZEeCTGP94aNb78w">
+                            <bpdm:messagingtask eventType="intermediate: message" operation="receiveMessage" partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä vastaanottajalle" bpdm:ID="_lP7LUNhZEeCTGP94aNb78w">
                                 <bpdm:linkset bpdm:type="assignments">
                                     <bpel:copy>
-                                        <bpel:from>$Kayttajaviestinta_Form1/tns:Message/tns:Message_Content</bpel:from>
-                                        <bpel:to>$tnsReceiveNewMessage.parameters/messageContent</bpel:to><mapper:mapperLink><mapper:vertice id="894460023" targetPath="$tnsReceiveNewMessage.parameters/messageContent" targetedBy="111942901-arg0"></mapper:vertice><mapper:vertice id="111942901" sourcePath="$Kayttajaviestinta_Form1/tns:Message/tns:Message_Content"></mapper:vertice></mapper:mapperLink>
-                                    </bpel:copy>
-                                    <bpel:copy>
-                                        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Subject</bpel:from>
-                                        <bpel:to>$tnsReceiveNewMessage.parameters/subject</bpel:to><mapper:mapperLink><mapper:vertice id="565039999" targetPath="$tnsReceiveNewMessage.parameters/subject" targetedBy="352469680-arg0"></mapper:vertice><mapper:vertice id="352469680" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_Subject"></mapper:vertice></mapper:mapperLink>
-                                    </bpel:copy>
-                                    <bpel:copy>
                                         <bpel:from>bpel:doXslTransform("../xsl/receiveRequest.xsl", $Kayttajaviestinta_Form/tns:receipients[$emptyCounter])</bpel:from>
-                                        <bpel:to>$tnsReceiveNewMessage.parameters/toUser</bpel:to><mapper:mapperLink><mapper:vertice id="1325128105" targetPath="$tnsReceiveNewMessage.parameters/toUser" targetedBy="1651656395-arg2"></mapper:vertice><mapper:vertice id="1651656395" dimension="78x24" location="467,82"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="2014437052" dimension="253x49" location="180,24" targetedBy="1651656395-arg0"><mapper:value>"../xsl/receiveRequest.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1563838009" dimension="78x24" location="300,204" targetedBy="1651656395-arg1"><mapper:value>[]</mapper:value></mapper:vertice><mapper:vertice id="1542049817" sourcePath="$Kayttajaviestinta_Form/tns:receipients" targetedBy="1563838009-arg0"></mapper:vertice><mapper:vertice id="289382599" sourcePath="$emptyCounter" targetedBy="1563838009-arg1"></mapper:vertice></mapper:mapperLink>
+                                        <bpel:to>$tnsReceiveMessage.parameters/toUser</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1957815480" targetPath="$tnsReceiveMessage.parameters/toUser" targetedBy="1075817311-arg2"></mapper:vertice>
+  <mapper:vertice id="1075817311" dimension="182x24" location="444,132">
+    <mapper:value>bpel:doXslTransform()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1785957621" dimension="253x49" location="180,24" targetedBy="1075817311-arg0">
+    <mapper:value>"../xsl/receiveRequest.xsl"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1210802028" dimension="78x24" location="300,204" targetedBy="1075817311-arg1">
+    <mapper:value>[]</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1379500632" sourcePath="$Kayttajaviestinta_Form/tns:receipients" targetedBy="1210802028-arg0"></mapper:vertice>
+  <mapper:vertice id="1879864101" sourcePath="$emptyCounter" targetedBy="1210802028-arg1"></mapper:vertice>
+</mapper:mapperLink>
                                     </bpel:copy>
                                     <bpel:copy>
-                                        <bpel:from>$Kayttajaviestinta_Form0/tns:Message/tns:Message_FromUser</bpel:from>
-                                        <bpel:to>$tnsReceiveNewMessage.parameters/fromUser</bpel:to><mapper:mapperLink><mapper:vertice id="714605111" targetPath="$tnsReceiveNewMessage.parameters/fromUser" targetedBy="465655997-arg0"></mapper:vertice><mapper:vertice id="465655997" sourcePath="$Kayttajaviestinta_Form0/tns:Message/tns:Message_FromUser"></mapper:vertice></mapper:mapperLink>
-                                    </bpel:copy>
-                                    <bpel:copy>
-                                        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_Content</bpel:from>
-                                        <bpel:to>$tnsReceiveNewMessage.parameters/originalContent</bpel:to><mapper:mapperLink><mapper:vertice id="162504941" targetPath="$tnsReceiveNewMessage.parameters/originalContent" targetedBy="1542837436-arg0"></mapper:vertice><mapper:vertice id="1542837436" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_Content"></mapper:vertice></mapper:mapperLink>
+                                        <bpel:from>$tnsSendMessageResponse.parameters/messageId</bpel:from>
+                                        <bpel:to>$tnsReceiveMessage.parameters/messageId</bpel:to><mapper:mapperLink><mapper:vertice id="2071255388" targetPath="$tnsReceiveMessage.parameters/messageId" targetedBy="1630231368-arg0"></mapper:vertice><mapper:vertice id="1630231368" sourcePath="$tnsSendMessageResponse.parameters/messageId"></mapper:vertice></mapper:mapperLink>
                                     </bpel:copy>
                                 </bpdm:linkset>
-                                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tnsReceiveNewMessage" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveNewMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_8cIjICZAEeGZ6qIn2ne6Bw"></bpdm:linkset>
-                                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="tnsReceiveNewMessageResponse" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveNewMessageResponse" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_8tTLoCZAEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tnsReceiveMessage" bpdm:msgVarScopeId="_60IzoKO0EeC8OdMz1v1xzQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_g-1JoL-EEeGpyY_PjoZzGQ"></bpdm:linkset>
+                                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="tnsReceiveMessageResponse" bpdm:msgVarScopeId="_60IzoKO0EeC8OdMz1v1xzQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveMessageResponse" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_hoJMYL-EEeGpyY_PjoZzGQ"></bpdm:linkset>
                             </bpdm:messagingtask>
                         </bpel:sequence>
                     </bpel:scope>
