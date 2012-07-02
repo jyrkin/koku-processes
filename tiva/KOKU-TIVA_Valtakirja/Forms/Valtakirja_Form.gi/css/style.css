@@ -1,19 +1,36 @@
 @media all
 {
 span.root {
-  overflow: visible !important;
+  /* overflow: visible !important; */
   font-family: Helvetica,Arial,Verdana,sans-serif;
   font-size:12px;
   color: #444;
 }
 
-.kokuButton, .selectList {
+.jsx30button_text, .jsx30select_text {
   font-size:10px;
   color: #000;
 }
 
+.fieldset .fieldset-padding .jsx30block span[label=tooltipImg] {
+    display: inline !important;
+    width: 30px !important;
+}
+
+.jsx30image {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.rowExtraMargin {
+  margin-bottom: 18px;
+}
+
 .row {
   margin-bottom: 12px;
+}
+
+.row, .rowExtraMargin {
   display: block !important;
   clear: both;
 }
@@ -22,11 +39,15 @@ span.root {
   float: left;
 }
 
+.checkBlock {
+  margin-right: 6px;
+}
+
 .column {
   margin-right: 12px;
 }
 
-.textField {
+#jsx .jsx30textbox, #jsx .jsx30select_text {
   width: 250px;
   height: 20px;
 }
@@ -92,6 +113,7 @@ div.fieldset-padding {
 
 span.required {
   color: red;
+  font-size: 12px;
 }
 
 td.label-column {

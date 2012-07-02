@@ -29,7 +29,7 @@
             	<xsl:value-of select="//fe:Tiedot_Lahettaja/text()" />
             </xsl:element>
             
-            <xsl:element name="vastaanottaja">        
+            <xsl:element name="vastaanottaja">
             	<xsl:value-of select="//fe:Tiedot_Vastaanottaja/text()" />
             </xsl:element>
             

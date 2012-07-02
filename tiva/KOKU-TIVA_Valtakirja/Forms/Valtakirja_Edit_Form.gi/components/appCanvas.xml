@@ -110,8 +110,17 @@
           <variants/>
           <strings riaLabelText="Tiedot_LahettajaDisplay" jsxname="Tiedot_LahettajaDisplay-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
-            <variants jsxenabled="0" jsxwidth="200"/>
+            <variants jsxenabled="1" jsxwidth="200" jsxreadonly="1"/>
             <strings jsxname="Tiedot_LahettajaDisplay" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Tiedot_Lahettaja" jsxname="Tiedot_Lahettaja-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxenabled="1" jsxwidth="200" jsxreadonly="1"/>
+            <strings jsxname="Tiedot_Lahettaja" jsxmargin="0 4 0 0" jsxvalue=""/>
             <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
         </object>
@@ -125,9 +134,18 @@
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
-          <strings riaLabelText="Tiedot_Henkilo" jsxname="Tiedot_Henkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <strings riaLabelText="Tiedot_HenkiloDisplay" jsxname="Tiedot_HenkiloDisplay-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
-            <variants jsxenabled="0" jsxwidth="200"/>
+            <variants jsxenabled="1" jsxwidth="200" jsxreadonly="1"/>
+            <strings jsxname="Tiedot_HenkiloDisplay" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Tiedot_Henkilo" jsxname="Tiedot_Henkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxenabled="1" jsxwidth="200" jsxreadonly="1"/>
             <strings jsxname="Tiedot_Henkilo" jsxmargin="0 4 0 0" jsxvalue=""/>
             <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
@@ -142,9 +160,18 @@
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
-          <strings riaLabelText="Tiedot_Vastaanottaja" jsxname="Tiedot_Vastaanottaja-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <strings riaLabelText="Tiedot_VastaanottajaDisplay" jsxname="Tiedot_VastaanottajaDisplay-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
-            <variants jsxenabled="0" jsxwidth="200"/>
+            <variants jsxenabled="1" jsxwidth="200" jsxreadonly="1"/>
+            <strings jsxname="Tiedot_VastaanottajaDisplay" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Tiedot_Vastaanottaja" jsxname="Tiedot_Vastaanottaja-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxenabled="1" jsxwidth="200" jsxreadonly="1"/>
             <strings jsxname="Tiedot_Vastaanottaja" jsxmargin="0 4 0 0" jsxvalue=""/>
             <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>

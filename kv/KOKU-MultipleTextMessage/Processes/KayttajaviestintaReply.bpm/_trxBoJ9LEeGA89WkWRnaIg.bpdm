@@ -93,10 +93,14 @@
                     </bpel:copy>
                     <bpel:copy>
                         <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_MessageId</bpel:from>
-                        <bpel:to>$tnsSendMessage.parameters/replyMessageId</bpel:to>
+                        <bpel:to>$tnsSendMessage.parameters/replyMessageId</bpel:to><mapper:mapperLink><mapper:vertice id="1878167117" targetPath="$tnsSendMessage.parameters/replyMessageId" targetedBy="2099877756-arg0"></mapper:vertice><mapper:vertice id="2099877756" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_MessageId"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Kayttajaviestinta_Form/tns:Message/tns:Message_FromRole</bpel:from>
+                        <bpel:to>$tnsSendMessage.parameters/fromRoleUid</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="1878167117" targetPath="$tnsSendMessage.parameters/replyMessageId" targetedBy="2099877756-arg0"></mapper:vertice>
-  <mapper:vertice id="2099877756" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_MessageId"></mapper:vertice>
+  <mapper:vertice id="345483550" targetPath="$tnsSendMessage.parameters/fromRoleUid" targetedBy="364950006-arg0"></mapper:vertice>
+  <mapper:vertice id="364950006" sourcePath="$Kayttajaviestinta_Form/tns:Message/tns:Message_FromRole"></mapper:vertice>
 </mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>

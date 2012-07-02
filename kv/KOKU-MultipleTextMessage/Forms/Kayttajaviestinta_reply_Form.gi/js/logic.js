@@ -88,33 +88,40 @@ function getSender(content) {
 
 // Recipient's fields
 function getRecipient(content) {
-    var childiterator, recipient;
+    var childiterator, recipient, senderRole;
     recipient = content.selectSingleNode("//senderUserInfo", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
+    if (content.selectSingleNode("//fromRoleUid", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'")) {
+        senderRole = content.selectSingleNode("//fromRoleUid", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
+        KayttajaviestintaForm.getJSXByName("Message_FromRole").setValue(senderRole);
+    }
+        
     nodeIterator = recipient.getFirstChild();
     quit = false;
-    
+
     while(!quit){
         name = nodeIterator.getNodeName();
         if (name == "displayName"){
             KayttajaviestintaForm.getJSXByName("Message_ToRealName").setValue(nodeIterator.getValue());
             // TODO: change this field below, now it was used since it wasn't being used in anything (requires schema change).
             KayttajaviestintaForm.getJSXByName("Message_ToLastName").setValue(nodeIterator.getValue());       
-        }         
-        
+        }
+    
         if (name == "uid"){ 
             // TODO: change this field below; now used for uid since it wasn't in use (requires schema change).                           
             KayttajaviestintaForm.getJSXByName("Message_ToFirstName").setValue(nodeIterator.getValue());
         }
-        if(nodeIterator.getNextSibling() != null)
+        if (nodeIterator.getNextSibling() != null) {
             nodeIterator = nodeIterator.getNextSibling();
-        else quit = true;       
-    
+        } else {
+            quit = true;
+        }  
+
     } // while   
-    
+
 }
 
 function getContent(content) {
-    var originalcontent, subject, temp;
+var originalcontent, subject, temp;
     subject = "re: ";
     originalcontent = "\n\n\n--\n";
     
