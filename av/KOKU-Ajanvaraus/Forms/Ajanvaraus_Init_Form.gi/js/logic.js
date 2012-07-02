@@ -141,10 +141,10 @@ function checkSlotMatrix() {
         AjanvarausForm.getJSXByName("aloitusPvm").getParent().repaint();
         AjanvarausForm.getJSXByName("lopetusPvm").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
         AjanvarausForm.getJSXByName("lopetusPvm").getParent().repaint();
-        AjanvarausForm.getJSXByName("aloitusAika").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
+        /* AjanvarausForm.getJSXByName("aloitusAika").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
         AjanvarausForm.getJSXByName("aloitusAika").getParent().repaint();
         AjanvarausForm.getJSXByName("lopetusAika").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
-        AjanvarausForm.getJSXByName("lopetusAika").getParent().repaint();
+        AjanvarausForm.getJSXByName("lopetusAika").getParent().repaint(); */
         AjanvarausForm.getJSXByName("kesto").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
         AjanvarausForm.getJSXByName("kesto").getParent().repaint();
         AjanvarausForm.getJSXByName("paikka").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
@@ -154,10 +154,10 @@ function checkSlotMatrix() {
         AjanvarausForm.getJSXByName("aloitusPvm").getParent().repaint();
         AjanvarausForm.getJSXByName("lopetusPvm").setRequired(jsx3.gui.Form.REQUIRED).repaint();
         AjanvarausForm.getJSXByName("lopetusPvm").getParent().repaint();
-        AjanvarausForm.getJSXByName("aloitusAika").setRequired(jsx3.gui.Form.REQUIRED).repaint();
+        /* AjanvarausForm.getJSXByName("aloitusAika").setRequired(jsx3.gui.Form.REQUIRED).repaint();
         AjanvarausForm.getJSXByName("aloitusAika").getParent().repaint();
         AjanvarausForm.getJSXByName("lopetusAika").setRequired(jsx3.gui.Form.REQUIRED).repaint();
-        AjanvarausForm.getJSXByName("lopetusAika").getParent().repaint();
+        AjanvarausForm.getJSXByName("lopetusAika").getParent().repaint(); */
         AjanvarausForm.getJSXByName("kesto").setRequired(jsx3.gui.Form.REQUIRED).repaint();
         AjanvarausForm.getJSXByName("kesto").getParent().repaint();
         AjanvarausForm.getJSXByName("paikka").setRequired(jsx3.gui.Form.REQUIRED).repaint();
@@ -561,17 +561,49 @@ function getDaySelections() {
     return selections;
 }
 
+function validateHours(fieldName) {
+    var hours = AjanvarausForm.getJSXByName(fieldName).getText();
+    if (isNaN(parseInt(hours)) || parseInt(hours) < 0 || parseInt(hours) > 23) {
+        AjanvarausForm.getJSXByName(fieldName).setValue("00");
+        AjanvarausForm.getJSXByName(fieldName).setText("00").repaint();
+        return false;
+    }
+    return true;
+}
+
+function validateMinutes(fieldName) {
+    var minutes = AjanvarausForm.getJSXByName(fieldName).getText();
+    if (isNaN(parseInt(minutes)) || parseInt(minutes) < 0 || parseInt(minutes) > 59) {
+        AjanvarausForm.getJSXByName(fieldName).setValue("00");
+        AjanvarausForm.getJSXByName(fieldName).setText("00").repaint();
+        return false;
+    }
+    return true;
+}
+
 function validateSingleSection() {
+    var invalidTimeAlert = "Kellon ajan t\u00E4ytyy olla muotoa hh:mm (00-23:00-59)!";
+
     if(!AjanvarausForm.getJSXByName("aloitusPvm").getDate()) {
         alert("Aloitusp\u00E4iv\u00E4m\u00E4\u00E4r\u00E4-kentt\u00E4 on tyhj\u00E4!");
         return false;
     }
-    if(!AjanvarausForm.getJSXByName("aloitusAika").getValue()) {
-        alert("Aloitusaikakentt\u00E4 on tyhj\u00E4!");
+    if(!AjanvarausForm.getJSXByName("aloitusTunnit").getText()) {
+        alert("Aloitustunnitkentt\u00E4 on tyhj\u00E4!");
+        return false;
+    } else if(!validateHours("aloitusTunnit")) {
+        alert(invalidTimeAlert);
+        return false;
+    }
+    if(AjanvarausForm.getJSXByName("aloitusMinuutit") == null || AjanvarausForm.getJSXByName("aloitusMinuutit").getText() == "") {
+        alert("Aloitusminuutitkentt\u00E4 on tyhj\u00E4!");
+        return false;
+    } else if(!validateMinutes("aloitusMinuutit")) {
+        alert("Aloitusminuutitkentt\u00E4 on tyhj\u00E4!");
         return false;
     }
     if(!AjanvarausForm.getJSXByName("kesto").getValue()) {
-        alert("Kestokentt\u00E4 on tyhj\u00E4!");
+        alert(invalidTimeAlert);
         return false;
     }
     if(!AjanvarausForm.getJSXByName("paikka").getValue()) {
@@ -582,6 +614,8 @@ function validateSingleSection() {
 }
 
 function validateMultipleSection() {
+    var invalidTimeAlert = "Kellon ajan t\u00E4ytyy olla muotoa hh:mm (00-23:00-59)!";
+
     if(!AjanvarausForm.getJSXByName("aloitusPvm").getDate()) {
         alert("Aloitusp\u00E4iv\u00E4m\u00E4\u00E4r\u00E4-kentt\u00E4 on tyhj\u00E4!");
         return false;
@@ -590,16 +624,36 @@ function validateMultipleSection() {
         alert("Lopetusp\u00E4iv\u00E4m\u00E4\u00E4r\u00E4-kentt\u00E4 on tyhj\u00E4!");
         return false;
     }
-    if(!AjanvarausForm.getJSXByName("aloitusAika").getValue()) {
-        alert("Aloitusaikakentt\u00E4 on tyhj\u00E4!");
+    if(AjanvarausForm.getJSXByName("aloitusTunnit").getText() == null || AjanvarausForm.getJSXByName("aloitusTunnit").getText() == "") {
+        alert("Aloitustunnit kentt\u00E4 on tyhj\u00E4!");
+        return false;
+    } else if (!validateHours("aloitusTunnit")) {
+        alert(invalidTimeAlert);
+        return false;
+    }
+    if(AjanvarausForm.getJSXByName("aloitusMinuutit").getText() == null || AjanvarausForm.getJSXByName("aloitusMinuutit").getText() == "") {
+        alert("Aloitusminuutitkentt\u00E4 on tyhj\u00E4!");
+        return false;
+    } else if (!validateMinutes("aloitusMinuutit")) {
+        alert(invalidTimeAlert);
         return false;
     }
     if(!AjanvarausForm.getJSXByName("kesto").getValue()) {
         alert("Kestokentt\u00E4 on tyhj\u00E4!");
         return false;
     }
-    if(!AjanvarausForm.getJSXByName("lopetusAika").getValue()) {
-        alert("Lopetusaikakentt\u00E4 on tyhj\u00E4!");
+    if(AjanvarausForm.getJSXByName("lopetusTunnit").getText() ==  null || AjanvarausForm.getJSXByName("lopetusTunnit").getText() == "") {
+        alert("Lopetustunnitkentt\u00E4 on tyhj\u00E4!");
+        return false;
+    } else if (!validateHours("lopetusTunnit")) {
+        alert(invalidTimeAlert);
+        return false;
+    }
+    if(AjanvarausForm.getJSXByName("lopetusMinuutit").getText() == null || AjanvarausForm.getJSXByName("lopetusMinuutit").getText() == "") {
+        alert("Lopetusminuutitkentt\u00E4 on tyhj\u00E4!");
+        return false;
+    } else if (!validateMinutes("lopetusMinuutit")) {
+        alert(invalidTimeAlert);
         return false;
     }
     if(!AjanvarausForm.getJSXByName("paikka").getValue()) {
@@ -716,7 +770,7 @@ function fixEndTime(start, end, duration) {
 }
 
 function getSlotCount() {
-    var day, hour, startDate, endDate, helperStartTime, helperEndTime, startTimeStr, endTimeStr, locat, duration, slotsPerDay, dayCount, totalSlots, lastSlot, limitExceeded, array = [], onlyOnce, selectedDays = [], infotext;
+    var day, hour, startDate, endDate, helperStartTime, helperEndTime, startTimeHoursStr, startTimeMinutesStr, endTimeHoursStr, endTimeMinutes, locat, duration, slotsPerDay, dayCount, totalSlots, lastSlot, limitExceeded, array = [], onlyOnce, selectedDays = [], infotext;
     limitExceeded = false;
     onlyOnce = 0;
     dayCount = 0;
@@ -729,10 +783,12 @@ function getSlotCount() {
     startDate = AjanvarausForm.getJSXByName("aloitusPvm").getDate();
     endDate = AjanvarausForm.getJSXByName("lopetusPvm").getDate();
     selectedDays = getDaySelections();
-    startTimeStr = AjanvarausForm.getJSXByName("aloitusAika").getValue();
-    endTimeStr = AjanvarausForm.getJSXByName("lopetusAika").getValue();
-    helperStartTime = new Date(1970, 1, 1, startTimeStr.substr(0, 2), startTimeStr.substr(3, 2), 0);
-    helperEndTime = new Date(1970, 1, 1, endTimeStr.substr(0, 2), endTimeStr.substr(3, 2), 0);
+    startTimeHoursStr = AjanvarausForm.getJSXByName("aloitusTunnit").getText();
+    startTimeMinutesStr = AjanvarausForm.getJSXByName("aloitusMinuutit").getText();
+    endTimeHoursStr = AjanvarausForm.getJSXByName("lopetusTunnit").getText();
+    endTimeMinutesStr = AjanvarausForm.getJSXByName("lopetusMinuutit").getText();
+    helperStartTime = new Date(1970, 1, 1, startTimeHoursStr, startTimeMinutesStr, 0);
+    helperEndTime = new Date(1970, 1, 1, endTimeHoursStr, endTimeMinutesStr, 0);
     locat = AjanvarausForm.getJSXByName("paikka").getValue();
     infotext = AjanvarausForm.getJSXByName("SlotsInfotext").getValue();
     duration = parseInt(AjanvarausForm.getJSXByName("kesto").getValue(), 10);
@@ -818,12 +874,11 @@ function inputSingleSection() {
         return;
     }
 
-    var startDate, helperStartTime, startTimeStr, startTimeHours, startTimeMinutes, duration, locat, infotext;
+    var startDate, helperStartTime, startTimeHours, startTimeMinutes, duration, locat, infotext;
     startDate = AjanvarausForm.getJSXByName("aloitusPvm").getDate();
     helperStartTime = new Date();
-    startTimeStr = AjanvarausForm.getJSXByName("aloitusAika").getValue();
-    startTimeHours = startTimeStr.substr(0, 2);
-    startTimeMinutes = startTimeStr.substr(3, 2);
+    startTimeHours = AjanvarausForm.getJSXByName("aloitusTunnit").getText();
+    startTimeMinutes = AjanvarausForm.getJSXByName("aloitusMinuutit").getText();
     helperStartTime.setHours(startTimeHours);
     helperStartTime.setMinutes(startTimeMinutes);
     duration = AjanvarausForm.getJSXByName("kesto").getValue();
@@ -838,7 +893,7 @@ function inputSingleSection() {
  *  Adds multiple appointment slots
  */
 function inputMultiSections() {
-    var day, hour, startDate, endDate, helperStartTime, helperEndTime, startTimeStr, endTimeStr, locat, duration, i, counter, escapeGenerate, maxSlots, counterArray = [], statement, selectedDays = [], daysSelected, infotext, lastchild;
+    var day, hour, startDate, endDate, helperStartTime, helperEndTime, startTimeHoursStr, startTimeMinutesStr, endTimeHoursStr, endTimeMinutesStr, locat, duration, i, counter, escapeGenerate, maxSlots, counterArray = [], statement, selectedDays = [], daysSelected, infotext, lastchild;
     maxSlots = getMaxSlots();
     counterArray = getSlotCount();
 
@@ -868,10 +923,12 @@ function inputMultiSections() {
     if(!daysSelected) {
         alert("Et ole valinnyt yht\u00E4\u00E4n viikonpaiv\u00E4\u00E4 tapaamisille.");
     }
-    startTimeStr = AjanvarausForm.getJSXByName("aloitusAika").getValue();
-    endTimeStr = AjanvarausForm.getJSXByName("lopetusAika").getValue();
-    helperStartTime = new Date(1970, 1, 1, startTimeStr.substr(0, 2), startTimeStr.substr(3, 2), 0);
-    helperEndTime = new Date(1970, 1, 1, endTimeStr.substr(0, 2), endTimeStr.substr(3, 2), 0);
+    startTimeHoursStr = AjanvarausForm.getJSXByName("aloitusTunnit").getText();
+    startTimeMinutesStr = AjanvarausForm.getJSXByName("aloitusMinuutit").getText();
+    endTimeHoursStr = AjanvarausForm.getJSXByName("lopetusTunnit").getText();
+    endTimeMinutesStr = AjanvarausForm.getJSXByName("lopetusMinuutit").getText();
+    helperStartTime = new Date(1970, 1, 1, startTimeHoursStr, startTimeMinutesStr, 0);
+    helperEndTime = new Date(1970, 1, 1, endTimeHoursStr, endTimeMinutesStr, 0);
     locat = AjanvarausForm.getJSXByName("paikka").getValue();
     infotext = AjanvarausForm.getJSXByName("SlotsInfotext").getValue();
     duration = parseInt(AjanvarausForm.getJSXByName("kesto").getValue(), 10);
@@ -960,10 +1017,11 @@ function clearAppointments() {
 
 function singleSlotFunc() {
     AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("column").setDisplay("none", true);
-    AjanvarausForm.getJSXByName("lopetusAika").getAncestorOfName("column").setDisplay("none", true);
+    AjanvarausForm.getJSXByName("lopetusTunnit").getAncestorOfName("column").setDisplay("none", true);
     AjanvarausForm.getJSXByName("multiSlots").setChecked(0, true);
     AjanvarausForm.getJSXByName("lopetusPvm").setDate(null);
-    AjanvarausForm.getJSXByName("lopetusAika").setValue("").repaint();
+    AjanvarausForm.getJSXByName("lopetusTunnit").setValue("").repaint();
+    AjanvarausForm.getJSXByName("lopetusMinuutit").setValue("").repaint();
     enableAll("week", 0);
 
     if(!AjanvarausForm.getJSXByName("singleSlot").getChecked()) {
@@ -973,7 +1031,7 @@ function singleSlotFunc() {
 
 function multiSlotsFunc() {
     AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("column").setDisplay("block", true);
-    AjanvarausForm.getJSXByName("lopetusAika").getAncestorOfName("column").setDisplay("block", true);
+    AjanvarausForm.getJSXByName("lopetusTunnit").getAncestorOfName("column").setDisplay("block", true);
     AjanvarausForm.getJSXByName("singleSlot").setChecked(0, true);
     enableAll("week", 1);
 
