@@ -3,14 +3,14 @@
 var kokuServiceEndpoints = null;
 
 function Preload() {
-MessageId = gup("MessageId");
-KayttajaviestintaForm.getJSXByName("Message_MessageId").setValue(MessageId);
-// alert(MessageId);
-messagecontent = Arcusys.Internal.Communication.GetMessageById(MessageId);
-// (messagecontent);
-getSender(messagecontent);
-getRecipient(messagecontent);
-getContent(messagecontent);
+    MessageId = gup("MessageId");
+    IsLoora = (/[\\?&]loora/.exec(top.location.href) != null);
+    KayttajaviestintaForm.getJSXByName("Message_MessageId").setValue(MessageId);
+    messagecontent = Arcusys.Internal.Communication.GetMessageById(MessageId);
+
+    getSender(messagecontent);
+    getRecipient(messagecontent);
+    getContent(messagecontent);
 }
 
 function intalioPreStart() {
@@ -46,7 +46,13 @@ function getSender(content) {
 
     // Setting sender UID
     try {
-        var result = Arcusys.Internal.Communication.GetUserUidByUsername(username);
+        var result = null;
+
+        if (IsLoora)
+            result = Arcusys.Internal.Communication.GetLooraUserUidByUsername(username);
+        else
+            result = Arcusys.Internal.Communication.GetKunpoUserUidByUsername(username);
+
         if(result != null) {
             var uid = result.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
             KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(uid);
@@ -211,7 +217,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         }
     };
     
-    arc.GetUserUidByUsername = function(username) {
+    arc.GetLooraUserUidByUsername = function(username) {
 
         var tout = 1000;
         var limit = 100;
@@ -240,6 +246,35 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         }
     };
     
+    arc.GetKunpoUserUidByUsername = function(username) {
+
+        var tout = 1000;
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByKunpoName><kunpoUsername>" + username + "</kunpoUsername></soa:getUserUidByKunpoName></soapenv:Body></soapenv:Envelope>";
+
+        var url = getUrl();
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        req.send(msg, tout);
+        var objXML = req.getResponseXML();
+
+        if(objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+
     arc.GetUserInfo = function(uid) {
         var tout = 1000;
         var limit = 100;
