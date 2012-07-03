@@ -861,7 +861,8 @@ function inputSection(entryDate, entryTime, entryDuration, entryLocation, entryI
     if(entryInfotext) {
         AjanvarausForm.getJSXByName(id).getDescendantOfName("infotext").setValue(entryInfotext);
     } else {
-        AjanvarausForm.getJSXByName(id).getDescendantOfName("tooltipImg").setDisplay("none");
+        $('span[class|="tooltipImg"]').css('display', 'none !important');
+        //AjanvarausForm.getJSXByName(id).getDescendantOfName("tooltipImg").setDisplay("none");
     }
     mapFieldsToMatrix(id, entryDate, entryHours + ":" + entryMinutes, endTimeHours + ":" + endTimeMinutes, entryLocation, entryInfotext);
 }

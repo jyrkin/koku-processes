@@ -80,7 +80,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Käyttäjät" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="Käyttäjät"/>
             </object>
           </object>
         </object>
@@ -107,7 +107,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Ryhmät" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="Ryhmät"/>
             </object>
           </object>
         </object>
@@ -658,7 +658,7 @@
           <variants/>
           <strings riaLabelText="Viesti_Otsikko" jsxname="Viesti_Otsikko-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
-            <variants jsxwidth="490" jsxrequired="1" jsxenabled="1" jsxmaxlength="80"/>
+            <variants jsxwidth="500" jsxrequired="1" jsxenabled="1" jsxmaxlength="80"/>
             <strings jsxname="Header_Text" jsxvalue="" jsxtip="Ajanvarauksen perustietojen otsikkokenttä on tyhjä!"/>
             <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
@@ -735,7 +735,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Yksittäinen tapaaminen" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="Yksittäinen tapaaminen"/>
             </object>
           </object>
         </object>
@@ -762,7 +762,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Monta tapaamista" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="Monta tapaamista"/>
             </object>
           </object>
         </object>
@@ -837,7 +837,7 @@
             <strings jsxname="label" jsxtext="Aloitusaika (hh:mm)" jsxclassname="FormLabel"/>
             <object type="jsx3.gui.Image">
               <variants jsxoverflow="2" jsxrelativeposition="1"/>
-              <strings jsxname="image" jsxsrc="images/help.gif" jsxtip="Voit myös syöttää kellonajat näppäimistöllä."/>
+              <strings jsxname="image" jsxsrc="images/help.gif" jsxtip="Voit myös syöttää kellonajat näppäimistöllä." jsxclassname="tooltipImg"/>
             </object>
           </object>
           <object type="com.intalio.ria.Field">

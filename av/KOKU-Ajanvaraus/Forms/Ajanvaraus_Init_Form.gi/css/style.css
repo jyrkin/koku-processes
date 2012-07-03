@@ -3,8 +3,12 @@
 span.root {
   overflow: visible !important;
   font-family: Helvetica,Arial,Verdana,sans-serif;
-  font-size:12px;
+  font-size: 12px;
   color: #444;
+}
+
+span.tooltipImg {
+  display: inline !important;
 }
 
 .jsx30button_text, .jsx30select_text {
@@ -40,6 +44,10 @@ span.root {
   margin-right: 12px;
 }
 
+td.required-column {
+  width: 8px;
+}
+
 #jsx .jsx30textbox, #jsx .jsx30select_text {
   width: 250px;
   height: 20px;
@@ -58,17 +66,21 @@ span.FormLabel, span.headerNote, #JSX div.form-title, #JSX span.form-title {
   display: block !important;
 }
 
+span.formLabel, span.checkLabel {
+  color: #666666;
+}
+
 span.FormLabel, span.headerNote {
-  color:#666666;
+  padding-left: 8px;
+}
+
+.checkLabel {
+  padding: 2px 0px 0px 0px;
 }
 
 div[label=IntalioInternal_SpacerBlock] {
   display: none !important;
 } 
-
-.checkLabel {
-  padding-top: 2px;
-}
 
 span.checkLabel {
   padding-top: 2px;
