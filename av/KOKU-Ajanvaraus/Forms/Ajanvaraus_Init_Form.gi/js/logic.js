@@ -419,6 +419,7 @@ function intalioPreStart() {
         return "Lomakkeessa t\u00E4ytyy olla v\u00E4hint\u00E4\u00E4n yksi tapaaminen!";
     }
     throughTextfields();
+    
     return null;
 }
 
@@ -1249,12 +1250,12 @@ function setModeModify() {
     AjanvarausForm.getJSXByName("aloitusPvm").getParent().repaint();
     AjanvarausForm.getJSXByName("lopetusPvm").setRequired(0);
     AjanvarausForm.getJSXByName("lopetusPvm").getParent().repaint();
-    AjanvarausForm.getJSXByName("aloitusAika").setRequired(0);
-    AjanvarausForm.getJSXByName("aloitusAika").getParent().repaint();
+    // AjanvarausForm.getJSXByName("aloitusAika").setRequired(0);
+    // AjanvarausForm.getJSXByName("aloitusAika").getParent().repaint();
     AjanvarausForm.getJSXByName("kesto").setRequired(0);
     AjanvarausForm.getJSXByName("kesto").getParent().repaint();
-    AjanvarausForm.getJSXByName("lopetusAika").setRequired(0);
-    AjanvarausForm.getJSXByName("lopetusAika").getParent().repaint();
+    // AjanvarausForm.getJSXByName("lopetusAika").setRequired(0);
+    // AjanvarausForm.getJSXByName("lopetusAika").getParent().repaint();
     AjanvarausForm.getJSXByName("paikka").setRequired(0);
     AjanvarausForm.getJSXByName("paikka").getParent().repaint();
 
@@ -1371,23 +1372,23 @@ function searchNames(searchString) {
         hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
         nodeIterator = childData.selectNodes("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
         childArray = getDataString(nodeIterator);
-        var firstname;
-        var lastname;
+        // var firstname;
+        // var lastname;
         
         for( i = 0; i < childArray.length; i = i + 1) {
             if(childArray[i].parents_uid) {
                 node = AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
                 node.setAttribute("jsxid", 0);
                 node.setAttribute("etunimi", childArray[i].firstname);
-                firstname = childArray[i].firstname;
+                // firstname = childArray[i].firstname;
                 node.setAttribute("sukunimi", childArray[i].lastname);
-                lastname = childArray[i].lastname;
+                // lastname = childArray[i].lastname;
                 node.setAttribute("uid", childArray[i].uid);
                 node.setAttribute("vanhempi", childArray[i].parents_displayName);
                 node.setAttribute("vanhempiUid", childArray[i].parents_uid);
                 AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
-                if (firstname != null && lastname != null)
-                    AjanvarausForm.getJSXByName("User_TargetChild").setValue(firstname + " " + lastname);
+                // if (firstname != null && lastname != null)
+                //    AjanvarausForm.getJSXByName("User_TargetChild").setValue(firstname + " " + lastname);
             }
         }
 

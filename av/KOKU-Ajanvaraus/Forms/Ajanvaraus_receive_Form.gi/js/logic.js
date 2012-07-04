@@ -187,13 +187,13 @@ function Preload() {
         targetPerson = gup("arg1");
         AjanvarausForm.getJSXByName("Lomake_ID").setValue(id);
         AjanvarausForm.getJSXByName("Lomake_Kohdehenkilo").setValue(targetPerson);  
-       
         try {
             var formData = Arcusys.Internal.Communication.GetFormData(id, targetPerson);
 
             if(formData != null) {
                 mapFormDataToFields(formData);
             }
+            addChild(targetPerson);
         }
         catch (e) {
             alert(e);
@@ -201,9 +201,16 @@ function Preload() {
     }   
 }
 
+function addChild(childrenID){
+name = getUserRealName(childrenID);
+AjanvarausForm.getJSXByName("targetChildren").setValue(name).repaint();
+
+
+}
+ 
+
 function mapFormDataToFields(objXML) {
     var sender, senderData, senderUid, senderRealName, subject, description, appointmentId, username, userRealName;
-
     sender = objXML.selectSingleNode("//sender", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     subject = objXML.selectSingleNode("//subject", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     description = objXML.selectSingleNode("//description", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
@@ -281,6 +288,7 @@ function inputPreload(objXML) {
     var attributes, i, pvm, pvm1, pvm2, pvm3, entryText, chosenSlot, nodeIterator, disabled, appointmentStatus;
     nodeIterator = objXML.selectNodeIterator("//slots", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'");
     attributes = getDataString(nodeIterator);
+
     
     chosenSlot = objXML.selectSingleNode("//chosenSlot", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
     appointmentStatus = objXML.selectSingleNode("//status", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
@@ -294,7 +302,7 @@ function inputPreload(objXML) {
         pvm3 = pvm.substr(0,4);
         pvm = pvm1 + "." + pvm2 + "." + pvm3;
                
-        entryText = pvm + ", klo: " + attributes[i].startTime.substr(0,5); + " - " + attributes[i].endTime.substr(0,5); + ", paikka: " + attributes[i].location;
+        entryText = pvm + ", klo: " + attributes[i].startTime.substr(0,5) + " - " + attributes[i].endTime.substr(0,5) + ", paikka: " + attributes[i].location;
         
         addNewEntry(entryText, attributes[i].comment, attributes[i].slotNumber, chosenSlot, attributes[i].disabled);
         refreshBlock();

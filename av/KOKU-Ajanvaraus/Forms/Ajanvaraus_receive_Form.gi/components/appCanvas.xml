@@ -70,7 +70,7 @@
       </object>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
-        <strings jsxname="childRow" jsxclassname="row"/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
@@ -81,7 +81,7 @@
           <strings jsxname="Lapsi-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="400" jsxenabled="0"/>
-            <strings jsxname="User_TargetChild" jsxdisabledbgcolor="#ffffff" jsxvalue=""/>
+            <strings jsxname="targetChildren" jsxdisabledbgcolor="#ffffff" jsxvalue=""/>
             <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>
@@ -185,6 +185,20 @@
       <object type="jsx3.gui.TextBox">
         <variants/>
         <strings jsxname="Lomake_Kohdehenkilo" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+    </object>
+    <object type="com.intalio.ria.Section">
+      <variants/>
+      <strings riaTitleText="" jsxname="Invisibles" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%"/>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="User_Recipient" jsxmargin="0 4 0 0" jsxvalue=""/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="User_Sender" jsxmargin="0 4 0 0" jsxvalue=""/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
