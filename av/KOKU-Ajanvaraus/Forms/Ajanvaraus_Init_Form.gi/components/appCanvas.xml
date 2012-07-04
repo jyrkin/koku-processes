@@ -1317,8 +1317,17 @@
         <dynamics jsxborder="@No jsxborder"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxvalue="316"/>
-        <strings jsxname="calendarEntryId" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants/>
+        <strings jsxvalue="316" jsxname="calendarEntryId" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+    </object>
+    <object type="com.intalio.ria.Section">
+      <variants/>
+      <strings riaTitleText="invisibles" jsxname="invisbles" jsxclassname="fieldset" jsxdisplay="none" jsxwidth="100%" jsxvisibility="hidden"/>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="User_TargetChild" jsxmargin="0 4 0 0" jsxvalue=""/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
