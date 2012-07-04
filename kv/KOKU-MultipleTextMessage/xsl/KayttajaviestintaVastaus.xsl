@@ -18,7 +18,7 @@
 					<p><xsl:value-of select="//ka:Message_FromRealName/text()" /></p>
 					<h2 class="old">VASTAANOTTAJA</h2>
 							<!-- <p><xsl:value-of select="$Vastaanottaja/ka:receipientDisplay"/></p>-->
-							<p><xsl:value-of select="//ka:Message_ToLastName/text()" /></p>
+							<p><xsl:value-of select="//ka:Message_ToRealName/text()" /></p>
 								<!--<xsl:if test="position()!=count(//ka:receipients)">-->
 								<!--</xsl:if>-->
 					<div class="innerContent">

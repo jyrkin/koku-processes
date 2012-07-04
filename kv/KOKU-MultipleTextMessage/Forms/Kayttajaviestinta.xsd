@@ -9,10 +9,11 @@
 
     		<element name="Message_FamilyMembers" type="boolean"></element>
     		<element name="Message_Website" type="boolean"></element>
-    		<element name="Message_ToFirstName" type="string"></element>
-    		<element name="Message_ToLastName" type="string"></element>
     		<element name="Message_FromRole" type="string"></element>
     		<element name="Message_MessageId" type="string"></element>
+    		<element name="Message_ToUser" type="string"></element>
+    		<element name="Message_ToRealName" type="string"></element>
+    		<element name="Message_HTML" type="string"></element>
     	</sequence>
 </complexType>
     <complexType name="Kayttajaviestinta_Type">

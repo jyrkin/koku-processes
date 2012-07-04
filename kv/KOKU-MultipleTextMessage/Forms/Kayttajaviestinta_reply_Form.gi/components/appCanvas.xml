@@ -32,21 +32,6 @@
     <object type="jsx3.gui.Block">
       <variants/>
       <strings jsxname="invisibles" jsxrelativeposition="1" jsxdisplay="none"/>
-      <object type="jsx3.gui.Select">
-        <variants jsxwidth="1" jsxheight="1" jsxxmlasync="1" _isfocusing="true"/>
-        <strings jsxname="Message_FromFirstName" jsxmargin="0 4 0 0" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay="none" jsxvisibility="hidden"/>
-        <events jsxselect="" jsxkeydown=""/>
-      </object>
-      <object type="jsx3.gui.Select">
-        <variants jsxwidth="1" jsxheight="1" jsxxmlasync="1" _isfocusing="true"/>
-        <strings jsxname="Message_ToFirstName" jsxmargin="0 4 0 0" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay="none" jsxvisibility="hidden"/>
-        <events jsxselect="" jsxkeydown=""/>
-      </object>
-      <object type="jsx3.gui.Select">
-        <variants jsxwidth="1" jsxheight="1" jsxxmlasync="1" _isfocusing="true"/>
-        <strings jsxname="Message_ToLastName" jsxmargin="0 4 0 0" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay="none" jsxvisibility="hidden"/>
-        <events jsxselect="" jsxkeydown=""/>
-      </object>
       <object type="jsx3.gui.TextBox">
         <variants/>
         <strings jsxname="Message_MessageId" jsxmargin="0 4 0 0" jsxvalue=""/>
@@ -54,7 +39,22 @@
       </object>
       <object type="jsx3.gui.TextBox">
         <variants/>
-        <strings jsxname="Message_FromRole" jsxmargin="0 4 0 0"/>
+        <strings jsxname="Message_FromUser" jsxmargin="0 4 0 0" jsxvalue=""/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="Message_FromRole" jsxmargin="0 4 0 0" jsxvalue=""/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="Message_ToUser" jsxmargin="0 4 0 0" jsxvalue=""/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="Message_HTML" jsxmargin="0 4 0 0"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
@@ -91,7 +91,7 @@
           <variants/>
           <strings riaLabelText="" jsxname="Message_Subject-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
-            <variants jsxwidth="300" jsxrequired="1"/>
+            <variants jsxwidth="300" jsxrequired="1" jsxreadonly="1"/>
             <strings jsxname="Message_Subject" jsxvalue="" jsxtip="Viestin aihe" jsxclassname="textField"/>
             <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxexecute="" jsxkeypress="" jsxkeydown="" jsxkeyup=""/>
           </object>
@@ -117,59 +117,19 @@
       </object>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
-        <strings jsxname="pane"/>
+        <strings jsxname="row" jsxclassname="row"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxrelativeposition="1" jsxoverflow="3"/>
-          <strings jsxname="label" jsxtext="Vastaanottaja(t)" jsxclassname="FormLabel"/>
+          <strings jsxname="label" jsxtext="Vastaanottaja" jsxclassname="FormLabel"/>
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
-          <strings riaLabelText="receipients" jsxname="receipients-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-          <object type="jsx3.gui.Block">
-            <variants jsxwidth="350" jsxheight="110" jsxoverflow="1"/>
-            <strings jsxname="matrix-block" jsxrelativeposition="1" jsxmargin="0 0 0 18" jsxdisplay="none" jsxvisibility="hidden"/>
-            <object type="jsx3.gui.Matrix">
-              <variants jsxpagingmodel="3" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1"/>
-              <strings jsxname="dummyMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlid="receipientsToShow-nomap" jsxsortpath="receipient" jsxsorttype="text" jsxsortdirection="ascending"/>
-              <events jsxaftercommit="this.getParent().getParent().validate(this, objEVENT);"/>
-              <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
-              <object type="jsx3.gui.Matrix.Column">
-                <variants jsxwidth="50"/>
-                <strings jsxname="deleteButtonColumn" jsxtext="Poista" jsxpadding="2" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxtextalign="center" jsxcelltextalign="center"/>
-                <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                <object type="jsx3.gui.ImageButton">
-                  <variants jsxwidth="16" jsxheight="16" jsxenabled="1" jsxstate="0" jsxprefetch="1" jsxtype="0"/>
-                  <strings jsxname="deleteButtonMask" jsximage="jsx:///images/list/delete.gif"/>
-                  <events jsxexecute="this.getParent().getParent().deleteRecord(this.emGetSession().recordId, true);this.getParent().getParent().getParent().getParent().validate(this, objEVENT);"/>
-                </object>
-              </object>
-              <object type="jsx3.gui.Matrix.Column">
-                <variants/>
-                <strings jsxname="receipient" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient"/>
-                <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                <object type="jsx3.gui.TextBox">
-                  <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="40" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
-                  <strings jsxname="receipient" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue="Kerttu Kuntalainen"/>
-                  <events jsxkeydown="1;"/>
-                </object>
-              </object>
-              <object type="jsx3.gui.Matrix.Column">
-                <variants/>
-                <strings jsxname="uid" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="uid" jsxdisplay="none"/>
-                <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                <object type="jsx3.gui.TextBox">
-                  <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="40" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
-                  <strings jsxname="uid" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue="Kerttu Kuntalainen"/>
-                  <events jsxkeydown="1;"/>
-                </object>
-              </object>
-            </object>
-          </object>
+          <strings riaLabelText="Viesti_Sisalto" jsxname="Message_ToRealName-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="300" jsxrequired="1" jsxreadonly="1"/>
-            <strings jsxname="Message_ToRealName" jsxvalue="" jsxclassname="textField"/>
-            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+            <strings jsxname="Message_ToRealName" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
         </object>
       </object>
@@ -225,11 +185,6 @@
       <object type="jsx3.gui.CheckBox">
         <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
-      </object>
-      <object type="jsx3.gui.TextBox">
-        <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
-        <strings jsxname="Message_FromUser" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
-        <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
     <object type="jsx3.gui.Button">

@@ -22,8 +22,12 @@
 					</xsl:element>
 	 			</xsl:for-each>
 	 		</xsl:element>
-
-	 		<xsl:element name="messageContent">
+			
+			<xsl:element name="messageContent">
+				<xsl:value-of select="//ka:Message_HTML/text()"/>
+			</xsl:element>
+			
+			<xsl:element name="originalContent">
 				<xsl:value-of select="//ka:Message_Content/text()"/>
 			</xsl:element>
 			
