@@ -5,8 +5,8 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize><![CDATA[preload();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="1" jsxwidth="600"/>
-    <strings jsxname="root" jsxclassname="root"/>
+    <variants jsxoverflow="1" jsxwidth="600" jsxrelativeposition="1"/>
+    <strings jsxleft="" jsxtop="" jsxheight="" jsxname="root" jsxclassname="root" jsxdisplay=""/>
     <object type="jsx3.gui.Block">
       <variants/>
       <strings jsxwidth="100%" jsxname="header" jsxrelativeposition="1"/>
@@ -494,7 +494,7 @@
             <variants/>
             <strings riaLabelText="Suostumus_Suostumusajankohta" jsxname="Suostumus_Suostumusajankohta-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
             <object type="jsx3.gui.DatePicker">
-              <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxenabled="1" jsxrequired="1" jsxyear="2012" jsxmonth="2" jsxdate="3"/>
+              <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxenabled="1" jsxrequired="1"/>
               <strings jsxformat="dd-MM-yyyy" jsxname="Suostumus1_Suostumusajankohta" jsxmargin="0 4 0 0" jsxdisabledbgcolor="#ffffff" jsxtip="Suostumusajankohta"/>
               <events jsxhide="com.intalio.ria.validate(this);" jsxblur="isValidDate(this, 0);"/>
             </object>

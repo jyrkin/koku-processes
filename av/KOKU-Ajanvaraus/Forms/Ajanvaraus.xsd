@@ -4,12 +4,12 @@
     <complexType name="slots_Type">
     	<sequence>
     		<element name="appointmentId" type="string"></element>
-            <element name="slotNumber" type="string"></element>
-            <element name="appointmentDate" type="string"></element>
+    		<element name="slotNumber" type="string"></element>
+    		<element name="appointmentDate" type="string"></element>
     		<element name="startTime" type="string"></element>
     		<element name="endTime" type="string"></element>
-            <element name="location" type="string"></element>
-            <element name="comment" type="string"></element>
+    		<element name="location" type="string"></element>
+    		<element name="comment" type="string"></element>
     	</sequence>
     </complexType>
 
@@ -28,6 +28,7 @@
     		<element name="User_Sender" type="string"></element>
     		<element name="User_SenderRealName" type="string"></element>
     		<element name="User_Role" type="string"></element>
+    		<element name="User_TargetChild" type="string"></element>
     	</sequence>
     </complexType>
     
@@ -59,8 +60,8 @@
     		<element name="Lomake_ID" type="string"></element>
     		<element name="Lomake_Status" type="string"></element>
     		<element name="Lomake_Hyvaksytty_Aika" type="string"></element>
-            <element name="Lomake_Kohdehenkilo" type="string"></element>
-            <element name="Lomake_Viesti" type="string"></element>
+    		<element name="Lomake_Kohdehenkilo" type="string"></element>
+    		<element name="Lomake_Viesti" type="string"></element>
     		<element name="Lomake_Extend1" type="string"></element>
     		<element name="Lomake_Extend2" type="string"></element>
     		<element name="Lomake_Extend3" type="boolean"></element>

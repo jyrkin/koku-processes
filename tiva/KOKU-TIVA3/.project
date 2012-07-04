@@ -16,6 +16,11 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+			<name>com.intalio.bpms.designer.extvar.xvarbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>com.intalio.bpms.designer.dataobjects.dataobjectbuilder</name>
 			<arguments>
 			</arguments>
@@ -46,7 +51,17 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+			<name>com.intalio.bpms.designer.bre.dtbuilder.decisiontablebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>com.intalio.bpms.designer.connectors.rest.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.intalio.bpms.designer.bre.dt2wsbuilder.drl2aarBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -67,6 +82,11 @@
 		</buildCommand>
 		<buildCommand>
 			<name>org.eclipse.stp.bpmn.validation.BatchValidationBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.intalio.bpms.designer.extvar.rptdesignbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -94,4 +114,11 @@
 	<natures>
 		<nature>org.eclipse.stp.bpmn.validation.BatchValidationBuildAbleNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>metadata.xml</name>
+			<type>1</type>
+			<location>/home/hmustonen/KOKU-workspace/git040712/koku-processes/tiva/KOKU-TIVA3/metadata.xml</location>
+		</link>
+	</linkedResources>
 </projectDescription>

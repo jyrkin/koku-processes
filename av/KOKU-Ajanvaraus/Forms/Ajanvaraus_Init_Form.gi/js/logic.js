@@ -1371,17 +1371,23 @@ function searchNames(searchString) {
         hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
         nodeIterator = childData.selectNodes("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
         childArray = getDataString(nodeIterator);
-
+        var firstname;
+        var lastname;
+        
         for( i = 0; i < childArray.length; i = i + 1) {
             if(childArray[i].parents_uid) {
                 node = AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
                 node.setAttribute("jsxid", 0);
                 node.setAttribute("etunimi", childArray[i].firstname);
+                firstname = childArray[i].firstname;
                 node.setAttribute("sukunimi", childArray[i].lastname);
+                lastname = childArray[i].lastname;
                 node.setAttribute("uid", childArray[i].uid);
                 node.setAttribute("vanhempi", childArray[i].parents_displayName);
                 node.setAttribute("vanhempiUid", childArray[i].parents_uid);
                 AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
+                if (firstname != null && lastname != null)
+                    AjanvarausForm.getJSXByName("User_TargetChild").setValue(firstname + " " + lastname);
             }
         }
 
