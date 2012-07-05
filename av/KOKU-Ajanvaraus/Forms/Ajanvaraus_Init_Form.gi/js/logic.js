@@ -1034,6 +1034,7 @@ function singleSlotFunc() {
 function multiSlotsFunc() {
     AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("column").setDisplay("block", true);
     AjanvarausForm.getJSXByName("lopetusTunnit").getAncestorOfName("column").setDisplay("block", true);
+    AjanvarausForm.getJSXByName("kesto").getAncestorOfName("column").setDisplay("block", true);
     AjanvarausForm.getJSXByName("singleSlot").setChecked(0, true);
     enableAll("week", 1);
 
