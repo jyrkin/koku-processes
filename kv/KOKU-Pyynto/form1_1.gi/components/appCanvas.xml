@@ -303,7 +303,7 @@
               <variants/>
               <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxheight="18" jsxchecked="1" jsxenabled="1" jsxdefaultchecked="0"/>
+                <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                 <strings jsxname="HaeKayttajia_Checkbox3" jsxtext="" jsxmargin="0 4 0 0"/>
                 <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
               </object>
@@ -405,7 +405,7 @@
             <object type="jsx3.gui.Button">
               <variants jsxheight="18"/>
               <strings jsxname="button" jsxtext="Hae" jsxclassname="kokuButton"/>
-              <events jsxexecute="makeSearch(form1.getJSXByName(&quot;searchStringRole&quot;).getValue());addToRecipients();"/>
+              <events jsxexecute="makeSearch(form1.getJSXByName(&quot;searchStringRole&quot;).getValue());"/>
             </object>
           </object>
         </object>
@@ -530,7 +530,7 @@
               <variants/>
               <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
+                <variants jsxheight="18" jsxchecked="1" jsxenabled="1" jsxdefaultchecked="0"/>
                 <strings jsxname="HaeKayttajia_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                 <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
               </object>
