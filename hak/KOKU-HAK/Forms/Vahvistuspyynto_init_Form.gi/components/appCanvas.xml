@@ -1,10 +1,9 @@
-﻿<?xml version='1.0' encoding='UTF-8'?>
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.6">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize>prepareForm();</onAfterDeserialize>
+  <onAfterDeserialize><![CDATA[prepareForm();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxoverflow="1"/>
     <strings jsxheight="100%" jsxwidth="100%" jsxname="root"/>
@@ -104,7 +103,7 @@
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxrelativeposition="1"/>
-                <strings jsxfontweight="normal" jsxtextalign="right" jsxpadding="12px" jsxname="form-title" jsxclassname="form-title-new2" jsxtext="Päivähoitohakemus&lt;br>&lt;small>&lt;small>&lt;/small>&lt;/small>"/>
+                <strings jsxfontweight="normal" jsxtextalign="right" jsxpadding="12px" jsxname="form-title" jsxclassname="form-title-new2" jsxtext="Päivähoitohakemus&lt;br&gt;&lt;small&gt;&lt;small&gt;&lt;/small&gt;&lt;/small&gt;"/>
               </object>
             </object>
           </object>
@@ -127,7 +126,7 @@
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;>*&lt;/span>)."/>
+                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)."/>
               </object>
             </object>
           </object>
@@ -245,7 +244,7 @@
                   <strings riaLabelText="Tiedot_Sijainti" jsxdisplay="" jsxname="Tiedot_Sijainti-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="1"/>
-                    <strings jsxxml="&lt;data>       &lt;locale>     &lt;record jsxid=&quot;Halila&quot; jsxtext=&quot;Hallila&quot; jsxcode=&quot;&quot;/>     &lt;record jsxid=&quot;Iidesranta&quot; jsxtext=&quot;Iidesranta&quot; jsxcode=&quot;&quot;/>     &lt;record jsxid=&quot;Jaervensivu&quot; jsxtext=&quot;Järvensivu&quot; jsxcode=&quot;&quot;/>     &lt;record jsxid=&quot;Koivistonkylä&quot; jsxtext=&quot;Koivistonkylä&quot; jsxcode=&quot;&quot;/>     &lt;record jsxid=&quot;Muotiala&quot; jsxtext=&quot;Muotiala&quot; jsxcode=&quot;&quot;/>     &lt;record jsxid=&quot;Nekala&quot; jsxtext=&quot;Nekala&quot; jsxcode=&quot;&quot;/>     &lt;record jsxid=&quot;Viinikka&quot; jsxtext=&quot;Viinikka&quot; jsxcode=&quot;&quot;/>     &lt;record jsxid=&quot;Veisu&quot; jsxtext=&quot;Veisu&quot; jsxcode=&quot;&quot;/>   &lt;/locale> &lt;/data>" jsxdefaulttext="- Valitse -" jsxname="Tiedot_Sijainti" jsxmargin="0 4 0 0"/>
+                    <strings jsxxml="&lt;data&gt;       &lt;locale&gt;     &lt;record jsxid=&quot;Halila&quot; jsxtext=&quot;Hallila&quot; jsxcode=&quot;&quot;/&gt;     &lt;record jsxid=&quot;Iidesranta&quot; jsxtext=&quot;Iidesranta&quot; jsxcode=&quot;&quot;/&gt;     &lt;record jsxid=&quot;Jaervensivu&quot; jsxtext=&quot;Järvensivu&quot; jsxcode=&quot;&quot;/&gt;     &lt;record jsxid=&quot;Koivistonkylä&quot; jsxtext=&quot;Koivistonkylä&quot; jsxcode=&quot;&quot;/&gt;     &lt;record jsxid=&quot;Muotiala&quot; jsxtext=&quot;Muotiala&quot; jsxcode=&quot;&quot;/&gt;     &lt;record jsxid=&quot;Nekala&quot; jsxtext=&quot;Nekala&quot; jsxcode=&quot;&quot;/&gt;     &lt;record jsxid=&quot;Viinikka&quot; jsxtext=&quot;Viinikka&quot; jsxcode=&quot;&quot;/&gt;     &lt;record jsxid=&quot;Veisu&quot; jsxtext=&quot;Veisu&quot; jsxcode=&quot;&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxname="Tiedot_Sijainti" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
                 </object>
@@ -312,7 +311,7 @@
         <variants/>
         <strings riaLabelText="Tiedot_KorkeinMaksu" jsxdisplay="none" jsxname="Tiedot_KorkeinMaksu-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
         <object type="jsx3.gui.CheckBox">
-          <variants jsxchecked="0" jsxheight="18"/>
+          <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
           <strings jsxname="Tiedot_KorkeinMaksu" jsxmargin="0 4 0 0"/>
           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
         </object>
@@ -321,7 +320,7 @@
         <variants/>
         <strings riaLabelText="Tiedot_EiKorkeinMaksu" jsxdisplay="none" jsxname="Tiedot_EiKorkeinMaksu-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
         <object type="jsx3.gui.CheckBox">
-          <variants jsxchecked="0" jsxheight="18"/>
+          <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
           <strings jsxname="Tiedot_EiKorkeinMaksu" jsxmargin="0 4 0 0"/>
           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
         </object>
@@ -330,7 +329,7 @@
         <variants/>
         <strings riaLabelText="Tiedot_Hyvaksyy" jsxdisplay="none" jsxname="Tiedot_Hyvaksyy-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
         <object type="jsx3.gui.CheckBox">
-          <variants jsxchecked="0" jsxheight="18"/>
+          <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
           <strings jsxname="Tiedot_Hyvaksyy" jsxmargin="0 4 0 0"/>
           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
         </object>
@@ -339,7 +338,7 @@
         <variants/>
         <strings riaLabelText="Tiedot_Hylkaa" jsxdisplay="none" jsxname="Tiedot_Hylkaa-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
         <object type="jsx3.gui.CheckBox">
-          <variants jsxchecked="0" jsxheight="18"/>
+          <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
           <strings jsxname="Tiedot_Hylkaa" jsxmargin="0 4 0 0"/>
           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
         </object>
@@ -402,6 +401,11 @@
       <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_CompleteButton" jsxmargin="15 10 15 0"/>
       <dynamics jsxtext="Intalio Complete Button"/>
       <events jsxexecute="Intalio.Internal.TMP.callCompleteTask();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18"/>
+      <strings jsxname="button" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton"/>
+      <events jsxexecute="history.back();"/>
     </object>
   </object>
 </serialization>

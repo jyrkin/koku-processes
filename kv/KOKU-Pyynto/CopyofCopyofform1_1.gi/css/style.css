@@ -229,6 +229,17 @@ span.FormLabel{
   color:#666666;
 }
 
+span[label=IntalioInternal_StartButton], span.intalioButton {
+    margin: 0px 8px 0px 0px !important;
+    padding: 3px 10px !important;
+    float: left !important;
+}
+
+span.intalioButton {
+    position: absolute !important;
+    left: 105px !important;
+}
+
 span.CheckboxLabel{
   padding: 8px;
   text-align:left;

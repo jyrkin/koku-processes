@@ -1015,5 +1015,10 @@
         </object>
       </object>
     </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18"/>
+      <strings jsxname="button" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton"/>
+      <events jsxexecute="history.back();"/>
+    </object>
   </object>
 </serialization>

@@ -1,4 +1,4 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
@@ -121,7 +121,7 @@
                   <variants/>
                   <strings jsxname="vastausVapaa-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1"/>
+                    <variants jsxheight="18" jsxchecked="1" jsxdefaultchecked="0"/>
                     <strings jsxname="vastausVapaa" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="form1.getJSXByName(&quot;vastausKyllaEi&quot;).setChecked(0).repaint();form1.getJSXByName(&quot;vastausVapaatVaihtoehdot&quot;).setChecked(0).repaint();"/>
                   </object>
@@ -153,7 +153,7 @@
                   <variants/>
                   <strings jsxname="vastausKyllaEi-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                     <strings jsxname="vastausKyllaEi" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="form1.getJSXByName(&quot;vastausVapaa&quot;).setChecked(0).repaint();form1.getJSXByName(&quot;vastausVapaatVaihtoehdot&quot;).setChecked(0).repaint();"/>
                   </object>
@@ -185,7 +185,7 @@
                   <variants/>
                   <strings jsxname="vastausVapaatVaihtoehdot-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                     <strings jsxname="vastausVapaatVaihtoehdot" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="form1.getJSXByName(&quot;vastausVapaa&quot;).setChecked(0).repaint();form1.getJSXByName(&quot;vastausKyllaEi&quot;).setChecked(0).repaint();"/>
                   </object>
@@ -311,7 +311,7 @@
               <strings jsxcellpadding="1" jsxpath="YesNoInput_Yes" jsxwidth="100" jsxpadding="3" jsxcelltextalign="center" jsxname="YesNoInput_Yes" jsxvaluetemplate="@empty" jsxtext="YesNoInput_Yes"/>
               <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxchecked="0" jsxenabled="1"/>
+                <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                 <strings jsxname="YesNoInput_Yes" jsxtext=""/>
                 <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
               </object>
@@ -321,7 +321,7 @@
               <strings jsxcellpadding="1" jsxpath="YesNoInput_No" jsxwidth="100" jsxpadding="3" jsxcelltextalign="center" jsxname="YesNoInput_No" jsxvaluetemplate="@empty" jsxtext="YesNoInput_No"/>
               <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxchecked="0" jsxenabled="1"/>
+                <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                 <strings jsxname="YesNoInput_No" jsxtext=""/>
                 <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
               </object>

@@ -148,6 +148,17 @@ div.title, span.title {
   width: 800px;
 }
 
+span[label=IntalioInternal_StartButton], span.intalioButton {
+    margin: 0px 8px 0px 0px !important;
+    padding: 3px 10px !important;
+    float: left !important;
+}
+
+span.intalioButton {
+    position: absolute !important;
+    left: 105px !important;
+}
+
 /* form header */
 #JSX div.form-title-new, #JSX span.form-title-new {
   font-size: 2.5em;

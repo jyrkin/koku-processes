@@ -289,6 +289,17 @@ span.CheckboxLabel{
   font-weight:bold;
 }
 
+span[label=IntalioInternal_StartButton], span.intalioButton {
+    margin: 0px 8px 0px 0px !important;
+    padding: 3px 10px !important;
+    float: left !important;
+}
+
+span.intalioButton {
+    position: absolute !important;
+    left: 105px !important;
+}
+
 #JSX span.jsx30tab{
     height: 25px !important;
     font-size:14px;

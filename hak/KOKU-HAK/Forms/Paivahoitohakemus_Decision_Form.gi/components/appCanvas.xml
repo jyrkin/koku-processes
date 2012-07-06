@@ -1,10 +1,9 @@
-﻿<?xml version='1.0' encoding='UTF-8'?>
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.6">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize>startup();</onAfterDeserialize>
+  <onAfterDeserialize><![CDATA[startup();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxwidth="860" jsxoverflow="1"/>
     <strings jsxheight="100%" jsxstyleoverride="overflow-x:hidden;   overflow-y:auto;" jsxname="root"/>
@@ -103,7 +102,7 @@
               <strings jsxheight="100%" jsxwidth="100%" jsxpadding="6px" jsxname="pane" jsxbgcolor=""/>
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.CheckBox">
-                <variants jsxchecked="0" jsxheight="18"/>
+                <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
                 <strings jsxpadding="" jsxdisplay="" jsxcolor="" jsxname="checkbox" jsxmargin="" jsxclassname="FormLabel" jsxtext="Näytä tunnistetiedot"/>
                 <events jsxtoggle="setMetadataDisplay(this.getChecked());"/>
               </object>
@@ -114,7 +113,7 @@
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="&lt;a href=&quot;https://easiointi.jns.fi/modules/page/show_page.asp?id=C2FAEEFB1516431C850F286DAC265679&quot;  target=&quot;blank&quot;>Täyttöohjeet&lt;/a>"/>
+                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="&lt;a href=&quot;https://easiointi.jns.fi/modules/page/show_page.asp?id=C2FAEEFB1516431C850F286DAC265679&quot;  target=&quot;blank&quot;&gt;Täyttöohjeet&lt;/a&gt;"/>
               </object>
             </object>
           </object>
@@ -798,7 +797,7 @@
                   <strings riaLabelText="Lapsi_Aidinkieli" jsxname="Lapsi_Aidinkieli-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" jsxxmlasync="1"/>
-                    <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;> &lt;record jsxid=&quot;Suomi&quot; jsxtext=&quot;Suomi&quot; jsxtip=&quot;Suomi&quot;/> &lt;record jsxid=&quot;Ruotsi&quot; jsxtext=&quot;Ruotsi&quot; jsxtip=&quot;Ruotsi&quot;/> &lt;record jsxid=&quot;Saame&quot; jsxtext=&quot;Saame&quot; jsxtip=&quot;Saame&quot;/> &lt;record jsxid=&quot;Venäjä&quot; jsxtext=&quot;Venäjä&quot; jsxtip=&quot;Venäjä&quot;/> &lt;record jsxid=&quot;Tanska-Norja-Islanti&quot; jsxtext=&quot;Tanska-Norja-Islanti&quot; jsxtip=&quot;Tanska-Norja-Islanti&quot;/> &lt;record jsxid=&quot;Englanti&quot; jsxtext=&quot;Englanti&quot; jsxtip=&quot;Englanti&quot;/> &lt;record jsxid=&quot;Saksa&quot; jsxtext=&quot;Saksa&quot; jsxtip=&quot;Saksa&quot;/> &lt;record jsxid=&quot;Ranska&quot; jsxtext=&quot;Ranska&quot; jsxtip=&quot;Ranska&quot;/> &lt;record jsxid=&quot;Muu&quot; jsxtext=&quot;Muu&quot; jsxtip=&quot;Muu&quot;/> &lt;record jsxid=&quot;Tuntematon&quot; jsxtext=&quot;Tuntematon&quot; jsxtip=&quot;Tuntematon&quot;/>&lt;/data>" jsxdefaulttext="- Valitse -" jsxname="Lapsi_Aidinkieli" jsxmargin="0 4 0 0"/>
+                    <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt; &lt;record jsxid=&quot;Suomi&quot; jsxtext=&quot;Suomi&quot; jsxtip=&quot;Suomi&quot;/&gt; &lt;record jsxid=&quot;Ruotsi&quot; jsxtext=&quot;Ruotsi&quot; jsxtip=&quot;Ruotsi&quot;/&gt; &lt;record jsxid=&quot;Saame&quot; jsxtext=&quot;Saame&quot; jsxtip=&quot;Saame&quot;/&gt; &lt;record jsxid=&quot;Venäjä&quot; jsxtext=&quot;Venäjä&quot; jsxtip=&quot;Venäjä&quot;/&gt; &lt;record jsxid=&quot;Tanska-Norja-Islanti&quot; jsxtext=&quot;Tanska-Norja-Islanti&quot; jsxtip=&quot;Tanska-Norja-Islanti&quot;/&gt; &lt;record jsxid=&quot;Englanti&quot; jsxtext=&quot;Englanti&quot; jsxtip=&quot;Englanti&quot;/&gt; &lt;record jsxid=&quot;Saksa&quot; jsxtext=&quot;Saksa&quot; jsxtip=&quot;Saksa&quot;/&gt; &lt;record jsxid=&quot;Ranska&quot; jsxtext=&quot;Ranska&quot; jsxtip=&quot;Ranska&quot;/&gt; &lt;record jsxid=&quot;Muu&quot; jsxtext=&quot;Muu&quot; jsxtip=&quot;Muu&quot;/&gt; &lt;record jsxid=&quot;Tuntematon&quot; jsxtext=&quot;Tuntematon&quot; jsxtip=&quot;Tuntematon&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxname="Lapsi_Aidinkieli" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
                 </object>
@@ -816,7 +815,7 @@
                   <strings riaLabelText="Lapsi_Kotipaikka" jsxname="Lapsi_Kotipaikka-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="1"/>
-                    <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;> &lt;record jsxid=&quot;Joensuu&quot; jsxtext=&quot;Joensuu&quot; jsxtip=&quot;Joensuu&quot;/> &lt;record jsxid=&quot;Lieksa&quot; jsxtext=&quot;Lieksa&quot; jsxtip=&quot;Lieksa&quot;/> &lt;record jsxid=&quot;Kontiolahti&quot; jsxtext=&quot;Kontiolahti&quot; jsxtip=&quot;Kontiolahti&quot;/> &lt;record jsxid=&quot;Eno&quot; jsxtext=&quot;Eno&quot; jsxtip=&quot;Eno&quot;/> &lt;record jsxid=&quot;Kitee&quot; jsxtext=&quot;Kitee&quot; jsxtip=&quot;Kitee&quot;/> &lt;record jsxid=&quot;Pyhäselkä&quot; jsxtext=&quot;Pyhäselkä&quot; jsxtip=&quot;Pyhäselkä&quot;/> &lt;record jsxid=&quot;Rääkkylä&quot; jsxtext=&quot;Rääkkylä&quot; jsxtip=&quot;Rääkkylä&quot;/> &lt;record jsxid=&quot;Nurmes&quot; jsxtext=&quot;Nurmes&quot; jsxtip=&quot;Nurmes&quot;/> &lt;record jsxid=&quot;Valtimo&quot; jsxtext=&quot;Valtimo&quot; jsxtip=&quot;Valtimo&quot;/> &lt;record jsxid=&quot;Tohmajärvi&quot; jsxtext=&quot;Tohmajärvi&quot; jsxtip=&quot;Tohmajärvi&quot;/>&lt;/data>" jsxdefaulttext="- Valitse -" jsxname="Lapsi_Kotipaikka" jsxmargin="0 4 0 0"/>
+                    <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt; &lt;record jsxid=&quot;Joensuu&quot; jsxtext=&quot;Joensuu&quot; jsxtip=&quot;Joensuu&quot;/&gt; &lt;record jsxid=&quot;Lieksa&quot; jsxtext=&quot;Lieksa&quot; jsxtip=&quot;Lieksa&quot;/&gt; &lt;record jsxid=&quot;Kontiolahti&quot; jsxtext=&quot;Kontiolahti&quot; jsxtip=&quot;Kontiolahti&quot;/&gt; &lt;record jsxid=&quot;Eno&quot; jsxtext=&quot;Eno&quot; jsxtip=&quot;Eno&quot;/&gt; &lt;record jsxid=&quot;Kitee&quot; jsxtext=&quot;Kitee&quot; jsxtip=&quot;Kitee&quot;/&gt; &lt;record jsxid=&quot;Pyhäselkä&quot; jsxtext=&quot;Pyhäselkä&quot; jsxtip=&quot;Pyhäselkä&quot;/&gt; &lt;record jsxid=&quot;Rääkkylä&quot; jsxtext=&quot;Rääkkylä&quot; jsxtip=&quot;Rääkkylä&quot;/&gt; &lt;record jsxid=&quot;Nurmes&quot; jsxtext=&quot;Nurmes&quot; jsxtip=&quot;Nurmes&quot;/&gt; &lt;record jsxid=&quot;Valtimo&quot; jsxtext=&quot;Valtimo&quot; jsxtip=&quot;Valtimo&quot;/&gt; &lt;record jsxid=&quot;Tohmajärvi&quot; jsxtext=&quot;Tohmajärvi&quot; jsxtip=&quot;Tohmajärvi&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxname="Lapsi_Kotipaikka" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
                 </object>
@@ -866,7 +865,7 @@
         <strings riaLabelText="Lapsi_Alue" jsxdisplay="none" jsxname="Lapsi_Alue-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
         <object type="jsx3.gui.Select">
           <variants jsxheight="18" jsxwidth="150" jsxxmlasync="1"/>
-          <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;> &lt;record jsxid=&quot;Oletus&quot; jsxtext=&quot;Oletus&quot; jsxtip=&quot;Oletus&quot;/>&lt;/data>" jsxname="Lapsi_Alue" jsxmargin="0 4 0 0"/>
+          <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt; &lt;record jsxid=&quot;Oletus&quot; jsxtext=&quot;Oletus&quot; jsxtip=&quot;Oletus&quot;/&gt;&lt;/data&gt;" jsxname="Lapsi_Alue" jsxmargin="0 4 0 0"/>
           <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
         </object>
       </object>
@@ -1188,7 +1187,7 @@
                   <strings riaLabelText="Huoltaja_Huoltajuus" jsxname="Huoltaja_Huoltajuus-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="1" jsxrequired="0"/>
-                    <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;> &lt;record jsxid=&quot;Yksinhuoltajuus&quot; jsxtext=&quot;Yksinhuoltajuus&quot; jsxtip=&quot;Yksinhuoltajuus&quot;/> &lt;record jsxid=&quot;Yhteishuoltajuus&quot; jsxtext=&quot;Yhteishuoltajuus&quot; jsxtip=&quot;Yhteishuoltajuus&quot;/> &lt;record jsxid=&quot;Perhehoitoon sijoitettu lapsi&quot; jsxtext=&quot;Perhehoitoon sijoitettu lapsi&quot; jsxtip=&quot;Perhehoitoon sijoitettu lapsi&quot;/>&lt;/data>" jsxtip="Huoltajuus" jsxdefaulttext="- Valitse -" jsxname="Huoltaja_Huoltajuus" jsxmargin="0 4 0 0"/>
+                    <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt; &lt;record jsxid=&quot;Yksinhuoltajuus&quot; jsxtext=&quot;Yksinhuoltajuus&quot; jsxtip=&quot;Yksinhuoltajuus&quot;/&gt; &lt;record jsxid=&quot;Yhteishuoltajuus&quot; jsxtext=&quot;Yhteishuoltajuus&quot; jsxtip=&quot;Yhteishuoltajuus&quot;/&gt; &lt;record jsxid=&quot;Perhehoitoon sijoitettu lapsi&quot; jsxtext=&quot;Perhehoitoon sijoitettu lapsi&quot; jsxtip=&quot;Perhehoitoon sijoitettu lapsi&quot;/&gt;&lt;/data&gt;" jsxtip="Huoltajuus" jsxdefaulttext="- Valitse -" jsxname="Huoltaja_Huoltajuus" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);setDisplayForSpouse();"/>
                   </object>
                 </object>
@@ -1206,7 +1205,7 @@
                   <strings riaLabelText="Huoltaja_Perhesuhde" jsxname="Huoltaja_Perhesuhde-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="1" jsxrequired="0"/>
-                    <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;> &lt;record jsxid=&quot;Naimaton&quot; jsxtext=&quot;Naimaton&quot; jsxtip=&quot;Naimaton&quot;/> &lt;record jsxid=&quot;Avioliitossa&quot; jsxtext=&quot;Avioliitossa&quot; jsxtip=&quot;Avioliitossa&quot;/> &lt;record jsxid=&quot;Asumuserossa&quot; jsxtext=&quot;Asumuserossa&quot; jsxtip=&quot;Asumuserossa&quot;/> &lt;record jsxid=&quot;Eronnut&quot; jsxtext=&quot;Eronnut&quot; jsxtip=&quot;Eronnut&quot;/> &lt;record jsxid=&quot;Leski&quot; jsxtext=&quot;Leski&quot; jsxtip=&quot;Leski&quot;/> &lt;record jsxid=&quot;Avoliitossa&quot; jsxtext=&quot;Avoliitossa&quot; jsxtip=&quot;Avoliitossa&quot;/> &lt;record jsxid=&quot;Rekisteröity parisuhde&quot; jsxtext=&quot;Rekisteröity parisuhde&quot; jsxtip=&quot;Rekisteröity parisuhde&quot;/>&lt;/data>" jsxtip="Parisuhde" jsxdefaulttext="- Valitse -" jsxname="Huoltaja_Perhesuhde" jsxmargin="0 4 0 0"/>
+                    <strings jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt; &lt;record jsxid=&quot;Naimaton&quot; jsxtext=&quot;Naimaton&quot; jsxtip=&quot;Naimaton&quot;/&gt; &lt;record jsxid=&quot;Avioliitossa&quot; jsxtext=&quot;Avioliitossa&quot; jsxtip=&quot;Avioliitossa&quot;/&gt; &lt;record jsxid=&quot;Asumuserossa&quot; jsxtext=&quot;Asumuserossa&quot; jsxtip=&quot;Asumuserossa&quot;/&gt; &lt;record jsxid=&quot;Eronnut&quot; jsxtext=&quot;Eronnut&quot; jsxtip=&quot;Eronnut&quot;/&gt; &lt;record jsxid=&quot;Leski&quot; jsxtext=&quot;Leski&quot; jsxtip=&quot;Leski&quot;/&gt; &lt;record jsxid=&quot;Avoliitossa&quot; jsxtext=&quot;Avoliitossa&quot; jsxtip=&quot;Avoliitossa&quot;/&gt; &lt;record jsxid=&quot;Rekisteröity parisuhde&quot; jsxtext=&quot;Rekisteröity parisuhde&quot; jsxtip=&quot;Rekisteröity parisuhde&quot;/&gt;&lt;/data&gt;" jsxtip="Parisuhde" jsxdefaulttext="- Valitse -" jsxname="Huoltaja_Perhesuhde" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);setDisplayForSpouse();"/>
                   </object>
                 </object>
@@ -1251,7 +1250,7 @@
                   <variants/>
                   <strings riaLabelText="Huoltaja_VuorotyoKylla" jsxname="Huoltaja_VuorotyoKylla-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Huoltaja_VuorotyoKylla" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;Huoltaja_VuorotyoEi&quot;,0);"/>
                   </object>
@@ -1283,7 +1282,7 @@
                   <variants/>
                   <strings riaLabelText="Huoltaja_VuorotyoEi" jsxname="Huoltaja_VuorotyoEi-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Huoltaja_VuorotyoEi" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;Huoltaja_VuorotyoKylla&quot;,0);"/>
                   </object>
@@ -1665,7 +1664,7 @@
                   <variants/>
                   <strings riaLabelText="Puoliso_VuorotyoKylla" jsxname="Puoliso_VuorotyoKylla-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Puoliso_VuorotyoKylla" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;Puoliso_VuorotyoEi&quot;,0);"/>
                   </object>
@@ -1697,7 +1696,7 @@
                   <variants/>
                   <strings riaLabelText="Puoliso_VuorotyoEi" jsxname="Puoliso_VuorotyoEi-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Puoliso_VuorotyoEi" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;Puoliso_VuorotyoKylla&quot;,0);"/>
                   </object>
@@ -1884,7 +1883,7 @@
                   <variants/>
                   <strings riaLabelText="HoidonTarve_Kokopaiva" jsxname="HoidonTarve_Kokopaiva-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="HoidonTarve_Kokopaiva" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;HoidonTarve_Osapaiva&quot;,0);setDisplayForSection(&quot;paneKokopaivaAlkaa&quot;,this.getChecked());setDisplayForSection(&quot;paneKokopaivaLoppuu&quot;,this.getChecked());setDisplayForSection(&quot;paneOsapaivaAlkaa&quot;,HoidonTarve_Osapaiva.getChecked());setDisplayForSection(&quot;paneOsapaivaLoppuu&quot;,HoidonTarve_Osapaiva.getChecked());"/>
                   </object>
@@ -1960,7 +1959,7 @@
                   <variants/>
                   <strings riaLabelText="HoidonTarve_Osapaiva" jsxname="HoidonTarve_Osapaiva-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="HoidonTarve_Osapaiva" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;HoidonTarve_Kokopaiva&quot;,0);setDisplayForSection(&quot;paneKokopaivaAlkaa&quot;,HoidonTarve_Kokopaiva.getChecked());setDisplayForSection(&quot;paneKokopaivaLoppuu&quot;,HoidonTarve_Kokopaiva.getChecked());setDisplayForSection(&quot;paneOsapaivaAlkaa&quot;,this.getChecked());setDisplayForSection(&quot;paneOsapaivaLoppuu&quot;,this.getChecked());"/>
                   </object>
@@ -2058,7 +2057,7 @@
                   <variants/>
                   <strings riaLabelText="HoidonTarve_VuorohoitoKylla" jsxname="HoidonTarve_VuorohoitoKylla-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="HoidonTarve_VuorohoitoKylla" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;HoidonTarve_VuorohoitoEi&quot;,0); setDisplayForSection(&quot;paneVuorohoitoKylla&quot;,this.getChecked());"/>
                   </object>
@@ -2088,7 +2087,7 @@
                       <variants/>
                       <strings riaLabelText="HoidonTarve_VuorohoitoLa" jsxname="HoidonTarve_VuorohoitoLa-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxenabled="0" jsxheight="18"/>
+                        <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                         <strings jsxname="HoidonTarve_VuorohoitoLa" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
                       </object>
@@ -2111,7 +2110,7 @@
                       <variants/>
                       <strings riaLabelText="HoidonTarve_VuorohoitoSu" jsxname="HoidonTarve_VuorohoitoSu-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxenabled="0" jsxheight="18"/>
+                        <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                         <strings jsxname="HoidonTarve_VuorohoitoSu" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
                       </object>
@@ -2134,7 +2133,7 @@
                       <variants/>
                       <strings riaLabelText="HoidonTarve_VuorohoitoIlta" jsxname="HoidonTarve_VuorohoitoIlta-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxenabled="0" jsxheight="18"/>
+                        <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                         <strings jsxname="HoidonTarve_VuorohoitoIlta" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
                       </object>
@@ -2157,7 +2156,7 @@
                       <variants/>
                       <strings riaLabelText="HoidonTarve_VuorohoitoYo" jsxname="HoidonTarve_VuorohoitoYo-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxenabled="0" jsxheight="18"/>
+                        <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                         <strings jsxname="HoidonTarve_VuorohoitoYo" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
                       </object>
@@ -2191,7 +2190,7 @@
                   <variants/>
                   <strings riaLabelText="HoidonTarve_VuorohoitoEi" jsxname="HoidonTarve_VuorohoitoEi-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="HoidonTarve_VuorohoitoEi" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;HoidonTarve_VuorohoitoKylla&quot;,0); setDisplayForSection(&quot;paneVuorohoitoKylla&quot;,HoidonTarve_VuorohoitoKylla.getChecked());"/>
                   </object>
@@ -2291,7 +2290,7 @@
                   <variants/>
                   <strings riaLabelText="HoidonTarve_AutoKylla" jsxname="HoidonTarve_AutoKylla-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="HoidonTarve_AutoKylla" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;HoidonTarve_AutoEi&quot;,0);"/>
                   </object>
@@ -2323,7 +2322,7 @@
                   <variants/>
                   <strings riaLabelText="HoidonTarve_AutoEi" jsxname="HoidonTarve_AutoEi-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="HoidonTarve_AutoEi" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;HoidonTarve_AutoKylla&quot;,0); "/>
                   </object>
@@ -2407,7 +2406,7 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                  <strings jsxname="label" jsxclassname="FormLabel" jsxtext="&lt;a href=&quot;http://palvelut.tampere.fi/osallistu/huoltajanet/pkkartalla/&quot; target=&quot;_blank&quot;>Päiväkotien haku kartalta&lt;/a>"/>
+                  <strings jsxname="label" jsxclassname="FormLabel" jsxtext="&lt;a href=&quot;http://palvelut.tampere.fi/osallistu/huoltajanet/pkkartalla/&quot; target=&quot;_blank&quot;&gt;Päiväkotien haku kartalta&lt;/a&gt;"/>
                 </object>
               </object>
               <object type="jsx3.gui.Block">
@@ -2437,7 +2436,7 @@
                   <strings riaLabelText="Hakutoive_1Tyyppi" jsxname="Hakutoive_1Tyyppi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="0" jsxrequired="0"/>
-                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;>   &lt;locale>     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/>     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/>   &lt;/locale> &lt;/data>" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_1Tyyppi" jsxmargin="0 4 0 0"/>
+                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;&gt;   &lt;locale&gt;     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/&gt;     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_1Tyyppi" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);fieldValue2Display(this,&quot;Hakutoive_1Alue&quot;);"/>
                   </object>
                 </object>
@@ -2486,7 +2485,7 @@
                   <strings riaLabelText="Hakutoive_1Tyyppi" jsxname="Hakutoive_1Tyyppi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="0" jsxrequired="0"/>
-                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;>   &lt;locale>     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/>     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/>   &lt;/locale> &lt;/data>" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_2Tyyppi" jsxmargin="0 4 0 0"/>
+                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;&gt;   &lt;locale&gt;     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/&gt;     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_2Tyyppi" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);fieldValue2Display(this,&quot;Hakutoive_2Alue&quot;);"/>
                   </object>
                 </object>
@@ -2535,7 +2534,7 @@
                   <strings riaLabelText="Hakutoive_1Tyyppi" jsxname="Hakutoive_1Tyyppi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="0" jsxrequired="0"/>
-                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;>   &lt;locale>     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/>     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/>   &lt;/locale> &lt;/data>" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_3Tyyppi" jsxmargin="0 4 0 0"/>
+                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;&gt;   &lt;locale&gt;     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/&gt;     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_3Tyyppi" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);fieldValue2Display(this,&quot;Hakutoive_3Alue&quot;);"/>
                   </object>
                 </object>
@@ -2584,7 +2583,7 @@
                   <strings riaLabelText="Hakutoive_1Tyyppi" jsxname="Hakutoive_1Tyyppi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="0" jsxrequired="0"/>
-                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;>   &lt;locale>     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/>     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/>   &lt;/locale> &lt;/data>" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_4Tyyppi" jsxmargin="0 4 0 0"/>
+                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;&gt;   &lt;locale&gt;     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/&gt;     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_4Tyyppi" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);fieldValue2Display(this,&quot;Hakutoive_4Alue&quot;);"/>
                   </object>
                 </object>
@@ -2633,7 +2632,7 @@
                   <strings riaLabelText="Hakutoive_1Tyyppi" jsxname="Hakutoive_1Tyyppi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxenabled="0" jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="0" jsxrequired="0"/>
-                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;>   &lt;locale>     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/>     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/>   &lt;/locale> &lt;/data>" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_5Tyyppi" jsxmargin="0 4 0 0"/>
+                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;&gt;   &lt;locale&gt;     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/&gt;     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_5Tyyppi" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);fieldValue2Display(this,&quot;Hakutoive_5Alue&quot;);"/>
                   </object>
                 </object>
@@ -2732,7 +2731,7 @@
                   <strings riaLabelText="Hakutoive_KuntaKoodi" jsxname="Hakutoive_KuntaKoodi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="0" jsxoptional="1"/>
-                    <strings jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;>   &lt;locale>     &lt;record jsxid=&quot;Joensuu&quot; jsxtext=&quot;Joensuu&quot;/>     &lt;record jsxid=&quot;Kontiolahti&quot; jsxtext=&quot;Kontiolahti&quot;/>     &lt;record jsxid=&quot;Lieksa&quot; jsxtext=&quot;Lieksa&quot;/>   &lt;/locale> &lt;/data>" jsxtip="KuntaKoodi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_KuntaKoodi" jsxmargin="0 4 0 0"/>
+                    <strings jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;&gt;   &lt;locale&gt;     &lt;record jsxid=&quot;Joensuu&quot; jsxtext=&quot;Joensuu&quot;/&gt;     &lt;record jsxid=&quot;Kontiolahti&quot; jsxtext=&quot;Kontiolahti&quot;/&gt;     &lt;record jsxid=&quot;Lieksa&quot; jsxtext=&quot;Lieksa&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxtip="KuntaKoodi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_KuntaKoodi" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);fieldVAlueKoodiDisplay(this.getVAlueKoodi(),&quot;Hakutoive_1&quot;);fieldVAlueKoodiDisplay(this.getVAlueKoodi(),&quot;Hakutoive_2&quot;);fieldVAlueKoodiDisplay(this.getVAlueKoodi(),&quot;Hakutoive_3&quot;);fieldVAlueKoodiDisplay(this.getVAlueKoodi(),&quot;Hakutoive_4&quot;);fieldVAlueKoodiDisplay(this.getVAlueKoodi(),&quot;Hakutoive_5&quot;);setRoleForHandler(this.getVAlueKoodi());setEmailForHandler(this.getVAlueKoodi());"/>
                   </object>
                 </object>
@@ -3100,7 +3099,7 @@
                   <variants/>
                   <strings riaLabelText="Lisatiedot_MaksuKylla" jsxname="Lisatiedot_MaksuKylla-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Lisatiedot_MaksuKylla" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;Lisatiedot_MaksuEi&quot;,0); "/>
                   </object>
@@ -3132,7 +3131,7 @@
                   <variants/>
                   <strings riaLabelText="Lisatiedot_MaksuEi" jsxname="Lisatiedot_MaksuEi-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxenabled="0" jsxheight="18"/>
+                    <variants jsxenabled="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Lisatiedot_MaksuEi" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);setCheckBoxState(&quot;Lisatiedot_MaksuKylla&quot;,0); "/>
                   </object>
@@ -3320,6 +3319,11 @@
       <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_CompleteButton" jsxmargin="15 10 15 0"/>
       <dynamics jsxtext="Intalio Complete Button"/>
       <events jsxexecute="Intalio.Internal.TMP.callCompleteTask();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18"/>
+      <strings jsxname="button" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton"/>
+      <events jsxexecute="history.back();"/>
     </object>
   </object>
 </serialization>

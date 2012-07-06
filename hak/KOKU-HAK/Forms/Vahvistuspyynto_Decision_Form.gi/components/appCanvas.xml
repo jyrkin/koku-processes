@@ -1,5 +1,4 @@
-﻿<?xml version='1.0' encoding='UTF-8'?>
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.6">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
@@ -104,7 +103,7 @@
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxrelativeposition="1"/>
-                <strings jsxfontweight="normal" jsxtextalign="right" jsxpadding="12px" jsxname="form-title" jsxclassname="form-title-new2" jsxtext="Päivähoitohakemus&lt;br>&lt;small>&lt;small>&lt;/small>&lt;/small>"/>
+                <strings jsxfontweight="normal" jsxtextalign="right" jsxpadding="12px" jsxname="form-title" jsxclassname="form-title-new2" jsxtext="Päivähoitohakemus&lt;br&gt;&lt;small&gt;&lt;small&gt;&lt;/small&gt;&lt;/small&gt;"/>
               </object>
             </object>
           </object>
@@ -127,7 +126,7 @@
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;>*&lt;/span>)."/>
+                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)."/>
               </object>
             </object>
           </object>
@@ -343,7 +342,7 @@
                   <variants/>
                   <strings riaLabelText="Tiedot_KorkeinMaksu" jsxdisplay="" jsxname="Tiedot_KorkeinMaksu-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxchecked="0" jsxheight="18"/>
+                    <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Tiedot_KorkeinMaksu" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);uncheckTheOthers(&quot;paneEiKorkeinMaksu&quot;,this.getName());"/>
                   </object>
@@ -375,7 +374,7 @@
                   <variants/>
                   <strings riaLabelText="Tiedot_EiKorkeinMaksu" jsxdisplay="" jsxname="Tiedot_EiKorkeinMaksu-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxchecked="0" jsxheight="18"/>
+                    <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Tiedot_EiKorkeinMaksu" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);uncheckTheOthers(&quot;paneKorkeinMaksu&quot;,this.getName());"/>
                   </object>
@@ -407,7 +406,7 @@
                   <variants/>
                   <strings riaLabelText="Tiedot_Hyvaksyy" jsxdisplay="" jsxname="Tiedot_Hyvaksyy-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxchecked="0" jsxheight="18"/>
+                    <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Tiedot_Hyvaksyy" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);uncheckTheOthers(&quot;paneHylkaa&quot;,this.getName());"/>
                   </object>
@@ -439,7 +438,7 @@
                   <variants/>
                   <strings riaLabelText="Tiedot_Hylkaa" jsxdisplay="" jsxname="Tiedot_Hylkaa-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxchecked="0" jsxheight="18"/>
+                    <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
                     <strings jsxname="Tiedot_Hylkaa" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);uncheckTheOthers(&quot;paneHyvaksyy&quot;,this.getName());"/>
                   </object>
@@ -525,6 +524,11 @@
       <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_CompleteButton" jsxmargin="15 10 15 0"/>
       <dynamics jsxtext="Intalio Complete Button"/>
       <events jsxexecute="Intalio.Internal.TMP.callCompleteTask();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18"/>
+      <strings jsxname="Peruuta" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton"/>
+      <events jsxexecute="history.back();"/>
     </object>
   </object>
 </serialization>
