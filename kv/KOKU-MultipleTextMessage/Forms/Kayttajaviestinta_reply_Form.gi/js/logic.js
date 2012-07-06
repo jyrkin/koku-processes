@@ -76,7 +76,7 @@ function getSender(content) {
             wholename = nodeFirstName.getValue() + " " + nodeLastName.getValue();
             KayttajaviestintaForm.getJSXByName("Message_FromRealName").setValue(wholename);
         } else {
-            alert("Could not get firs and last names");
+            alert("Could not get first and last names");
             return;
         }
     } catch (e) {

@@ -179,7 +179,7 @@
             <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay=""/>
             <object type="jsx3.gui.Matrix">
               <variants jsxautorow="0" jsxselectionmodel="0" jsxpagingmodel="1" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
-              <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutVastaanottajat-nomap" jsxname="searchMatrix" jsxbgcolor="#efefff" jsxsortpath="huoltajat" jsxsorttype="text" jsxsortdirection="ascending"/>
+              <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutVastaanottajat-nomap" jsxname="searchMatrix" jsxbgcolor="#efefff" jsxsortpath="huoltajat" jsxsorttype="text" jsxsortdirection="descending"/>
               <events jsxaftercommit=""/>
               <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
               <object type="jsx3.gui.Matrix.Column">
@@ -735,6 +735,11 @@
         <strings jsxname="Message_FromUser" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
         <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18"/>
+      <strings jsxname="button" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton"/>
+      <events jsxexecute="history.back();"/>
     </object>
   </object>
 </serialization>
