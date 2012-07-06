@@ -1,4 +1,4 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
@@ -66,8 +66,8 @@
       </object>
     </object>
     <object type="com.intalio.ria.Section">
-      <variants/>
-      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Kayttajat" jsxclassname="fieldset" jsxdisplay="block" jsxwidth=""/>
+      <variants jsxrelativeposition="1"/>
+      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Kayttajat" jsxclassname="fieldset" jsxdisplay="" jsxwidth=""/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="600" jsxrelativeposition="1" jsxheight="240"/>
         <strings jsxleft="" jsxtop="" jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -240,8 +240,8 @@
       </object>
     </object>
     <object type="com.intalio.ria.Section">
-      <variants/>
-      <strings riaTitleText="Perustiedot" jsxname="Perustiedot" jsxclassname="fieldset" jsxwidth=""/>
+      <variants jsxrelativeposition="1"/>
+      <strings riaTitleText="Perustiedot" jsxname="Perustiedot" jsxclassname="fieldset" jsxwidth="" jsxdisplay=""/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="600" jsxheight="280" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -451,8 +451,8 @@
       </object>
     </object>
     <object type="com.intalio.ria.Section">
-      <variants/>
-      <strings jsxheight="" riaTitleText="Hae Kohdehenkilö" jsxname="Haku_Lapsi" jsxclassname="fieldset" jsxdisplay="block"/>
+      <variants jsxrelativeposition="1"/>
+      <strings jsxheight="" riaTitleText="Hae Kohdehenkilö" jsxname="Haku_Lapsi" jsxclassname="fieldset" jsxdisplay=""/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="600" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="240"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -601,8 +601,8 @@
       </object>
     </object>
     <object type="com.intalio.ria.Section">
-      <variants/>
-      <strings riaTitleText="Pyyntö" jsxname="Pyynto" jsxclassname="fieldset"/>
+      <variants jsxrelativeposition="1"/>
+      <strings riaTitleText="Pyyntö" jsxname="Pyynto" jsxclassname="fieldset" jsxdisplay=""/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="600" jsxheight="750" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -884,7 +884,7 @@
       </object>
     </object>
     <object type="com.intalio.ria.Section">
-      <variants/>
+      <variants jsxrelativeposition="1"/>
       <strings riaTitleText="Vastaus" jsxname="Vastaus" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="590" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
@@ -1292,6 +1292,11 @@
         <strings jsxname="Vastaus_Paatos_Required" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
         <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18"/>
+      <strings jsxname="button" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton" jsxdisplay="none"/>
+      <events jsxexecute="history.back();"/>
     </object>
   </object>
 </serialization>
