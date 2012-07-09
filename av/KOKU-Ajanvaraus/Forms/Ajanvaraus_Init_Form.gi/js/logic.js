@@ -1021,6 +1021,7 @@ function singleSlotFunc() {
     AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("column").setDisplay("none", true);
     AjanvarausForm.getJSXByName("lopetusTunnit").getAncestorOfName("column").setDisplay("none", true);
     AjanvarausForm.getJSXByName("multiSlots").setChecked(0, true);
+    AjanvarausForm.getJSXByName("tapaamistenLisaaminen").repaint();
     AjanvarausForm.getJSXByName("lopetusPvm").setDate(null);
     AjanvarausForm.getJSXByName("lopetusTunnit").setValue("").repaint();
     AjanvarausForm.getJSXByName("lopetusMinuutit").setValue("").repaint();
@@ -1036,6 +1037,7 @@ function multiSlotsFunc() {
     AjanvarausForm.getJSXByName("lopetusTunnit").getAncestorOfName("column").setDisplay("block", true);
     AjanvarausForm.getJSXByName("kesto").getAncestorOfName("column").setDisplay("block", true);
     AjanvarausForm.getJSXByName("singleSlot").setChecked(0, true);
+    AjanvarausForm.getJSXByName("tapaamistenLisaaminen").repaint();
     enableAll("week", 1);
 
     if(!AjanvarausForm.getJSXByName("multiSlots").getChecked()) {

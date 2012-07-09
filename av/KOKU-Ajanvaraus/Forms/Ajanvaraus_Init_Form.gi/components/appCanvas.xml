@@ -861,7 +861,7 @@
         </object>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="2"/>
-          <strings jsxname="column" jsxclassname="column"/>
+          <strings jsxname="column" jsxclassname="column" jsxdisplay="block"/>
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxrelativeposition="1" jsxoverflow="3"/>
@@ -874,13 +874,17 @@
               <variants jsxoverflow="2" jsxrelativeposition="1"/>
               <strings jsxname="image" jsxsrc="images/help.gif" jsxtip="Voit myös syöttää kellonajat näppäimistöllä." jsxdisplay="none"/>
             </object>
+            <object type="jsx3.gui.Image">
+              <variants jsxoverflow="2" jsxrelativeposition="1"/>
+              <strings jsxname="image" jsxsrc="images/help.gif" jsxtip="Voit myös syöttää kellonajat näppäimistöllä." jsxclassname="tooltipImg" jsxvisibility="hidden"/>
+            </object>
           </object>
           <object type="com.intalio.ria.Field">
-            <variants/>
-            <strings riaLabelText="duration" jsxname="duration-field" riaErrorImageSrc="images/error.gif" riaHelpImageSrc="images/help.gif" jsxstyleoverride="padding-top: 5px;"/>
+            <variants jsxrelativeposition="1"/>
+            <strings riaLabelText="duration" jsxname="duration-field" riaErrorImageSrc="images/error.gif" riaHelpImageSrc="images/help.gif" jsxstyleoverride="" jsxtop="" jsxdisplay=""/>
             <object type="jsx3.gui.Select">
-              <variants jsxwidth="100" jsxheight="18" jsxxmlasync="1" _isfocusing="true" jsxrequired="1" jsxtype="0"/>
-              <strings jsxname="kesto" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;15&quot; jsxtext=&quot;15 min&quot;/&gt;&lt;record jsxid=&quot;30&quot; jsxtext=&quot;30 min&quot;/&gt;&lt;record jsxid=&quot;45&quot; jsxtext=&quot;45 min&quot;/&gt;&lt;record jsxid=&quot;60&quot; jsxtext=&quot;1 tunti&quot;/&gt;&lt;record jsxid=&quot;75&quot; jsxtext=&quot;1 tunti 15 min&quot;/&gt;&lt;record jsxid=&quot;90&quot; jsxtext=&quot;1 tunti 30 min&quot;/&gt;&lt;record jsxid=&quot;105&quot; jsxtext=&quot;1 tunti 45 min&quot;/&gt;&lt;record jsxid=&quot;120&quot; jsxtext=&quot;2 tuntia&quot;/&gt;&lt;record jsxid=&quot;135&quot; jsxtext=&quot;2 tuntia 15 min&quot;/&gt;&lt;record jsxid=&quot;150&quot; jsxtext=&quot;2 tuntia 30 min&quot;/&gt;&lt;record jsxid=&quot;165&quot; jsxtext=&quot;2 tuntia 45 min&quot;/&gt;&lt;record jsxid=&quot;180&quot; jsxtext=&quot;3 tuntia&quot;/&gt;&lt;record jsxid=&quot;195&quot; jsxtext=&quot;3 tuntia 15 min&quot;/&gt;&lt;record jsxid=&quot;210&quot; jsxtext=&quot;3 tuntia 30 min&quot;/&gt;&lt;record jsxid=&quot;225&quot; jsxtext=&quot;3 tuntia 45 min&quot;/&gt;&lt;record jsxid=&quot;240&quot; jsxtext=&quot;4 tuntia&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -"/>
+              <variants jsxwidth="100" jsxheight="18" jsxxmlasync="1" _isfocusing="true" jsxrequired="1" jsxtype="0" jsxrelativeposition="1" jsxleft="0"/>
+              <strings jsxtop="" jsxname="kesto" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;15&quot; jsxtext=&quot;15 min&quot;/&gt;&lt;record jsxid=&quot;30&quot; jsxtext=&quot;30 min&quot;/&gt;&lt;record jsxid=&quot;45&quot; jsxtext=&quot;45 min&quot;/&gt;&lt;record jsxid=&quot;60&quot; jsxtext=&quot;1 tunti&quot;/&gt;&lt;record jsxid=&quot;75&quot; jsxtext=&quot;1 tunti 15 min&quot;/&gt;&lt;record jsxid=&quot;90&quot; jsxtext=&quot;1 tunti 30 min&quot;/&gt;&lt;record jsxid=&quot;105&quot; jsxtext=&quot;1 tunti 45 min&quot;/&gt;&lt;record jsxid=&quot;120&quot; jsxtext=&quot;2 tuntia&quot;/&gt;&lt;record jsxid=&quot;135&quot; jsxtext=&quot;2 tuntia 15 min&quot;/&gt;&lt;record jsxid=&quot;150&quot; jsxtext=&quot;2 tuntia 30 min&quot;/&gt;&lt;record jsxid=&quot;165&quot; jsxtext=&quot;2 tuntia 45 min&quot;/&gt;&lt;record jsxid=&quot;180&quot; jsxtext=&quot;3 tuntia&quot;/&gt;&lt;record jsxid=&quot;195&quot; jsxtext=&quot;3 tuntia 15 min&quot;/&gt;&lt;record jsxid=&quot;210&quot; jsxtext=&quot;3 tuntia 30 min&quot;/&gt;&lt;record jsxid=&quot;225&quot; jsxtext=&quot;3 tuntia 45 min&quot;/&gt;&lt;record jsxid=&quot;240&quot; jsxtext=&quot;4 tuntia&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxdisplay=""/>
               <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
             </object>
           </object>

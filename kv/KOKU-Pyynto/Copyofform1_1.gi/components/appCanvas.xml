@@ -84,7 +84,7 @@
           <strings jsxname="User_SenderDisplay-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="300" jsxenabled="0"/>
-            <strings jsxname="SenderName" jsxvalue="" jsxdisplay=""/>
+            <strings jsxname="SenderName" jsxvalue="" jsxdisplay="" jsxbgcolor="" jsxdisabledbgcolor="#FFFFFF"/>
             <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>
@@ -101,7 +101,7 @@
           <strings jsxname="User_RecipientDisplay-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="300" jsxenabled="0"/>
-            <strings jsxname="RecipientName" jsxvalue=""/>
+            <strings jsxname="RecipientName" jsxvalue="" jsxdisabledbgcolor="#FFFFFF"/>
             <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>
@@ -119,7 +119,7 @@
           <strings jsxname="User_AnswerUntil-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.DatePicker">
             <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18" jsxenabled="0"/>
-            <strings jsxname="User_AnswerUntil" jsxmargin="0 4 0 0" jsxformat="dd.MM.yyyy"/>
+            <strings jsxname="User_AnswerUntil" jsxmargin="0 4 0 0" jsxformat="dd.MM.yyyy" jsxdisabledbgcolor="#FFFFFF"/>
           </object>
         </object>
       </object>
