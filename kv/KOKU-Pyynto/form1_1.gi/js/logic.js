@@ -250,7 +250,7 @@ function searchEmbloyeeNames(searchString) {
             else
                 node.setAttribute("sahkoposti", personInfo[3]);
             if((personInfo[4] == "undefined")) {
-                alert("Kayttajahaussa tapahtui virhe. Kohdehenkilon id puuttuu");
+                alert("Kayttajahaussa tapahtui virhe. Lapsen id puuttuu");
                 entryFound = false;
             }
 

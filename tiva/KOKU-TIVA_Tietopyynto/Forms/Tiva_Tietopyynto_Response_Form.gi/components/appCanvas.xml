@@ -263,14 +263,14 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Kohdehenkilö (lapsi)" jsxclassname="FormLabel"/>
+                  <strings jsxname="label" jsxtext="Lapsi" jsxclassname="FormLabel"/>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
                   <strings riaLabelText="Kohde" jsxname="Pyynto_Kohde-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxenabled="0"/>
-                    <strings jsxname="Pyynto_Kohde" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="Tietopyyntöä koskeva kohdehenkilö"/>
+                    <strings jsxname="Pyynto_Kohde" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="Tietopyyntöä koskeva lapsi"/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
                 </object>
@@ -299,7 +299,7 @@
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
                     <strings jsxname="showOrHideTargetSearch" jsxtext="Piilota Haku" jsxmargin="14 0 0 0" jsxdisplay="none"/>
-                    <events jsxexecute="if (TivaTietopyyntoForm.getJSXByName(&quot;searchTargetVisible&quot;).getChecked() == 0) {  TivaTietopyyntoForm.getJSXByName(&quot;Haku_Lapsi&quot;).setDisplay(&quot;block&quot;).repaint();  TivaTietopyyntoForm.getJSXByName(&quot;showOrHideTargetSearch&quot;).setText(&quot;Piilota Haku&quot;,true);  TivaTietopyyntoForm.getJSXByName(&quot;searchTargetVisible&quot;).setChecked(1); } else if(TivaTietopyyntoForm.getJSXByName(&quot;searchTargetVisible&quot;).getChecked() == 1) {  TivaTietopyyntoForm.getJSXByName(&quot;Haku_Lapsi&quot;).setDisplay(&quot;none&quot;).repaint();  TivaTietopyyntoForm.getJSXByName(&quot;showOrHideTargetSearch&quot;).setText(&quot;Lisää kohdehenkilö&quot;,true);  TivaTietopyyntoForm.getJSXByName(&quot;searchTargetVisible&quot;).setChecked(0); } "/>
+                    <events jsxexecute="if (TivaTietopyyntoForm.getJSXByName(&quot;searchTargetVisible&quot;).getChecked() == 0) {  TivaTietopyyntoForm.getJSXByName(&quot;Haku_Lapsi&quot;).setDisplay(&quot;block&quot;).repaint();  TivaTietopyyntoForm.getJSXByName(&quot;showOrHideTargetSearch&quot;).setText(&quot;Piilota Haku&quot;,true);  TivaTietopyyntoForm.getJSXByName(&quot;searchTargetVisible&quot;).setChecked(1); } else if(TivaTietopyyntoForm.getJSXByName(&quot;searchTargetVisible&quot;).getChecked() == 1) {  TivaTietopyyntoForm.getJSXByName(&quot;Haku_Lapsi&quot;).setDisplay(&quot;none&quot;).repaint();  TivaTietopyyntoForm.getJSXByName(&quot;showOrHideTargetSearch&quot;).setText(&quot;Lisää lapsi&quot;,true);  TivaTietopyyntoForm.getJSXByName(&quot;searchTargetVisible&quot;).setChecked(0); } "/>
                   </object>
                 </object>
               </object>
@@ -537,7 +537,7 @@
         <strings riaLabelText="Kohde" jsxname="Pyynto_Kohde_UID-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
         <object type="jsx3.gui.TextBox">
           <variants jsxenabled="0"/>
-          <strings jsxname="Pyynto_Kohde_UID" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="Tietopyyntöä koskeva kohdehenkilö"/>
+          <strings jsxname="Pyynto_Kohde_UID" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="Tietopyyntöä koskeva lapsi"/>
           <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
       </object>

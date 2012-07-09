@@ -1,5 +1,4 @@
 
-
 var kokuServiceEndpoints = null;
 
 function getEndpoint(serviceName) {
@@ -15,9 +14,9 @@ function intalioPreStart() {
 }
 
  function formatDataCache(cache, matrix) {
-	 
+     
     if (TivaTietopyyntoForm.getCache().getDocument(cache) != null &&
-    		TivaTietopyyntoForm.getCache().getDocument(cache).getFirstChild() == null) {
+            TivaTietopyyntoForm.getCache().getDocument(cache).getFirstChild() == null) {
        commitCustomAutoRowSession(matrix, cache);
         return true;
     }
@@ -54,7 +53,7 @@ function throughTextfields() {
 function commitCustomAutoRowSession(matrix, cache) {
     var nodes, xmlStr;
     if (matrix != null && cache != null) {
-    	nodes = TivaTietopyyntoForm.getJSXByName(matrix).getChildren();
+        nodes = TivaTietopyyntoForm.getJSXByName(matrix).getChildren();
         xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
 
         for (var i = 0; i < nodes.length; i++) {
@@ -432,7 +431,7 @@ function searchNames(searchString) {
                 else
                     node.setAttribute("sahkoposti", personInfo[3]);
                 if((personInfo[4] == "undefined")) {
-                    alert("Kayttajahaussa tapahtui virhe. Kohdehenkilon id puuttuu");
+                    alert("Kayttajahaussa tapahtui virhe. Lapsen id puuttuu");
                     return false;   
                 }
 
@@ -558,7 +557,7 @@ function addToRecipients() {
                     counter++;
 
                 } else {
-                    alert("Vastaavia kohdehenkiloita loytyi useampi kuin yksi. Vain yksi kohdehenkilo voidaan lisata");
+                    alert("Vastaavia lapsia loytyi useampi kuin yksi. Vain yksi lapsi voidaan lisata");
                 }
             } else {
                 uid = childNode.getAttribute("uid");
@@ -600,7 +599,7 @@ function addToTarget() {
 
     }
     if(counter < 1) {
-        alert("Yht" + unescape("%E4%E4") + "n kohdehenkil" + unescape("%F6%E4") + " ei ole valittuna");
+        alert("Yht" + unescape("%E4%E4") + "n lasta ei ole valittuna");
         return;
     }
     xmlData = Arcusys.Internal.Communication.GetChildinfo(uid);
