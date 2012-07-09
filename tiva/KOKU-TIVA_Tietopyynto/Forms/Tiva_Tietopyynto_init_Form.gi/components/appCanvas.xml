@@ -269,7 +269,7 @@
                   <strings riaLabelText="Perustiedot_Lahettaja" jsxname="Perustiedot_Lahettaja-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxenabled="0"/>
-                    <strings jsxname="Perustiedot_Lahettaja" jsxmargin="0 4 0 0" jsxvalue="" jsxtip=""/>
+                    <strings jsxname="Perustiedot_Lahettaja" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="" jsxdisabledbgcolor="#FFFFFF"/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
                 </object>
@@ -296,7 +296,7 @@
                   <strings riaLabelText="Vastaanottaja" jsxname="Perustiedot_Vastaanottaja-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxenabled="0" jsxrequired="1"/>
-                    <strings jsxname="Perustiedot_Vastaanottaja" jsxmargin="0 4 0 0" jsxvalue=" " jsxtip="Tietopyynnön vastaanottaja"/>
+                    <strings jsxname="Perustiedot_Vastaanottaja" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="Tietopyynnön vastaanottaja" jsxdisabledbgcolor="#FFFFFF"/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
                 </object>
@@ -629,8 +629,8 @@
                   <variants/>
                   <strings riaLabelText="Kohde" jsxname="Pyynto_Kohde-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxenabled="0" jsxrequired="1"/>
-                    <strings jsxname="Pyynto_Kohde" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="Tietopyyntöä koskeva kohdehenkilö"/>
+                    <variants jsxenabled="0" jsxrequired="1" jsxreadonly="0"/>
+                    <strings jsxname="Pyynto_Kohde" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="Tietopyyntöä koskeva kohdehenkilö" jsxdisabledbgcolor="#FFFFFF" jsxcolor="" jsxbgcolor="" jsxbg=""/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
                 </object>
