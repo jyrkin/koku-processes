@@ -30,6 +30,16 @@
           <events jsxexecute="dontUseTemplate();"/>
         </object>
       </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="column" jsxclassname="column"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.Button">
+          <variants jsxindex="0" jsxheight="18"/>
+          <strings jsxname="button" jsxtext="Peruuta" jsxmargin="0 4 0 0"/>
+          <events jsxexecute="history.back();"/>
+        </object>
+      </object>
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
@@ -1667,8 +1677,8 @@
       </object>
     </object>
     <object type="jsx3.gui.Button">
-      <variants jsxindex="0" jsxheight="18"/>
-      <strings jsxname="button" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton"/>
+      <variants jsxindex="0" jsxheight="17"/>
+      <strings jsxname="peruuta" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton" jsxdisplay="block" jsxvisibility="Visible" jsxcolor="" jsxleft=""/>
       <events jsxexecute="history.back();"/>
     </object>
   </object>

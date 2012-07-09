@@ -5,7 +5,7 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="1" jsxwidth="600"/>
+    <variants jsxoverflow="3" jsxwidth="600"/>
     <strings jsxname="root" jsxclassname="root"/>
     <object type="jsx3.gui.Block">
       <variants/>
@@ -392,11 +392,6 @@
           <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
       </object>
-    </object>
-    <object type="jsx3.gui.Button">
-      <variants jsxindex="0" jsxheight="18"/>
-      <strings jsxname="button" jsxtext="Peruuta" jsxmargin="0 4 0 0" jsxclassname="intalioButton"/>
-      <events jsxexecute="history.back();"/>
     </object>
   </object>
 </serialization>

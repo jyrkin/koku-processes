@@ -1,7 +1,7 @@
 @media all
 {
 span.root {
-  /* overflow: visible !important; */
+  overflow: visible !important;
   font-family: Helvetica,Arial,Verdana,sans-serif;
   font-size:12px;
   color: #444;
@@ -20,7 +20,11 @@ span[label=IntalioInternal_StartButton], span.intalioButton {
 
 span.intalioButton {
     position: absolute !important;
-    left: 105px !important;
+    left: 135px !important;
+}
+
+.ie8 span.intalioButton  {
+    margin: 43px 0px 0px 0px !important;
 }
 
 .fieldset .fieldset-padding .jsx30block span[label=tooltipImg] {
