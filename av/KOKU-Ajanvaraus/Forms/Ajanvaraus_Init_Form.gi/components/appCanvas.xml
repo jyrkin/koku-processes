@@ -820,7 +820,7 @@
           <strings riaLabelText="location" jsxname="location-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="500" jsxrequired="1"/>
-            <strings jsxname="paikka"/>
+            <strings jsxname="paikka" jsxvalue=""/>
             <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>

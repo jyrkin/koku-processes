@@ -615,7 +615,7 @@ function validateSingleSection() {
 }
 
 function validateMultipleSection() {
-    var invalidTimeAlert = "Kellon ajan t\u00E4ytyy olla muotoa hh:mm (00-23:00-59)!";
+    var invalidTimeAlert = "Kellonajan t\u00E4ytyy olla muotoa hh:mm (00-23:00-59)!";
 
     if(!AjanvarausForm.getJSXByName("aloitusPvm").getDate()) {
         alert("Aloitusp\u00E4iv\u00E4m\u00E4\u00E4r\u00E4-kentt\u00E4 on tyhj\u00E4!");
@@ -626,14 +626,14 @@ function validateMultipleSection() {
         return false;
     }
     if(AjanvarausForm.getJSXByName("aloitusTunnit").getText() == null || AjanvarausForm.getJSXByName("aloitusTunnit").getText() == "") {
-        alert("Aloitustunnit kentt\u00E4 on tyhj\u00E4!");
+        alert("Aloitustunnit-kentt\u00E4 on tyhj\u00E4!");
         return false;
     } else if (!validateHours("aloitusTunnit")) {
         alert(invalidTimeAlert);
         return false;
     }
     if(AjanvarausForm.getJSXByName("aloitusMinuutit").getText() == null || AjanvarausForm.getJSXByName("aloitusMinuutit").getText() == "") {
-        alert("Aloitusminuutitkentt\u00E4 on tyhj\u00E4!");
+        alert("Aloitusminuutit-kentt\u00E4 on tyhj\u00E4!");
         return false;
     } else if (!validateMinutes("aloitusMinuutit")) {
         alert(invalidTimeAlert);
@@ -644,14 +644,14 @@ function validateMultipleSection() {
         return false;
     }
     if(AjanvarausForm.getJSXByName("lopetusTunnit").getText() ==  null || AjanvarausForm.getJSXByName("lopetusTunnit").getText() == "") {
-        alert("Lopetustunnitkentt\u00E4 on tyhj\u00E4!");
+        alert("Lopetustunnit-kentt\u00E4 on tyhj\u00E4!");
         return false;
     } else if (!validateHours("lopetusTunnit")) {
         alert(invalidTimeAlert);
         return false;
     }
     if(AjanvarausForm.getJSXByName("lopetusMinuutit").getText() == null || AjanvarausForm.getJSXByName("lopetusMinuutit").getText() == "") {
-        alert("Lopetusminuutitkentt\u00E4 on tyhj\u00E4!");
+        alert("Lopetusminuutit-kentt\u00E4 on tyhj\u00E4!");
         return false;
     } else if (!validateMinutes("lopetusMinuutit")) {
         alert(invalidTimeAlert);
