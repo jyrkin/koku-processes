@@ -1,6 +1,10 @@
 // General functions ----------------------------------------------------------------------------------------------------------------------------
 var kokuServiceEndpoints = null;
 
+function setEndDate(endDate) {
+    AjanvarausForm.getJSXByName("lopetusPvm").setDate(endDate).repaint();
+}
+
 function showDialog(dialogId, text, textTitle, title) {
     var dialog, cssDisplay;
     dialog = $("#" + dialogId);
@@ -623,6 +627,10 @@ function validateMultipleSection() {
     }
     if(!AjanvarausForm.getJSXByName("lopetusPvm").getDate()) {
         alert("Lopetusp\u00E4iv\u00E4m\u00E4\u00E4r\u00E4-kentt\u00E4 on tyhj\u00E4!");
+        return false;
+    }
+    if (AjanvarausForm.getJSXByName("lopetusPvm").getDate().getTime() < AjanvarausForm.getJSXByName("aloitusPvm").getDate().getTime()) {
+        alert("Olet valinnut lopetusp\u00E4iv\u00E4m\u00E4\u00E4r\u00E4ksi aikaisemman ajan kuin aloitusp\u00E4iv\u00E4m\u00E4\u00E4r\u00E4ksi!");
         return false;
     }
     if(AjanvarausForm.getJSXByName("aloitusTunnit").getText() == null || AjanvarausForm.getJSXByName("aloitusTunnit").getText() == "") {

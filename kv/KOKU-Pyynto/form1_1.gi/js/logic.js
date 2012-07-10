@@ -16,6 +16,10 @@ function isNumeric(targetField) {
 
 }
 
+function setEndDate(endDate, dateField) {
+    form1.getJSXByName(dateField).setDate(endDate).repaint();
+}
+
 jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error) {
 
     error.getError = function(name) {
@@ -1593,6 +1597,11 @@ function inputCalendarSection(title, question, nameSection) {
     var textSection = form1.getJSXByName("block").load("components/multiplecalendarsection.xml", true);
 
     textSection.setName(nameSection).repaint();
+    
+    var startDate = textSection.getDescendantOfName("aloitusPvm");
+    var endDate = textSection.getDescendantOfName("lopetusPvm");
+    startDate.setName(startDate.getName() + nameSection);
+    endDate.setName(endDate.getName() + nameSection);
 
     var block = "choiceBlock" + nameSection;
     textSection.getDescendantOfName("choiceBlock").setName(block);

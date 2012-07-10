@@ -783,8 +783,8 @@
             <strings riaLabelText="startDate" jsxname="startDate-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
             <object type="jsx3.gui.DatePicker">
               <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18" jsxfirstweekday="1" jsxrequired="1"/>
-              <strings jsxname="aloitusPvm" jsxformat="dd-MM-yyyy"/>
-              <events jsxhide="com.intalio.ria.validate(this);"/>
+              <strings jsxname="aloitusPvm" jsxformat="dd.MM.yyyy"/>
+              <events jsxhide="com.intalio.ria.validate(this);" jsxblur="setEndDate(this.getDate());"/>
             </object>
           </object>
         </object>
@@ -801,7 +801,7 @@
             <strings riaLabelText="endDate" jsxname="endDate-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
             <object type="jsx3.gui.DatePicker">
               <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18" jsxfirstweekday="1" jsxrequired="1"/>
-              <strings jsxname="lopetusPvm" jsxmargin="0 4 0 0" jsxformat="dd-MM-yyyy"/>
+              <strings jsxname="lopetusPvm" jsxmargin="0 4 0 0" jsxformat="dd.MM.yyyy"/>
               <events jsxhide="com.intalio.ria.validate(this);"/>
             </object>
           </object>
@@ -845,7 +845,7 @@
             <strings riaLabelText="hours" jsxname="hours-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
             <object type="jsx3.gui.Select">
               <variants jsxwidth="50" jsxheight="18" jsxxmlasync="1" jsxtype="1"/>
-              <strings jsxname="aloitusTunnit" jsxxml="&lt;data&gt; &lt;record jsxid=&quot;08&quot; jsxtext=&quot;08&quot;/&gt; &lt;record jsxid=&quot;09&quot; jsxtext=&quot;09&quot;/&gt; &lt;record jsxid=&quot;10&quot; jsxtext=&quot;10&quot;/&gt; &lt;record jsxid=&quot;11&quot; jsxtext=&quot;11&quot;/&gt; &lt;record jsxid=&quot;12&quot; jsxtext=&quot;12&quot;/&gt; &lt;record jsxid=&quot;13&quot; jsxtext=&quot;13&quot;/&gt; &lt;record jsxid=&quot;14&quot; jsxtext=&quot;14&quot;/&gt; &lt;record jsxid=&quot;15&quot; jsxtext=&quot;15&quot;/&gt; &lt;record jsxid=&quot;16&quot; jsxtext=&quot;16&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="00" jsxvalue="00"/>
+              <strings jsxname="aloitusTunnit" jsxxml="&lt;data&gt; &lt;record jsxid=&quot;08&quot; jsxtext=&quot;08&quot;/&gt; &lt;record jsxid=&quot;09&quot; jsxtext=&quot;09&quot;/&gt; &lt;record jsxid=&quot;10&quot; jsxtext=&quot;10&quot;/&gt; &lt;record jsxid=&quot;11&quot; jsxtext=&quot;11&quot;/&gt; &lt;record jsxid=&quot;12&quot; jsxtext=&quot;12&quot;/&gt; &lt;record jsxid=&quot;13&quot; jsxtext=&quot;13&quot;/&gt; &lt;record jsxid=&quot;14&quot; jsxtext=&quot;14&quot;/&gt; &lt;record jsxid=&quot;15&quot; jsxtext=&quot;15&quot;/&gt; &lt;record jsxid=&quot;16&quot; jsxtext=&quot;16&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="00"/>
               <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
             </object>
             <object type="jsx3.gui.Block">
@@ -854,7 +854,7 @@
             </object>
             <object type="jsx3.gui.Select">
               <variants jsxwidth="50" jsxheight="18" jsxxmlasync="1" jsxtype="1"/>
-              <strings jsxname="aloitusMinuutit" jsxxml="&lt;data&gt; &lt;record jsxid=&quot;00&quot; jsxtext=&quot;00&quot;/&gt; &lt;record jsxid=&quot;15&quot; jsxtext=&quot;15&quot;/&gt; &lt;record jsxid=&quot;30&quot; jsxtext=&quot;30&quot;/&gt; &lt;record jsxid=&quot;45&quot; jsxtext=&quot;45&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="00" jsxvalue="00"/>
+              <strings jsxname="aloitusMinuutit" jsxxml="&lt;data&gt; &lt;record jsxid=&quot;00&quot; jsxtext=&quot;00&quot;/&gt; &lt;record jsxid=&quot;15&quot; jsxtext=&quot;15&quot;/&gt; &lt;record jsxid=&quot;30&quot; jsxtext=&quot;30&quot;/&gt; &lt;record jsxid=&quot;45&quot; jsxtext=&quot;45&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="00" jsxvalue=""/>
               <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
             </object>
           </object>

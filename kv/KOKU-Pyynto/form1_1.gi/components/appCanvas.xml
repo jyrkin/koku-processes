@@ -1069,7 +1069,7 @@
           <strings jsxname="Header_Text-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="400" jsxenabled="1" jsxmaxlength="180"/>
-            <strings jsxname="Header_Text" jsxvalue=""/>
+            <strings jsxname="Header_Text"/>
             <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);setValueToText(this.getValue(),&quot;formHeaderLabel&quot;);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>
@@ -1087,7 +1087,7 @@
           <strings jsxname="kysymys-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="400" jsxmaxlength="100"/>
-            <strings jsxname="kysymys" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <strings jsxname="kysymys" jsxmargin="0 4 0 0"/>
             <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>
@@ -1260,8 +1260,8 @@
           </object>
         </object>
         <object type="jsx3.gui.TextBox">
-          <variants/>
-          <strings jsxvalue="11" jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+          <variants jsxvalue="14"/>
+          <strings jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
         <object type="jsx3.gui.TextBox">
@@ -1376,7 +1376,7 @@
       <strings jsxwidth="100%" jsxname="header" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxrelativeposition="1"/>
-        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title" jsxtext=""/>
+        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title" jsxtext="qweqwe"/>
       </object>
     </object>
     <object type="jsx3.gui.Block">

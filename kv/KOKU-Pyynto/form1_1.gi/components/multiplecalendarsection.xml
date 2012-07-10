@@ -85,7 +85,7 @@
                 <object type="jsx3.gui.DatePicker">
                   <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18" jsxfirstweekday="1"/>
                   <strings jsxname="aloitusPvm" jsxmargin="0 4 0 0" jsxformat="dd-MM-yyyy"/>
-                  <events jsxhide="com.intalio.ria.validate(this);" jsxchange="checkDateNotBefore(newDATE, this.getParent().getParent().getParent().getDescendantOfName(&quot;lopetusPvm&quot;).getDate(), &quot;Aloituspäivämäärä ei voi olla  lopetuspäivämäärän jälkeen&quot;);"/>
+                  <events jsxhide="com.intalio.ria.validate(this);" jsxchange="checkDateNotBefore(newDATE, this.getAncestorOfName(&quot;paneEdit&quot;).getDescendantOfName(&quot;endDate-field&quot;).getFirstChild().getDate(), &quot;Aloituspäivämäärä ei voi olla  lopetuspäivämäärän jälkeen&quot;);" jsxblur="setEndDate(this.getDate(), this.getAncestorOfName(&quot;paneEdit&quot;).getDescendantOfName(&quot;endDate-field&quot;).getFirstChild().getName());"/>
                 </object>
               </object>
             </object>
