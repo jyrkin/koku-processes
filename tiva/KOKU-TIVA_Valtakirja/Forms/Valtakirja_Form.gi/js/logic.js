@@ -67,7 +67,7 @@ function setReceipientKunpoName(userUid) {
     try {
         var kunpoName = Arcusys.Internal.Communication.GetKunpoUsernameByUid(userUid);
         if (kunpoName != null) {
-            var displayName = kunpoName.selectSingleNode("//kunpoUsername", "xmlns:ns2=http://soa.common.koku.arcusys.fi/'").getValue();
+            var displayName = kunpoName.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
             Valtakirja_Form.getJSXByName("Tiedot_VastaanottajaDisplay").setValue(displayName);
         }
     } catch (e) {
