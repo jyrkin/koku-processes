@@ -102,6 +102,7 @@ function prepareForm() {
     getRealUserName(uid);
 }
 
+/* To the author of this function: getters usually return a value. This function on the other hand does not return a value. */
 function getRealUserName(uid) {
     SenderInfo = Arcusys.Internal.Communication.GetUserInfo(uid);
     if(SenderInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'") && SenderInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'")) {
@@ -110,6 +111,11 @@ function getRealUserName(uid) {
         wholename = firstname + " " + lastname;
         KayttajaviestintaForm.getJSXByName("Message_FromRealName").setValue(wholename);
     }
+}
+
+function getRealUserNamePinkySwear(uid) {
+    SenderInfo = Arcusys.Internal.Communication.GetUserInfo(uid);
+    return SenderInfo.selectSingleNode("//displayName", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
 }
 
 function getTaskSubscribe() {
@@ -317,10 +323,7 @@ function mapSelectedRecipientsToMatrix() {
             uid = childNode.getAttribute("uid");
             
             node = KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild().cloneNode();
-            kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
-            if(kunpoUsername != null) {
-                displayName = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
-            }
+            displayName = getRealUserNamePinkySwear(uid);
             node.setAttribute("jsxid", jsxid);
             node.setAttribute("receipient", uid);
             node.setAttribute("receipientDisplay", displayName);
