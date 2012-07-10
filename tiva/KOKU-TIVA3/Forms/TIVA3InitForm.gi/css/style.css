@@ -114,7 +114,11 @@ span[label=IntalioInternal_StartButton], span.intalioButton {
 
 span.intalioButton {
     position: absolute !important;
-    left: 105px !important;
+    left: 145px !important;
+}
+
+.ie8 span.intalioButton  {
+    margin: 43px 0px 0px 0px !important;
 }
 
 span.required {
