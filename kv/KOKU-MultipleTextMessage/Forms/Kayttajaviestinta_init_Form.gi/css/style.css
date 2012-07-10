@@ -94,6 +94,10 @@ span[label=IntalioInternal_StartButton], span.intalioButton {
     float: left !important;
 }
 
+.ie8 span.intalioButton  {
+    margin: 43px 0px 0px 0px !important;
+}
+
 /* form header */
 #JSX div.form-title, #JSX span.form-title {
   font-size:2.5em;
