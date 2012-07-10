@@ -830,7 +830,7 @@
           <strings jsxname="User_SenderDisplay-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants jsxwidth="300" jsxenabled="1"/>
-            <strings jsxname="User_SenderDisplay" jsxmargin="0 4 0 0" jsxvalue=""/>
+            <strings jsxname="User_SenderDisplay" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#FFFFFF"/>
             <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
           </object>
         </object>
