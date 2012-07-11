@@ -101,8 +101,11 @@ function prepareForm() {
     getRoles(uid);
     getRealUserName(uid);
 
-    /* This fixes an IE9 bug where the button would move when clicked or dragged.
-       Please do not ask me how or why. */
+    IE9ButtonMovingFix();
+}
+
+/* IE9 hack to fix the buttons moving when clicked */
+function IE9ButtonMovingFix() {
     parent.jQuery('iframe').contents().find('span[label="IntalioInternal_StartButton"]').parent().append('<div></div>');
 }
 
