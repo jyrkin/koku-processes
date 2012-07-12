@@ -100,6 +100,13 @@ function prepareForm() {
     }
     getRoles(uid);
     getRealUserName(uid);
+
+    IE9ButtonMovingFix();
+}
+
+/* IE9 hack to fix the buttons moving when clicked */
+function IE9ButtonMovingFix() {
+    parent.jQuery('iframe').contents().find('span[label="IntalioInternal_StartButton"]').parent().append('<div></div>');
 }
 
 /* To the author of this function: getters usually return a value. This function on the other hand does not return a value. */
@@ -455,6 +462,7 @@ function deleteDupes() {
 
 function intalioPreStart() {
     if(KayttajaviestintaForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild() == null) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Viestiin ei ole lis\xE4tty yht\xE4\xE4n vastaanottajaa. Lis\xE4\xE4 viestille vastaanottajat.";
     }
 
@@ -785,6 +793,7 @@ jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error)
     error.getError = function(name) {
         var errortext = KayttajaviestintaForm.getJSXByName(name).getTip();
         errortext = "Puuttuvat tiedot: " + errortext;
+        parent.scrollTo(0, 0); // scroll the parent window up
         return errortext;
     };
 });

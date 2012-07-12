@@ -711,6 +711,12 @@ function prepareForm() {
     } catch (e) {
         alert(e);
     }
+    IE9ButtonMovingFix();
+}
+
+/* IE9 hack to fix the buttons moving when clicked */
+function IE9ButtonMovingFix() {
+    parent.jQuery('iframe').contents().find('span[label="IntalioInternal_StartButton"]').parent().append('<div></div>');
 }
 
 jsx3.lang.Package.definePackage("koku.service", //the full name of the package to create
