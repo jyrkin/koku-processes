@@ -1101,6 +1101,11 @@ function inputCalendarSection(title, question, nameSection) {
 
     // textSection.setTitleText(title).repaint();
     textSection.setName(nameSection).repaint();
+    
+    var startDate = textSection.getDescendantOfName("aloitusPvm");
+    var endDate = textSection.getDescendantOfName("lopetusPvm");
+    startDate.setName(startDate.getName() + nameSection);
+    endDate.setName(endDate.getName() + nameSection);
 
     var block = "choiceBlock" + nameSection;
     textSection.getDescendantOfName("choiceBlock").setName(block);
