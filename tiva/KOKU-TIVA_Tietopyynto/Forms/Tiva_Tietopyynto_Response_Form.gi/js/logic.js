@@ -298,6 +298,7 @@ jsx3.lang.Package.definePackage(
     error.getError= function(name) {
         var errortext = TivaTietopyyntoForm.getJSXByName(name).getTip();
         errortext = "Puuttuvat tiedot: " + errortext;
+        parent.scrollTo(0, 0); // scroll the parent window up
         return errortext;
     };
 }

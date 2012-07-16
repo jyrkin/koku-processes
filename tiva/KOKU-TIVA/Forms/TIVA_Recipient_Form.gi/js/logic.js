@@ -9,6 +9,7 @@ function intalioPreStart() {
     throughTextfields();
     if (TIVAForm.getJSXByName("Suostumus_Hylkaa").getChecked()) {
         if (!confirmation("Haluatko varmasti hyl\u00E4t\u00E4 suostumuksen?")) {
+            parent.scrollTo(0, 0); // scroll the parent window up
             return "Lomaketta ei tallennettu";
         } else {
             TIVAForm.getJSXByName("Suostumus_Status").setValue("Evatty");
@@ -17,6 +18,7 @@ function intalioPreStart() {
         mapFieldsToMatrix();
     }
     if (error != null) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return ("Valitse tai hylk\u00E4\u00E4 suostumus");
     } else {
         return null;

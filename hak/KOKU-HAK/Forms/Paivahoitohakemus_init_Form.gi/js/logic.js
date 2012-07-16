@@ -26,8 +26,10 @@ function formatDataCache(cache, matrix) {
 /* place JavaScript code here */
 function intalioPreStart() {
     if (Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Tyyppi").getValue() == "- Valitse -") {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Virheelliset tiedot: Hoidon tyyppi!";
     } else if (Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Alue").getValue() == "- Valitse -") {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Virheelliset tiedot: 1. hakutoive!";
     }
     Paivahoitohakemus_Form.getJSXByName("Lapsi_ValittuDisplay").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getText()).repaint();
@@ -517,6 +519,7 @@ jsx3.lang.Package.definePackage(
     error.getError=function(name){
         var errortext = Paivahoitohakemus_Form.getJSXByName(name).getTip();
         errortext = "Virheelliset tiedot: " + errortext;
+        parent.scrollTo(0, 0); // scroll the parent window up
         return errortext;
     };
   }

@@ -4,9 +4,11 @@ function intalioPreStart() {
     clearDataCache("Vastaanottajat-nomap");
     mapSelectedRecipientsToMatrix();
     if (TIVA3Form.getCache().getDocument("Vastaanottajat-nomap").getFirstChild() == null) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Lomakkeelle ei ole valittu suostujaa!";
     }
     if (TIVA3Form.getJSXByName("Pohja_PohjaId").getValue() == null || TIVA3Form.getJSXByName("Pohja_PohjaId").getValue() == "") {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Kirjaukselle ei ole valittu pohjaa!";
     }
     throughTextfields();
@@ -1024,6 +1026,7 @@ jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error)
     error.getError = function(name) {
         var errortext = TIVA3Form.getJSXByName(name).getTip();
         errortext = "Puuttuvat tiedot: " + errortext;
+        parent.scrollTo(0, 0); // scroll the parent window up
         return errortext;
     };
 });

@@ -409,6 +409,7 @@ function getDomainName() {
 
 function intalioPreStart() {
     if(form1.getCache().getDocument("TextInput-nomap").getFirstChild() == null) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Lomakkeelle ei ole lis\xE4tty yht\xE4\xE4n pyynt\xF6\xE4.";
     }
 
@@ -422,6 +423,7 @@ function intalioPreStart() {
         } else if(form1.getJSXByName("PohjaNakyvyys_Kaikki").getChecked()) {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("All").repaint();
         } else {
+            parent.scrollTo(0, 0); // scroll the parent window up
             return "Pohjalle ei ole valittu n\xE4kyvyytt\xE4!";
         }
 

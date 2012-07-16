@@ -7,6 +7,7 @@ function intalioPreStart() {
     mapSelectedRecipientsToMatrix();
     error = checkSuostumukset();
     if(error != "") {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return error;
     }
     throughTextfields();
@@ -727,6 +728,7 @@ jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error)
     error.getError = function(name) {
         var errortext = TIVAForm.getJSXByName(name).getTip();
         errortext = "Puuttuvat tiedot: " + errortext;
+        parent.scrollTo(0, 0); // scroll the parent window up
         return errortext;
     };
 });
