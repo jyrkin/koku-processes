@@ -473,12 +473,6 @@ function preload() {
     userRealName = getUserRealName(uid);
     TIVA3Form.getJSXByName("lahettaja_tosinimi").setValue(userRealName).repaint();
     TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
-    Intalio.Internal.Utilities.SERVER.subscribe(Intalio.Internal.Utilities.GET_TASK_SUCCESS, IE9ButtonMovingFix);
-}
-
-/* IE9 hack to fix the buttons moving when clicked */
-function IE9ButtonMovingFix() {
-    parent.jQuery('iframe').contents().find('span[label="IntalioInternal_StartButton"]').parent().append('<div></div>');
 }
 
 function getUserRealName(uid) {

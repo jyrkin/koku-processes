@@ -14,15 +14,6 @@ function escapeHTML(value) {
                 }
 }
 
-function Preload() {
-    Intalio.Internal.Utilities.SERVER.subscribe(Intalio.Internal.Utilities.GET_TASK_SUCCESS, IE9ButtonMovingFix);
-}
-
-/* IE9 hack to fix the buttons moving when clicked */
-function IE9ButtonMovingFix() {
-    parent.jQuery('iframe').contents().find('span[label="IntalioInternal_StartButton"]').parent().append('<div></div>');
-}
-
 // Goes through textfields in order to check XSS-vulnerabilities.
 function throughTextfields() {
     var temp, value, descendants = [];
