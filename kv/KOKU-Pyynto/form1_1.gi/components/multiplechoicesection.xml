@@ -64,7 +64,7 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Button">
                   <variants jsxindex="0" jsxheight="18"/>
-                  <strings jsxname="button" jsxtext="Lisää vaihtoehto" jsxmargin="0 4 0 0" jsxpadding=""/>
+                  <strings jsxname="button" jsxtext="Lisää vaihtoehto" jsxmargin="-7 4 0 6" jsxpadding=""/>
                   <events jsxexecute="addChoice(this.getParent().getParent().getParent().getParent().getParent().getParent().getParent().getName());"/>
                 </object>
               </object>

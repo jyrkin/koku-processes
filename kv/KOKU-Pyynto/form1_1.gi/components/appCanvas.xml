@@ -1114,13 +1114,13 @@
         <variants jsxoverflow="1"/>
         <strings jsxname="selections-row" jsxrelativeposition="1" jsxclassname="row"/>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="1"/>
+          <variants jsxoverflow="2"/>
           <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="1"/>
             <strings jsxname="column" jsxrelativeposition="1" jsxclassname="column"/>
             <object type="jsx3.gui.Block">
-              <variants jsxoverflow="1"/>
+              <variants jsxoverflow="2"/>
               <strings jsxname="column" jsxrelativeposition="1" jsxclassname="checkBlock"/>
               <object type="jsx3.gui.CheckBox">
                 <variants jsxheight="18" jsxchecked="1" jsxdefaultchecked="0"/>
@@ -1139,10 +1139,10 @@
           </object>
         </object>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="1"/>
+          <variants jsxoverflow="2"/>
           <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
           <object type="jsx3.gui.Block">
-            <variants jsxoverflow="1"/>
+            <variants jsxoverflow="2"/>
             <strings jsxname="column" jsxrelativeposition="1" jsxclassname="checkBlock"/>
             <object type="jsx3.gui.CheckBox">
               <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
@@ -1160,10 +1160,10 @@
           </object>
         </object>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="1"/>
+          <variants jsxoverflow="2"/>
           <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
           <object type="jsx3.gui.Block">
-            <variants jsxoverflow="1"/>
+            <variants jsxoverflow="2"/>
             <strings jsxname="column" jsxrelativeposition="1" jsxclassname="checkBlock"/>
             <object type="jsx3.gui.CheckBox">
               <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
@@ -1181,10 +1181,10 @@
           </object>
         </object>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="1"/>
+          <variants jsxoverflow="2"/>
           <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
           <object type="jsx3.gui.Block">
-            <variants jsxoverflow="1"/>
+            <variants jsxoverflow="2"/>
             <strings jsxname="column" jsxrelativeposition="1" jsxclassname="checkBlock"/>
             <object type="jsx3.gui.CheckBox">
               <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
@@ -1202,10 +1202,10 @@
           </object>
         </object>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="1"/>
+          <variants jsxoverflow="2"/>
           <strings jsxname="row" jsxrelativeposition="1" jsxclassname="row"/>
           <object type="jsx3.gui.Block">
-            <variants jsxoverflow="1"/>
+            <variants jsxoverflow="2"/>
             <strings jsxname="column" jsxrelativeposition="1" jsxclassname="checkBlock"/>
             <object type="jsx3.gui.CheckBox">
               <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
@@ -1376,7 +1376,7 @@
       <strings jsxwidth="100%" jsxname="header" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxrelativeposition="1"/>
-        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title" jsxtext="qweqwe"/>
+        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title" jsxtext=""/>
       </object>
     </object>
     <object type="jsx3.gui.Block">
