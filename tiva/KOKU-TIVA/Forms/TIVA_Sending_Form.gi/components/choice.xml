@@ -36,7 +36,7 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Button">
           <variants jsxindex="0" jsxheight="18"/>
-          <strings jsxname="remChoice" jsxtext="Poista" jsxmargin="0 4 0 0"/>
+          <strings jsxname="remChoice" jsxtext="Poista" jsxmargin="0 4 0 0" jsxdisplay="" jsxvisibility=""/>
           <events jsxexecute="removeChoice(this.getParent().getParent().getParent(),this.getParent().getParent().getParent().getChild(&quot;choiceId&quot;).getValue());checkSuostumukset();"/>
         </object>
       </object>

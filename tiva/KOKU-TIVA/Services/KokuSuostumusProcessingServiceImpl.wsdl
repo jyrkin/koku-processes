@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="KokuSuostumusProcessingService" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns:ns1="http://services.koku.fi/entity/tiva/v1" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns:ns1="http://services.koku.fi/entity/tiva/v1" xmlns:ns2="http://soa.common.koku.arcusys.fi/" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:import namespace="http://services.koku.fi/entity/tiva/v1" />
+<xs:import namespace="http://soa.common.koku.arcusys.fi/" />
 <xs:element name="annaSuostumus" type="tns:annaSuostumus" />
 <xs:element name="annaSuostumusResponse" type="tns:annaSuostumusResponse" />
 <xs:element name="evaaSuostumus" type="tns:evaaSuostumus" />
 <xs:element name="evaaSuostumusResponse" type="tns:evaaSuostumusResponse" />
 <xs:element name="getConsentTemplateById" type="tns:getConsentTemplateById" />
 <xs:element name="getConsentTemplateByIdResponse" type="tns:getConsentTemplateByIdResponse" />
+<xs:element name="getKksFormInstances" type="tns:getKksFormInstances" />
+<xs:element name="getKksFormInstancesResponse" type="tns:getKksFormInstancesResponse" />
 <xs:element name="getSuostumusForReply" type="tns:getSuostumusForReply" />
 <xs:element name="getSuostumusForReplyResponse" type="tns:getSuostumusForReplyResponse" />
 <xs:element name="kirjaaSuostumus" type="tns:kirjaaSuostumus" />
@@ -47,6 +50,8 @@
 <xs:element minOccurs="0" name="kommentti" type="xs:string" />
 <xs:element minOccurs="0" name="informationTarget" type="xs:string" />
 <xs:element maxOccurs="unbounded" minOccurs="0" name="givenToParties" nillable="true" type="ns1:givenTo" />
+<xs:element minOccurs="0" name="kksFormInstance" type="tns:kksFormInstance" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="kksGivenTo" nillable="true" type="ns2:organization" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="suostumuspohja">
@@ -91,6 +96,19 @@
 <xs:element name="permitted" type="xs:boolean" />
 </xs:sequence>
 </xs:complexType>
+<xs:complexType name="kksFormInstance">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="fields" nillable="true" type="tns:kksFormField" />
+<xs:element minOccurs="0" name="instanceId" type="xs:string" />
+<xs:element minOccurs="0" name="instanceName" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="kksFormField">
+<xs:sequence>
+<xs:element minOccurs="0" name="fieldId" type="xs:string" />
+<xs:element minOccurs="0" name="fieldName" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
 <xs:complexType name="lahetaSuostumus">
 <xs:sequence>
 <xs:element name="suostumuspohjaId" type="xs:long" />
@@ -101,11 +119,24 @@
 <xs:element minOccurs="0" name="replyTillDate" type="xs:anySimpleType" />
 <xs:element minOccurs="0" name="maaraaika" type="xs:anySimpleType" />
 <xs:element minOccurs="0" name="maaraaikaMandatory" type="xs:boolean" />
+<xs:element minOccurs="0" name="kksFormInstance" type="tns:kksFormInstance" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="kksGivenTo" type="ns2:organization" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="lahetaSuostumusResponse">
 <xs:sequence>
 <xs:element minOccurs="0" name="suostumusId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getKksFormInstances">
+<xs:sequence>
+<xs:element minOccurs="0" name="kksCode" type="xs:string" />
+<xs:element minOccurs="0" name="targetPersonUid" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getKksFormInstancesResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:kksFormInstance" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="mitatoiSuostumus">
@@ -150,6 +181,8 @@
 <xs:element maxOccurs="unbounded" minOccurs="0" name="vastaukset" type="tns:toimenpidevastaus" />
 <xs:element minOccurs="0" name="suostumuksenLisaTiedot" type="tns:consentSourceInfo" />
 <xs:element minOccurs="0" name="kommentti" type="xs:string" />
+<xs:element minOccurs="0" name="kksFormInstance" type="tns:kksFormInstance" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="kksGivenTo" type="ns2:organization" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="consentSourceInfo">
@@ -225,6 +258,22 @@
 </xs:restriction>
 </xs:simpleType>
 </xs:schema>
+<xs:schema targetNamespace="http://soa.common.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.common.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="perform" type="tns:perform" />
+<xs:element name="performResponse" type="tns:performResponse" />
+<xs:complexType name="organization">
+<xs:sequence>
+<xs:element minOccurs="0" name="organizationId" type="xs:string" />
+<xs:element minOccurs="0" name="organizationName" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="performResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:complexType name="perform">
+<xs:sequence />
+</xs:complexType>
+</xs:schema>
 <xs:schema targetNamespace="http://services.koku.fi/entity/tiva/v1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:complexType name="givenTo">
 <xs:sequence>
@@ -254,8 +303,16 @@
     <wsdl:part element="tns:annaSuostumusResponse" name="parameters">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="getKksFormInstances">
+    <wsdl:part element="tns:getKksFormInstances" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="muokkaaSuostumus">
     <wsdl:part element="tns:muokkaaSuostumus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getKksFormInstancesResponse">
+    <wsdl:part element="tns:getKksFormInstancesResponse" name="parameters">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="evaaSuostumusResponse">
@@ -282,12 +339,12 @@
     <wsdl:part element="tns:kirjaaSuostumus" name="parameters">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="luoSuostumuspohja">
-    <wsdl:part element="tns:luoSuostumuspohja" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="evaaSuostumus">
     <wsdl:part element="tns:evaaSuostumus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="luoSuostumuspohja">
+    <wsdl:part element="tns:luoSuostumuspohja" name="parameters">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="mitatoiSuostumusResponse">
@@ -306,12 +363,12 @@
     <wsdl:part element="tns:selaaSuostumuspohjat" name="parameters">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getSuostumusForReply">
-    <wsdl:part element="tns:getSuostumusForReply" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="kirjaaSuostumusResponse">
     <wsdl:part element="tns:kirjaaSuostumusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSuostumusForReply">
+    <wsdl:part element="tns:getSuostumusForReply" name="parameters">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="KokuSuostumusProcessingService">
@@ -325,6 +382,12 @@
       <wsdl:input message="tns:lahetaSuostumus" name="lahetaSuostumus">
     </wsdl:input>
       <wsdl:output message="tns:lahetaSuostumusResponse" name="lahetaSuostumusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKksFormInstances">
+      <wsdl:input message="tns:getKksFormInstances" name="getKksFormInstances">
+    </wsdl:input>
+      <wsdl:output message="tns:getKksFormInstancesResponse" name="getKksFormInstancesResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mitatoiSuostumus">
@@ -384,6 +447,15 @@
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output name="getSuostumusForReplyResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKksFormInstances">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getKksFormInstances">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getKksFormInstancesResponse">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -471,8 +543,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuSuostumusProcessingService">
     <wsdl:port binding="tns:KokuSuostumusProcessingServiceSoapBinding" name="KokuSuostumusProcessingServicePort">
-      <soap:address location="http://kohtikumppanuutta-qa-5.dmz:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" />
-      <!-- <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" /> -->
+      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

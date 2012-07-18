@@ -14,7 +14,18 @@
     		<element name="Toimenpiteet" type="tns:Toimenpiteet_Type"
     			maxOccurs="unbounded" minOccurs="0">
     		</element>
-    		<element name="Vastaukset" type="tns:Vastaukset_Type" maxOccurs="unbounded" minOccurs="0"></element>
+    		<element name="Vastaukset" type="tns:Vastaukset_Type"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    		<element name="KKSattribuutti"
+    			type="tns:KKSattribuutti_Type" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="KKSorganisaatio"
+    			type="tns:KKSorganisaatio_Type" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="KKS" type="tns:KKS_Type"></element>
     	</sequence>
     </complexType>
 
@@ -86,6 +97,35 @@
     	<sequence>
             <element name="Vastaukset_VastausId" type="string"></element>
             <element name="Vastaukset_Vastaus" type="boolean"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="KKS_Type">
+    	<sequence>
+    		<element name="KKS_koodi" type="string"></element>
+    		<element name="KKS_childuid" type="string"></element>
+    		<element name="KKS_lomake" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+
+
+
+    <complexType name="KKSattribuutti_Type">
+    	<sequence>
+    		<element name="KKSattribuutti_attribuutti" type="string"></element>
+    		<element name="KKSattribuutti_id" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="KKSorganisaatio_Type">
+    	<sequence>
+    		<element name="KKSorganisaatio_organisaatio"
+    			type="string">
+    		</element>
+    		<element name="KKSorganisaatio_id" type="string"></element>
     	</sequence>
     </complexType>
 

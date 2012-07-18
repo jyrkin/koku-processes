@@ -1,11 +1,11 @@
 
 behind_proxy=false
-bundleExportPath=/home/henril/intalio_workspace/koku-processes/tiva/KOKU-TIVA
+bundleExportPath=/home/hmustonen/KOKU-workspace/git110712/koku-processes/tiva/KOKU-TIVA
 deploy.fileRuntimeSelection=Forms\:Forms/TIVA.xsd\:Forms/TIVA_Recipient_Form.gi\:Forms/TIVA_Sending_Form.gi\:Forms/TIVA_Template_Form.gi\:Processes\:Processes/TIVARecipient-Process.bpm\:Processes/TIVASending-Process.bpm\:Processes/TIVATemplateCreation-Process.bpm\:Services\:Services/KokuSuostumusProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl\:xsl\:xsl/annaSuostumus.xsl\:xsl/getRecipients.xsl\:xsl/luoSuostumuspohja.xsl\:
 deploy_bundleShouldBeArchived=false
 deploy_bundleShouldBeDeployed=true
 deploy_gi_serverUrl=http\://localhost\:8080/gi
 deploy_serverUrl=http\://localhost\:8080/ode
-deploymenttimeout=120
+deploymenttimeout=30
 diagram_baseUri=http\://www.arcusys.fi
 eclipse.preferences.version=1
