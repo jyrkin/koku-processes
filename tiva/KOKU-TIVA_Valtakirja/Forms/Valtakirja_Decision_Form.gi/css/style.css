@@ -15,7 +15,6 @@ span.root {
 span[label=IntalioInternal_StartButton], span.intalioButton {
     margin: 0px 8px 0px 0px !important;
     padding: 3px 10px !important;
-    float: left !important;
 }
 
 span.intalioButton {
@@ -92,7 +91,7 @@ span.FormLabel, span.headerNote {
 }
 
 div[label=IntalioInternal_SpacerBlock] {
-  display: none !important;
+  visibility: hidden !important;
 } 
 
 .checkLabel {

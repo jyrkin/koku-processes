@@ -7,15 +7,18 @@ function intalioPreStart() {
     
     if (AjanvarausForm.getJSXByName("Lomake_Hylkaa").getChecked()) {
         if(!confirmation("Olet peruuttamassa tapaamista")) {
+            parent.scrollTo(0, 0); // scroll the parent window up
             return "Tapaamista ei peruttu";
         }
     } else if (checkApprovedSlot()) {
         entry = getEntry();
    
         if (!confirmation("Olet varaamassa tapaamista ajalle: " + entry)) {
+            parent.scrollTo(0, 0); // scroll the parent window up
             return "Tapaamista ei varattu";
         }
     } else {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Sinun t\u00E4ytyy joko valita aika tai peruuttaa tapaaminen";
     } 
     
@@ -630,6 +633,7 @@ jsx3.lang.Package.definePackage(
     error.getError=function(name){
         var errortext = AjanvarausForm.getJSXByName(name).getTip();
         errortext = "Puuttuvat tiedot: " + errortext;
+        parent.scrollTo(0, 0); // scroll the parent window up
         return errortext;
     };
   }

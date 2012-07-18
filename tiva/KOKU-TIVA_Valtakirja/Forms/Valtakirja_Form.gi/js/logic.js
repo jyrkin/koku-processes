@@ -59,6 +59,7 @@ jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error)
     error.getError = function(name) {
         var errortext = Valtakirja_Form.getJSXByName(name).getTip();
         errortext = "Virheelliset tiedot: " + errortext;
+        parent.scrollTo(0, 0); // scroll the parent window up
         return errortext;
     };
 });

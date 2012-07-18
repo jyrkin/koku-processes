@@ -24,6 +24,7 @@ jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error)
 
     error.getError = function(name) {
         var errortext = Valtakirja_Form.getJSXByName(name).getTip();
+        parent.scrollTo(0, 0); // scroll the parent window up
         errortext = "Virheelliset tiedot: " + errortext;
         return errortext;
     };
@@ -1866,15 +1867,19 @@ function intalioPreStart() {
     headerText = form1.getJSXByName("Header_Text");
     
     if(form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild() == null) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Pyynt\xF6\xF6n ei ole lis\xE4tty yht\xE4\xE4n vastaanottajaa. Lis\xE4\xE4 pyynn\xF6lle vastaanottajat.";
     }
     if(form1.getJSXByName("User_AnswerUntil").getValue() == "dd.MM.yyyy") {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Puuttuvat tiedot: Vastauksen m\xE4\xE4r\xE4aika";
     }
     if(form1.getJSXByName("User_Reminder").getValue() == null) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Puuttuvat tiedot: Vastauksen muistutusraja";
     }
     if(form1.getCache().getDocument("TextInput-nomap").getFirstChild() == null) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Lomakkeelle ei ole lis\xE4tty yht\xE4\xE4n pyynt\xF6\xE4.";
     }
 

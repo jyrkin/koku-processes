@@ -70,16 +70,19 @@ function intalioPreStart() {
 
     error = checkSuostumukset();
     if (error != "") {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return error;
     }
 
     error = checkTemplateName();
     if (error != "") {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return error;
     }
 
     error = checkRecipients();
     if (error != "") {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return error;
     }
     throughTextfields();
@@ -728,6 +731,7 @@ jsx3.lang.Package.definePackage(
         error.getError = function (name) {
             var errortext = TIVA_Form.getJSXByName(name).getTip();
             errortext = "Puuttuvat tiedot: " + errortext;
+            parent.scrollTo(0, 0); // scroll the parent window up
             return errortext;
         };
     }

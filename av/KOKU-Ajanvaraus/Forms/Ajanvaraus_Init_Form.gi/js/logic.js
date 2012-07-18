@@ -417,13 +417,14 @@ function intalioPreStart() {
     mapSelectedRecipientsToMatrix();
 
     if(!AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild()) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Lomakkeessa t\u00E4ytyy olla v\u00E4hint\u00E4\u00E4n yksi vastaanottaja!";
     }
     if(!AjanvarausForm.getCache().getDocument("slots-nomap").getFirstChild()) {
+        parent.scrollTo(0, 0); // scroll the parent window up
         return "Lomakkeessa t\u00E4ytyy olla v\u00E4hint\u00E4\u00E4n yksi tapaaminen!";
     }
     throughTextfields();
-    
     return null;
 }
 
@@ -1937,6 +1938,7 @@ jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error)
     error.getError = function(name) {
         var errortext = AjanvarausForm.getJSXByName(name).getTip();
         errortext = "Puuttuvat tiedot: " + errortext;
+        parent.scrollTo(0, 0); // scroll the parent window up
         return errortext;
     };
 });

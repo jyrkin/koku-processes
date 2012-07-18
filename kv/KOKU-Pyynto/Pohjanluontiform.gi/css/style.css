@@ -1,7 +1,7 @@
 @media all
 {
 span.root {
-  /* overflow: visible !important; */
+  overflow: visible !important;
   font-family: Helvetica,Arial,Verdana,sans-serif;
   font-size:12px;
   color: #444;
@@ -51,7 +51,7 @@ span.FormLabel, span.headerNote {
 }
 
 div[label=IntalioInternal_SpacerBlock] {
-  display: none !important;
+  visibility: hidden !important;
 } 
 
 .checkLabel {
@@ -95,12 +95,11 @@ div.fieldset-padding {
 span[label=IntalioInternal_StartButton], span.intalioButton {
     margin: 0px 8px 0px 0px !important;
     padding: 3px 10px !important;
-    float: left !important;
 }
 
 span.intalioButton {
     position: absolute !important;
-    left: 125px !important;
+    left: 140px !important;
 }
 
 .ie8 span.intalioButton  {
