@@ -273,7 +273,7 @@ function preload() {
 
 function mapFormDataToFields(objXML) {
     var i, pohjaId, otsikko, saateteksti, laatija, actionReplies, vastattu, attributes, vastaanottaja, maaraaika, maaraaika1, maaraaika2, maaraaika3, aikaraja, aikaraja1, aikaraja2, aikaraja3, kommentti, targetPersonUid;
-    var vastattu, vakioMaaraaika;
+    var vastattu, vakioMaaraaika, kkscode;
     // Get basic information from xml document
 
     pohjaId = objXML.selectSingleNode("//suostumuspohjaId", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -283,6 +283,7 @@ function mapFormDataToFields(objXML) {
     targetPersonUid = objXML.selectSingleNode("//targetPersonUid", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
     targetPersonData = Arcusys.Internal.Communication.getUserInfo(targetPersonUid);
     targetPerson = targetPersonData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue() + " " + targetPersonData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    kkscode = objXML.selectSingleNode("//code", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
     if (objXML.selectSingleNode("//alreadyReplied", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
         vastattu = objXML.selectSingleNode("//alreadyReplied", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -295,6 +296,13 @@ function mapFormDataToFields(objXML) {
     } else {
         vakioMaaraika = 0;
     }
+
+    if (kkscode != null){
+        TIVAForm.getJSXByName("KKS_code").getParent().getParent().setDisplay("block").repaint();
+        TIVAForm.getJSXByName("KKS_code").setValue(kkscode);
+    }
+    
+    getKKSdata(objXML);
 
     if (objXML.selectSingleNode("//maaraaika", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
         maaraaika = objXML.selectSingleNode("//maaraaika", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -346,6 +354,22 @@ function mapFormDataToFields(objXML) {
     setHeightAccordTextHeight(TIVAForm.getJSXByName("Suostumus_Kuvaus").getParent(), TIVAForm.getJSXByName("Suostumus_Kuvaus").getText(), 100, 12);
     TIVAForm.getJSXByName("targetPersonLabel").setText("<b>Lapsen nimi: </b>" + targetPerson, true);
 
+}
+
+// Gets the KKS -fields and 
+function getKKSdata(objXML){
+
+var nodeIterator, fieldnodes, i;
+nodeIterator = objXML.selectNodeIterator("//fields", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+fieldnodes = getDataString(nodeIterator);
+/*
+for (i=0; i<fieldnodes.length; i++)
+    alert(fieldnodes[i][fieldName]);
+
+
+nodeIterator = objXML.selectNodeIterator("//fields", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+fieldnodes = getDataString(nodeIterator);
+*/
 }
 
 function setPermittedSlots(actionReplies) {
@@ -488,6 +512,42 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 });
 
 // Extra functions -------------------------------------------------------------------------------------------------------------------------------
+
+function getDataString(nodeIterator) {
+    var attributes = [], i = 0, nodes, node, childNode, nodeName, depth = 0;
+
+    while(nodeIterator.hasNext()) {
+        node = nodeIterator.next();
+        attributes[i] = [];
+        childNode = node.getFirstChild();
+        while(childNode) {
+            if(childNode.getFirstChild()) {
+                childNode = childNode.getFirstChild();
+                depth++;
+            }
+            nodeName = childNode.getNodeName();
+            if(depth > 0) {
+                nodeName = childNode.getParent().getNodeName() + "_" + nodeName;
+            }
+
+            if(attributes[i][nodeName]) {
+                attributes[i][nodeName] += ",";
+            } else {
+                attributes[i][nodeName] = "";
+            }
+            attributes[i][nodeName] += childNode.getValue();
+
+            while(!childNode.getNextSibling() && depth > 0) {
+                childNode = childNode.getParent();
+                depth--;
+            }
+            childNode = childNode.getNextSibling();
+        }
+        i++;
+    }
+
+    return attributes;
+}
 
 function getDomainName() {
 

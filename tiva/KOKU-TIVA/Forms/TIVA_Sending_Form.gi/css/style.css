@@ -1,7 +1,7 @@
 @media all
 {
 span.root {
-  /* overflow: visible !important; */
+  overflow: visible !important;
   font-family: Helvetica,Arial,Verdana,sans-serif;
   font-size:12px;
   color: #444;

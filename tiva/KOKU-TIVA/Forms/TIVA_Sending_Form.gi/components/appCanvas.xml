@@ -649,7 +649,7 @@
           </object>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxname="column" jsxclassname="column"/>
+            <strings jsxname="column" jsxclassname="column" jsxmargin="0 0 0 50"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxoverflow="2" jsxrelativeposition="1"/>
@@ -682,7 +682,7 @@
               <variants/>
               <strings riaLabelText="Organisaatio-field" jsxname="Organisaatio-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
               <object type="jsx3.gui.Select">
-                <variants jsxheight="18" jsxwidth="120" _isfocusing="true" jsxxmlasync="1" jsxrequired="0"/>
+                <variants jsxheight="18" jsxwidth="170" _isfocusing="true" jsxxmlasync="1" jsxrequired="0"/>
                 <strings jsxvalue="" jsxxml="" jsxdefaulttext="- Valitse -" jsxname="Organisaatio" jsxxmlid="organisaatiot-nomap" jsxxmlurl=""/>
                 <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
               </object>
@@ -697,14 +697,14 @@
               <strings riaLabelText="Lisaa-field" jsxname="Lisaa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
               <object type="jsx3.gui.Button">
                 <variants jsxheight="18" jsxrelativeposition="1"/>
-                <strings jsxname="button" jsxtext="Lisää" jsxclassname="kokuButton" jsxtop="" jsxmargin="10 19 10 1" jsxbgcolor="" jsxdisabledcolor=""/>
+                <strings jsxname="nappi_lisaaOrg" jsxtext="Lisää" jsxclassname="kokuButton" jsxtop="" jsxmargin="10 19 10 1" jsxbgcolor="" jsxdisabledcolor=""/>
                 <events jsxexecute="addToMatrix(TIVAForm.getJSXByName(&quot;Organisaatio&quot;).getValue(),&quot;KKSorganisaatio_id&quot;,&quot;KKSorganisaatio&quot;,&quot;KKSorganisaatio-nomap&quot;, &quot;KKSorganisaatio_organisaatio&quot;,&quot;organisaatiot-nomap&quot;);TIVAForm.getJSXByName(&quot;KKS_kentat&quot;).repaint();"/>
               </object>
             </object>
           </object>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxname="column" jsxclassname="column"/>
+            <strings jsxname="column" jsxclassname="column" jsxmargin="0 0 0 0"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxoverflow="3" jsxrelativeposition="1"/>
@@ -714,7 +714,7 @@
               <variants/>
               <strings riaLabelText="Attribuutit-field" jsxname="Attribuutit-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
               <object type="jsx3.gui.Select">
-                <variants jsxheight="18" jsxwidth="120" _isfocusing="true" jsxxmlasync="1" jsxrequired="0" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+                <variants jsxheight="18" jsxwidth="170" _isfocusing="true" jsxxmlasync="1" jsxrequired="0" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
                 <strings jsxvalue="" jsxxml="" jsxdefaulttext="- Valitse -" jsxname="Attribuutit" jsxdisplay="" jsxxmlid="Attribuutit-nomap"/>
                 <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
               </object>
@@ -726,8 +726,8 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Button">
               <variants jsxheight="18"/>
-              <strings jsxname="button" jsxtext="Lisää" jsxclassname="kokuButton" jsxmargin="10 1 10 1" jsxdisabledbgcolor=""/>
-              <events jsxexecute="addToMatrix(TIVAForm.getJSXByName(&quot;Attribuutit&quot;).getValue(),&quot;KKSattribuutit_id&quot;,&quot;AttributesMatrix&quot;, &quot;KKSattribuutti-nomap&quot;,&quot;KKSattribuutti_attribuutti&quot;,&quot;Attribuutit-nomap&quot;);TIVAForm.getJSXByName(&quot;KKS_kentat&quot;).repaint();"/>
+              <strings jsxname="nappi_lisaaAttr" jsxtext="Lisää" jsxclassname="kokuButton" jsxmargin="10 1 10 14" jsxdisabledbgcolor=""/>
+              <events jsxexecute="addToMatrix(TIVAForm.getJSXByName(&quot;Attribuutit&quot;).getValue(),&quot;KKSattribuutti_id&quot;,&quot;AttributesMatrix&quot;, &quot;KKSattribuutti-nomap&quot;,&quot;KKSattribuutti_attribuutti&quot;,&quot;Attribuutit-nomap&quot;);TIVAForm.getJSXByName(&quot;KKS_kentat&quot;).repaint();"/>
             </object>
           </object>
         </object>
@@ -740,11 +740,11 @@
             <strings jsxname="column" jsxclassname="column"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
-              <variants jsxheight="140" jsxwidth="170" jsxoverflow="1"/>
+              <variants jsxheight="140" jsxwidth="220" jsxoverflow="1"/>
               <strings jsxdisplay="" jsxname="matrix-block" jsxmargin="0 12 0 0" jsxrelativeposition="1"/>
               <object type="jsx3.gui.Matrix">
-                <variants jsxpagingmodel="0" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1" jsxrendernavigators="1" jsxsuppresshscroll="1" jsxsuppressvscroll="0" jsxscalewidth="0"/>
-                <strings jsxname="KKSorganisaatio" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxsortpath="KKSorganisaatio_organisaatio" jsxsorttype="text" jsxsortdirection="descending" jsxxmlid="KKSorganisaatio-nomap" jsxrenderingmodel="deep"/>
+                <variants jsxpagingmodel="1" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="0" jsxrendernavigators="1" jsxsuppresshscroll="1" jsxsuppressvscroll="0" jsxscalewidth="0"/>
+                <strings jsxname="KKSorganisaatio" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#FFFFFF" jsxsortpath="KKSorganisaatio_organisaatio" jsxsorttype="text" jsxsortdirection="descending" jsxxmlid="KKSorganisaatio-nomap" jsxrenderingmodel="deep" jsxbg=""/>
                 <events jsxaftercommit="this.getParent().getParent().validate(this, objEVENT);"/>
                 <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
                 <object type="jsx3.gui.Matrix.Column">
@@ -773,7 +773,7 @@
                   <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10"/>
-                    <strings jsxname="KKSorganisaatio_organisaatioKentta" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue="2"/>
+                    <strings jsxname="KKSorganisaatio_organisaatioKentta" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
                     <events jsxkeydown="1;"/>
                   </object>
                 </object>
@@ -785,10 +785,10 @@
             <strings jsxname="column" jsxclassname="column"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
-              <variants jsxheight="140" jsxwidth="170" jsxoverflow="1"/>
+              <variants jsxheight="140" jsxwidth="220" jsxoverflow="1"/>
               <strings jsxdisplay="" jsxname="matrix-block" jsxmargin="0 12 0 0" jsxrelativeposition="1"/>
               <object type="jsx3.gui.Matrix">
-                <variants jsxpagingmodel="0" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1" jsxrendernavigators="1" jsxsuppresshscroll="1" jsxsuppressvscroll="0" jsxscalewidth="0"/>
+                <variants jsxpagingmodel="1" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="0" jsxrendernavigators="1" jsxsuppresshscroll="1" jsxsuppressvscroll="0" jsxscalewidth="0"/>
                 <strings jsxname="AttributesMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxsortpath="jsxid" jsxsorttype="text" jsxsortdirection="ascending" jsxxmlid="KKSattribuutti-nomap" jsxrenderingmodel="deep"/>
                 <events jsxaftercommit="this.getParent().getParent().validate(this, objEVENT);"/>
                 <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
@@ -803,7 +803,7 @@
                   </object>
                 </object>
                 <object type="jsx3.gui.Matrix.Column">
-                  <variants jsxwidth="136"/>
+                  <variants jsxwidth="136" jsxresize="0"/>
                   <strings jsxname="KKSattribuutti_attribuutti" jsxtext="Valitut attribuutit" jsxpadding="2" jsxcellpadding="3" jsxpath="KKSattribuutti_attribuutti"/>
                   <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                   <object type="jsx3.gui.TextBox">
@@ -813,8 +813,8 @@
                   </object>
                 </object>
                 <object type="jsx3.gui.Matrix.Column">
-                  <variants jsxwidth="136"/>
-                  <strings jsxname="KKSattribuutit_id" jsxtext="Valitut attribuutit" jsxpadding="2" jsxcellpadding="3" jsxpath="KKSattribuutit_id" jsxdisplay="none"/>
+                  <variants jsxwidth="136" jsxresize="0"/>
+                  <strings jsxname="KKSattribuutti_id" jsxtext="Valitut attribuutit" jsxpadding="2" jsxcellpadding="3" jsxpath="KKSattribuutti_id" jsxdisplay="none"/>
                   <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10"/>
@@ -830,6 +830,11 @@
       <object type="jsx3.gui.TextBox">
         <variants/>
         <strings jsxname="KKS_childuid" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="KKS_lomakeId" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>

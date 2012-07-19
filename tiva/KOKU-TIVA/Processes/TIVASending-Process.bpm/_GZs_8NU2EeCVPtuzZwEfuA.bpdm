@@ -66,6 +66,22 @@
                         <bpel:from>bpel:doXslTransform("../xsl/getRecipients.xsl", $TIVA_Form)</bpel:from>
                         <bpel:to>$kokuSuostumusProcessingServiceImplLahetaSuostumusMsg.parameters</bpel:to><mapper:mapperLink><mapper:vertice id="1972523417" targetPath="$kokuSuostumusProcessingServiceImplLahetaSuostumusMsg.parameters" targetedBy="1390569843-arg2"></mapper:vertice><mapper:vertice id="1390569843" dimension="224x39" location="288,144"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="1960667993" dimension="252x24" location="204,48" targetedBy="1390569843-arg0"><mapper:value>"../xsl/getRecipients.xsl"</mapper:value></mapper:vertice><mapper:vertice id="176782900" sourcePath="$TIVA_Form" targetedBy="1390569843-arg1"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$TIVA_Form/tns:KKS/tns:KKS_lomake</bpel:from>
+                        <bpel:to>$kokuSuostumusProcessingServiceImplLahetaSuostumusMsg.parameters/kksFormInstance/instanceName</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="801512622" targetPath="$kokuSuostumusProcessingServiceImplLahetaSuostumusMsg.parameters/kksFormInstance/instanceName" targetedBy="1762009024-arg0"></mapper:vertice>
+  <mapper:vertice id="1762009024" sourcePath="$TIVA_Form/tns:KKS/tns:KKS_lomake"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$TIVA_Form/tns:KKS/tns:KKS_lomakeId</bpel:from>
+                        <bpel:to>$kokuSuostumusProcessingServiceImplLahetaSuostumusMsg.parameters/kksFormInstance/instanceId</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="19240764" targetPath="$kokuSuostumusProcessingServiceImplLahetaSuostumusMsg.parameters/kksFormInstance/instanceId" targetedBy="1852292688-arg0"></mapper:vertice>
+  <mapper:vertice id="1852292688" sourcePath="$TIVA_Form/tns:KKS/tns:KKS_lomakeId"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuSuostumusProcessingServiceImplLahetaSuostumusMsg" bpdm:msgVarScopeId="_GZs_8NU2EeCVPtuzZwEfuA" bpdm:variableIsManaged="true" bpdm:messageType="KokuSuostumusProcessingServiceImpl:lahetaSuostumus" bpdm:binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceSoapBinding" bpdm:ID="_NLjUcCSZEeGRn-ArL7CKYA"></bpdm:linkset>
                 <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuSuostumusProcessingServiceImplLahetaSuostumusResponseMsg" bpdm:msgVarScopeId="_GZs_8NU2EeCVPtuzZwEfuA" bpdm:variableIsManaged="true" bpdm:messageType="KokuSuostumusProcessingServiceImpl:lahetaSuostumusResponse" bpdm:binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceSoapBinding" bpdm:ID="_NenaYCSZEeGRn-ArL7CKYA"></bpdm:linkset>

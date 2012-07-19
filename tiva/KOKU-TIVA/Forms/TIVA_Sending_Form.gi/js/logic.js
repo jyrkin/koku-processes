@@ -3,6 +3,7 @@
 function intalioPreStart() {
     var error;
 
+    TIVAForm.getJSXByName("KKS_lomakeId").setValue(TIVAForm.getJSXByName("KKS_lomake").getValue());
     clearDataCache("Vastaanottajat-nomap");
     mapSelectedRecipientsToMatrix();
     error = checkSuostumukset();
@@ -59,11 +60,12 @@ for (i = 0; i <= j; i++) {
 function addToMatrix(addition, additionId, matrix, cache, attribute, sourcecache){
 var childIterator, childNode, node, hasEmptyChild, val;
   val =  TIVAForm.getCache().getDocument(sourcecache).selectSingleNode("//record[@jsxid='" + addition + "']/@jsxtext").getValue();
+
+ /*
   TIVAForm.getJSXByName(matrix).commitAutoRowSession();
   childIterator = TIVAForm.getCache().getDocument(cache).getChildIterator();
    while (childIterator.hasNext())
-    childNode = childIterator.next();   
-    
+    childNode = childIterator.next();       
     childNode.setAttribute(attribute, val);
     childNode.setAttribute(additionId, addition);
   
@@ -71,7 +73,27 @@ var childIterator, childNode, node, hasEmptyChild, val;
   
   if(hasEmptyChild) {
         TIVAForm.getCache().getDocument(cache).removeChild(TIVAForm.getCache().getDocument(cache).getFirstChild());
-  }    
+  } 
+  */
+
+    var node, hasEmptyChild;
+    hasEmptyChild = formatDataCache(cache, matrix);
+    node = TIVAForm.getCache().getDocument(cache).getFirstChild().cloneNode();
+
+    node.setAttribute("jsxid", addition);
+    node.setAttribute(additionId, addition);
+    node.setAttribute(attribute, val);
+
+    TIVAForm.getCache().getDocument(cache).insertBefore(node);
+
+    if(hasEmptyChild) {
+        TIVAForm.getCache().getDocument(cache).removeChild(TIVAForm.getCache().getDocument(cache).getFirstChild());
+    }
+
+  
+  
+  
+     
 }
 
 

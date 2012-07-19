@@ -106,6 +106,7 @@
     		<element name="KKS_koodi" type="string"></element>
     		<element name="KKS_childuid" type="string"></element>
     		<element name="KKS_lomake" type="string"></element>
+    		<element name="KKS_lomakeId" type="string"></element>
     	</sequence>
     </complexType>
 

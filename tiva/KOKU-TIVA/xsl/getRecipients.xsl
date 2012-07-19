@@ -59,17 +59,26 @@
 				</xsl:element>
 			</xsl:for-each>
 
-			<xsl:for-each select="//fe:KKSattribuutti">
-				<xsl:element name="fields">
-					<xsl:element name="fieldId">
-						<xsl:value-of select="fe:KKSattribuutti_id/text()" />
-					</xsl:element>
-					<xsl:element name="fieldName">
-						<xsl:value-of select="fe:KKSattribuutti_attribuutti/text()" />
-					</xsl:element>
-				</xsl:element>
-			</xsl:for-each>
 
+			<xsl:element name="kksFormInstance">
+				<xsl:for-each select="//fe:KKSattribuutti">
+					<xsl:element name="fields">
+						<xsl:element name="fieldId">
+							<xsl:value-of select="fe:KKSattribuutti_id/text()" />
+						</xsl:element>
+						<xsl:element name="fieldName">
+							<xsl:value-of select="fe:KKSattribuutti_attribuutti/text()" />
+						</xsl:element>
+					</xsl:element>
+				</xsl:for-each>
+				
+				<xsl:element name="instanceId">
+					<xsl:value-of select="//fe:KKS_lomakeId/text()" />
+				</xsl:element>
+				<xsl:element name="instanceName">
+					<xsl:value-of select="//fe:KKS_lomake/text()" />
+				</xsl:element>
+			</xsl:element>
 		</xsl:copy>
 	</xsl:template>
 </xsl:stylesheet>
