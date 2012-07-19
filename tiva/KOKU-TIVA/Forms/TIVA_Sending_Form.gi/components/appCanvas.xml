@@ -621,7 +621,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxdisplay="" riaTitleText="KKS" jsxname="KKS_kentat" jsxclassname="fieldset" jsxwidth="100%"/>
+      <strings jsxdisplay="none" riaTitleText="KKS" jsxname="KKS_kentat" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>

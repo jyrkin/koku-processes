@@ -298,7 +298,17 @@ function mapFormDataToFields(objXML) {
     otsikko = objXML.selectSingleNode("//otsikko", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
     saateteksti = objXML.selectSingleNode("//saateteksti", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
     laatijaUid = objXML.selectSingleNode("//laatija", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
-    KKSkoodi = objXML.selectSingleNode("//code", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    KKSkoodi = "";
+
+    try{    
+        KKSkoodi = objXML.selectSingleNode("//code", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    } catch (e) {}
+    
+    if (KKSkoodi != ""){
+    TIVAForm.getJSXByName("KKS_kentat").setDisplay("block").repaint();
+    } else {TIVAForm.getJSXByName("KKS_kentat").setDisplay("none").repaint();}
+    
+    
     laatijaData = Arcusys.Internal.Communication.getUserInfo(laatijaUid);
     otsikko = removeQuotes(otsikko);
     saateteksti = removeQuotes(saateteksti);
@@ -545,7 +555,7 @@ function searchNames(searchString) {
         }
 
         if(entryFound) {
-            TIVAForm.getJSXByName("KKS_kentat").setDisplay("block").repaint();
+            // TIVAForm.getJSXByName("KKS_kentat").setDisplay("block").repaint();
 
             clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
             hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");

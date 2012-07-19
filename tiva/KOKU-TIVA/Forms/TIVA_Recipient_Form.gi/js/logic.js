@@ -273,7 +273,7 @@ function preload() {
 
 function mapFormDataToFields(objXML) {
     var i, pohjaId, otsikko, saateteksti, laatija, actionReplies, vastattu, attributes, vastaanottaja, maaraaika, maaraaika1, maaraaika2, maaraaika3, aikaraja, aikaraja1, aikaraja2, aikaraja3, kommentti, targetPersonUid;
-    var vastattu, vakioMaaraaika, kkscode;
+    var vastattu, vakioMaaraaika;
     // Get basic information from xml document
 
     pohjaId = objXML.selectSingleNode("//suostumuspohjaId", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -283,7 +283,6 @@ function mapFormDataToFields(objXML) {
     targetPersonUid = objXML.selectSingleNode("//targetPersonUid", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
     targetPersonData = Arcusys.Internal.Communication.getUserInfo(targetPersonUid);
     targetPerson = targetPersonData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue() + " " + targetPersonData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
-    kkscode = objXML.selectSingleNode("//code", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
     if (objXML.selectSingleNode("//alreadyReplied", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
         vastattu = objXML.selectSingleNode("//alreadyReplied", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -296,14 +295,7 @@ function mapFormDataToFields(objXML) {
     } else {
         vakioMaaraika = 0;
     }
-
-    if (kkscode != null){
-        TIVAForm.getJSXByName("KKS_code").getParent().getParent().setDisplay("block").repaint();
-        TIVAForm.getJSXByName("KKS_code").setValue(kkscode);
-    }
     
-    getKKSdata(objXML);
-
     if (objXML.selectSingleNode("//maaraaika", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
         maaraaika = objXML.selectSingleNode("//maaraaika", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
         maaraaika = maaraaika.replace("Z", "");
@@ -354,23 +346,47 @@ function mapFormDataToFields(objXML) {
     setHeightAccordTextHeight(TIVAForm.getJSXByName("Suostumus_Kuvaus").getParent(), TIVAForm.getJSXByName("Suostumus_Kuvaus").getText(), 100, 12);
     TIVAForm.getJSXByName("targetPersonLabel").setText("<b>Lapsen nimi: </b>" + targetPerson, true);
 
+//adds the new KKS -information
+    getKKSdata(objXML);
 }
 
 // Gets the KKS -fields and 
 function getKKSdata(objXML){
 
-var nodeIterator, fieldnodes, i;
-nodeIterator = objXML.selectNodeIterator("//fields", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
-fieldnodes = getDataString(nodeIterator);
-/*
-for (i=0; i<fieldnodes.length; i++)
-    alert(fieldnodes[i][fieldName]);
+var nodeIterator, fieldnodes, i, kkscode, kksinfostring;
+kksinfostring="";
+kkscode = objXML.selectSingleNode("//code", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
-
-nodeIterator = objXML.selectNodeIterator("//fields", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
-fieldnodes = getDataString(nodeIterator);
-*/
+if (kkscode != null){
+        TIVAForm.getJSXByName("KKS_code").getParent().getParent().setDisplay("block").repaint();
+        TIVAForm.getJSXByName("KKS_code").setValue(kkscode);
 }
+
+// Field values are fetched consequentally, could be moved to it's own function in the future.
+nodeIterator = objXML.selectNodeIterator("//fields", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+fieldnodes = getDataString(nodeIterator);
+
+if (fieldnodes.length != 0){
+kksinfostring = "Suostumusta koskevat attribuutit:\n";
+for (i=0; i<fieldnodes.length; i++)
+kksinfostring = kksinfostring + fieldnodes[i]["fieldName"] + "\n";
+}
+
+nodeIterator = objXML.selectNodeIterator("//kksGivenTo", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+fieldnodes = getDataString(nodeIterator);
+if (fieldnodes.length != 0){
+kksinfostring = kksinfostring + "\nSuostumusta koskevat organisaatiot:\n"; 
+for (i=0; i<fieldnodes.length; i++)
+kksinfostring = kksinfostring + fieldnodes[i]["organizationName"] + "\n";
+}
+
+if (kksinfostring.length >= 2){
+TIVAForm.getJSXByName("KKSarvot").setDisplay("block").repaint();
+TIVAForm.getJSXByName("KKSinfo").setValue(kksinfostring);
+TIVAForm.getJSXByName("testingAdditionaldata").setValue(kksinfostring);
+}
+
+} //getKKSdata
 
 function setPermittedSlots(actionReplies) {
     var nodes, permitted, slotNumber, slot, check, block;

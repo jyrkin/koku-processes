@@ -144,6 +144,29 @@
         </object>
       </object>
       <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="120"/>
+        <strings jsxwidth="100%" jsxname="KKSarvot" jsxmargin="" jsxpadding="0" jsxdisplay="none"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2" jsxheight="100" jsxwidth="500"/>
+          <strings jsxname="pane" jsxclassname="kokuSpan"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="3" jsxrelativeposition="1"/>
+            <strings jsxname="label" jsxclassname="formLabel" jsxtext="KKS-kenttien tiedot"/>
+          </object>
+          <object type="com.intalio.ria.Field">
+            <variants/>
+            <strings jsxname="textarea-field" jsxclassname="field" riaLabelText="[Textarea label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxtype="1" jsxenabled="0" jsxheight="80" jsxwidth="450"/>
+              <strings jsxname="KKSinfo" jsxmargin="0 4 0 0" jsxvalue="" jsxbgcolor="#FFFFFF" jsxdisabledbgcolor="#FFFFFF"/>
+              <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxheight="120"/>
         <strings jsxwidth="100%" jsxname="pane"/>
         <dynamics jsxborder="@No jsxborder"/>
@@ -238,6 +261,11 @@
       <object type="jsx3.gui.TextBox">
         <variants/>
         <strings jsxname="organizationNames" jsxmargin="0 4 0 0" jsxpadding="2 2 0 0" jsxvalue=""/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="testingAdditionaldata" jsxmargin="0 4 0 0" jsxpadding="2 2 0 0" jsxvalue=""/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
       </object>
     </object>
