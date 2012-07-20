@@ -385,7 +385,7 @@ kksinfostring = kksinfostring + fieldnodes[i]["organizationName"] + "\n";
 
 if (kksinfostring.length >= 2){
 TIVAForm.getJSXByName("KKSarvot").setDisplay("block").repaint();
-TIVAForm.getJSXByName("KKSinfo").setValue(kksinfostring);
+TIVAForm.getJSXByName("KKSinfo").setText(kksinfostring).repaint();
 TIVAForm.getJSXByName("testingAdditionaldata").setValue(kksinfostring);
 }
 
