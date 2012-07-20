@@ -7,6 +7,18 @@ span.root {
   color: #444;
 }
 
+/* IE9 Dropdown list hack */
+/* needs to be updated every time elements are added or removed */
+.jsx30select_1_option {
+  position:relative;
+  font-family: Verdana, sans-serif;
+  font-size: 10px;
+  height: 16px;
+  padding: 3px 8px 0px 4px;
+  cursor: default;
+  white-space:nowrap;
+}
+
 .jsx30button_text, .jsx30select_text {
   font-size:10px;
   color: #000;
