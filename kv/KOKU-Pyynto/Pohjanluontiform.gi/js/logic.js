@@ -190,8 +190,8 @@ function addWeeksToChoices(questionName) {
     var weekAttribute;
     var index = 0;
     // alert(questionName);
-    var startDate = form1.getJSXByName(questionName).getDescendantOfName("aloitusPvm").getDate();
-    var endDate = form1.getJSXByName(questionName).getDescendantOfName("lopetusPvm").getDate();
+    var startDate = form1.getJSXByName("aloitusPvm" + questionName).getDate();
+    var endDate = form1.getJSXByName("lopetusPvm" + questionName).getDate();
     // alert(startDate + endDate);
 
     var startYear = startDate.getFullYear();
@@ -228,8 +228,8 @@ function addDaysToChoices(questionName) {
     var day;
     var index = 0;
     // alert(questionName);
-    var startDate = form1.getJSXByName(questionName).getDescendantOfName("aloitusPvm").getDate();
-    var endDate = form1.getJSXByName(questionName).getDescendantOfName("lopetusPvm").getDate();
+    var startDate = form1.getJSXByName("aloitusPvm" + questionName).getDate();
+    var endDate = form1.getJSXByName("lopetusPvm" + questionName).getDate();
     // alert(startDate + endDate);
 
     for( day = startDate; day <= endDate; day.setDate(day.getDate() + 1)) {
@@ -251,8 +251,8 @@ function addHoursToChoices(questionName) {
     var day, hour;
     var index = 0;
     // alert(questionName);
-    var startDate = form1.getJSXByName(questionName).getDescendantOfName("aloitusPvm").getDate();
-    var endDate = form1.getJSXByName(questionName).getDescendantOfName("lopetusPvm").getDate();
+    var startDate = form1.getJSXByName("aloitusPvm" + questionName).getDate();
+    var endDate = form1.getJSXByName("lopetusPvm" + questionName).getDate();
     // alert(startDate + endDate);
     var startTime = form1.getJSXByName(questionName).getDescendantOfName("aloitusAika").getValue();
     var endTime = form1.getJSXByName(questionName).getDescendantOfName("lopetusAika").getValue();
