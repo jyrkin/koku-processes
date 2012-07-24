@@ -1825,16 +1825,16 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
     };
 });
 function getRoles(uid) {
-    var i = 0, j = 0, roleName, roleId;
-
-    //var uid = "415ae6c9-406b-41df-b71e-887b5f0e4f3a";
-    rolesData = Arcusys.Internal.Communication.GetUserRoles(uid);
-
-    var roles = rolesData.selectNodeIterator("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+    var i = 0;
+	var j = 0;
+	var roleName;
+	var roleId;
     var rolesArray = [];
-
+    var rolesData = Arcusys.Internal.Communication.GetUserRoles(uid);
+    var roles = rolesData.selectNodeIterator("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
     var checkRoles = rolesData.selectSingleNode("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
-
+    
+    var s = "<data>";
     if(checkRoles) {
         while(roles.hasNext()) {
             node = roles.next();
@@ -1853,19 +1853,14 @@ function getRoles(uid) {
             }
         }
 
-        var s = "<data>";
-
         for( i = 0; i < rolesArray.length; i++) {
             s += "<record jsxid=\"" + rolesArray[i][1] + "\" jsxtext=\"" + rolesArray[i][0] + "\"\/>";
         }
-        s += "<record jsxid=\"\" jsxtext=\"Ei valintaa\"/>";
-        s += "</data>";
-
-        AjanvarausForm.getJSXByName("User_Role").setXMLString(s).resetCacheData();
-
-        //AjanvarausForm.getJSXByName("Roolit").setDisplay("block", true);
     }
+	s += "<record jsxid=\"\" jsxtext=\"Ei valintaa\"/>";
+	s += "</data>";
 
+	AjanvarausForm.getJSXByName("User_Role").setXMLString(s).resetCacheData();
 }
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {

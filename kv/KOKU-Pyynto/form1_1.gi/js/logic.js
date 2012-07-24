@@ -321,6 +321,7 @@ function getRoles(uid) {
 
     var checkRoles = rolesData.selectSingleNode("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
 
+	var s = "<data>";
     if(checkRoles) {
         while(roles.hasNext()) {
             node = roles.next();
@@ -339,19 +340,15 @@ function getRoles(uid) {
             }
         }
 
-        var s = "<data>";
 
         for( i = 0; i < rolesArray.length; i++) {
             s += "<record jsxid=\"" + rolesArray[i][1] + "\" jsxtext=\"" + rolesArray[i][0] + "\"\/>";
         }
-        s += "<record jsxid=\"\" jsxtext=\"Ei valintaa\"/>";
-        s += "</data>";
-
-        form1.getJSXByName("User_Roolit").setXMLString(s).resetCacheData();
-
-        //form1.getJSXByName("Roolit").setDisplay("block", true);
-
     }
+	s += "<record jsxid=\"\" jsxtext=\"Ei valintaa\"/>";
+	s += "</data>";
+
+	form1.getJSXByName("User_Roolit").setXMLString(s).resetCacheData();
 
 }
 
