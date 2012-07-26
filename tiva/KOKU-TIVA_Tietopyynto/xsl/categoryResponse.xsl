@@ -26,7 +26,7 @@
 			</xsl:element>
 			
 			<xsl:element name="informationDetails">
-				<xsl:value-of select="//ka:Vastaus_Liite/text()"/>
+				<xsl:value-of select="//ka:Vastaus_Perustelut/text()"/>
 			</xsl:element>
 			
 			<xsl:element name="requestId">
