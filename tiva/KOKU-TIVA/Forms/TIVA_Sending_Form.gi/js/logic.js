@@ -306,7 +306,12 @@ function mapFormDataToFields(objXML) {
     
     if (KKSkoodi != ""){
     TIVAForm.getJSXByName("KKS_kentat").setDisplay("block").repaint();
-    } else {TIVAForm.getJSXByName("KKS_kentat").setDisplay("none").repaint();}
+    TIVAForm.getJSXByName("KKS-field").getParent().setDisplay("block").getParent().repaint();
+    TIVAForm.getJSXByName("KKS-field2").getParent().setDisplay("block").getParent().repaint();
+    } else {TIVAForm.getJSXByName("KKS_kentat").setDisplay("none").repaint();
+            TIVAForm.getJSXByName("KKS-field").getParent().setDisplay("none").getParent().repaint();
+            TIVAForm.getJSXByName("KKS-field2").getParent().setDisplay("none").getParent().repaint();
+            }
     
     
     laatijaData = Arcusys.Internal.Communication.getUserInfo(laatijaUid);
@@ -433,6 +438,7 @@ function preload() {
     userRealName = getUserRealName(uid);
     TIVAForm.getJSXByName("Kayttaja_NakyvaLahettaja").setValue(userRealName).repaint();
     TIVAForm.getJSXByName("Kayttaja_Lahettaja").setValue(uid).repaint();
+    TIVAForm.getJSXByName("KKS_kentat").repaint();
 }
 
 function getUserRealName(uid) {

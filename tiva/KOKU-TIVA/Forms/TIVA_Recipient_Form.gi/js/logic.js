@@ -353,8 +353,8 @@ function mapFormDataToFields(objXML) {
 // Gets the KKS -fields and 
 function getKKSdata(objXML){
 
-var nodeIterator, fieldnodes, i, kkscode, kksinfostring;
-kksinfostring="";
+var nodeIterator, fieldnodes, i, kkscode, kksinfostring, kksinfostring2;
+kksinfostring="", kksinfostring2="";
 
 try{
 kkscode = objXML.selectSingleNode("//code", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -370,22 +370,23 @@ nodeIterator = objXML.selectNodeIterator("//fields", "xmlns:ns2='http://soa.tiva
 fieldnodes = getDataString(nodeIterator);
 
 if (fieldnodes.length != 0){
-kksinfostring = "Suostumusta koskevat attribuutit:\n";
+kksinfostring = "Suostumusta koskevat attribuutit:<br />";
 for (i=0; i<fieldnodes.length; i++)
-kksinfostring = kksinfostring + fieldnodes[i]["fieldName"] + "\n";
+kksinfostring = kksinfostring + fieldnodes[i]["fieldName"] + "<br />";
 }
 
 nodeIterator = objXML.selectNodeIterator("//kksGivenTo", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
 fieldnodes = getDataString(nodeIterator);
 if (fieldnodes.length != 0){
-kksinfostring = kksinfostring + "\nSuostumusta koskevat organisaatiot:\n"; 
+kksinfostring2 = kksinfostring2 + "\nSuostumusta koskevat organisaatiot:<br />"; 
 for (i=0; i<fieldnodes.length; i++)
-kksinfostring = kksinfostring + fieldnodes[i]["organizationName"] + "\n";
+kksinfostring2 = kksinfostring2 + fieldnodes[i]["organizationName"] + "<br />";
 }
 
 if (kksinfostring.length >= 2){
 TIVAForm.getJSXByName("KKSarvot").setDisplay("block").repaint();
 TIVAForm.getJSXByName("KKSinfo").setText(kksinfostring).repaint();
+TIVAForm.getJSXByName("KKSinfo2").setText(kksinfostring2).repaint();
 TIVAForm.getJSXByName("testingAdditionaldata").setValue(kksinfostring);
 }
 

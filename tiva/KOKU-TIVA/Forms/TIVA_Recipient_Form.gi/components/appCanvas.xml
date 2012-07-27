@@ -84,7 +84,7 @@
         <strings jsxwidth="100%" jsxname="pane" jsxmargin="" jsxpadding="0" jsxdisplay=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="2" jsxheight="40" jsxwidth="180"/>
+          <variants jsxoverflow="2" jsxheight="40" jsxwidth="220"/>
           <strings jsxname="pane" jsxclassname="kokuSpan"/>
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
@@ -107,7 +107,7 @@
           </object>
         </object>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="2" jsxheight="40"/>
+          <variants jsxoverflow="2" jsxheight="40" jsxwidth="150"/>
           <strings jsxname="pane" jsxstyleoverride="" jsxclassname="kokuSpan"/>
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
@@ -145,10 +145,10 @@
       </object>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="120"/>
-        <strings jsxwidth="100%" jsxname="KKSarvot" jsxmargin="" jsxpadding="0" jsxdisplay=""/>
+        <strings jsxwidth="100%" jsxname="KKSarvot" jsxmargin="" jsxpadding="0" jsxdisplay="none"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
-          <variants jsxoverflow="2" jsxheight="100" jsxwidth="500"/>
+          <variants jsxoverflow="2" jsxheight="100" jsxwidth="250"/>
           <strings jsxname="pane" jsxclassname="kokuSpan"/>
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
@@ -161,6 +161,23 @@
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
               <strings jsxname="KKSinfo" jsxtext="" jsxbgcolor="" jsxcolor=""/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2" jsxheight="100" jsxwidth="250"/>
+          <strings jsxname="pane" jsxclassname="kokuSpan"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="3" jsxrelativeposition="1"/>
+            <strings jsxname="label" jsxclassname="formLabel" jsxtext="aa" jsxcolor="" jsxvisibility="hidden"/>
+          </object>
+          <object type="com.intalio.ria.Field">
+            <variants/>
+            <strings jsxname="text-output-field" jsxclassname="field" riaLabelText="" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxrelativeposition="1" jsxoverflow="3"/>
+              <strings jsxname="KKSinfo2" jsxtext="" jsxbgcolor="" jsxcolor=""/>
             </object>
           </object>
         </object>
