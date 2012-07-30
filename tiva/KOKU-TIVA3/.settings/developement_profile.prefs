@@ -1,6 +1,7 @@
-#Fri Feb 10 14:03:23 EET 2012
+
 behind_proxy=false
 bundleExportPath=/home/henril/intalio_workspace/KOKU-TIVA3
+deploy.fileRuntimeSelection=Forms\:Forms/TIVA3.xsd\:Forms/TIVA3InitForm.gi\:Processes\:Processes/TIVA3Init-Process.bpm\:Services\:Services/KokuSuostumusProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl\:xsl\:xsl/kirjaaSuostumus1.xsl\:xsl/kirjaaSuostumus2.xsl\:
 deploy_bundleShouldBeArchived=false
 deploy_bundleShouldBeDeployed=true
 deploy_gi_serverUrl=http\://localhost\:8080/gi

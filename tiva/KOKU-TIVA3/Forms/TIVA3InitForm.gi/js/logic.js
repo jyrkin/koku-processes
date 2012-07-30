@@ -399,9 +399,6 @@ function mapFieldsToMatrix(id, topic) {
 function mapChoicesToMatrix(id, description, infotext) {
     var node, answerNode, hasEmptyChild, answerHasEmptyChild;
 
-    clearDataCache("Vastaukset-nomap");
-    clearDataCache("Toimenpiteet-nomap");
-
     hasEmptyChild = formatDataCache("Toimenpiteet-nomap", "Toimenpiteet");
     answerHasEmptyChild = formatDataCache("Vastaukset-nomap", "Vastaukset");
 
@@ -498,6 +495,9 @@ function mapFormDataToFields(objXML) {
     laatijaData = Arcusys.Internal.Communication.getUserInfo(laatijaUid);
     attributes = getAttributes(objXML);
 
+    clearDataCache("Vastaukset-nomap");
+    clearDataCache("Toimenpiteet-nomap");
+    
     for (i = 0; i < attributes.length; i++) {
         addChoice(attributes[i][0], attributes[i][1], attributes[i][2], true);
     }
