@@ -406,7 +406,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="3" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="KKS-koodi"/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Sopimuslomakkeen tunnus"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants/>
@@ -424,7 +424,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="KKS-lomake" jsxmargin="0 0 0 38"/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Sopimuslomake" jsxmargin="0 0 0 38"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants/>
@@ -682,7 +682,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="3" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Organisaatio"/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Organisaatiot"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants jsxwidth="170"/>
@@ -709,7 +709,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="3" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Attribuutit" jsxtextalign="left" jsxstyleoverride=""/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Sopimuslomakkeen osat" jsxtextalign="left" jsxstyleoverride=""/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants jsxwidth="170"/>
