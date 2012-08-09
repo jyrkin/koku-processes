@@ -4,6 +4,7 @@ function intalioPreStart() {
     var error;
 
     TIVAForm.getJSXByName("KKS_lomakeId").setValue(TIVAForm.getJSXByName("KKS_lomake").getValue());
+    TIVAForm.getJSXByName("KKS_lomake").setValue(TIVAForm.getJSXByName("KKS_lomake").getText());
     clearDataCache("Vastaanottajat-nomap");
     mapSelectedRecipientsToMatrix();
     error = checkSuostumukset();
