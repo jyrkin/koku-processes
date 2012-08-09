@@ -79,8 +79,8 @@
             <variants/>
             <strings riaLabelText="" jsxname="KKS-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
             <object type="jsx3.gui.Button">
-              <variants jsxheight="20" jsxwidth="130"/>
-              <strings jsxname="KKSKoodiButton" jsxtext="KKS-koodi" jsxmargin="" jsxpadding="2 40 0 40" jsxclassname="kokuButton"/>
+              <variants jsxheight="20" jsxwidth="170"/>
+              <strings jsxname="KKSKoodiButton" jsxtext="Lisää sopimuslomake" jsxmargin="" jsxpadding="2 25 0 25" jsxclassname="kokuButton"/>
               <events jsxexecute="KKSKoodi();"/>
             </object>
           </object>
@@ -91,7 +91,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="3" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="KKS-koodi" jsxpadding="0" jsxmargin="0 0 0 20"/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Sopimuslomakkeen tunnus" jsxpadding="0" jsxmargin="0 0 0 20"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants/>
@@ -597,8 +597,8 @@
         <dynamics jsxborder="@No jsxborder"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxvalue="29"/>
-        <strings jsxdisplay="none" jsxname="id" jsxmargin="0 4 0 0"/>
+        <variants/>
+        <strings jsxvalue="29" jsxdisplay="none" jsxname="id" jsxmargin="0 4 0 0"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>

@@ -378,7 +378,7 @@ kksinfostring = kksinfostring + fieldnodes[i]["fieldName"] + "<br />";
 nodeIterator = objXML.selectNodeIterator("//kksGivenTo", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
 fieldnodes = getDataString(nodeIterator);
 if (fieldnodes.length != 0){
-kksinfostring2 = kksinfostring2 + "\nSuostumusta koskevat organisaatiot:<br />"; 
+kksinfostring2 = kksinfostring2 + "\nOrganisaatiot, joille tiedot luovutetaan:<br />"; 
 for (i=0; i<fieldnodes.length; i++)
 kksinfostring2 = kksinfostring2 + fieldnodes[i]["organizationName"] + "<br />";
 }

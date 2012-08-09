@@ -240,7 +240,7 @@ function KKSKoodi() {
         TIVA_Form.getJSXByName("KKSKoodiButton").setText("Piilota").repaint();
     } else if (TIVA_Form.getJSXByName("KKSKoodi-pane").getDisplay() == "block") {
         TIVA_Form.getJSXByName("KKSKoodi-pane").setDisplay("none", true);
-        TIVA_Form.getJSXByName("KKSKoodiButton").setText("KKS-koodi", true).repaint();
+        TIVA_Form.getJSXByName("KKSKoodiButton").setText("Lisää sopimuslomake", true).repaint();
     }
 }
 
