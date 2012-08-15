@@ -96,9 +96,10 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetTemplateNames = function() {
 
+        var SEARCH_STRING = "";
         var LIMIT = 100;
         var SERVICE_NAME = "KokuValtakirjaProcessingService";
-        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaValtakirjapohjat><searchString>" + searchString + "</searchString><limit>" + LIMIT + "</limit></soa:selaaValtakirjapohjat></soapenv:Body></soapenv:Envelope>";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaValtakirjapohjat><searchString>" + SEARCH_STRING + "</searchString><limit>" + LIMIT + "</limit></soa:selaaValtakirjapohjat></soapenv:Body></soapenv:Envelope>";
 
         return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
