@@ -1635,8 +1635,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetChildren = function(searchString) {
+        var LIMIT = 100;
         var SERVICE_NAME = "UsersAndGroupsService";
-        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + LIMIT + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
 
         return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
@@ -1662,8 +1663,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetGroups = function(searchString) {
+        var LIMIT = 100;
         var SERVICE_NAME = "UsersAndGroupsService";
-        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchGroups><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchGroups></soapenv:Body></soapenv:Envelope>";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchGroups><searchString>" + searchString + "</searchString><limit>" + LIMIT + "</limit></soa:searchGroups></soapenv:Body></soapenv:Envelope>";
 
         return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
