@@ -122,42 +122,18 @@ function getTaskSubscribe() {
     Intalio.Internal.Utilities.SERVER.subscribe(Intalio.Internal.Utilities.GET_TASK_SUCCESS, prepareForm);
 }
 
+function handleSend(serviceName, soapMessage) {
+    var xmlString = parent.KokuWS.handleSend(serviceName, soapMessage);
+    var xmlDoc = new jsx3.xml.Document();
+    return xmlDoc.loadXML(xmlString);
+}
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetKunpoUsernameByUid = function(uid) {
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKunpoNameByUserUid><userUid>" + uid + "</userUid></soa:getKunpoNameByUserUid></soapenv:Body></soapenv:Envelope>";
 
-        var tout = 1000;
-        var limit = 100;
-        var searchString = "";
-
-        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKunpoNameByUserUid><userUid>" + uid + "</userUid></soa:getKunpoNameByUserUid></soapenv:Body></soapenv:Envelope>";
-        var endpoint;
-        var url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-
-        var req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        //req.setRequestHeader("Content-Type","text/xml");
-
-        //req.setRequestHeader("SOAPAction","");
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        var objXML = req.getResponseXML();
-        // alert(req.getStatus());
-
-        // var objXML = req.getResponseXML();
-        // alert("DEBUG - SERVER RESPONSE:" + objXML);
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            // alert(objXML);
-            return objXML;
-
-        }
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 function getRoles(uid) {
@@ -202,71 +178,19 @@ function getRoles(uid) {
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetKunpoUsernameByUid = function(uid) {
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKunpoNameByUserUid><userUid>" + uid + "</userUid></soa:getKunpoNameByUserUid></soapenv:Body></soapenv:Envelope>";
 
-        var tout = 1000;
-        var limit = 100;
-        var searchString = "";
-
-        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKunpoNameByUserUid><userUid>" + uid + "</userUid></soa:getKunpoNameByUserUid></soapenv:Body></soapenv:Envelope>";
-
-        var url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-
-        var req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        //req.setRequestHeader("Content-Type","text/xml");
-
-        //req.setRequestHeader("SOAPAction","");
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        var objXML = req.getResponseXML();
-        // alert(req.getStatus());
-
-        // var objXML = req.getResponseXML();
-        // alert("DEBUG - SERVER RESPONSE:" + objXML);
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            // alert(objXML);
-            return objXML;
-
-        }
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetUserUidByUsername = function(username) {
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + username + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
 
-        var tout = 1000;
-        var limit = 100;
-        var searchString = "";
-
-        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + username + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
-
-        var url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-
-        var req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        var objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 function mapSelectedRecipientsToMatrix() {
@@ -750,30 +674,10 @@ function addGroupsToRecipients() {
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetUserRoles = function(uid) {
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserRoles><userUid>" + uid + "</userUid></soa:getUserRoles></soapenv:Body></soapenv:Envelope>";
 
-        var tout, msg, endpoint, url, req, objXML;
-        tout = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserRoles><userUid>" + uid + "</userUid></soa:getUserRoles></soapenv:Body></soapenv:Envelope>";
-
-        url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
-
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 
@@ -789,193 +693,52 @@ jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error)
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetUsers = function(searchString) {
-        var tout, msg, endpoint, url, req, objXML, limit;
-        tout = 1000;
-        limit = 100;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchUsers><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchUsers></soapenv:Body></soapenv:Envelope>";
-        url = getUrl();
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchUsers><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchUsers></soapenv:Body></soapenv:Envelope>";
 
-        // ARCUSYS INTRA PROXY
-        //url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-
-        // IXONOS DEMO PROXY
-        //url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
-
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
-
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetGroups = function(searchString) {
-        var tout, msg, endpoint, url, req, objXML, limit;
-        tout = 1000;
-        limit = 100;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchGroups><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchGroups></soapenv:Body></soapenv:Envelope>";
-        url = getUrl();
-
-        // ARCUSYS INTRA PROXY
-        //url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-
-        // IXONOS DEMO PROXY
-        //url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
-
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
-
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchGroups><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchGroups></soapenv:Body></soapenv:Envelope>";
+        
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetGroupUsers = function(groupUid) {
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUsersByGroupUid><groupUid>" + groupUid + "</groupUid></soa:getUsersByGroupUid></soapenv:Body></soapenv:Envelope>";
 
-        var tout, msg, endpoint, url, req, objXML;
-        tout = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUsersByGroupUid><groupUid>" + groupUid + "</groupUid></soa:getUsersByGroupUid></soapenv:Body></soapenv:Envelope>";
-        url = getUrl();
-
-        // ARCUSYS INTRA PROXY
-        //url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-
-        // IXONOS DEMO PROXY
-        //url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
-
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
-
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetChildrens = function(searchString) {
-        var tout, msg, endpoint, url, req, objXML, limit;
-        tout = 1000;
-        limit = 100;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildrens)");
-        } else {
-            return objXML;
-
-        }
-
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetUserInfo = function(uid) {
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + uid + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
 
-        var tout = 1000;
-        var limit = 100;
-        var searchString = "";
-
-        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + uid + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
-
-        var url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-
-        var req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        var objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetChildinfo = function(nodes) {
-        var tout, msg, endpoint, url, req, objXML;
-        tout = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo>" + nodes + "</soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo>" + nodes + "</soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getUrl();
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildinfo)");
-        } else {
-            return objXML;
-
-        }
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
 
     };
 });
