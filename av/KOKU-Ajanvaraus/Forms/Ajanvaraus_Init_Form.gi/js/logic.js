@@ -27,7 +27,7 @@ function showDialog(dialogId, text, textTitle, title) {
 }
 
 function handleSend(serviceName, soapMessage) {
-    var xmlString = handleSend(serviceName, soapMessage);
+    var xmlString = parent.KokuWS.handleSend(serviceName, soapMessage);
     var xmlDoc = new jsx3.xml.Document();
     return xmlDoc.loadXML(xmlString);
 }
