@@ -1625,7 +1625,7 @@ function addGroupsToRecipients() {
 
 // Package FormPreFill
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetFormData = function(id) {
+    arc.GetFormData = function(appointmentId) {
         var SERVICE_NAME = "KokuAppointmentProcessingService";
         var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
 
