@@ -240,7 +240,7 @@ function KKSKoodi() {
         TIVA_Form.getJSXByName("KKSKoodiButton").setText("Piilota").repaint();
     } else if (TIVA_Form.getJSXByName("KKSKoodi-pane").getDisplay() == "block") {
         TIVA_Form.getJSXByName("KKSKoodi-pane").setDisplay("none", true);
-        TIVA_Form.getJSXByName("KKSKoodiButton").setText("Lisää sopimuslomake", true).repaint();
+        TIVA_Form.getJSXByName("KKSKoodiButton").setText("LisÃ¤Ã¤ sopimuslomake", true).repaint();
     }
 }
 
@@ -581,63 +581,32 @@ function valuesToArray(attributes) {
 
 // Web Service Calls -----------------------------------------------------------------------------------------------------------------------------
 
+function handleSend(serviceName, soapMessage) {
+    var xmlString = parent.KokuWS.handleSend(serviceName, soapMessage);
+    var xmlDoc = new jsx3.xml.Document();
+    return xmlDoc.loadXML(xmlString);
+}
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc) {
     arc.GetChildren = function (searchString) {
-        var tout, msg, endpoint, url, req, objXML, limit;
 
-        tout = 1000;
-        limit = 100;
+        var LIMIT = 100;
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + LIMIT + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
 
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
-        url = getUrl();
-        
-        endpoint = getEndpoint("UsersAndGroupsService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-
-        req = new jsx3.net.Request();
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
-        } else {
-            return objXML;
-        }
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 
 //Package FormPreFill
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc) {
     arc.getTemplatesData = function (str) {
-        var tout, msg, endpoint, url, req, objXML;
 
-        tout = 1000;
+        var LIMIT = 10;
+        var SERVICE_NAME = "KokuSuostumusProcessingService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaSuostumuspohjat><searchString>" + str + "</searchString><limit>" + LIMIT + "</limit></soa:selaaSuostumuspohjat></soapenv:Body></soapenv:Envelope>";
 
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaSuostumuspohjat><searchString>" + str + "</searchString><limit>10</limit></soa:selaaSuostumuspohjat></soapenv:Body></soapenv:Envelope>";
-
-        endpoint = getEndpoint("KokuSuostumusProcessingService");
-        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
-        url = getUrl();
-
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-
-        req = new jsx3.net.Request();
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
-        } else {
-            return objXML;
-        }
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 
@@ -645,32 +614,13 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetTemplateNames = function() {
         
-        var tout = 1000;   
-        var limit = 100;
-        var searchString = "";
-        
-        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaValtakirjapohjat><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:selaaValtakirjapohjat></soapenv:Body></soapenv:Envelope>";
+        var LIMIT = 100;
+        var SEARCHSTRING = "";
+        var SERVICE_NAME = "KokuValtakirjaProcessingService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaValtakirjapohjat><searchString>" + SEARCHSTRING + "</searchString><limit>" + LIMIT + "</limit></soa:selaaValtakirjapohjat></soapenv:Body></soapenv:Envelope>";
         var url = getUrl();
-        
-        endpoint = getEndpoint("KokuValtakirjaProcessingService");
-        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
 
-
-        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
-        var req = new jsx3.net.Request();
-        req.open('POST', url, false);      
-
-        
-       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-       req.send(msg, tout);
-       var objXML = req.getResponseXML();
-
-        if (objXML == null) {
-            alert("Virhe palvelinyhteydess\xE4");
-        } else {
-            return objXML;
-
-        }
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
 
