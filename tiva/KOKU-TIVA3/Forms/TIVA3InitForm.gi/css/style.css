@@ -22,70 +22,85 @@ span.root {
 .jsx30button_text, .jsx30select_text {
   font-size:10px;
   color: #000;
+  overflow: hidden !important;
 }
 
 .fieldset .fieldset-padding .jsx30block span[label=tooltipImg] {
     display: inline !important;
     width: 30px !important;
+    overflow: hidden !important;
 }
 
 .jsx30image {
   min-width: 10px;
   min-height: 10px;
+  overflow: hidden !important;
 }
 
 .row {
   margin-bottom: 12px;
   display: block !important;
   clear: both;
+  overflow: hidden !important;
 }
 
 .column, .checkBlock {
   float: left;
+  overflow: hidden !important;
 }
 
 .checkBlock {
   margin-right: 6px;
   min-height: 20px;
   min-width: 20px;
+  overflow: hidden !important;
 }
 
 .column {
   margin-right: 12px;
+  overflow: hidden !important;
 }
 
 #jsx .jsx30textbox, #jsx .jsx30select_text {
   width: 250px;
   height: 20px;
+  overflow: hidden !important;
 }
 
 .labelPadding {
   padding-top: 12px;
+  overflow: hidden !important;
 }
 
 .labelHeader {
-  margin-bottom: 12px;
+  margin-bottom: 12px
+  overflow: hidden !important;
 }
 
 span.FormLabel, span.headerNote, #JSX div.form-title, #JSX span.form-title {
   font-family: Helvetica,Arial,Verdana,sans-serif;
   display: block !important;
+  overflow: hidden !important;
 }
 
 span.FormLabel, span.headerNote {
   color:#666666;
+  overflow: hidden !important;
 }
 
 div[label=IntalioInternal_SpacerBlock] {
   visibility: hidden !important;
+  overflow: hidden !important;
 } 
 
 .checkLabel {
   padding-top: 2px;
+  overflow: hidden !important;
 }
 
 span.checkLabel {
   padding-top: 2px;
+  overflow: hidden !important;
 }
 
 legend {
@@ -94,19 +109,23 @@ legend {
   text-transform:uppercase;
   font-size: 14px;
   color: #444;
+  overflow: hidden !important;
 }
 
 /* fieldset */
 fieldset {
   border: 1px solid #da251d;
+  width: 574px !important;
   margin: 0px 0px 12px 0px;
   padding: 12px;
+  overflow: hidden !important;
 }
 
 /* padding inside fieldset (IE bug workaround) */
 div.fieldset-padding {
   margin: 15px 10px;
   width: 100% !important;
+  overflow: hidden !important;
 }
 
 /* form header */
@@ -116,29 +135,36 @@ div.fieldset-padding {
   letter-spacing:2px;
   text-transform:uppercase;
   color: #444;
+  overflow: hidden !important;
 }
 
 span[label=IntalioInternal_StartButton], span.intalioButton {
     margin: 0px 8px 0px 0px !important;
     padding: 3px 10px !important;
+    overflow: hidden !important;
+    
 }
 
 span.intalioButton {
     position: absolute !important;
     left: 145px !important;
+    overflow: hidden !important;
 }
 
 .ie8 span.intalioButton  {
     margin: 43px 0px 0px 0px !important;
+    overflow: hidden !important;
 }
 
 span.required {
   color: red;
   font-size: 12px;
+  overflow: hidden !important;
 }
 
 td.label-column {
   display:none;
+  overflow: hidden !important;
 }
 
 }
@@ -148,13 +174,15 @@ td.label-column {
 
 #JSX .jsx30button {
   display: none !important;
+  overflow: hidden !important;
 }
 
 fieldset {
   margin: 0 0 25 5;
-  border: 1px solid #da251d;
-  /* width: 820px; */
+  border:1px solid #da251d;
+  width: 600px !important;
   page-break-after: always;
+  overflow: hidden !important;
 }
 
 }
