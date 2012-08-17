@@ -1175,7 +1175,7 @@ function mapAttributes(objXML) {
         pvm = pvm1 + "." + pvm2 + "." + pvm3;
 
         mapFieldsToMatrix(attributes[i].slotNumber, attributes[i].appointmentDate, attributes[i].startTime.substr(0, 5), attributes[i].endTime.substr(0, 5), attributes[i].location, attributes[i].comment, true);
-        entryText = pvm + ", klo: " + attributes[i].startTime.substr(0, 5) + " - " + attributes[i].endTime.substr(0, 5) + ", paikka: " + attributes[i].location;
+        entryText = pvm + ", klo: " + attributes[i].startTime.substr(0, 5) + " - " + attributes[i].endTime.substr(0, 5) + ", " + attributes[i].location;
 
         addNewEntry(entryText, attributes[i].comment, attributes[i].slotNumber);
         refreshBlock();

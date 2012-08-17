@@ -115,4 +115,11 @@
 		<nature>com.intalio.bpms.designer.core.designernature</nature>
 		<nature>org.eclipse.stp.bpmn.validation.BatchValidationBuildAbleNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>metadata.xml</name>
+			<type>1</type>
+			<location>/home/hmustonen/KOKU-workspace/KOKUquickfix/koku-processes/av/KOKU-Ajanvaraus/metadata.xml</location>
+		</link>
+	</linkedResources>
 </projectDescription>
