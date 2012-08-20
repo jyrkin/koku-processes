@@ -37,6 +37,25 @@ function throughTextfields() {
     }
 }
 
+function addToMatrix(addition, additionId, matrix, cache, attribute, sourcecache){
+var childIterator, childNode, node, hasEmptyChild, val;
+  val =  TIVA3Form.getCache().getDocument(sourcecache).selectSingleNode("//record[@jsxid='" + addition + "']/@jsxtext").getValue();
+
+    var node, hasEmptyChild;
+    hasEmptyChild = formatDataCache(cache, matrix);
+    node = TIVA3Form.getCache().getDocument(cache).getFirstChild().cloneNode();
+
+    node.setAttribute("jsxid", addition);
+    node.setAttribute(additionId, addition);
+    node.setAttribute(attribute, val);
+
+    TIVA3Form.getCache().getDocument(cache).insertBefore(node);
+
+    if(hasEmptyChild) {
+        TIVA3Form.getCache().getDocument(cache).removeChild(TIVA3Form.getCache().getDocument(cache).getFirstChild());
+    }  
+}
+
 
 // General functions -----------------------------------------------------------------------------------------------------------------------------
 
@@ -469,7 +488,8 @@ function preload() {
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     userRealName = getUserRealName(uid);
     TIVA3Form.getJSXByName("lahettaja_tosinimi").setValue(userRealName).repaint();
-    TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
+    // TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
+    TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(uid);
 }
 
 function getUserRealName(uid) {
@@ -494,6 +514,21 @@ function mapFormDataToFields(objXML) {
     laatijaUid = objXML.selectSingleNode("//laatija", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
     laatijaData = Arcusys.Internal.Communication.getUserInfo(laatijaUid);
     attributes = getAttributes(objXML);
+    KKSkoodi = "";
+
+    try{    
+        KKSkoodi = objXML.selectSingleNode("//code", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    } catch (e) {}
+    
+    if (KKSkoodi != ""){
+    TIVA3Form.getJSXByName("KKS_kentat").setDisplay("block").repaint();
+    TIVA3Form.getJSXByName("KKS-field").getParent().setDisplay("block").getParent().repaint();
+    TIVA3Form.getJSXByName("KKS-field2").getParent().setDisplay("block").getParent().repaint();
+    } else {TIVA3Form.getJSXByName("KKS_kentat").setDisplay("none").repaint();
+            TIVA3Form.getJSXByName("KKS-field").getParent().setDisplay("none").getParent().repaint();
+            TIVA3Form.getJSXByName("KKS-field2").getParent().setDisplay("none").getParent().repaint();
+            }
+    
 
     clearDataCache("Vastaukset-nomap");
     clearDataCache("Toimenpiteet-nomap");
@@ -503,6 +538,16 @@ function mapFormDataToFields(objXML) {
     }
 
     // Map values to the form fields
+    
+    // Map values to the form fields
+    TIVA3Form.getJSXByName("KKS_koodi").setValue(KKSkoodi);
+
+
+    if (KKSkoodi != null) {
+
+        prefillKKS(KKSkoodi);
+        }
+        
     TIVA3Form.getJSXByName("Suostumus_SuostumusId").setValue(pohjaId);
     TIVA3Form.getJSXByName("Suostumus").setTitleText(otsikko, true);
     TIVA3Form.getJSXByName("Suostumus_Kuvaus").setText(saateteksti, true);
@@ -532,6 +577,44 @@ function getAttributes(objXML) {
     return attributes;
 }
 
+function prefillKKS(kkscode){
+var formData, testi, nodeIterator, formData, childid, childnode, xmlstring = "", test, userid, kksformvalues, organizations;
+var fieldID, fieldInstance;
+xmlstring = "<data>"
+userid = TIVA3Form.getJSXByName("Kayttaja_Lahettaja").getValue();
+childid = TIVA3Form.getJSXByName("KKS_childuid").getValue();
+formData = Arcusys.Internal.Communication.GetKKSformInstances(kkscode, childid);
+nodeIterator = formData.selectNodeIterator("//return", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+
+kksformvalues = getDataString(nodeIterator);
+mapToDropdown(kksformvalues, "instanceId", "instanceName", "KKS_lomake");
+
+organizations = Arcusys.Internal.Communication.getUserOrg(userid);
+nodeIterator = organizations.selectNodeIterator("//organization", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+kksformvalues = getDataString(nodeIterator);
+mapToDropdown(kksformvalues, "organizationId", "organizationName", "Organisaatio");
+}
+
+function mapToDropdown(sourceArray, idValue, idText, dropBox){
+var returnXML, i, j;
+returnXML= "<data>";
+j = sourceArray.length-1;
+
+for (i = 0; i <= j; i++) {
+    // Creates xml string for the dropdown box to show the different kks -forms.
+    returnXML = returnXML + "<record jsxid=\"" + sourceArray[i][idValue] + "\" jsxtext=\"" + sourceArray[i][idText] + "\"/>";
+    }    
+    returnXML = returnXML + "</data>";
+
+  TIVA3Form.getJSXByName(dropBox).setDefaultText("-Valitse-").repaint();
+  TIVA3Form.getJSXByName(dropBox).setXMLString(returnXML);
+  TIVA3Form.getJSXByName(dropBox).resetXmlCacheData();
+  TIVA3Form.getJSXByName(dropBox).repaint();
+  
+  return returnXML;
+  
+}
+
 // Recipients functions --------------------------------------------------------------------------------------------------------------------------
 
 function validateAddToRecipients(selection) {
@@ -551,6 +634,15 @@ function setSuostuja2FieldsRequirements(flag) {
     TIVA3Form.getJSXByName("Suostumus2_Suostumusjankohta").setEnabled(flag, true);
 }
 
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetKKSformInstances = function(kksValue, child) {
+
+        var SERVICE_NAME = "KokuSuostumusProcessingService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKksFormInstances><kksCode>" + kksValue + "</kksCode><targetPersonUid>" + child + "</targetPersonUid></soa:getKksFormInstances></soapenv:Body></soapenv:Envelope>";
+
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
+    };
+});
 
 /**
  * inserts selected users to real matrix that values can be later used in Intalio process.
@@ -629,6 +721,7 @@ function searchNames(searchString) {
                     node.setAttribute("etunimi", childArray[i]["firstname"]);
                     node.setAttribute("sukunimi", childArray[i]["lastname"]);
                     node.setAttribute("uid", childArray[i]["uid"]);
+                    TIVA3Form.getJSXByName("KKS_childuid").setValue(childArray[i]["uid"]);
                     node.setAttribute("vanhempi", childArray[i]["parents_displayName"]);
                     node.setAttribute("vanhempiUid", childArray[i]["parents_uid"]);
                     TIVA3Form.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
@@ -801,6 +894,48 @@ function handleSend(serviceName, soapMessage) {
     return xmlDoc.loadXML(xmlString);
 }
 
+function getKKSTemplate(templateID){
+var nodeiterator, orgnodes, fields, i, splittedId, splittedName, temp;
+kkscode = TIVA3Form.getJSXByName("KKS_koodi").getValue();
+childid = TIVA3Form.getJSXByName("KKS_childuid").getValue();
+formData = Arcusys.Internal.Communication.GetKKSformInstances(kkscode, childid);
+nodeIterator = formData.selectNodeIterator("//return", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+orgnodes = getDataString(nodeIterator);
+
+for (i=0; i<orgnodes.length; i++){
+    if((orgnodes[i]["instanceId"]) == templateID){
+        temp = orgnodes[i]["fields_fieldId"];
+        splittedId = temp.split(",");
+        
+        temp = orgnodes[i]["fields_fieldName"];
+        splittedName = temp.split(",");
+        mapAttributesToDropdown(splittedId, splittedName, "Attribuutit");
+        return;
+        }     
+}
+}
+
+// Could be combined with the other mapping function.
+function mapAttributesToDropdown(sourceArray1, sourceArray2, dropBox){
+var returnXML, i, j;
+returnXML= "<data>";
+j = sourceArray1.length-1;
+
+for (i = 0; i <= j; i++) {
+    // Creates xml string for the dropdown box to show the different kks -forms.
+    returnXML = returnXML + "<record jsxid=\"" + sourceArray1[i] + "\" jsxtext=\"" + sourceArray2[i] + "\"/>";
+    }    
+    returnXML = returnXML + "</data>";
+
+  TIVA3Form.getJSXByName(dropBox).setDefaultText("-Valitse-").repaint();
+  TIVA3Form.getJSXByName(dropBox).setXMLString(returnXML);
+  TIVA3Form.getJSXByName(dropBox).resetXmlCacheData();
+  TIVA3Form.getJSXByName(dropBox).repaint();
+  
+  return returnXML;
+  
+}
+
 //Package FormPreFill
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc) {
     arc.GetFormData = function (pohjaId) {
@@ -829,6 +964,17 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
         var LIMIT = 100;
         var SERVICE_NAME = "UsersAndGroupsService";
         var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + LIMIT + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
+
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
+    };
+});
+
+// gets the organizations
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.getUserOrg = function(id) {
+
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserOrganizations><userUid>" + id + "</userUid></soa:getUserOrganizations></soapenv:Body></soapenv:Envelope>";
 
         return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };

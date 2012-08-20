@@ -30,8 +30,8 @@
     	<sequence>
     		<element name="Kayttaja" type="tns:Kayttaja_Type"></element>
     		<element name="Pohja" type="tns:Pohja_Type"></element>
-            <element name="Suostumus" type="tns:Suostumus_Type"></element>
-            <element name="Suostumus1" type="tns:Suostumus1_Type"></element>
+    		<element name="Suostumus" type="tns:Suostumus_Type"></element>
+    		<element name="Suostumus1" type="tns:Suostumus1_Type"></element>
     		<element name="Suostumus2" type="tns:Suostumus2_Type"></element>
     		<element name="Vastaanottajat"
     			type="tns:Vastaanottajat_Type" maxOccurs="unbounded"
@@ -43,6 +43,15 @@
     		<element name="Vastaukset" type="tns:Vastaukset_Type"
     			maxOccurs="unbounded" minOccurs="0">
     		</element>
+    		<element name="KKSattribuutti"
+    			type="tns:KKSattribuutti_Type" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="KKSorganisaatio"
+    			type="tns:KKSorganisaatio_Type" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="KKS" type="tns:KKS_Type"></element>
     	</sequence>
     </complexType>
 
@@ -99,6 +108,32 @@
     		<element name="Suostumus_SuostumusId" type="string"></element>
     		<element name="Suostumus_Kohdehenkilo" type="string"></element>
     		<element name="Suostumus_Maaraaika" type="date"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="KKS_Type">
+    	<sequence>
+    		<element name="KKS_koodi" type="string"></element>
+    		<element name="KKS_childuid" type="string"></element>
+    		<element name="KKS_lomake" type="string"></element>
+    		<element name="KKS_lomakeId" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="KKSattribuutti_Type">
+    	<sequence>
+    		<element name="KKSattribuutti_attribuutti" type="string"></element>
+    		<element name="KKSattribuutti_id" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="KKSorganisaatio_Type">
+    	<sequence>
+    		<element name="KKSorganisaatio_organisaatio"
+    			type="string">
+    		</element>
+    		<element name="KKSorganisaatio_id" type="string"></element>
     	</sequence>
     </complexType>
 </schema>

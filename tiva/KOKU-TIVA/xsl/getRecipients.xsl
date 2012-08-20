@@ -59,7 +59,6 @@
 				</xsl:element>
 			</xsl:for-each>
 
-
 			<xsl:element name="kksFormInstance">
 				<xsl:for-each select="//fe:KKSattribuutti">
 					<xsl:element name="fields">
