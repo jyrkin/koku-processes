@@ -363,7 +363,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxdisplay="" riaTitleText="Pohjien hakeminen" jsxname="Hae_Pohjat" jsxclassname="fieldset" jsxwidth="100%"/>
+      <strings jsxdisplay="" riaTitleText="Suostumuspohjan valinta" jsxname="Hae_Pohjat" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
         <strings jsxname="row" jsxclassname="row"/>
@@ -400,7 +400,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="3" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Sopimuslomakkeen tunnus"/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Kokoelman tunnus"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants/>
@@ -418,7 +418,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Sopimuslomake" jsxmargin="0 0 0 38"/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Kokoelma" jsxmargin="0 0 0 38"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants/>
@@ -434,7 +434,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxdisplay="none" riaTitleText="Sopimuslomake" jsxname="KKS_kentat" jsxclassname="fieldset" jsxwidth="100%"/>
+      <strings jsxdisplay="none" riaTitleText="Kokoelma" jsxname="KKS_kentat" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.TextBox">
         <variants/>
         <strings jsxname="KKS_childuid" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
@@ -455,7 +455,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="3" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Organisaatiot, joille tiedot luovutetaan"/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Toimijat, joille tiedot luovutetaan"/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants jsxwidth="170"/>
@@ -482,7 +482,7 @@
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="3" jsxrelativeposition="1"/>
-            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Sopimuslomakkeen osat" jsxtextalign="left" jsxstyleoverride=""/>
+            <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Kokoelman luovutettavat tiedot" jsxtextalign="left" jsxstyleoverride=""/>
           </object>
           <object type="com.intalio.ria.Field">
             <variants jsxwidth="170"/>
@@ -562,7 +562,7 @@
             <strings jsxdisplay="" jsxname="matrix-block" jsxbgcolor=""/>
             <object type="jsx3.gui.Matrix">
               <variants jsxpagingmodel="1" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="0" jsxrendernavigators="1" jsxsuppresshscroll="1" jsxsuppressvscroll="0" jsxscalewidth="0"/>
-              <strings jsxname="AttributesMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxsortpath="KKSattribuutti_attribuutti" jsxsorttype="text" jsxsortdirection="ascending" jsxxmlid="KKSattribuutti-nomap" jsxrenderingmodel="deep"/>
+              <strings jsxname="AttributesMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxsortpath="KKSattribuutti_attribuutti" jsxsorttype="text" jsxsortdirection="descending" jsxxmlid="KKSattribuutti-nomap" jsxrenderingmodel="deep"/>
               <events jsxaftercommit="this.getParent().getParent().validate(this, objEVENT);"/>
               <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
               <object type="jsx3.gui.Matrix.Column">
@@ -577,7 +577,7 @@
               </object>
               <object type="jsx3.gui.Matrix.Column">
                 <variants jsxwidth="136" jsxresize="0"/>
-                <strings jsxname="KKSattribuutti_attribuutti" jsxtext="Valitut attribuutit" jsxpadding="2" jsxcellpadding="3" jsxpath="KKSattribuutti_attribuutti"/>
+                <strings jsxname="KKSattribuutti_attribuutti" jsxtext="Valitut tiedot" jsxpadding="2" jsxcellpadding="3" jsxpath="KKSattribuutti_attribuutti"/>
                 <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                 <object type="jsx3.gui.TextBox">
                   <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10"/>

@@ -360,11 +360,6 @@ try{
 kkscode = objXML.selectSingleNode("//code", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 } catch (e) {return null}
 
-if (kkscode != null){
-        TIVAForm.getJSXByName("KKS_code").getParent().getParent().setDisplay("block").repaint();
-        TIVAForm.getJSXByName("KKS_code").setValue(kkscode);
-}
-
 // Field values are fetched consequentally, could be moved to it's own function in the future.
 nodeIterator = objXML.selectNodeIterator("//fields", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
 fieldnodes = getDataString(nodeIterator);
