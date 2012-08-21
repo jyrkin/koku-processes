@@ -434,7 +434,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxdisplay="" riaTitleText="Sopimuslomake" jsxname="KKS_kentat" jsxclassname="fieldset" jsxwidth="100%"/>
+      <strings jsxdisplay="none" riaTitleText="Sopimuslomake" jsxname="KKS_kentat" jsxclassname="fieldset" jsxwidth="100%"/>
       <object type="jsx3.gui.TextBox">
         <variants/>
         <strings jsxname="KKS_childuid" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
@@ -1141,6 +1141,11 @@
           <strings jsxname="Suostumus_SuostumusId" jsxmargin="0 4 0 0" jsxvalue="1"/>
           <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxname="Kayttaja_Uid" jsxvalue="" jsxclassname="textField" jsxdisplay="none" jsxvisibility="hidden"/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
   </object>

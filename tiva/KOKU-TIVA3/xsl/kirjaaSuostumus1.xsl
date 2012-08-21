@@ -80,8 +80,6 @@
 					</xsl:element>
 				</xsl:element>
 			</xsl:for-each>
-
-
 			<xsl:element name="kksFormInstance">
 				<xsl:for-each select="//fe:KKSattribuutti">
 					<xsl:element name="fields">
@@ -92,13 +90,13 @@
 							<xsl:value-of select="fe:KKSattribuutti_attribuutti/text()" />
 						</xsl:element>
 					</xsl:element>
-				</xsl:for-each>
-				
+				</xsl:for-each>				
 				<xsl:element name="instanceId">
-					<xsl:value-of select="//fe:KKS_lomakeId/text()" />
+					<xsl:value-of select="//fe:KKS_koodi/text()" />
 				</xsl:element>
 				<xsl:element name="instanceName">
-					<xsl:value-of select="//fe:KKS_lomake/text()" />
+					<xsl:value-of select="//fe:KKS_koodi/text()" />
+					<!-- <xsl:value-of select="//fe:KKS_lomake/text()" /> -->
 				</xsl:element>
 			</xsl:element>
 		</xsl:copy>

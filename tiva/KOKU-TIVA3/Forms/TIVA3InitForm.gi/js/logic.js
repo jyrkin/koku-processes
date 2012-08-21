@@ -488,8 +488,8 @@ function preload() {
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     userRealName = getUserRealName(uid);
     TIVA3Form.getJSXByName("lahettaja_tosinimi").setValue(userRealName).repaint();
-    // TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
-    TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(uid);
+    TIVA3Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
+    TIVA3Form.getJSXByName("Kayttaja_Uid").setValue(uid);
 }
 
 function getUserRealName(uid) {
@@ -527,6 +527,7 @@ function mapFormDataToFields(objXML) {
     } else {TIVA3Form.getJSXByName("KKS_kentat").setDisplay("none").repaint();
             TIVA3Form.getJSXByName("KKS-field").getParent().setDisplay("none").getParent().repaint();
             TIVA3Form.getJSXByName("KKS-field2").getParent().setDisplay("none").getParent().repaint();
+            emptyKKS();
             }
     
 
@@ -536,15 +537,12 @@ function mapFormDataToFields(objXML) {
     for (i = 0; i < attributes.length; i++) {
         addChoice(attributes[i][0], attributes[i][1], attributes[i][2], true);
     }
-
-    // Map values to the form fields
     
     // Map values to the form fields
     TIVA3Form.getJSXByName("KKS_koodi").setValue(KKSkoodi);
 
 
     if (KKSkoodi != null) {
-
         prefillKKS(KKSkoodi);
         }
         
@@ -577,11 +575,23 @@ function getAttributes(objXML) {
     return attributes;
 }
 
+function emptyKKS(){
+
+clearDataCache("Attribuutit-nomap");
+clearDataCache("Toimenpiteet-nomap");
+clearDataCache("KKSorganisaatio-nomap");
+clearDataCache("KKSattribuutti-nomap");
+TIVA3Form.getJSXByName("KKS_koodi").setValue("");
+TIVA3Form.getJSXByName("KKS_lomake").setValue("");
+TIVA3Form.getJSXByName("Organisaatio").setValue("");
+TIVA3Form.getJSXByName("Attribuutit").setValue("");
+}
+
 function prefillKKS(kkscode){
 var formData, testi, nodeIterator, formData, childid, childnode, xmlstring = "", test, userid, kksformvalues, organizations;
 var fieldID, fieldInstance;
 xmlstring = "<data>"
-userid = TIVA3Form.getJSXByName("Kayttaja_Lahettaja").getValue();
+userid = TIVA3Form.getJSXByName("Kayttaja_Uid").getValue();
 childid = TIVA3Form.getJSXByName("KKS_childuid").getValue();
 formData = Arcusys.Internal.Communication.GetKKSformInstances(kkscode, childid);
 nodeIterator = formData.selectNodeIterator("//return", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
