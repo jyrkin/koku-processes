@@ -95,11 +95,16 @@
           </object>
           <object type="com.intalio.ria.Field">
             <variants/>
-            <strings riaLabelText="Pohja_KKSKoodi" jsxname="Pohja_KKSKoodi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+            <strings riaLabelText="Pohja_KKSKoodi" jsxname="Pohja_KKSKoodi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
             <object type="jsx3.gui.TextBox">
               <variants/>
-              <strings jsxname="Pohja_Extend1" jsxmargin="0" jsxvalue="" jsxpadding="0"/>
+              <strings jsxname="Pohja_Extend1" jsxmargin="0" jsxvalue="" jsxpadding="0" jsxdisplay="none" jsxvisibility="hidden"/>
               <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+            </object>
+            <object type="jsx3.gui.Select">
+              <variants jsxwidth="200" jsxheight="18" jsxxmlasync="1"/>
+              <strings jsxname="KKSforms" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;kks.kehitysasialaji.vasu&quot; jsxtext=&quot;Varhaiskasvatussuunnitelma&quot;/&gt;&lt;record jsxid=&quot;kks.kehitysasialaji.4-vuotiaan_neuvolatarkastus&quot; jsxtext=&quot;4-vuotiaan neuvolatarkastus&quot;/&gt;&lt;record jsxid=&quot;kks.kehitysasialaji.sopimus_paivakotihoito&quot; jsxtext=&quot;Päiväkotihoidon Hoitosopimus&quot;/&gt;&lt;record jsxid=&quot;kks.kehitysasialaji.5lk_koulu_terveystarkastus.huoltaja&quot; jsxtext=&quot;5. Luokan kouluterveystarkastus, Huoltajan lomake&quot;/&gt;&lt;record jsxid=&quot;kks.kehitysasialaji.5lk_koulu_terveystarkastus.oppilas&quot; jsxtext=&quot;5. Luokan kouluterveystarkastus, Oppilaan lomake&quot;/&gt;&lt;record jsxid=&quot;kks.kehitysasialaji.5lk_koulu_terveystarkastus.terveydenhoitaja&quot; jsxtext=&quot;5. Luokan kouluterveystarkastus, Tietoja terveystarkastuksesta&quot;/&gt;&lt;record jsxid=&quot;kks.kehitysasialaji.4-vuotiaan_neuvolatarkastus.huoltaja&quot; jsxtext=&quot;4-vuotiaan neuvolatarkastus, huoltajan lomake&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxbgcolor="" jsxtextalign="left" jsxvalue=""/>
+              <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
             </object>
           </object>
         </object>
@@ -184,6 +189,10 @@
           <strings jsxvalue="" jsxname="Pohja_Extend2" jsxmargin="0 4 0 0"/>
           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="select-field" jsxclassname="field" riaLabelText="[Select label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
       </object>
     </object>
     <object type="com.intalio.ria.Section">

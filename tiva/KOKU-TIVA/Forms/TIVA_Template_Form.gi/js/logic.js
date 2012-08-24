@@ -60,6 +60,8 @@ function setTooltipSpanWidth(id) {
     //$("#" + id).css('border', '1px solid red');
 }
 
+
+
 function intalioPreStart() {
     var error;
 
@@ -86,6 +88,13 @@ function intalioPreStart() {
         return error;
     }
     throughTextfields();
+    
+    if (TIVA_Form.getJSXByName("KKSKoodi-pane").getDisplay() != "none"){
+        koodi = TIVA_Form.getJSXByName("KKSforms").getValue();
+        TIVA_Form.getJSXByName("Pohja_Extend1").setValue(koodi);
+    
+    
+    }
     return null;
 }
 
@@ -240,7 +249,9 @@ function KKSKoodi() {
         TIVA_Form.getJSXByName("KKSKoodiButton").setText("Piilota").repaint();
     } else if (TIVA_Form.getJSXByName("KKSKoodi-pane").getDisplay() == "block") {
         TIVA_Form.getJSXByName("KKSKoodi-pane").setDisplay("none", true);
-        TIVA_Form.getJSXByName("KKSKoodiButton").setText("LisÃ¤Ã¤ sopimuslomake", true).repaint();
+        TIVA_Form.getJSXByName("KKSforms").setValue("");
+        // TIVA_Form.getJSXByName("root").repaint();
+        TIVA_Form.getJSXByName("KKSKoodiButton").setText("Lis\u00E4\u00E4 sopimuslomake", true).repaint();
     }
 }
 
@@ -348,14 +359,78 @@ function getId() {
 function preload() {
     var username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("\\") + 1));
-
-    TIVA_Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
-    
+    uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
+    uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    TIVA_Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);  
     var templateNamesData = Arcusys.Internal.Communication.GetTemplateNames();
             
     if(templateNamesData != null) {
         mapTemplateNamesToField(templateNamesData);
     }
+    getKKScodes(uid);
+}
+
+function getKKScodes(uid){
+tempKKS = Arcusys.Internal.Communication.getKKSdata(uid);
+nodeIterator = tempKKS.selectNodeIterator("//return", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+kksformvalues = getDataString(nodeIterator);
+mapToDropdown(kksformvalues, "typeId", "typeName", "KKSforms");
+}
+
+function getDataString(nodeIterator) {
+    var attributes = [], i = 0, nodes, node, childNode, nodeName, depth = 0;
+
+    while(nodeIterator.hasNext()) {
+        node = nodeIterator.next();
+        attributes[i] = [];
+        childNode = node.getFirstChild();
+        while(childNode) {
+            if(childNode.getFirstChild()) {
+                childNode = childNode.getFirstChild();
+                depth++;
+            }
+            nodeName = childNode.getNodeName();
+            if(depth > 0) {
+                nodeName = childNode.getParent().getNodeName() + "_" + nodeName;
+            }
+
+            if(attributes[i][nodeName]) {
+                attributes[i][nodeName] += ",";
+            } else {
+                attributes[i][nodeName] = "";
+            }
+            attributes[i][nodeName] += childNode.getValue();
+
+            while(!childNode.getNextSibling() && depth > 0) {
+                childNode = childNode.getParent();
+                depth--;
+            }
+            childNode = childNode.getNextSibling();
+        }
+        i++;
+    }
+
+    return attributes;
+}
+
+function mapToDropdown(sourceArray, idValue, idText, dropBox){
+var returnXML, i, j;
+returnXML= "<data>";
+j = sourceArray.length-1;
+
+for (i = 0; i <= j; i++) {
+    // Creates xml string for the dropdown box to show the different kks -forms.
+    returnXML = returnXML + "<record jsxid=\"" + sourceArray[i][idValue] + "\" jsxtext=\"" + sourceArray[i][idText] + "\"/>";
+    }    
+    returnXML = returnXML + "</data>";
+
+  TIVA_Form.getJSXByName(dropBox).setDefaultText("-Valitse-").repaint();
+  TIVA_Form.getJSXByName(dropBox).setXMLString(returnXML);
+  TIVA_Form.getJSXByName(dropBox).resetXmlCacheData();
+  TIVA_Form.getJSXByName(dropBox).repaint();
+  
+  return returnXML;
+  
 }
 
 function commitCustomAutoRowSession(matrix, cache) {
@@ -600,12 +675,33 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 
 //Package FormPreFill
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc) {
-    arc.getTemplatesData = function (str) {
+    arc.getTemplatesData = function(str) {
 
         var LIMIT = 10;
         var SERVICE_NAME = "KokuSuostumusProcessingService";
         var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaSuostumuspohjat><searchString>" + str + "</searchString><limit>" + LIMIT + "</limit></soa:selaaSuostumuspohjat></soapenv:Body></soapenv:Envelope>";
 
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserUidByLooraname = function(username) {
+
+        var SERVICE_NAME = "UsersAndGroupsService";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + username + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
+
+        return handleSend(SERVICE_NAME, SOAP_MESSAGE);
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc) {
+    arc.getKKSdata = function(uid) {
+
+        var SERVICE_NAME = "KokuSuostumusProcessingService";
+        // var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKksFormTypes><employeeUid>" + uid + "</employeeUid></soa:getKksFormTypes></soapenv:Body></soapenv:Envelope>";
+        var SOAP_MESSAGE = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKksFormTypes><employeeUid>" + uid + "</employeeUid></soa:getKksFormTypes></soapenv:Body></soapenv:Envelope>";
+        
         return handleSend(SERVICE_NAME, SOAP_MESSAGE);
     };
 });
