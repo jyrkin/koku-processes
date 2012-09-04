@@ -4,7 +4,7 @@
 	xmlns:ka="http://soa.kv.koku.arcusys.fi/">
 	<xsl:output method="html" />
 	
-	<xsl:param name="Vastaanottaja" />
+<!--	<xsl:param name="Vastaanottaja" />-->
 	<xsl:preserve-space elements="Message_Content"/>
 	
 	<xsl:template match="/">
